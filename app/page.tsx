@@ -1,5 +1,8 @@
-import { Button } from '@/components/ui/button';
-
 export default function Home() {
-	return <Button variant='secondary'>Button from ShadCDN/ui</Button>;
+  return (
+    <>
+      <h1 className="heading1 text-darkPrimary">heading1</h1>
+      <h1 className="heading1-semibold text-darkPrimary-2">heading1-semibold</h1>
+    </>
+  );
 }
