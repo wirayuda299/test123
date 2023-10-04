@@ -2,11 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -16,45 +16,69 @@ module.exports = {
       },
     },
     extend: {
-      colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
+      fontFamily: {
+        "source-sans": "[var(--source-sans)]",
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+      colors: {
+        primary: "#FF4401",
+        secondary: {
+          redblack: "#661B00",
+          red: {
+            DEFAULT: "#FF4401",
+            90: "#FF571A",
+            80: "#FF6934",
+            60: "#FF8F67",
+            10: "#FFECE6",
+          },
+          yellow: {
+            DEFAULT: "#EA942C",
+            90: "#EC9F41",
+            80: "#EEA956",
+            30: "#F9DFC0",
+            10: "#FDF4EA",
+          },
+          blueBlack: {
+            DEFAULT: "#0A182D",
+            80: "#2A62B5",
+          },
+          blue: {
+            DEFAULT: "#347AE2",
+            90: "#4887E5",
+            80: "#5D95E8",
+            20: "#D6E4F9",
+            10: "#EBF2FC",
+          },
+          purpleBlack: "#141631",
+          purple: {
+            DEFAULT: "#6570F7",
+            80: "#848DF9",
+            20: "#E0E2FD",
+            10: "#F0F1FE",
+          },
+          green: {
+            DEFAULT: "#0ECC8D",
+            80: "#3ED6A4",
+            10: "#E7FAF4",
+          },
+        },
+        white: {
+          DEFAULT: "#FFFFFF",
+          800: "#F7F7F7",
+          700: "#F4F6F8",
+        },
+        darkPrimary: {
+          DEFAULT: "#151A1E",
+          2: "#1E252B",
+          3: "#262D34",
+          4: "#2C353D",
+        },
+        darkSecondary: {
+          DEFAULT: "#192351",
+          900: "#3F4354",
+          800: "#97989D",
+          700: "#858EAD",
+          600: "#C5D0E6",
+        },
       },
       keyframes: {
         "accordion-down": {
@@ -73,4 +97,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
