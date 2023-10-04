@@ -1,4 +1,4 @@
-export const heroContent = [
+export const signupContents = [
 	{
 		icon: '/assets/icons/bag.svg',
 		alt: 'bag icon',
@@ -17,4 +17,4 @@ export const heroContent = [
 		text: 'Get the best new stories from founders in your inbox.',
 		background: 'bg-secondary-blue-10',
 	},
-] as const;
+];

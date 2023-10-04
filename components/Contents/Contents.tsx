@@ -1,16 +1,24 @@
 import Image from 'next/image';
 
-import { heroContent } from '@/constant';
+type HeroContentsProps = {
+	title: string;
+	contents: {
+		background: string;
+		icon: string;
+		alt: string;
+		text: string;
+	}[];
+};
 
-export default function HeroText() {
+export default function HeroContents({ contents, title }: HeroContentsProps) {
 	return (
 		<section className='flex min-h-screen w-full flex-col items-center justify-center bg-white-800 p-5 3xl:max-w-720'>
 			<div className='w-full max-w-442'>
 				<h2 className='text-18 font-semibold text-darkSecondary-900 md:text-3xl md:font-bold'>
-					Join a thriving community of entrepreneurs and developers.
+					{title}
 				</h2>
 				<div className='flex w-full flex-col items-start gap-5 pt-10'>
-					{heroContent.map((content) => (
+					{contents.map((content) => (
 						<div
 							className='flex h-full items-center justify-start gap-6 rounded-lg bg-white p-5'
 							key={content.text}

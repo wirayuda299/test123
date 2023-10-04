@@ -1,1 +1,1 @@
-export { default as HeroText } from '@/components/HeroText/HeroText';
+export { default as Contents } from '@/components/Contents/Contents';

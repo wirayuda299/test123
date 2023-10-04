@@ -1,9 +1,13 @@
-import { HeroText } from '@/components/index';
+import { Contents } from '@/components/index';
+import { signupContents } from '@/constant';
 
 export default function Signup() {
 	return (
 		<div>
-			<HeroText />
+			<Contents
+				title='Join a thriving community of entrepreneurs and developers.'
+				contents={signupContents}
+			/>
 		</div>
 	);
 }
