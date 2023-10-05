@@ -29,9 +29,6 @@ module.exports = {
 			height: {
 				60: '60px',
 			},
-			fontSize: {
-				18: '18px',
-			},
 			colors: {
 				primary: '#FF4401',
 				secondary: {
