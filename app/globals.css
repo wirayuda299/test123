@@ -74,4 +74,8 @@
   .bodyXs-regular {
     @apply font-normal text-[9px] leading-[14px];
   }
+
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
 }
