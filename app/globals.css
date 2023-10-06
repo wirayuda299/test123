@@ -74,4 +74,39 @@
   .bodyXs-regular {
     @apply font-normal text-[9px] leading-[14px];
   }
+
+  /* No Focus */
+  .no-focus {
+    @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+  }
+}
+
+@layer components {
+  /* TopBar */
+  .topBar {
+    @apply flex w-full items-center justify-between px-3 lg:px-10 bg-white dark:bg-darkPrimary-3;
+  }
+
+  /* Search Bar */
+  .searchbar {
+    @apply flex gap-1 rounded-lg w-full;
+  }
+
+  .searchbar_input {
+    @apply border-none outline-none bg-white-700 h-8 lg:h-10 dark:bg-darkPrimary-4 px-[20px] py-[9px] !important;
+  }
+
+  /* BottomBar */
+  .bottombar {
+    @apply fixed bottom-0 z-10 w-full p-4 md:hidden bg-white-800 dark:bg-darkPrimary-2;
+    box-shadow: 0px -6px 30px 0px rgba(0, 0, 0, 0.06);
+  }
+
+  .bottombar_container {
+    @apply flex items-center justify-between gap-3;
+  }
+
+  .bottombar_link {
+    @apply relative flex flex-col items-center gap-2 rounded-lg p-2 sm:flex-1 sm:px-2 sm:py-2.5;
+  }
 }
