@@ -1,5 +1,5 @@
 import './globals.css';
-
+import { ClerkProvider } from '@clerk/nextjs';
 import { Source_Sans_3 } from 'next/font/google';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
@@ -17,8 +17,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
-		<html lang='en'>
-			<body className={sourceSansPro.className}>{children}</body>
-		</html>
+		<ClerkProvider>
+			<html lang='en'>
+				<body className={sourceSansPro.className}>{children}</body>
+			</html>
+		</ClerkProvider>
 	);
 }

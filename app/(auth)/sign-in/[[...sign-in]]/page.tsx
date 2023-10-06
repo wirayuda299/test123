@@ -1,0 +1,15 @@
+import { SignIn } from '@clerk/nextjs';
+
+import { Contents } from '@/components/index';
+import { signInContents } from '@/constant';
+
+export default function Signin() {
+	return (
+		<>
+			<Contents title='Sign in to Hipnode.' contents={signInContents} />
+			<div className='flex w-full items-center justify-center dark:bg-darkPrimary-3'>
+				<SignIn />;
+			</div>
+		</>
+	);
+}

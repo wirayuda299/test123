@@ -1,4 +1,5 @@
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 const interests = [
 	'Advertising',
@@ -16,9 +17,9 @@ const interests = [
 
 export default function BusinessInterest() {
 	return (
-		<section className='flex min-h-full w-full flex-col items-center justify-center bg-white p-5 lg:max-w-720'>
+		<section className='flex min-h-full w-full flex-col items-center justify-center bg-white p-5 dark:bg-darkPrimary-3 lg:max-w-720'>
 			<div className='w-full max-w-442'>
-				<h2 className='py-10 text-lg font-semibold text-darkSecondary-900 md:text-3xl md:font-bold'>
+				<h2 className='py-10 text-lg font-semibold text-darkSecondary-900 dark:text-white-800 md:text-3xl md:font-bold'>
 					What types of businesses are you most interested in running?
 				</h2>
 				<p className='text-base font-semibold text-secondary-blue-80'>
@@ -28,12 +29,18 @@ export default function BusinessInterest() {
 					{interests.map((interest) => (
 						<Button
 							key={interest}
-							className='bg-white-700 text-lg font-semibold text-darkSecondary-900 hover:bg-white-800'
+							className='bg-white-700 text-lg font-semibold text-darkSecondary-900 hover:bg-secondary-red-60 hover:text-white dark:bg-darkPrimary-4 dark:text-white-800'
 						>
 							{interest}
 						</Button>
 					))}
 				</div>
+				<Link
+					href='/'
+					className='mt-5 block w-min rounded bg-secondary-red-60 px-10 py-3 text-white-700'
+				>
+					Next
+				</Link>
 			</div>
 		</section>
 	);

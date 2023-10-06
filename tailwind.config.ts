@@ -21,6 +21,7 @@ module.exports = {
 			},
 			maxWidth: {
 				442: '442px',
+				500: '500px',
 				720: '720px',
 			},
 			width: {

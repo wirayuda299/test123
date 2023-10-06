@@ -1,4 +1,6 @@
-import { AuthForm, Contents } from '@/components/index';
+import { SignUp } from '@clerk/nextjs';
+
+import { Contents } from '@/components/index';
 import { signupContents } from '@/constant';
 
 export default function Signup() {
@@ -8,7 +10,9 @@ export default function Signup() {
 				title='Join a thriving community of entrepreneurs and developers.'
 				contents={signupContents}
 			/>
-			<AuthForm type='signup' />
+			<div className='flex w-full items-center justify-center dark:bg-darkPrimary-3'>
+				<SignUp />
+			</div>
 		</>
 	);
 }
