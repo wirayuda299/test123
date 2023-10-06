@@ -79,6 +79,10 @@
 	.bodyXs-regular {
 		@apply font-normal text-[9px] leading-[14px];
 	}
+
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
 }
 .cl-socialButtons {
 	display: flex;
@@ -129,4 +133,7 @@ html.dark .cl-internal-mdg29y,
 html.dark .cl-internal-18ut2g5 {
 	background-color: var(--dark);
 	color: var(--white);
+}
+@layer utilities {
+ 
 }
