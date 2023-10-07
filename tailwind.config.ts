@@ -16,8 +16,15 @@ module.exports = {
       },
     },
     extend: {
+      boxShadow: {
+        postCardImgShadow: "0 3px 4px 0 rgba(250, 137, 36, 0.06)",
+      },
+
       fontFamily: {
         "source-sans": "[var(--source-sans)]",
+      },
+      backgroundImage: {
+        meetUpBg: `url(../public/images/hostMeetup.svg)`,
       },
       colors: {
         primary: "#FF4401",
