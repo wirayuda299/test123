@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 interface PostCardProps {
   mainImage: string;
   title: string;
@@ -47,7 +49,7 @@ const PostCard: React.FC<PostCardProps> = ({
         <ul className='postCardTagList'>
           {tags.map((tag) => (
             <li key={tag} className='tag'>
-              {tag}
+              {tag.toLowerCase()}
             </li>
           ))}
         </ul>
@@ -78,17 +80,19 @@ const PostCard: React.FC<PostCardProps> = ({
           </div>
         )}
         {/* Avatar shows on mobile view instead of heart */}
-        <div className='avatarMobile'>
-          <Image src={avatar} alt='Avatar' width={20} height={25} />
-        </div>
+        <Avatar className='avatarMobile md:hidden'>
+          <AvatarImage src={avatar} alt='Avatar' width={20} height={25} />
+          <AvatarFallback>HN</AvatarFallback>
+        </Avatar>
       </div>
 
       {/* Grid Item 4 - User info and created date */}
       <div className='postCardGridItem4'>
         {/* Avatar */}
-        <div className='avatarDesktop'>
-          <Image src={avatar} alt='Avatar' width={28} height={34} />
-        </div>
+        <Avatar className='avatarDesktop'>
+          <AvatarImage src={avatar} alt='Avatar' width={28} height={34} />
+          <AvatarFallback>HN</AvatarFallback>
+        </Avatar>
         <div>
           {/* Name */}
           <div className='flex items-center justify-between'>
@@ -101,9 +105,7 @@ const PostCard: React.FC<PostCardProps> = ({
             )}
           </div>
           {/* Created date */}
-          <p className='bodySm-regular text-darkSecondary-800 dark:text-darkSecondary-600'>
-            {createdDate}
-          </p>
+          <p className='postCreatedDate'>{createdDate}</p>
         </div>
       </div>
 

@@ -139,6 +139,10 @@
     @apply body-semibold mr-[5px] text-darkSecondary-900 dark:text-white-700;
   }
 
+  .postCreatedDate {
+    @apply bodySm-regular text-darkSecondary-800 dark:text-darkSecondary-600;
+  }
+
   .viewsList {
     @apply bodyXs-regular md:body-regular flex h-full items-center justify-start gap-[30px] text-center text-darkSecondary-800 dark:text-darkSecondary-600 md:justify-between md:gap-[40px];
   }
