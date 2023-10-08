@@ -63,3 +63,11 @@ export const demoPerformance = [
     ],
   },
 ];
+
+export const optionBar = [
+  "Posts",
+  "Meetups",
+  "Podcasts",
+  "Interviews",
+  "History",
+];
