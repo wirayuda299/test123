@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply dark:bg-darkPrimary-3 bg-white;
+  }
+}
+
 @layer utilities {
   .heading1 {
     @apply font-bold text-[26px] leading-[38px];
@@ -83,20 +89,193 @@
 
 @layer components {
   /* TopBar */
+
+  .topBarContainer {
+    @apply flex items-center justify-between lg:px-10 bg-white dark:bg-darkPrimary-3 mx-auto max-w-screen-2xl px-5 py-[10px] md:py-[15px] fixed top-0 left-0 right-0 w-full z-50 !important;
+  }
+
   .topBar {
-    @apply flex w-full items-center justify-between px-3 lg:px-10 bg-white dark:bg-darkPrimary-3;
+    @apply flex w-full flex-1 items-center justify-between md:justify-evenly lg:gap-8;
+  }
+
+  .topBarCol2 {
+    @apply flex shrink-0 items-center justify-between gap-[28px] lg:basis-5/6;
+  }
+
+  .logoIcon {
+    @apply h-[35px] w-[25px] lg:h-[30px] lg:w-[30px];
+  }
+
+  .logoText {
+    @apply hidden h-[32px] w-[70px] lg:h-[38px] lg:w-[106px] mr-5;
+  }
+
+  .searchIcon {
+    @apply ml-[10px] h-[20px] w-[20px] object-contain lg:h-[20px] lg:w-[20px];
+  }
+
+  .navLinksContainer {
+    @apply hidden items-center gap-[7px] md:flex xl:gap-[20px];
+  }
+
+  .navLink {
+    @apply shrink-0 rounded-lg p-[8px] lg:p-[10px];
+  }
+
+  .navTooltip {
+    @apply rounded-lg px-2 text-black hover:block dark:bg-black dark:text-white;
+  }
+
+  .navTooltipContent {
+    @apply rounded-lg border border-black dark:bg-black;
+  }
+
+  .navLinkIcon {
+    @apply h-[16px] w-[16px] object-contain dark:brightness-200 lg:h-[20px] lg:w-[20px];
+  }
+
+  .profileIconContainer {
+    @apply shrink-0 cursor-pointer rounded-lg p-[8px] px-0 md:bg-white md:dark:bg-darkPrimary-3;
+  }
+
+  .profileIcon {
+    @apply h-[16px] w-[16px] object-contain dark:brightness-200 lg:h-[20px] lg:w-[20px] mr-0;
+  }
+
+  .profileDropDownIcon {
+    @apply no-focus border-none dark:bg-darkPrimary-3 dark:hover:bg-darkPrimary-4 bg-white-700;
+  }
+
+  .profileDropDownArrow {
+    @apply text-darkSecondary-700 dark:text-white dark:hover:bg-darkPrimary-3 dark:bg-darkPrimary-3 relative top-[1px] ml-1 h-5 w-5 transition duration-200 group-data-[state=open]:rotate-180 dark:group-data-[state=open]:bg-darkPrimary-3;
+  }
+
+  .navProfileAvatarImage {
+    @apply h-[38px] w-[39px] rounded-lg border-2 border-white bg-secondary-yellow-30 object-contain p-[3px] dark:border-darkPrimary-4 lg:h-[38px] lg:w-[39px];
+  }
+
+  .navProfileAvatarContainer {
+    @apply rounded-lg border border-secondary-yellow text-center;
+  }
+
+  .navProfileName {
+    @apply bodyMd-semibold lg:display-semibold hidden shrink-0 dark:text-white sm:block;
+  }
+
+  .dropDownMenuItem {
+    @apply body-semibold mr-4 mt-[3px] text-darkSecondary-900 hover:text-primary dark:text-white-700;
+  }
+
+  .darkModeToggle {
+    @apply display-semibold mr-2 text-darkSecondary-900 dark:text-white-800;
+  }
+
+  /* Message Dropdown in Nav */
+
+  .messageIconContainer {
+    @apply aspect-square px-2 md:bg-white-800 dark:md:bg-darkPrimary-4 dark:bg-darkPrimary-3;
+  }
+
+  .messageIcon {
+    @apply profileIcon h-[23px] w-[23px] md:h-[20px] md:w-[20px];
+  }
+
+  .messageDropDownContent {
+    @apply w-[336px] bg-white dark:bg-darkPrimary-3;
+  }
+
+  .messageDropDownHeader {
+    @apply heading3 px-[6px] pb-[10px] text-darkSecondary-900 dark:text-white-800;
+  }
+
+  .messageNotificationContainer {
+    @apply flex w-[316px] items-center justify-between rounded-md px-2 py-[10px] hover:bg-white-700 dark:hover:bg-darkSecondary-900;
+  }
+
+  .messageAvatarImage {
+    @apply h-[38px] w-[39px] rounded-[100%] object-contain p-[3px] dark:border-darkPrimary-4 lg:h-[38px] lg:w-[39px];
+  }
+
+  .messagesNumber {
+    @apply body-semibold ml-5 mr-4 flex h-6 w-6 items-center justify-center rounded-[100%] bg-primary text-white lg:mr-1;
+  }
+
+  .seeInMessenger {
+    @apply body-semibold cursor-pointer pb-[5px] pt-[15px] text-secondary-blue hover:opacity-70;
+  }
+
+  /* Notification DropDown in Nav */
+
+  .bellIconContainer {
+    @apply dark:data-[active]:bg-darkPrimary-4 ml-1 aspect-square md:ml-2 md:bg-white-800 dark:md:bg-darkPrimary-4 dark:bg-darkPrimary-3 !important;
+  }
+
+  .bellIcon {
+    @apply profileIcon h-[23px] w-[23px] md:h-[20px] md:w-[20px] !important;
+  }
+
+  .bellButtonDropDown {
+    @apply w-[335px] md:w-[589px] bg-white dark:bg-darkPrimary-3 h-[659px] overflow-y-auto !important;
+  }
+
+  .notificationsDropDownContainer {
+    @apply flex justify-between items-center pb-[30px] border-b border-white-800 dark:border-darkPrimary-4;
+  }
+
+  .markAsSeenButton {
+    @apply dark:bg-darkPrimary-2 bg-secondary-blue-10 text-secondary-blue-80 dark:text-secondary-blue-80 p-[7px] dark:p-[10px] rounded-md hover:opacity-80 flex justify-between;
+  }
+
+  .tabContainer {
+    @apply border-b data-[state=active]:border-secondary-blue data-[state=active]:text-secondary-blue data-[state=active]:shadow-none border-transparent dark:data-[state=active]:bg-darkPrimary-3 display-semibold !important;
+  }
+
+  .tabList {
+    @apply display-semibold w-full border-b border-white-800 dark:border-darkPrimary-4 bg-white dark:bg-darkPrimary-3 rounded-none mb-[20px] justify-between !important;
+  }
+
+  .emptyNotificationsText {
+    @apply body-regular text-darkSecondary-900 dark:text-darkSecondary-800 ml-2;
+  }
+
+  /* Notification */
+
+  .notificationAvatarImage {
+    @apply h-[46px] w-[46px] rounded-[100%] object-contain p-[3px] dark:border-darkPrimary-4 lg:h-[50px] lg:w-[50px];
+  }
+
+  .notificationAvatarIcon {
+    @apply dark:bg-darkPrimary-3 z-50 bg-white h-[26px] w-[26px] shadow-xl rounded-[100%] absolute flex justify-center items-center -bottom-1 right-0;
+  }
+
+  .avatarIconImage {
+    @apply invert h-[18px] w-[18px] dark:invert-0 dark:contrast-200 p-[2px];
+  }
+
+  .notificationText {
+    @apply bodyMd-regular dark:bg-darkPrimary-2 line-clamp-1 text-darkSecondary-800 bg-white-800 p-[10px] mb-[10px];
+  }
+
+  .notificationContainer {
+    @apply flex gap-[5px] w-[529px] justify-between;
   }
 
   /* Search Bar */
+
   .searchbar {
-    @apply flex gap-1 rounded-lg w-full;
+    @apply gap-1 rounded-lg w-full lg:body-regular bodyMd-regular relative flex-1;
   }
 
   .searchbar_input {
-    @apply border-none outline-none bg-white-700 h-8 lg:h-10 dark:bg-darkPrimary-4 px-[20px] py-[9px] !important;
+    @apply border-none outline-none bg-white-700 h-8 lg:h-10 dark:bg-darkPrimary-4 px-[20px] py-[9px] min-w-[180px] dark:text-white !important;
   }
 
-  /* BottomBar */
+  .searchBarIcon {
+    @apply cursor-pointer absolute right-3 lg:right-[10px] top-[8px] h-[16px] w-[16px] object-contain sm:right-4 sm:top-[8px] md:top-[8px] lg:top-[10px] lg:h-[20px] lg:w-[20px];
+  }
+
+  /* Bottom Bar */
+
   .bottombar {
     @apply fixed bottom-0 z-10 w-full p-4 md:hidden bg-white-800 dark:bg-darkPrimary-2;
     box-shadow: 0px -6px 30px 0px rgba(0, 0, 0, 0.06);

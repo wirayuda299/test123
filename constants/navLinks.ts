@@ -11,7 +11,7 @@ export const navLinks = [
   },
   {
     imgURL: "/assets/navigation/group.svg",
-    route: "/group",
+    route: "/groups",
     label: "Groups",
   },
   {
@@ -24,9 +24,4 @@ export const navLinks = [
     route: "/communities",
     label: "Communities",
   },
-  // {
-  //   imgURL: "/assets/user.svg",
-  //   route: "/profile",
-  //   label: "Profile",
-  // },
 ];

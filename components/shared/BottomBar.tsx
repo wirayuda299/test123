@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { navLinks } from "@/constants";
+import { navLinks } from "@/constants/navLinks";
 
 function Bottombar() {
   const pathname = usePathname();
@@ -26,14 +26,12 @@ function Bottombar() {
               <Image
                 src={link.imgURL}
                 alt={link.label}
-                width={20}
-                height={20}
+                width={25}
+                height={25}
                 className={`object-contain dark:brightness-200 ${
                   isActive && "brightness-200"
                 }`}
               />
-
-              <p className='max-sm:hidden'>{link.label.split(/\s+/)[0]}</p>
             </Link>
           );
         })}

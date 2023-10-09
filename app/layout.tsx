@@ -4,9 +4,9 @@ import { Source_Sans_3 } from "next/font/google";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-import TopBar from "@/components/shared/TopBar";
+import TopBar from "@/components/shared/TopBar/TopBar";
 import BottomBar from "@/components/shared/BottomBar";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeProvider } from "@/components/shared/TopBar/ThemeProvider";
 
 const sourceSansPro = Source_Sans_3({
   subsets: ["latin"],
@@ -31,7 +31,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         >
           <TopBar />
 
-          <main className='bg-white-800 dark:bg-darkPrimary-2'>{children}</main>
+          <main className='bg-white-800 dark:bg-darkPrimary-2 mx-auto max-w-screen-2xl p-2.5%'>
+            {children}
+          </main>
 
           <BottomBar />
         </ThemeProvider>
