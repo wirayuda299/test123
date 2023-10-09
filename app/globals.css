@@ -78,4 +78,8 @@
   .max-container {
     @apply max-w-[1440px] mx-auto px-[2.5%];
   }
+
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
 }
