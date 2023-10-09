@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const ProfileDropDown = () => {
-  const isLoggedIn: boolean = false; // for testing
+  const isLoggedIn: boolean = true; // for testing
 
   return (
     <NavigationMenu>
