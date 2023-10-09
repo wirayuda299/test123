@@ -16,7 +16,7 @@ const ProfileDropDown = () => {
       <NavigationMenuList>
         <NavigationMenuItem>
           {/* Arrow Button */}
-          <NavigationMenuTrigger className='pl-1 dark:hover:bg-darkPrimary-3 dark:bg-darkPrimary-3'>
+          <NavigationMenuTrigger className='pl-1 dark:bg-darkPrimary-3 dark:hover:bg-darkPrimary-3'>
             <AiOutlineCaretDown className='profileDropDownArrow' />
           </NavigationMenuTrigger>
 

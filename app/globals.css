@@ -181,7 +181,7 @@
   }
 
   .messageDropDownContent {
-    @apply w-[336px] bg-white dark:bg-darkPrimary-3;
+    @apply max-w-[336px] bg-white dark:bg-darkPrimary-3;
   }
 
   .messageDropDownHeader {
@@ -215,7 +215,7 @@
   }
 
   .bellButtonDropDown {
-    @apply w-[335px] md:w-[589px] bg-white dark:bg-darkPrimary-3 h-[659px] overflow-y-auto !important;
+    @apply max-w-[335px] md:max-w-[589px] bg-white dark:bg-darkPrimary-3 h-[659px] overflow-y-auto !important;
   }
 
   .notificationsDropDownContainer {

@@ -51,7 +51,7 @@ const MessageDropDown = () => {
 
                     {/* Notification body - name, created date, message */}
                     <div className='ml-[2px]'>
-                      <div className='flex items-center justify-start line-clamp-1'>
+                      <div className='line-clamp-1 flex items-center justify-start'>
                         <h4 className='display-semibold mr-2 text-darkSecondary-900 dark:text-white-800'>
                           {message.name}
                         </h4>
@@ -96,7 +96,7 @@ const MessageDropDown = () => {
             />
           </NavigationMenuTrigger>
 
-          {/* Bell Button DropDownContent*/}
+          {/* Bell Button DropDown Content */}
           <NavigationMenuContent className='bellButtonDropDown'>
             {/* Message Notifications */}
             <Notifications />

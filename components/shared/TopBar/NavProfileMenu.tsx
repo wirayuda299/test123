@@ -10,7 +10,7 @@ const NavProfileMenu = () => {
   };
 
   return (
-    <section className='flex items-center justify-between'>
+    <section className='relative flex items-center justify-between'>
       <div className='flex items-center gap-[10px] lg:gap-[15px]'>
         {/* Messages Icon with Dropdown */}
         <div className='profileIconContainer'>
@@ -32,7 +32,7 @@ const NavProfileMenu = () => {
         <div className=' flex items-center justify-between gap-[5px] lg:gap-[10px]'>
           {/* Name */}
           <h6 className='navProfileName'>{testUser.name}</h6>
-          {/* Dropdown Menu with Dark Mode toggle (Arrow Icon)*/}
+          {/* Dropdown Menu with Dark Mode toggle (Arrow Icon) */}
           <ProfileDropDown />
         </div>
       </div>
