@@ -5,6 +5,7 @@ export default function Introduce() {
 	return (
 		<>
 			<Contents
+				position='left'
 				contents={introduceContents}
 				title='Tell us a little about yourself!'
 			/>
