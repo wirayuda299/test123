@@ -18,7 +18,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={sourceSansPro.className}>{children}</body>
+      <body className={sourceSansPro.className}>
+        <main className="max-container">{children}</main>
+      </body>
     </html>
   );
 }

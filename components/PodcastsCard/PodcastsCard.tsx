@@ -22,7 +22,9 @@ const PodcastsCard = ({ cardData }: Props) => {
       />
 
       <div className="px-3">
-        <p className="bodyMd-semibold text-darkSecondary-900">{cardData.title}</p>
+        <p className="bodyMd-semibold text-darkSecondary-900 dark:text-white-800">
+          {cardData.title}
+        </p>
         <p className="bodySm-regular text-darkSecondary-800 pt-1.5">{cardData.author}</p>
       </div>
       <div>
