@@ -5,22 +5,22 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
 const sourceSansPro = Source_Sans_3({
-	subsets: ['latin'],
-	variable: '--font-source-sans',
-	weight: ['700', '600', '400'],
+  subsets: ['latin'],
+  variable: '--font-source-sans',
+  weight: ['700', '600', '400'],
 });
 
 export const metadata: Metadata = {
-	title: 'Hipnode - Social Media Web Application',
-	description: 'Social Media Web Application',
+  title: 'Hipnode - Social Media Web Application',
+  description: 'Social Media Web Application',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-	return (
-		<ClerkProvider>
-			<html lang='en'>
-				<body className={sourceSansPro.className}>{children}</body>
-			</html>
-		</ClerkProvider>
-	);
+  return (
+    <html lang='en'>
+      <ClerkProvider>
+        <body className={sourceSansPro.className}>{children}</body>
+      </ClerkProvider>
+    </html>
+  );
 }

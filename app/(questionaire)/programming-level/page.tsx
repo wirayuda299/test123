@@ -1,16 +1,9 @@
 import { Contents } from '@/components/index';
-import { introduceContents, programmingLevels } from '@/constant';
+import { programmingLevels } from '@/constant';
 
 export default function ProgrammingLevel() {
 	return (
-		<section className='flex h-full w-full items-center'>
-			<div className='top-0 h-screen w-full lg:sticky'>
-				<Contents
-					position='left'
-					contents={introduceContents}
-					title='Tell us a little about yourself!'
-				/>
-			</div>
+		<section className=' h-full w-full'>
 			<Contents
 				path='/interest'
 				position='right'
