@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={sourceSansPro.className}>
-        <main className="max-container">{children}</main>
+        <main className="max-container bg-white-800">{children}</main>
       </body>
     </html>
   );

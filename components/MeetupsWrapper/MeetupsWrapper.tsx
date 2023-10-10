@@ -1,9 +1,6 @@
 import job1 from "@/public/images/job1.svg";
 import job2 from "@/public/images/job2.svg";
-import events from "events";
-import { Dribbble } from "lucide-react";
 import Image from "next/image";
-import image from "next/image";
 import { Badge } from "../ui/badge";
 
 const MeetupsWrapper = () => {
