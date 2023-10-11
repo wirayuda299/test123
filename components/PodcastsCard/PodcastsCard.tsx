@@ -30,7 +30,7 @@ const PodcastsCard = ({ cardData }: Props) => {
         </p>
       </div>
       <div>
-        <Image src={rightArr} width={30} height={30} alt='rightArr' />
+        <Image src='icons/rightArr.svg' width={30} height={30} alt='rightArr' />
       </div>
     </div>
   );

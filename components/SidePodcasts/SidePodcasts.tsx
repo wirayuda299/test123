@@ -1,6 +1,6 @@
-import { podcasts } from '@/public/constants';
-import { rightArr as RightArr } from '@/public/icons';
 import Image from 'next/image';
+
+import { podcasts } from '@/public/constants';
 import { PodcastsCard } from '../index';
 
 const SidePodcasts = () => {
@@ -10,7 +10,7 @@ const SidePodcasts = () => {
         Podcasts
         <Image
           className='ml-2'
-          src={RightArr}
+          src='icons/rightArr.svg'
           alt='rightArr'
           width={12}
           height={10}
@@ -20,7 +20,7 @@ const SidePodcasts = () => {
       {podcasts?.map((item) => (
         <PodcastsCard
           cardData={{
-            img: item.image.src,
+            img: item.image,
             alt: item.id,
             title: item.title,
             author: item.author,

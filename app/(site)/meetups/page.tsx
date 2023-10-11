@@ -24,7 +24,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className='flex flex-col gap-5'>
+        <div className='flex flex-col gap-5 w-full lg:w-2/6'>
           <div className='hidden lg:block'>
             <HostMeetupCard />
           </div>

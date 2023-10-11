@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang='en' className='dark'>
+    <html lang='en'>
       <ClerkProvider>
         <body className={sourceSansPro.className}>
           <main className='max-container bg-white-800 dark:bg-darkPrimary-2'>
