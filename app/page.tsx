@@ -1,13 +1,15 @@
-import { LeftSidebar } from "@/components/index";
+import HomeLeftSidebar from "@/components/Home/HomeLeftSidebar";
+import HomeRightSidebar from "@/components/Home/HomeRightSidebar";
 
 export default function Home() {
   return (
-    <>
-      <LeftSidebar />
-      <h1 className="heading1 text-darkPrimary">heading1</h1>
-      <h1 className="heading1-semibold text-darkPrimary-2">
-        heading1-semibold
-      </h1>
-    </>
+    <main className='flex flex-row bg-white-700 px-[2.5%] dark:bg-darkPrimary-2'>
+      <HomeLeftSidebar />
+      <section>
+        <div className='w-full max-w-4xl'></div>
+      </section>
+      {/* @ts-ignore */}
+      <HomeRightSidebar />
+    </main>
   );
 }

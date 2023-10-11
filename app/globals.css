@@ -79,3 +79,31 @@
     @apply flex items-center justify-center;
   }
 }
+
+@layer components {
+  /* Left Sidebar Home Page */
+
+  .leftSidebar {
+    @apply sticky left-0 top-0 z-20 flex h-screen w-fit flex-col justify-between overflow-auto pb-5 pt-28 max-md:hidden;
+  }
+
+  .asideContainerLarge {
+    @apply max-w-[210px] rounded-[16px] bg-white py-[20px] pl-[20px] pr-[25px] dark:bg-darkPrimary-3;
+  }
+
+  .asideContainerSmall {
+    @apply max-w-[210px] rounded-[16px] bg-white p-[10px] dark:bg-darkPrimary-3;
+  }
+
+  .asideListItemLink {
+    @apply flex items-center justify-start gap-[8px] p-[6px] hover:rounded-md hover:bg-white-700 hover:dark:bg-darkPrimary-4;
+  }
+
+  .asideImageDiv {
+    @apply flexCenter rounded-md bg-white-700 dark:bg-darkPrimary-4;
+  }
+
+  .asideFollowingNumber {
+    @apply bodyXs-semibold rounded-sm bg-primary px-[5px] py-[2px] text-white;
+  }
+}
