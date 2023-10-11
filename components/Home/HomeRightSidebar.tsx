@@ -4,7 +4,8 @@ import PopularTags from './PopularTags';
 
 const HomeRightSidebar = () => {
   return (
-    <aside className='leftSidebar gap-[20px]'>
+    <aside className='rightSidebar'>
+      {/* These need to be replaced with Suraj's components */}
       <NewAndPopular />
       <PopularTags />
       <PinnedGroups />

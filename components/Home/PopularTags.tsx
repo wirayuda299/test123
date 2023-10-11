@@ -1,12 +1,14 @@
-import { popularTags } from "@/constant/homeLeftSidebar";
-import SidebarListItem from "./SidebarListItem";
+import { popularTags } from '@/constant/homeLeftSidebar';
+import SidebarListItem from './SidebarListItem';
 
 const PopularTags = () => {
   return (
     <aside className='asideContainerLarge'>
-      <h3 className='display-semibold mb-[20px] text-darkSecondary-900 dark:text-white-800'>
-        Popular Tags
-      </h3>
+      <header>
+        <h3 className='display-semibold mb-[20px] text-darkSecondary-900 dark:text-white-800'>
+          Popular Tags
+        </h3>
+      </header>
       <ul>
         {popularTags.map((item) => (
           <SidebarListItem

@@ -86,77 +86,65 @@
     @apply flex items-center justify-center;
   }
 
-  /* Custom Scrollbar */
+  /* No Focus */
 
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 3px;
-    height: 3px;
-    border-radius: 2px;
+  .no-focus {
+    @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: #09090a;
-  }
+  /* Clerk */
 
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #5c5c7b;
-    border-radius: 50px;
+  .cl-socialButtons {
+    display: flex;
+    width: auto;
   }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #7878a3;
+  .cl-socialButtons .cl-socialButtonsBlockButton {
+    width: 60px;
+    height: 50px;
+    display: flex;
   }
-}
-
-.cl-socialButtons {
-  display: flex;
-  width: auto;
-}
-.cl-socialButtons .cl-socialButtonsBlockButton {
-  width: 60px;
-  height: 50px;
-  display: flex;
-}
-html.dark .cl-socialButtons .cl-socialButtonsBlockButton {
-  background-color: var(--dark);
-  border: 1px solid var(--gray);
-}
-html.dark .cl-socialButtonsBlockButton__github .cl-internal-1fc9kwt > img {
-  filter: invert(100%);
-}
-html.dark .cl-internal-b868gt {
-  background-color: var(--white);
-}
-.cl-socialButtonsBlockButton__github .cl-socialButtonsBlockButtonText,
-.cl-socialButtonsBlockButton__google .cl-socialButtonsBlockButtonText__google {
-  display: none !important;
-}
-.cl-socialButtons .cl-internal-1fc9kwt {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.cl-internal-b3fm6y,
-.cl-formButtonPrimary {
-  background-color: var(--orange);
-}
-.cl-footerActionLink {
-  color: var(--orange);
-}
-html.dark .cl-internal-17ydaof {
-  background-color: var(--dark);
-}
-html.dark .cl-internal-1vbdq0x,
-html.dark .cl-internal-13zhnx0,
-html.dark .cl-internal-1xpzc82,
-html.dark .cl-internal-17bz5n6,
-html.dark .cl-internal-138ov2f {
-  color: var(--white);
-}
-html.dark .cl-internal-mdg29y,
-html.dark .cl-internal-18ut2g5 {
-  background-color: var(--dark);
-  color: var(--white);
+  html.dark .cl-socialButtons .cl-socialButtonsBlockButton {
+    background-color: var(--dark);
+    border: 1px solid var(--gray);
+  }
+  html.dark .cl-socialButtonsBlockButton__github .cl-internal-1fc9kwt > img {
+    filter: invert(100%);
+  }
+  html.dark .cl-internal-b868gt {
+    background-color: var(--white);
+  }
+  .cl-socialButtonsBlockButton__github .cl-socialButtonsBlockButtonText,
+  .cl-socialButtonsBlockButton__google
+    .cl-socialButtonsBlockButtonText__google {
+    display: none !important;
+  }
+  .cl-socialButtons .cl-internal-1fc9kwt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cl-internal-b3fm6y,
+  .cl-formButtonPrimary {
+    background-color: var(--orange);
+  }
+  .cl-footerActionLink {
+    color: var(--orange);
+  }
+  html.dark .cl-internal-17ydaof {
+    background-color: var(--dark);
+  }
+  html.dark .cl-internal-1vbdq0x,
+  html.dark .cl-internal-13zhnx0,
+  html.dark .cl-internal-1xpzc82,
+  html.dark .cl-internal-17bz5n6,
+  html.dark .cl-internal-138ov2f {
+    color: var(--white);
+  }
+  html.dark .cl-internal-mdg29y,
+  html.dark .cl-internal-18ut2g5 {
+    background-color: var(--dark);
+    color: var(--white);
+  }
 }
 
 @layer components {
@@ -187,7 +175,7 @@ html.dark .cl-internal-18ut2g5 {
   }
 
   .postCardMainImage {
-    @apply aspect-square min-h-[62px] min-w-[62px] rounded-[4px] md:h-[156px] md:w-[156px];
+    @apply aspect-square min-h-[62px] min-w-[62px] rounded-[4px];
   }
 
   .postCardTitle {
@@ -211,7 +199,7 @@ html.dark .cl-internal-18ut2g5 {
   }
 
   .avatarDesktop {
-    @apply h-[40px] w-[40px] rounded-[100%] bg-secondary-purple-10 px-[6px] py-[3px] dark:bg-secondary-purple-20;
+    @apply h-[40px] w-[40px] rounded-full bg-secondary-purple-10  dark:bg-secondary-purple-20;
   }
 
   .avatarName {
@@ -223,7 +211,7 @@ html.dark .cl-internal-18ut2g5 {
   }
 
   .viewsList {
-    @apply bodyXs-regular md:body-regular flex h-full items-center justify-start gap-[30px] text-center text-darkSecondary-800 dark:text-darkSecondary-600 md:justify-between md:gap-[40px];
+    @apply bodyXs-regular xl:display-regular flex h-full items-center justify-start gap-[20px] lg:gap-[10px] text-center text-darkSecondary-800 dark:text-darkSecondary-600 md:justify-between md:gap-[20px];
   }
 
   .online {
@@ -237,7 +225,7 @@ html.dark .cl-internal-18ut2g5 {
   /* Home Page Left Sidebar  */
 
   .leftSidebar {
-    @apply sticky left-0 top-0 z-20 flex h-screen w-fit flex-col justify-between overflow-auto pb-5 pt-28 max-md:hidden;
+    @apply sticky left-0 top-0 z-20 h-screen w-fit flex-col overflow-auto pt-28 max-md:hidden flex gap-[20px] shrink-0 pl-3 lg:flex lg:flex-col !important;
   }
 
   .asideContainerLarge {
@@ -253,7 +241,7 @@ html.dark .cl-internal-18ut2g5 {
   }
 
   .asideImageDiv {
-    @apply flexCenter rounded-md bg-white-700 dark:bg-darkPrimary-4;
+    @apply flexCenter rounded-md bg-white-700 dark:bg-darkPrimary-4 shrink-0;
   }
 
   .asideFollowingNumber {
@@ -262,7 +250,25 @@ html.dark .cl-internal-18ut2g5 {
 
   /* Home Page Right Sidebar  */
 
-  .rightsidebar {
-    @apply sticky right-0 top-0 z-20 flex h-screen w-fit flex-col justify-between gap-12 overflow-auto px-10 pb-6 pt-28 max-xl:hidden;
+  .rightSidebar {
+    @apply sticky right-0 top-0 z-20 h-screen w-fit flex-col overflow-auto pb-3 pt-28 gap-[20px] hidden shrink-0 pr-3 lg:flex lg:flex-col !important;
+  }
+
+  /* Create Post Bar */
+
+  .barContainer {
+    @apply flex items-center justify-between gap-[10px] md:gap-[20px] rounded-[16px] bg-white p-[14px] md:p-[20px] dark:bg-darkPrimary-3;
+  }
+
+  .barInput {
+    @apply md:body-regular no-focus bodyMd-regular border-none bg-white-700 text-darkSecondary-700 dark:bg-darkPrimary-4 dark:text-darkSecondary-700 !important;
+  }
+
+  .barButton {
+    @apply bodyXs-semibold md:bodyMd-semibold no-focus min-w-[90px] md:min-w-[116px] px-[8px] md:px-[10px] py-[4px] md:py-[12px] rounded-[10px] bg-secondary-red-80 text-white hover:bg-secondary-red-80 hover:opacity-80 !important;
+  }
+
+  .avatarCreatePostMobile {
+    @apply h-[28px] w-[28px] md:h-[38px] md:w-[38px];
   }
 }

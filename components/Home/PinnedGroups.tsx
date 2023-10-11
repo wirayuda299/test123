@@ -1,12 +1,12 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import { pinnedGroups } from "@/constant/homeLeftSidebar";
-import SidebarListItem from "./SidebarListItem";
+import { pinnedGroups } from '@/constant/homeLeftSidebar';
+import SidebarListItem from './SidebarListItem';
 
 const PinnedGroups = () => {
   return (
     <aside className='asideContainerLarge'>
-      <div className='mb-[20px] flex items-center justify-start'>
+      <header className='mb-[20px] flex items-center justify-start'>
         <h3 className='display-semibold mr-2 text-darkSecondary-900 dark:text-white-800'>
           Pinned Groups
         </h3>
@@ -17,7 +17,7 @@ const PinnedGroups = () => {
           height={20}
           className='dark:contrast-200 dark:grayscale dark:invert'
         />
-      </div>
+      </header>
       <ul>
         {pinnedGroups.map((item) => (
           <SidebarListItem

@@ -1,10 +1,10 @@
-import NewAndPopular from "./NewAndPopular";
-import PinnedGroups from "./PinnedGroups";
-import PopularTags from "./PopularTags";
+import NewAndPopular from './NewAndPopular';
+import PinnedGroups from './PinnedGroups';
+import PopularTags from './PopularTags';
 
 const HomeLeftSidebar = () => {
   return (
-    <aside className='leftSidebar gap-[20px]'>
+    <aside className='leftSidebar'>
       <NewAndPopular />
       <PopularTags />
       <PinnedGroups />
