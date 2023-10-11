@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+
 import FilterElements from './FilterElements';
 
 const Filter = () => {

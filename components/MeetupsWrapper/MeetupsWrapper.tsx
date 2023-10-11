@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import { Badge } from '../ui/badge';
 
 const MeetupsWrapper = () => {
@@ -13,6 +14,7 @@ const MeetupsWrapper = () => {
       date: 'Feb 7',
       image: 'images/job1.svg',
     },
+
     {
       title: 'Design Meetups USA | Dribbble',
       companyName: 'Dribbble',
@@ -30,6 +32,7 @@ const MeetupsWrapper = () => {
       {meetupsData?.map((meetupData) => (
         <div className='w-full p-5 shadow-md rounded-2xl bg-white dark:bg-darkPrimary-3  mb-4'>
           <div key={meetupData.companyName}>
+            {/* Meetup Quick Informatio */}
             <div className='flex justify-between items-center'>
               <div className='flex'>
                 <Image
@@ -58,6 +61,8 @@ const MeetupsWrapper = () => {
                 </p>
               </div>
             </div>
+
+            {/* Description about meetup card */}
             <p className='bodyMd-regular md:body-regular my-6 text-darkSecondary-900 dark:text-white'>
               Contact Email mansurul@uihut.com; Phone Number +8801777138513. UI
               HUT is a design resources platform for UX/UI designers,
