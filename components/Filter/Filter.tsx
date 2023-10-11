@@ -1,5 +1,7 @@
-import { useState } from "react";
-import FilterElements from "./FilterElements";
+'use client';
+
+import { useState } from 'react';
+import FilterElements from './FilterElements';
 
 const Filter = () => {
   type CategoriesType = {
@@ -10,42 +12,48 @@ const Filter = () => {
 
   const categoryData: CategoriesType[] = [
     {
-      item: "Full Time",
+      item: 'Full Time',
       selected: false,
       id: 1,
     },
     {
-      item: "Part Time",
+      item: 'Part Time',
       selected: false,
       id: 2,
     },
     {
-      item: "Internship",
+      item: 'Internship',
       selected: false,
       id: 3,
     },
     {
-      item: "Remote",
+      item: 'Remote',
       selected: false,
       id: 4,
     },
     {
-      item: "Free",
+      item: 'Free',
       selected: false,
       id: 5,
     },
     {
-      item: "Cotract",
+      item: 'Cotract',
       selected: false,
       id: 6,
     },
   ];
 
-  return (
-    <div className="p-5 bg-white rounded-2xl">
-      <h3 className="heading3">Categories</h3>
+  const [isOpen, setisOpen] = useState(false);
 
-      {categoryData?.map((category) => <FilterElements category={category} />)}
+  return (
+    <div className='p-5 bg-white rounded-2xl dark:bg-darkPrimary-3'>
+      <h3 className='heading3 text-darkSecondary-900 dark:text-white'>
+        Categories
+      </h3>
+
+      {categoryData?.map((category) => (
+        <FilterElements key={category.id} category={category} />
+      ))}
     </div>
   );
 };

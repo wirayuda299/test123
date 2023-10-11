@@ -17,11 +17,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang='en'>
+    <html lang='en' className='dark'>
       <ClerkProvider>
         <body className={sourceSansPro.className}>
-        <main className="max-container bg-white-800">{children}</main>
-      </body>
+          <main className='max-container bg-white-800 dark:bg-darkPrimary-2'>
+            {children}
+          </main>
+        </body>
       </ClerkProvider>
     </html>
   );
