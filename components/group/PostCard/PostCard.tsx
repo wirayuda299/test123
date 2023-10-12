@@ -16,9 +16,9 @@ const actionsButtons = [
 
 export default function PostCard() {
   return (
-    <Card className='mb-5 w-[250px] rounded-xl border-none p-2 dark:bg-darkPrimary-3 max-sm:w-full'>
+    <Card className='mb-5 w-250 rounded-xl border-none p-2 dark:bg-darkPrimary-3 max-sm:w-full'>
       <CardHeader className='p-2'>
-        <CardTitle className='flex items-center gap-3 '>
+        <CardTitle className='flex items-center gap-3'>
           <Image
             src={'/assets/images/profile.svg'}
             width={50}
@@ -29,7 +29,7 @@ export default function PostCard() {
             <h3 className='text-xs font-semibold text-darkSecondary-900 dark:text-white-800'>
               Looking to Partner Up
             </h3>
-            <p className='text-[10px] font-normal text-darkSecondary-900 dark:text-white-800'>
+            <p className='text-10 font-normal text-darkSecondary-900 dark:text-white-800'>
               Sayem Ahmed
             </p>
           </div>

@@ -28,12 +28,14 @@ module.exports = {
       },
       width: {
         60: '60px',
+        250: '250px',
       },
       height: {
         60: '60px',
       },
       fontSize: {
         9: '9px',
+        10: '10px',
       },
       colors: {
         primary: '#FF4401',

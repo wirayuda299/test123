@@ -14,7 +14,7 @@ export default function Pagination({ page, totalPages }: PaginationProps) {
       <Button disabled={page <= 1} className='!bg-secondary-red-80 !text-white'>
         Prev
       </Button>
-      <p className='font-semibold dark:text-white-800'>
+      <p className='truncate font-semibold dark:text-white-800'>
         <span className='text-darkPrimary-2 dark:text-white-800'>{page}</span> /{' '}
         <span className='text-primary'>{totalPages}</span>
       </p>

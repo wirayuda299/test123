@@ -1,4 +1,4 @@
-export { default as Contents } from '@/components/Contents/Contents';
+export { default as Contents } from '@/components/shared/Contents/Contents';
 export { default as BusinessInterest } from '@/components/BusinessInterest/BuisinessInterest';
 export { default as LeftSidebar } from './LeftSidebar/LeftSidebar';
 export { default as Sidebar } from '@/components/group/Sidebar/Sidebar';
