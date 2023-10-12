@@ -1,5 +1,5 @@
-import LeftSidebar from "./LeftSidebar/LeftSidebar";
-import Performance from "./Performance/Performance";
-import ProfileFeed from "./ProfileFeed/ProfileFeed";
-
-export { LeftSidebar, Performance, ProfileFeed };
+export { default as Contents } from '@/components/Contents/Contents';
+export { default as BusinessInterest } from '@/components/BusinessInterest/BuisinessInterest';
+export { default as LeftSidebar } from './LeftSidebar/LeftSidebar';
+export { default as Performance } from './Performance/Performance';
+export { default as ProfileFeed } from './ProfileFeed/ProfileFeed';

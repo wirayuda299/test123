@@ -1,81 +1,212 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+:root {
+	--dark: #2c353d;
+	--orange: #ff8f67;
+	--white: #fff;
+	--gray: #3f4354;
+}
 @layer utilities {
-  .heading1 {
-    @apply font-bold text-[26px] leading-[38px];
+	.heading1 {
+		@apply font-bold text-[26px] leading-[38px];
+	}
+
+	.heading1-semibold {
+		@apply font-semibold text-[26px] leading-[38px];
+	}
+
+	.heading2 {
+		@apply font-bold text-[18px] leading-[28px];
+	}
+
+	.heading3 {
+		@apply font-semibold text-[18px] leading-[26px];
+	}
+
+	.heading3-regular {
+		@apply font-normal text-[18px] leading-[26px];
+	}
+
+	.display {
+		@apply font-bold text-[16px] leading-[24px];
+	}
+
+	.display-semibold {
+		@apply font-semibold text-[16px] leading-[24px];
+	}
+
+	.display-regular {
+		@apply font-normal text-[16px] leading-[24px];
+	}
+
+	.body {
+		@apply font-bold text-[14px] leading-[22px];
+	}
+
+	.body-semibold {
+		@apply font-semibold text-[14px] leading-[22px];
+	}
+
+	.body-regular {
+		@apply font-normal text-[14px] leading-[22px];
+	}
+
+	.bodyMd {
+		@apply font-bold text-[12px] leading-[18px];
+	}
+
+	.bodyMd-semibold {
+		@apply font-semibold text-[12px] leading-[18px];
+	}
+
+	.bodyMd-regular {
+		@apply font-normal text-[12px] leading-[18px];
+	}
+
+	.bodySm-semibold {
+		@apply font-semibold text-[10px] leading-[16px];
+	}
+
+	.bodySm-regular {
+		@apply font-normal text-[10px] leading-[16px];
+	}
+
+	.bodyXs-semibold {
+		@apply font-semibold text-[9px] leading-[14px];
+	}
+
+	.bodyXs-regular {
+		@apply font-normal text-[9px] leading-[14px];
+	}
+
+	.flexCenter {
+		@apply flex items-center justify-center;
+	}
+}
+.cl-socialButtons {
+	display: flex;
+	width: auto;
+}
+.cl-socialButtons .cl-socialButtonsBlockButton {
+	width: 60px;
+	height: 50px;
+	display: flex;
+}
+html.dark .cl-socialButtons .cl-socialButtonsBlockButton {
+	background-color: var(--dark);
+	border: 1px solid var(--gray);
+}
+html.dark .cl-socialButtonsBlockButton__github .cl-internal-1fc9kwt > img {
+	filter: invert(100%);
+}
+html.dark .cl-internal-b868gt {
+	background-color: var(--white);
+}
+.cl-socialButtonsBlockButton__github .cl-socialButtonsBlockButtonText,
+.cl-socialButtonsBlockButton__google .cl-socialButtonsBlockButtonText__google {
+	display: none !important;
+}
+.cl-socialButtons .cl-internal-1fc9kwt {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cl-internal-b3fm6y,
+.cl-formButtonPrimary {
+	background-color: var(--orange);
+}
+.cl-footerActionLink {
+	color: var(--orange);
+}
+html.dark .cl-internal-17ydaof {
+	background-color: var(--dark);
+}
+html.dark .cl-internal-1vbdq0x,
+html.dark .cl-internal-13zhnx0,
+html.dark .cl-internal-1xpzc82,
+html.dark .cl-internal-17bz5n6,
+html.dark .cl-internal-138ov2f {
+	color: var(--white);
+}
+html.dark .cl-internal-mdg29y,
+html.dark .cl-internal-18ut2g5 {
+	background-color: var(--dark);
+	color: var(--white);
+}
+
+@layer components {
+  /* Post Card on Home Page */
+
+  .postCardGrid {
+    @apply grid grid-cols-[2.3fr_1fr_1.8fr_1fr_2fr_1fr] md:grid-rows-[1fr_0.6fr] grid-rows-[0.95fr] gap-x-0 gap-y-0 mx-auto my-[20px] max-w-[785px] rounded-[16px] bg-white p-[14px] dark:bg-darkPrimary-3 md:p-[20px];
   }
 
-  .heading1-semibold {
-    @apply font-semibold text-[26px] leading-[38px];
+  .postCardGridItem1 {
+    @apply row-start-1 row-end-3 col-start-1 col-end-2 pr-[14px] md:pr-[0px];
   }
 
-  .heading2 {
-    @apply font-bold text-[18px] leading-[28px];
+  .postCardGridItem2 {
+    @apply row-start-1 row-end-2 col-start-2 col-end-6;
   }
 
-  .heading3 {
-    @apply font-semibold text-[18px] leading-[26px];
+  .postCardGridItem3 {
+    @apply row-start-1 row-end-2 col-start-6 col-end-7 ml-auto pl-6;
   }
 
-  .heading3-regular {
-    @apply font-normal text-[18px] leading-[26px];
+  .postCardGridItem4 {
+    @apply row-start-2 row-end-3 col-start-2 col-end-4 hidden gap-[10px] pt-[12px] md:flex md:pl-[6px] lg:pt-[12px];
   }
 
-  .display {
-    @apply font-bold text-[16px] leading-[24px];
+  .postCardGridItem5 {
+    @apply md:row-start-2 md:row-end-3 md:col-start-4 md:col-end-7 row-start-2 row-end-3 col-start-2 col-end-7 pt-[12px];
   }
 
-  .display-semibold {
-    @apply font-semibold text-[16px] leading-[24px];
+  .postCardMainImage {
+    @apply aspect-square min-h-[62px] min-w-[62px] rounded-[4px] md:h-[156px] md:w-[156px];
   }
 
-  .display-regular {
-    @apply font-normal text-[16px] leading-[24px];
+  .postCardTitle {
+    @apply bodyMd-semibold md:heading3 line-clamp-3 text-darkSecondary-900 dark:text-white-800 md:line-clamp-2 md:pl-[6px];
   }
 
-  .body {
-    @apply font-bold text-[14px] leading-[22px];
+  .postCardTagList {
+    @apply bodyXs-regular md:bodySm-semibold mt-[10px] flex gap-[10px] text-darkSecondary-700 dark:text-darkSecondary-600 md:gap-3 md:pl-[6px];
   }
 
-  .body-semibold {
-    @apply font-semibold text-[14px] leading-[22px];
+  .orangeHeart {
+    @apply hidden h-[28px] w-[28px] items-center justify-center rounded-[100%] bg-secondary-red-10 p-[1px] dark:bg-darkPrimary-4 md:flex;
   }
 
-  .body-regular {
-    @apply font-normal text-[14px] leading-[22px];
+  .grayHeart {
+    @apply hidden h-[28px] w-[28px] items-center justify-center rounded-[100%] bg-white-700 p-[4px] dark:bg-darkPrimary-4 md:flex;
   }
 
-  .bodyMd {
-    @apply font-bold text-[12px] leading-[18px];
+  .avatarMobile {
+    @apply h-[30px] w-[30px] rounded-[100%] bg-secondary-purple-10 px-[5px] py-[3px] dark:bg-secondary-purple-20 md:hidden;
   }
 
-  .bodyMd-semibold {
-    @apply font-semibold text-[12px] leading-[18px];
+  .avatarDesktop {
+    @apply h-[40px] w-[40px] rounded-[100%] bg-secondary-purple-10 px-[6px] py-[3px] dark:bg-secondary-purple-20;
   }
 
-  .bodyMd-regular {
-    @apply font-normal text-[12px] leading-[18px];
+  .avatarName {
+    @apply body-semibold mr-[5px] text-darkSecondary-900 dark:text-white-700;
   }
 
-  .bodySm-semibold {
-    @apply font-semibold text-[10px] leading-[16px];
+  .postCreatedDate {
+    @apply bodySm-regular text-darkSecondary-800 dark:text-darkSecondary-600;
   }
 
-  .bodySm-regular {
-    @apply font-normal text-[10px] leading-[16px];
+  .viewsList {
+    @apply bodyXs-regular md:body-regular flex h-full items-center justify-start gap-[30px] text-center text-darkSecondary-800 dark:text-darkSecondary-600 md:justify-between md:gap-[40px];
   }
 
-  .bodyXs-semibold {
-    @apply font-semibold text-[9px] leading-[14px];
+  .online {
+    @apply block h-[5px] w-[5px] rounded-[100%];
   }
 
-  .bodyXs-regular {
-    @apply font-normal text-[9px] leading-[14px];
-  }
-
-  .flexCenter {
-    @apply flex items-center justify-center;
+  .tag {
+    @apply rounded-xl bg-white-700 px-[10px] py-[4px] dark:bg-darkPrimary-4;
   }
 }
