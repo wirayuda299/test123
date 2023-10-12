@@ -20,7 +20,7 @@ const TopBar = () => {
       {/* On Mobile: Either show Search Bar (when search icon is clicked) - otherwise show TopBar */}
       {windowWidth < 640 && showSearchBar ? (
         // Search bar
-        <div className='mx-auto w-full py-1'>
+        <div className='mx-auto w-full py-3'>
           <Searchbar
             showSearchBar={showSearchBar}
             setShowSearchBar={setShowSearchBar}
@@ -30,8 +30,6 @@ const TopBar = () => {
         // TopBar
         <div className='topBar'>
           {/* Top Bar Column 1 */}
-
-          {/* Logo */}
           <Logo
             showSearchBar={showSearchBar}
             setShowSearchBar={setShowSearchBar}
@@ -39,10 +37,8 @@ const TopBar = () => {
 
           {/* Top Bar Column 2 */}
           <div className='topBarCol2'>
-            {/* Nav Links */}
             <NavLinks />
 
-            {/* SearchBar */}
             <Searchbar
               showSearchBar={showSearchBar}
               setShowSearchBar={setShowSearchBar}

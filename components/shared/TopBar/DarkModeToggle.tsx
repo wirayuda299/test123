@@ -17,6 +17,7 @@ const DarkModeToggle = ({ isTextHidden = false }: DarkModeToggleProps) => {
       >
         Interface
       </h6>
+
       <Switch
         onClick={
           theme === "light" ? () => setTheme("dark") : () => setTheme("light")

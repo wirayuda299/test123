@@ -3,12 +3,12 @@ import Link from "next/link";
 
 interface LogoProps {
   showSearchBar: boolean;
-  setShowSearchBar: (value: boolean) => void;
+  setShowSearchBar: (cb: (value: boolean) => boolean) => void;
 }
 
 const Logo = ({ showSearchBar, setShowSearchBar }: LogoProps) => {
   return (
-    <Link href='/' className=' mr-4 flex shrink-0 items-center gap-[10px]'>
+    <Link href='/' className='mr-4 flex shrink-0 items-center gap-[10px]'>
       {/* Logo Icons - Dark and Light Mode */}
       <Image
         src='/logo-icon-light.svg'
@@ -31,15 +31,13 @@ const Logo = ({ showSearchBar, setShowSearchBar }: LogoProps) => {
         alt='Search Icon'
         width={20}
         height={20}
-        className={`${
-          showSearchBar ? "block sm:hidden" : "block sm:hidden"
-        } searchIcon`}
-        onClick={() => setShowSearchBar((prevState) => !prevState)}
+        className={`${showSearchBar ? "block" : "sm:hidden"} searchIcon`}
+        onClick={() => setShowSearchBar((showSearchBar) => !showSearchBar)}
       />
 
       {/* Logo Text - Dark and Light Mode */}
-      <div className='hidden items-center md:flex '>
-        <h1 className='heading1 text-primary'>Hipnode</h1>
+      <div className='hidden items-center lg:flex '>
+        <h1 className='md:heading2 lg:heading1 text-primary'>Hipnode</h1>
         <span className='heading1 text-darkSecondary dark:text-white'>.</span>
       </div>
     </Link>

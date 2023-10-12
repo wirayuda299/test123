@@ -1,16 +1,17 @@
 import { AiOutlineCaretDown } from "react-icons/ai";
-import DropDownLoggedIn from "./DropDownLoggedIn";
-import DropDownLoggedOut from "./DropDownLoggedOut";
 import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuItem,
+  NavigationMenuContent,
+  NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
+import { loggedIn } from "@/constants/profileDropDowns";
+import { Separator } from "@radix-ui/react-separator";
+import DarkModeToggle from "./DarkModeToggle";
 
 const ProfileDropDown = () => {
-  const isLoggedIn: boolean = true; // for testing
-
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -19,15 +20,25 @@ const ProfileDropDown = () => {
           <NavigationMenuTrigger className='pl-1 dark:bg-darkPrimary-3 dark:hover:bg-darkPrimary-3'>
             <AiOutlineCaretDown className='profileDropDownArrow' />
           </NavigationMenuTrigger>
-
           {/* Dropdown */}
-          {isLoggedIn ? (
-            // The user is logged in
-            <DropDownLoggedIn />
-          ) : (
-            // The user is logged out
-            <DropDownLoggedOut />
-          )}
+          <NavigationMenuContent className='cursor-pointer bg-white dark:bg-darkPrimary-3'>
+            {loggedIn.map((link) => (
+              <NavigationMenuLink
+                key={link.label}
+                href={link.route}
+                className='mb-4 flex items-center hover:text-primary'
+              >
+                <link.IconComponent className='mr-2' />
+                <h6 className='display-semibold mr-2'>{link.label}</h6>
+              </NavigationMenuLink>
+            ))}
+
+            {/* Seperator */}
+            <Separator className='mx-auto mt-5 dark:bg-white-800' />
+
+            {/* Dark Mode Toggle */}
+            <DarkModeToggle />
+          </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

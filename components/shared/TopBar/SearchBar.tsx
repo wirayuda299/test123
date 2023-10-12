@@ -4,7 +4,7 @@ import { Input } from "../../ui/input";
 
 interface SearchBarProps {
   showSearchBar: boolean;
-  setShowSearchBar: (value: boolean) => void;
+  setShowSearchBar: (cb: (value: boolean) => boolean) => void;
 }
 
 const Searchbar = ({ showSearchBar, setShowSearchBar }: SearchBarProps) => {
@@ -22,7 +22,7 @@ const Searchbar = ({ showSearchBar, setShowSearchBar }: SearchBarProps) => {
         width={20}
         height={20}
         className='searchBarIcon'
-        onClick={() => setShowSearchBar((prevState) => !prevState)}
+        onClick={() => setShowSearchBar((showSearchBar) => !showSearchBar)}
       />
     </div>
   );

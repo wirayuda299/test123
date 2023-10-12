@@ -85,13 +85,17 @@
   .no-focus {
     @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
   }
+
+  .w-screen-minus-5 {
+    width: calc(100vw - theme("spacing.5"));
+  }
 }
 
 @layer components {
   /* TopBar */
 
   .topBarContainer {
-    @apply flex items-center justify-between bg-white dark:bg-darkPrimary-3 mx-auto max-w-screen-2xl px-3 lg:px-10 py-[12px] md:py-[15px] fixed top-0 left-0 right-0 w-full z-50 !important;
+    @apply flex items-center bg-white dark:bg-darkPrimary-3 mx-auto max-w-screen-2xl px-3 lg:px-10 py-[4px] md:py-[15px] fixed top-0 left-0 right-0 w-full z-50 !important;
   }
 
   .topBar {
@@ -99,7 +103,7 @@
   }
 
   .topBarCol2 {
-    @apply flex flex-1 shrink-0 items-center gap-[30px] lg:gap-[50px] justify-end;
+    @apply flex flex-1 shrink-0 items-center gap-[20px] lg:gap-[50px] justify-end;
   }
 
   .logoIcon {
@@ -115,7 +119,7 @@
   }
 
   .navLinksContainer {
-    @apply hidden items-center gap-[7px] md:flex xl:gap-[5px] shrink-0;
+    @apply hidden items-center gap-[7px] md:flex xl:gap-[5px] shrink-0 lg:ml-10;
   }
 
   .navLink {
@@ -163,7 +167,7 @@
   }
 
   .loginButton {
-    @apply bg-primary px-[24px] py-[9px] text-white hover:bg-primary hover:text-primary hover:opacity-70 dark:bg-primary dark:text-white dark:hover:bg-primary h-8 md:h-10 !important;
+    @apply bg-primary px-[24px] py-[9px] text-white hover:bg-primary hover:opacity-70 dark:bg-primary dark:text-white dark:hover:bg-primary h-8 md:h-10 !important;
   }
 
   .signupButton {
@@ -181,15 +185,15 @@
   /* Message Dropdown in Nav */
 
   .messageIconContainer {
-    @apply aspect-square px-2 md:bg-white-800 dark:md:bg-darkPrimary-4 dark:bg-darkPrimary-3;
+    @apply aspect-square px-2 md:bg-white-800 dark:md:bg-darkPrimary-4 dark:bg-darkPrimary-3 w-full !important;
   }
 
   .messageIcon {
-    @apply profileIcon h-[23px] w-[23px] md:h-[20px] md:w-[20px];
+    @apply profileIcon h-[23px] w-[23px] md:h-[20px] md:w-[20px] md:bg-white-800 dark:md:bg-darkPrimary-4;
   }
 
   .messageDropDownContent {
-    @apply max-w-[336px] bg-white dark:bg-darkPrimary-3;
+    @apply max-w-[386px] bg-white dark:bg-darkPrimary-3 px-2 md:px-[20px] !important;
   }
 
   .messageDropDownHeader {
@@ -197,7 +201,7 @@
   }
 
   .messageNotificationContainer {
-    @apply flex w-[316px] items-center justify-between rounded-md px-2 py-[10px] hover:bg-white-700 dark:hover:bg-darkSecondary-900;
+    @apply flex min-w-[290px] md:w-[316px] items-center justify-between rounded-md px-2 py-[10px] hover:bg-white-700 dark:hover:bg-darkSecondary-900;
   }
 
   .messageAvatarImage {
@@ -205,7 +209,7 @@
   }
 
   .messagesNumber {
-    @apply body-semibold ml-5 mr-4 flex h-6 w-6 items-center justify-center rounded-[100%] bg-primary text-white lg:mr-1;
+    @apply body-semibold mr-2 ml-2 md:mr-0 flex h-6 w-6 items-center justify-center rounded-[100%] bg-primary text-white lg:mr-1;
   }
 
   .seeInMessenger {
@@ -223,7 +227,7 @@
   }
 
   .bellButtonDropDown {
-    @apply max-w-[335px] md:max-w-[589px] bg-white dark:bg-darkPrimary-3 h-[659px] overflow-y-auto !important;
+    @apply w-screen-minus-5 md:w-[529px] md:px-[20px] bg-white dark:bg-darkPrimary-3 h-[659px] overflow-y-auto !important;
   }
 
   .notificationsDropDownContainer {
@@ -231,7 +235,7 @@
   }
 
   .markAsSeenButton {
-    @apply dark:bg-darkPrimary-2 bg-secondary-blue-10 text-secondary-blue-80 dark:text-secondary-blue-80 p-[7px] dark:p-[10px] rounded-md hover:opacity-80 flex justify-between;
+    @apply dark:bg-darkPrimary-2 bg-secondary-blue-10 text-secondary-blue-80 dark:text-secondary-blue-80 p-[7px] dark:p-[10px] rounded-md hover:opacity-80 flex justify-between body-regular;
   }
 
   .tabContainer {
@@ -239,7 +243,7 @@
   }
 
   .tabList {
-    @apply display-semibold w-full border-b border-white-800 dark:border-darkPrimary-4 bg-white dark:bg-darkPrimary-3 rounded-none mb-[20px] justify-between !important;
+    @apply display-semibold w-full border-b border-white-800 dark:border-darkPrimary-4 bg-white dark:bg-darkPrimary-3 rounded-none mb-[20px] justify-between overflow-x-auto md:overflow-visible !important;
   }
 
   .emptyNotificationsText {
@@ -247,6 +251,10 @@
   }
 
   /* Notification */
+
+  .notificationContainer {
+    @apply flex gap-[5px] max-w-[529px] justify-between;
+  }
 
   .notificationAvatarImage {
     @apply h-[46px] w-[46px] rounded-[100%] object-contain p-[3px] dark:border-darkPrimary-4 lg:h-[50px] lg:w-[50px];
@@ -262,10 +270,6 @@
 
   .notificationText {
     @apply bodyMd-regular dark:bg-darkPrimary-2 line-clamp-1 text-darkSecondary-800 bg-white-800 p-[10px] mb-[10px];
-  }
-
-  .notificationContainer {
-    @apply flex gap-[5px] max-w-[529px] justify-between;
   }
 
   /* Search Bar */

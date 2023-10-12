@@ -61,7 +61,7 @@ const Notification = ({
             <h4
               className={`${
                 isSeen ? "text-darkSecondary-800" : "text-secondary-red-80"
-              } heading3 wrap mb-[4px] mr-2`}
+              } heading3 mb-[4px] mr-2`}
             >
               {title}
             </h4>

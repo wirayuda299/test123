@@ -29,7 +29,7 @@ const Notifications = () => {
     <>
       <header className='notificationsDropDownContainer'>
         {/* Dynamic Header */}
-        <h3 className='heading3 px-[6px] text-darkSecondary-900 dark:text-white-800'>
+        <h3 className='display-semibold md:heading3 px-[6px] text-darkSecondary-900 dark:text-white-800'>
           {notifications.length} Notifications
         </h3>
 
