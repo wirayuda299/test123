@@ -1,14 +1,15 @@
 import {
   Filter,
   HostMeetupCard,
-  MeetupsWrapper,
-  SidePodcasts,
+  MeetupChip,
+  PodcastChip,
 } from '@/components/index';
+import { podcastDatas } from '@/constant';
 
-const page = () => {
+const podcasts = () => {
   const buttonData = {
     codeButton: 'Code Of Conduct',
-    buttonName: 'Host a Meetup',
+    buttonName: 'Submit a Podcast',
   };
 
   return (
@@ -20,11 +21,15 @@ const page = () => {
           </div>
 
           <div className='flex flex-col md:flex-row gap-4'>
-            <div className='w-full md:max-w-[210px]'>
+            <div className='w-full md:max-w-[210px] '>
               <Filter />
             </div>
             <div className='w-full lg:w-5/6'>
-              <MeetupsWrapper />
+              <div className='columns-1 md:columns-2'>
+                {podcastDatas?.map((podcast) => (
+                  <PodcastChip podcastData={podcast} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -33,11 +38,11 @@ const page = () => {
           <div className='hidden lg:block'>
             <HostMeetupCard buttonData={buttonData} />
           </div>
-          <SidePodcasts />
+          <MeetupChip />
         </div>
       </div>
     </div>
   );
 };
 
-export default page;
+export default podcasts;

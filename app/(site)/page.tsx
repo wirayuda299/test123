@@ -1,7 +1,7 @@
-import PostCard from "@/components/PostCard";
-import { LeftSidebar } from "@/components/index";
+import PostCard from '@/components/PostCard';
+import { LeftSidebar } from '@/components/index';
 
-import { postDummyData } from "@/constant/PostDummyData";
+import { postDummyData } from '@/constant/PostDummyData';
 
 export default function Home() {
   return (

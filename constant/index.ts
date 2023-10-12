@@ -5,3 +5,5 @@ export { signInContents } from './signin';
 export { signupContents } from './signup';
 export { userCurrentStage } from './userCurrentStage';
 export { socialIcons } from './socialIcons';
+export { meetupsData } from './meetups';
+export { podcastDatas } from './podcastDatas';
