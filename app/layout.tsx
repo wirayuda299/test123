@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         >
           <TopBar />
 
-          <main className='bg-white-800 dark:bg-darkPrimary-2 mx-auto max-w-screen-2xl p-2.5%'>
+          <main className='mx-auto max-w-screen-2xl bg-white-800 dark:bg-darkPrimary-2'>
             {children}
           </main>
 

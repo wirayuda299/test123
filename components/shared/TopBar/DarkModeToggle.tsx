@@ -2,11 +2,21 @@ import { useTheme } from "next-themes";
 
 import { Switch } from "@/components/ui/switch";
 
-const DarkModeToggle = () => {
+interface DarkModeToggleProps {
+  isTextHidden?: boolean;
+}
+
+const DarkModeToggle = ({ isTextHidden = false }: DarkModeToggleProps) => {
   const { setTheme, theme } = useTheme();
   return (
-    <div className='flex justify-between p-[1px] pt-5'>
-      <h6 className='dropDownMenuItem darkModeToggle'>Interface</h6>
+    <div className='flex justify-between p-[1px]'>
+      <h6
+        className={`dropDownMenuItem darkModeToggle ${
+          isTextHidden ? "hidden" : ""
+        }`}
+      >
+        Interface
+      </h6>
       <Switch
         onClick={
           theme === "light" ? () => setTheme("dark") : () => setTheme("light")

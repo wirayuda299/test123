@@ -4,23 +4,18 @@ import { Input } from "../../ui/input";
 
 interface SearchBarProps {
   showSearchBar: boolean;
-  setShowSearchBar: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowSearchBar: (value: boolean) => void;
 }
 
-const Searchbar: React.FC<SearchBarProps> = ({
-  showSearchBar,
-  setShowSearchBar,
-}) => {
+const Searchbar = ({ showSearchBar, setShowSearchBar }: SearchBarProps) => {
   return (
     <div className={`${showSearchBar ? "block" : "hidden sm:block"} searchbar`}>
-      {/* Input Box */}
       <Input
         id='text'
         placeholder='Type here to search...'
         className='no-focus searchbar_input'
       />
 
-      {/* Icon */}
       <Image
         src='/assets/navigation/search.svg'
         alt='Search Icon'

@@ -3,12 +3,12 @@ import Link from "next/link";
 
 interface LogoProps {
   showSearchBar: boolean;
-  setShowSearchBar: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowSearchBar: (value: boolean) => void;
 }
 
-const Logo: React.FC<LogoProps> = ({ showSearchBar, setShowSearchBar }) => {
+const Logo = ({ showSearchBar, setShowSearchBar }: LogoProps) => {
   return (
-    <Link href='/' className='flex shrink-0 items-center gap-[10px]'>
+    <Link href='/' className=' mr-4 flex shrink-0 items-center gap-[10px]'>
       {/* Logo Icons - Dark and Light Mode */}
       <Image
         src='/logo-icon-light.svg'
@@ -37,21 +37,11 @@ const Logo: React.FC<LogoProps> = ({ showSearchBar, setShowSearchBar }) => {
         onClick={() => setShowSearchBar((prevState) => !prevState)}
       />
 
-      {/* Logo Text - Dark and Light Mode*/}
-      <Image
-        src='/logo-text-light.svg'
-        alt='Logo Text'
-        width={106}
-        height={38}
-        className='logoText dark:hidden sm:block '
-      />
-      <Image
-        src='/logo-text-dark.svg'
-        alt='Logo Text'
-        width={106}
-        height={38}
-        className='logoText dark:sm:block'
-      />
+      {/* Logo Text - Dark and Light Mode */}
+      <div className='hidden items-center md:flex '>
+        <h1 className='heading1 text-primary'>Hipnode</h1>
+        <span className='heading1 text-darkSecondary dark:text-white'>.</span>
+      </div>
     </Link>
   );
 };

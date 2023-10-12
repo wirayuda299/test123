@@ -8,12 +8,12 @@ import DarkModeToggle from "./DarkModeToggle";
 
 const DropDownLoggedIn = () => {
   return (
-    <NavigationMenuContent className='bg-white dark:bg-darkPrimary-3 cursor-pointer'>
+    <NavigationMenuContent className='cursor-pointer bg-white dark:bg-darkPrimary-3'>
       {loggedIn.map((link) => (
         <NavigationMenuLink
           key={link.label}
           href={link.route}
-          className='flex items-center hover:text-primary mb-4'
+          className='mb-4 flex items-center hover:text-primary'
         >
           <link.IconComponent className='mr-2' />
           <h6 className='display-semibold mr-2'>{link.label}</h6>

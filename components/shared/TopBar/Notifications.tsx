@@ -39,7 +39,7 @@ const Notifications = () => {
           className='markAsSeenButton'
           onClick={() => setIsSeen((prevState) => !prevState)}
         >
-          <span className='mr-[10px] text-blue-80 display-semibold'>
+          <span className='display-semibold mr-[10px] text-secondary-blue-80'>
             <AiOutlineCheck size={20} />
           </span>
           {isSeen ? "Mark All Unread" : "Mark All Read"}
@@ -50,7 +50,7 @@ const Notifications = () => {
       <Tabs defaultValue='allNotifications' className='w-full'>
         {/* List of All Tabs */}
         <TabsList className='tabList'>
-          {/* All Notifications Tab*/}
+          {/* All Notifications Tab */}
           <TabsTrigger value='allNotifications' className='tabContainer'>
             All notifications
           </TabsTrigger>
@@ -73,7 +73,7 @@ const Notifications = () => {
             Mentions
           </TabsTrigger>
 
-          {/* Create Post Tab*/}
+          {/* Create Post Tab */}
           <TabsTrigger value='createPost' className='tabContainer'>
             <BsPencilSquare size={18} />
           </TabsTrigger>

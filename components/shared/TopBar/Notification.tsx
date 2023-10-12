@@ -14,7 +14,7 @@ interface NotificationProps {
   isSeen: boolean;
 }
 
-const Notification: React.FC<NotificationProps> = ({
+const Notification = ({
   name,
   avatar,
   typeIcon,
@@ -24,11 +24,11 @@ const Notification: React.FC<NotificationProps> = ({
   date,
   time,
   isSeen,
-}) => {
+}: NotificationProps) => {
   return (
     <div className='mb-[35px]'>
       <div className='notificationContainer'>
-        <Avatar className='w-[50px] h-[50px] relative'>
+        <Avatar className='relative h-[50px] w-[50px]'>
           <AvatarImage
             src={avatar}
             alt='Avatar'
@@ -49,7 +49,7 @@ const Notification: React.FC<NotificationProps> = ({
         </Avatar>
         <div className='w-[449px]'>
           <div className='ml-[2px]'>
-            <div className='flex items-center justify-start mb-[8px]'>
+            <div className='mb-[8px] flex items-center justify-start'>
               <h4 className='display-semibold mr-2 text-darkSecondary-800'>
                 {name}
               </h4>
@@ -61,7 +61,7 @@ const Notification: React.FC<NotificationProps> = ({
             <h4
               className={`${
                 isSeen ? "text-darkSecondary-800" : "text-secondary-red-80"
-              } heading3 mr-2 wrap mb-[4px]`}
+              } heading3 wrap mb-[4px] mr-2`}
             >
               {title}
             </h4>

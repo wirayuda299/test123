@@ -20,7 +20,7 @@ const TopBar = () => {
       {/* On Mobile: Either show Search Bar (when search icon is clicked) - otherwise show TopBar */}
       {windowWidth < 640 && showSearchBar ? (
         // Search bar
-        <div className='py-3 w-full max-w-screen-2xl mx-auto'>
+        <div className='mx-auto w-full py-1'>
           <Searchbar
             showSearchBar={showSearchBar}
             setShowSearchBar={setShowSearchBar}

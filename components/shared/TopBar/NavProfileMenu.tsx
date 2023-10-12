@@ -1,6 +1,10 @@
+import Link from "next/link";
+
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import MessageDropDown from "./MessageDropDown";
 import ProfileDropDown from "./ProfileDropDown";
+import { Button } from "@/components/ui/button";
+import DarkModeToggle from "./DarkModeToggle";
+import MessageDropDown from "./MessageDropDown";
 
 const NavProfileMenu = () => {
   // For testing
@@ -8,33 +12,42 @@ const NavProfileMenu = () => {
     name: "AR. Jakir",
     avatar: "/assets/navigation/profile-image.png",
   };
+  const isLoggedIn: boolean = false;
 
   return (
-    <section className='relative flex items-center justify-between'>
+    <section className='relative flex shrink-0 items-center justify-between'>
       <div className='flex items-center gap-[10px] lg:gap-[15px]'>
-        {/* Messages Icon with Dropdown */}
-        <div className='profileIconContainer'>
-          <MessageDropDown />
-        </div>
-
-        {/* User */}
-        {/* Avatar */}
-        <Avatar className='navProfileAvatarContainer'>
-          <AvatarImage
-            src={testUser.avatar}
-            alt='Avatar'
-            width={39}
-            height={38}
-            className='navProfileAvatarImage'
-          />
-          <AvatarFallback className='rounded-lg'>HN</AvatarFallback>
-        </Avatar>
-        <div className=' flex items-center justify-between gap-[5px] lg:gap-[10px]'>
-          {/* Name */}
-          <h6 className='navProfileName'>{testUser.name}</h6>
-          {/* Dropdown Menu with Dark Mode toggle (Arrow Icon) */}
-          <ProfileDropDown />
-        </div>
+        {isLoggedIn ? (
+          <>
+            <div className='profileIconContainer'>
+              <MessageDropDown />
+            </div>
+            <Avatar className='navProfileAvatarContainer'>
+              <AvatarImage
+                src={testUser.avatar}
+                alt='Avatar'
+                width={39}
+                height={38}
+                className='navProfileAvatarImage'
+              />
+              <AvatarFallback className='rounded-lg'>HN</AvatarFallback>
+            </Avatar>
+            <div className='flex items-center justify-between gap-[5px] lg:gap-[10px]'>
+              <h6 className='navProfileName'>{testUser.name}</h6>
+              <ProfileDropDown />
+            </div>
+          </>
+        ) : (
+          <div className='flex items-center justify-center gap-[24px]'>
+            <Link href='#' className='signupButton'>
+              Signup
+            </Link>
+            <Link href='#'>
+              <Button className='loginButton'>Login</Button>
+            </Link>
+            <DarkModeToggle isTextHidden={true} />
+          </div>
+        )}
       </div>
     </section>
   );
