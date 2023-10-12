@@ -3,7 +3,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 
 export default function Group() {
   return (
-    <div className='flex h-full w-full flex-col items-center overflow-hidden bg-white-800 p-5 lg:h-screen lg:flex-row'>
+    <div className='flex h-full w-full flex-col items-center overflow-hidden bg-white-800 p-5 dark:bg-darkPrimary-2 lg:h-screen lg:flex-row'>
       <Sidebar />
       <ScrollArea className='h-full w-full overflow-y-auto  py-5 lg:h-screen'>
         <div className='flex flex-wrap justify-center gap-5'>

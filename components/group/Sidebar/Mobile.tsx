@@ -9,8 +9,8 @@ import { sidebarContents } from '@/constant';
 
 export default function Mobile() {
   const [selectedContent, setSelectedContent] = useState<
-    (typeof sidebarContents)[0] | null
-  >(null);
+    (typeof sidebarContents)[0]
+  >(sidebarContents[0]);
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const handleClick = (content: (typeof sidebarContents)[0]) => {
@@ -19,13 +19,14 @@ export default function Mobile() {
   };
 
   return (
-    <div className='relative flex w-full flex-col !bg-secondary-red-10 lg:hidden'>
+    <div className='relative flex w-full flex-col bg-secondary-red-10 dark:bg-darkPrimary-3 lg:hidden'>
       {selectedContent ? (
         <div className='flex items-center justify-between rounded-3xl bg-secondary-yellow-10 px-3 py-4'>
           <Card
             icon={selectedContent.icon}
             text={selectedContent.text}
             title={selectedContent.label}
+            style='text-darkPrimary-2'
           />
           <button onClick={() => setIsExpanded((prev) => !prev)}>
             <Image
@@ -60,7 +61,7 @@ export default function Mobile() {
         </div>
       )}
       <div
-        className={`absolute left-0 z-10  w-full flex-col overflow-hidden bg-white-800 transition-all duration-500 ease-in-out [&>*:not(:first-child)]:mt-5  ${
+        className={`ease absolute left-0 z-10 w-full flex-col overflow-hidden bg-white-800 py-3 transition-all duration-500 dark:bg-darkPrimary-3 dark:px-3 [&>*:not(:first-child)]:mt-5  ${
           isExpanded ? 'top-16 flex' : '-top-full hidden'
         }`}
       >
