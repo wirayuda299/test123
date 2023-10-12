@@ -15,7 +15,7 @@ type SidebarItemProps = {
 };
 export default function SidebarItem({ content }: SidebarItemProps) {
   return (
-    <div className='flex flex-col items-start space-y-5'>
+    <div className='mb-5 flex flex-col items-start space-y-5'>
       <Header {...content} />
       <div className=' flex flex-col items-start gap-3'>
         {content.items.map((item) => (
