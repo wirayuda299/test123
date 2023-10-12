@@ -11,7 +11,7 @@ export default function Group() {
             <PostCard key={c} />
           ))}
         </div>
-        <Pagination page={10} totalPages={10} />
+        <Pagination totalPages={10} />
       </ScrollArea>
       <ScrollArea>
         <div className='flex flex-col gap-5 lg:sticky lg:top-0 lg:h-screen'>

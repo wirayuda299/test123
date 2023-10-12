@@ -16,7 +16,7 @@ const actionsButtons = [
 
 export default function PostCard() {
   return (
-    <Card className='mb-5 w-250 rounded-xl border-none p-2 dark:bg-darkPrimary-3 max-sm:w-full'>
+    <Card className='mb-5 rounded-xl border-none p-2 dark:bg-darkPrimary-3 max-sm:w-full sm:w-250'>
       <CardHeader className='p-2'>
         <CardTitle className='flex items-center gap-3'>
           <Image
