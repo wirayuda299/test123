@@ -189,7 +189,7 @@
   }
 
   .messageIcon {
-    @apply profileIcon h-[23px] w-[23px] md:h-[20px] md:w-[20px] md:bg-white-800 dark:md:bg-darkPrimary-4;
+    @apply profileIcon h-[23px] w-[23px] md:h-[20px] md:w-[20px];
   }
 
   .messageDropDownContent {
@@ -201,7 +201,7 @@
   }
 
   .messageNotificationContainer {
-    @apply flex min-w-[290px] md:w-[316px] items-center justify-between rounded-md px-2 py-[10px] hover:bg-white-700 dark:hover:bg-darkSecondary-900;
+    @apply flex min-w-[290px] md:w-[316px] items-center justify-between rounded-md px-2 py-[10px] hover:bg-white-700 dark:hover:bg-darkPrimary-4 !important;
   }
 
   .messageAvatarImage {
