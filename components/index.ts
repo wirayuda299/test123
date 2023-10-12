@@ -3,3 +3,4 @@ export { default as BusinessInterest } from '@/components/BusinessInterest/Buisi
 export { default as LeftSidebar } from './LeftSidebar/LeftSidebar';
 export { default as Sidebar } from '@/components/group/Sidebar/Sidebar';
 export { default as PostCard } from '@/components/group/PostCard/PostCard';
+export { default as Pagination } from '@/components/shared/Pagination';

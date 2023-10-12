@@ -1,4 +1,4 @@
-import { PostCard, Sidebar } from '@/components/index';
+import { Pagination, PostCard, Sidebar } from '@/components/index';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 export default function Group() {
@@ -11,6 +11,7 @@ export default function Group() {
             <PostCard key={c} />
           ))}
         </div>
+        <Pagination page={10} totalPages={10} />
       </ScrollArea>
       <ScrollArea>
         <div className='flex flex-col gap-5 lg:sticky lg:top-0 lg:h-screen'>
