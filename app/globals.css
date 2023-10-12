@@ -218,10 +218,10 @@ html.dark .cl-internal-18ut2g5 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #555;
+  background: #f4f6f8;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #f4f6f8;
 }
