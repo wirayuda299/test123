@@ -1,6 +1,6 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 interface NotificationProps {
   name: string;
@@ -50,23 +50,23 @@ const Notification = ({
         <div className='w-[449px]'>
           <div className='ml-[2px]'>
             <div className='mb-[8px] flex items-center justify-start'>
-              <h4 className='display-semibold mr-2 text-darkSecondary-800'>
+              <h4 className='display-semibold md:heading3 mr-2 text-darkSecondary-800'>
                 {name}
               </h4>
-              <h6 className='bodyMd-regular mt-1 text-darkSecondary-800'>
+              <h6 className='bodySm-regular md:body-semibold mt-1 text-darkSecondary-800'>
                 {typeText}
               </h6>
             </div>
             {text && <h6 className='notificationText'>{text}</h6>}
             <h4
               className={`${
-                isSeen ? "text-darkSecondary-800" : "text-secondary-red-80"
-              } heading3 mb-[4px] mr-2`}
+                isSeen ? 'text-darkSecondary-800' : 'text-secondary-red-80'
+              } display-semibold md:heading3 mb-[4px] mr-2 `}
             >
               {title}
             </h4>
 
-            <h6 className='bodySm-regular text-darkSecondary-800'>
+            <h6 className='bodySm-regular md:body-regular text-darkSecondary-800'>
               {date}, {time}
             </h6>
           </div>

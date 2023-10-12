@@ -1,16 +1,16 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import ProfileDropDown from "./ProfileDropDown";
-import { Button } from "@/components/ui/button";
-import DarkModeToggle from "./DarkModeToggle";
-import MessageDropDown from "./MessageDropDown";
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import ProfileDropDown from './ProfileDropDown';
+import { Button } from '@/components/ui/button';
+import DarkModeToggle from './DarkModeToggle';
+import MessageDropDown from './MessageDropDown';
 
 const NavProfileMenu = () => {
   // For testing
   const testUser = {
-    name: "AR. Jakir",
-    avatar: "/assets/navigation/profile-image.png",
+    name: 'AR. Jakir',
+    avatar: '/assets/navigation/profile-image.png',
   };
   const isLoggedIn: boolean = true;
 
@@ -22,7 +22,7 @@ const NavProfileMenu = () => {
             <div className='profileIconContainer'>
               <MessageDropDown />
             </div>
-            <Avatar className='navProfileAvatarContainer'>
+            <Avatar className='navProfileAvatarContainer rounded-lg'>
               <AvatarImage
                 src={testUser.avatar}
                 alt='Avatar'
@@ -38,7 +38,7 @@ const NavProfileMenu = () => {
             </div>
           </>
         ) : (
-          <div className='flex items-center justify-center gap-[24px]'>
+          <div className='flex flex-1 items-center justify-center gap-[15px] py-3 md:gap-[24px]'>
             <Link href='#' className='signupButton'>
               Signup
             </Link>

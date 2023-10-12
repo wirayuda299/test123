@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface LogoProps {
   showSearchBar: boolean;
@@ -31,7 +31,9 @@ const Logo = ({ showSearchBar, setShowSearchBar }: LogoProps) => {
         alt='Search Icon'
         width={20}
         height={20}
-        className={`${showSearchBar ? "block" : "sm:hidden"} searchIcon`}
+        className={`${
+          showSearchBar ? 'hidden sm:block' : 'block sm:hidden'
+        } searchIcon`}
         onClick={() => setShowSearchBar((showSearchBar) => !showSearchBar)}
       />
 

@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --dark: #2c353d;
+  --orange: #ff8f67;
+  --white: #fff;
+  --gray: #3f4354;
+}
+
 @layer base {
   body {
-    @apply dark:bg-darkPrimary-3 bg-white;
+    @apply dark:bg-darkPrimary bg-white-700 mx-auto max-w-screen-2xl;
   }
 }
 
@@ -81,13 +88,20 @@
     @apply font-normal text-[9px] leading-[14px];
   }
 
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
+
   /* No Focus */
+
   .no-focus {
     @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
   }
 
+  /* Screen width minus 5% */
+
   .w-screen-minus-5 {
-    width: calc(100vw - theme("spacing.5"));
+    width: calc(100vw - theme('spacing.5'));
   }
 }
 
@@ -95,7 +109,7 @@
   /* TopBar */
 
   .topBarContainer {
-    @apply flex items-center bg-white dark:bg-darkPrimary-3 mx-auto max-w-screen-2xl px-3 lg:px-10 py-[4px] md:py-[15px] fixed top-0 left-0 right-0 w-full z-50 !important;
+    @apply flex items-center bg-white dark:bg-darkPrimary-3 mx-auto max-w-screen-2xl px-3 lg:px-10 py-[4px] md:py-2 fixed top-0 left-0 right-0 w-full z-50 !important;
   }
 
   .topBar {
@@ -167,7 +181,7 @@
   }
 
   .loginButton {
-    @apply bg-primary px-[24px] py-[9px] text-white hover:bg-primary hover:opacity-70 dark:bg-primary dark:text-white dark:hover:bg-primary h-8 md:h-10 !important;
+    @apply bg-primary px-[15px] lg:px-[24px] text-white hover:bg-primary hover:opacity-70 dark:bg-primary dark:text-white dark:hover:bg-primary h-8 md:h-10 !important;
   }
 
   .signupButton {
@@ -201,7 +215,7 @@
   }
 
   .messageNotificationContainer {
-    @apply flex min-w-[290px] md:w-[316px] items-center justify-between rounded-md px-2 py-[10px] hover:bg-white-700 dark:hover:bg-darkPrimary-4 !important;
+    @apply flex w-[290px] md:w-[316px] items-center justify-between rounded-md px-2 py-[10px] hover:bg-white-700 dark:hover:bg-darkPrimary-4 !important;
   }
 
   .messageAvatarImage {
@@ -239,7 +253,7 @@
   }
 
   .tabContainer {
-    @apply border-b data-[state=active]:border-secondary-blue data-[state=active]:text-secondary-blue data-[state=active]:shadow-none border-transparent dark:data-[state=active]:bg-darkPrimary-3 display-semibold !important;
+    @apply border-b data-[state=active]:border-secondary-blue data-[state=active]:text-secondary-blue data-[state=active]:shadow-none border-transparent dark:data-[state=active]:bg-darkPrimary-3 body-semibold md:display-semibold !important;
   }
 
   .tabList {
@@ -269,7 +283,7 @@
   }
 
   .notificationText {
-    @apply bodyMd-regular dark:bg-darkPrimary-2 line-clamp-1 text-darkSecondary-800 bg-white-800 p-[10px] mb-[10px];
+    @apply bodyMd-regular md:display-regular dark:bg-darkPrimary-2 line-clamp-1 text-darkSecondary-800 bg-white-800 p-[10px] mb-[10px];
   }
 
   /* Search Bar */
@@ -286,10 +300,84 @@
     @apply cursor-pointer absolute right-3 lg:right-[10px] top-[8px] h-[16px] w-[16px] object-contain sm:right-4 sm:top-[8px] md:top-[8px] lg:top-[10px] lg:h-[20px] lg:w-[20px];
   }
 
+  /* Post Card on Home Page */
+
+  .postCardGrid {
+    @apply grid grid-cols-[2.3fr_1fr_1.8fr_1fr_2fr_1fr] md:grid-rows-[1fr_0.6fr] grid-rows-[0.95fr] gap-x-0 gap-y-0 mx-auto my-[20px] max-w-[785px] rounded-[16px] bg-white p-[14px] dark:bg-darkPrimary-3 md:p-[20px];
+  }
+
+  .postCardGridItem1 {
+    @apply row-start-1 row-end-3 col-start-1 col-end-2 pr-[14px] md:pr-[0px];
+  }
+
+  .postCardGridItem2 {
+    @apply row-start-1 row-end-2 col-start-2 col-end-6;
+  }
+
+  .postCardGridItem3 {
+    @apply row-start-1 row-end-2 col-start-6 col-end-7 ml-auto pl-6;
+  }
+
+  .postCardGridItem4 {
+    @apply row-start-2 row-end-3 col-start-2 col-end-4 hidden gap-[10px] pt-[12px] md:flex md:pl-[6px] lg:pt-[12px];
+  }
+
+  .postCardGridItem5 {
+    @apply md:row-start-2 md:row-end-3 md:col-start-4 md:col-end-7 row-start-2 row-end-3 col-start-2 col-end-7 pt-[12px];
+  }
+
+  .postCardMainImage {
+    @apply aspect-square min-h-[62px] min-w-[62px] rounded-[4px] md:h-[156px] md:w-[156px];
+  }
+
+  .postCardTitle {
+    @apply bodyMd-semibold md:heading3 line-clamp-3 text-darkSecondary-900 dark:text-white-800 md:line-clamp-2 md:pl-[6px];
+  }
+
+  .postCardTagList {
+    @apply bodyXs-regular md:bodySm-semibold mt-[10px] flex gap-[10px] text-darkSecondary-700 dark:text-darkSecondary-600 md:gap-3 md:pl-[6px];
+  }
+
+  .orangeHeart {
+    @apply hidden h-[28px] w-[28px] items-center justify-center rounded-[100%] bg-secondary-red-10 p-[1px] dark:bg-darkPrimary-4 md:flex;
+  }
+
+  .grayHeart {
+    @apply hidden h-[28px] w-[28px] items-center justify-center rounded-[100%] bg-white-700 p-[4px] dark:bg-darkPrimary-4 md:flex;
+  }
+
+  .avatarMobile {
+    @apply h-[30px] w-[30px] rounded-[100%] bg-secondary-purple-10 px-[5px] py-[3px] dark:bg-secondary-purple-20 md:hidden;
+  }
+
+  .avatarDesktop {
+    @apply h-[40px] w-[40px] rounded-[100%] bg-secondary-purple-10 px-[6px] py-[3px] dark:bg-secondary-purple-20;
+  }
+
+  .avatarName {
+    @apply body-semibold mr-[5px] text-darkSecondary-900 dark:text-white-700;
+  }
+
+  .postCreatedDate {
+    @apply bodySm-regular text-darkSecondary-800 dark:text-darkSecondary-600;
+  }
+
+  .viewsList {
+    @apply bodyXs-regular md:body-regular flex h-full items-center justify-start gap-[30px] text-center text-darkSecondary-800 dark:text-darkSecondary-600 md:justify-between md:gap-[40px];
+  }
+
+  .online {
+    @apply block h-[5px] w-[5px] rounded-[100%];
+  }
+
+  .tag {
+    @apply rounded-xl bg-white-700 px-[10px] py-[4px] dark:bg-darkPrimary-4;
+  }
+
   /* Bottom Bar */
 
   .bottombar {
-    @apply fixed bottom-0 z-10 w-full p-4 md:hidden bg-white-800 dark:bg-darkPrimary-2;
+    @apply fixed bottom-0 z-10 w-full p-4 md:hidden bg-white-800 dark:bg-darkPrimary-3;
     box-shadow: 0px -6px 30px 0px rgba(0, 0, 0, 0.06);
   }
 
