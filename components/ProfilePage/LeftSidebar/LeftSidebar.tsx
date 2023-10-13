@@ -7,11 +7,18 @@ import Following from './Following';
 
 const LeftSidebar = () => {
   return (
-    <aside className='relative rounded-2xl bg-white text-center dark:bg-darkPrimary-3 md:w-[210px]'>
+    <aside className='w-full rounded-2xl bg-white text-center dark:bg-darkPrimary-3 lg:sticky lg:top-0 lg:w-[210px]'>
       <div className="h-[106px] w-full rounded-t-2xl bg-[url('../public/left-sidebar-bg.svg')]" />
       <div className='px-5 py-[30px]'>
-        <div className='flexCenter absolute inset-x-0 top-10 mx-auto h-[130px] w-[130px] rounded-full border-4 border-white bg-secondary-yellow-30'>
-          <Image src='user-avatar.svg' alt='user-img' width={90} height={90} />
+        <div className='relative'>
+          <div className='flexCenter absolute inset-x-0 -top-24 mx-auto h-[130px] w-[130px] rounded-full border-4 border-white bg-secondary-yellow-30'>
+            <Image
+              src='user-avatar.svg'
+              alt='user-img'
+              width={90}
+              height={90}
+            />
+          </div>
         </div>
 
         <h1 className='heading1-semibold mt-[44px] text-darkSecondary dark:text-white'>
