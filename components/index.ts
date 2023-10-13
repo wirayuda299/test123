@@ -4,3 +4,5 @@ export { default as LeftSidebar } from './LeftSidebar/LeftSidebar';
 export { default as Sidebar } from '@/components/group/Sidebar/Sidebar';
 export { default as PostCard } from '@/components/group/PostCard/PostCard';
 export { default as Pagination } from '@/components/shared/Pagination';
+export { default as Performance } from './Performance/Performance';
+export { default as ProfileFeed } from './ProfileFeed/ProfileFeed';
