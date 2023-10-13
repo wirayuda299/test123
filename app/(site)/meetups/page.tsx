@@ -12,17 +12,17 @@ const page = () => {
   };
 
   return (
-    <div className='flex gap-4 bg-white-700 flex-col md:flex-row dark:bg-darkPrimary-2'>
-      <div className='flex-col flex lg:flex lg:flex-row gap-4 '>
+    <section className='flex gap-4 bg-white-700 flex-col md:flex-row dark:bg-darkPrimary-2'>
+      <main className='flex-col flex lg:flex lg:flex-row gap-4 '>
         <div className='flex flex-col lg:flex-row gap-4'>
           <div className='lg:hidden w-full'>
             <HostMeetupCard buttonData={buttonData} />
           </div>
 
           <div className='flex flex-col md:flex-row gap-4'>
-            <div className='w-full md:max-w-[210px]'>
+            <aside className='w-full md:max-w-[210px]'>
               <Filter />
-            </div>
+            </aside>
             <div className='w-full lg:w-5/6'>
               <MeetupsWrapper />
             </div>
@@ -35,8 +35,8 @@ const page = () => {
           </div>
           <SidePodcasts />
         </div>
-      </div>
-    </div>
+      </main>
+    </section>
   );
 };
 

@@ -15,7 +15,7 @@ interface PodcastProps {
 const PodcastChip = ({ podcastData }: PodcastProps) => {
   console.log(podcastData);
   return (
-    <div className='w-full bg-white dark:bg-darkPrimary-3 rounded-2xl p-5 mb-3 overflow-hidden hover:shadow-md transition-all'>
+    <section className='w-full bg-white dark:bg-darkPrimary-3 rounded-2xl p-5 mb-3 overflow-hidden hover:shadow-md transition-all'>
       <h3 className='heading3 mb-2.5 text-darkSecondary-900 dark:text-white'>
         {podcastData.title}
       </h3>
@@ -23,7 +23,7 @@ const PodcastChip = ({ podcastData }: PodcastProps) => {
         {podcastData.description}
       </p>
 
-      <div className='mt-5 flex items-center'>
+      <main className='mt-5 flex items-center'>
         <Avatar>
           <AvatarImage
             className='w-8 rounded-full'
@@ -40,8 +40,8 @@ const PodcastChip = ({ podcastData }: PodcastProps) => {
             Sylhet, Bangladesh
           </p>
         </div>
-      </div>
-    </div>
+      </main>
+    </section>
   );
 };
 
