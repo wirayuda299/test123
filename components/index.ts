@@ -5,6 +5,8 @@ export { default as SidePodcasts } from '@/components/SidePodcasts/SidePodcasts'
 export { default as PodcastsCard } from '@/components/Shared/PodcastsCard/PodcastsCard';
 export { default as MeetupsWrapper } from '@/components/Shared/MeetupsWrapper/MeetupsWrapper';
 export { default as Filter } from '@/components/Shared/Filter/Filter';
-export { default as LeftSidebar } from '@/components/LeftSidebar/LeftSidebar';
 export { default as PodcastChip } from '@/components/Podcasts/PodcastChip';
 export { default as MeetupChip } from '@/components/Shared/MeetupChip/MeetupChip';
+export { default as LeftSidebar } from './LeftSidebar/LeftSidebar';
+export { default as Performance } from './Performance/Performance';
+export { default as ProfileFeed } from './ProfileFeed/ProfileFeed';
