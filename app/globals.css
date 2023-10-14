@@ -6,8 +6,15 @@
   --orange: #ff8f67;
   --white: #fff;
   --gray: #3f4354;
+  --dark: #2c353d;
+  --orange: #ff8f67;
+  --white: #fff;
+  --gray: #3f4354;
 }
 @layer utilities {
+  .heading1 {
+    @apply font-bold text-[26px] leading-[38px];
+  }
   .heading1 {
     @apply font-bold text-[26px] leading-[38px];
   }
@@ -15,7 +22,13 @@
   .heading1-semibold {
     @apply font-semibold text-[26px] leading-[38px];
   }
+  .heading1-semibold {
+    @apply font-semibold text-[26px] leading-[38px];
+  }
 
+  .heading2 {
+    @apply font-bold text-[18px] leading-[28px];
+  }
   .heading2 {
     @apply font-bold text-[18px] leading-[28px];
   }
@@ -23,11 +36,20 @@
   .heading3 {
     @apply font-semibold text-[18px] leading-[26px];
   }
+  .heading3 {
+    @apply font-semibold text-[18px] leading-[26px];
+  }
 
   .heading3-regular {
     @apply font-normal text-[18px] leading-[26px];
   }
+  .heading3-regular {
+    @apply font-normal text-[18px] leading-[26px];
+  }
 
+  .display {
+    @apply font-bold text-[16px] leading-[24px];
+  }
   .display {
     @apply font-bold text-[16px] leading-[24px];
   }
@@ -39,7 +61,13 @@
   .display-regular {
     @apply font-normal text-[16px] leading-[24px];
   }
+  .display-regular {
+    @apply font-normal text-[16px] leading-[24px];
+  }
 
+  .body {
+    @apply font-bold text-[14px] leading-[22px];
+  }
   .body {
     @apply font-bold text-[14px] leading-[22px];
   }
@@ -47,7 +75,13 @@
   .body-semibold {
     @apply font-semibold text-[14px] leading-[22px];
   }
+  .body-semibold {
+    @apply font-semibold text-[14px] leading-[22px];
+  }
 
+  .body-regular {
+    @apply font-normal text-[14px] leading-[22px];
+  }
   .body-regular {
     @apply font-normal text-[14px] leading-[22px];
   }
@@ -55,7 +89,13 @@
   .bodyMd {
     @apply font-bold text-[12px] leading-[18px];
   }
+  .bodyMd {
+    @apply font-bold text-[12px] leading-[18px];
+  }
 
+  .bodyMd-semibold {
+    @apply font-semibold text-[12px] leading-[18px];
+  }
   .bodyMd-semibold {
     @apply font-semibold text-[12px] leading-[18px];
   }
@@ -63,7 +103,13 @@
   .bodyMd-regular {
     @apply font-normal text-[12px] leading-[18px];
   }
+  .bodyMd-regular {
+    @apply font-normal text-[12px] leading-[18px];
+  }
 
+  .bodySm-semibold {
+    @apply font-semibold text-[10px] leading-[16px];
+  }
   .bodySm-semibold {
     @apply font-semibold text-[10px] leading-[16px];
   }
@@ -71,11 +117,20 @@
   .bodySm-regular {
     @apply font-normal text-[10px] leading-[16px];
   }
+  .bodySm-regular {
+    @apply font-normal text-[10px] leading-[16px];
+  }
 
   .bodyXs-semibold {
     @apply font-semibold text-[9px] leading-[14px];
   }
+  .bodyXs-semibold {
+    @apply font-semibold text-[9px] leading-[14px];
+  }
 
+  .bodyXs-regular {
+    @apply font-normal text-[9px] leading-[14px];
+  }
   .bodyXs-regular {
     @apply font-normal text-[9px] leading-[14px];
   }
@@ -94,8 +149,13 @@
 .cl-socialButtons {
   display: flex;
   width: auto;
+  display: flex;
+  width: auto;
 }
 .cl-socialButtons .cl-socialButtonsBlockButton {
+  width: 60px;
+  height: 50px;
+  display: flex;
   width: 60px;
   height: 50px;
   display: flex;
@@ -103,18 +163,26 @@
 html.dark .cl-socialButtons .cl-socialButtonsBlockButton {
   background-color: var(--dark);
   border: 1px solid var(--gray);
+  background-color: var(--dark);
+  border: 1px solid var(--gray);
 }
 html.dark .cl-socialButtonsBlockButton__github .cl-internal-1fc9kwt > img {
   filter: invert(100%);
+  filter: invert(100%);
 }
 html.dark .cl-internal-b868gt {
+  background-color: var(--white);
   background-color: var(--white);
 }
 .cl-socialButtonsBlockButton__github .cl-socialButtonsBlockButtonText,
 .cl-socialButtonsBlockButton__google .cl-socialButtonsBlockButtonText__google {
   display: none !important;
+  display: none !important;
 }
 .cl-socialButtons .cl-internal-1fc9kwt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,11 +190,14 @@ html.dark .cl-internal-b868gt {
 .cl-internal-b3fm6y,
 .cl-formButtonPrimary {
   background-color: var(--orange);
+  background-color: var(--orange);
 }
 .cl-footerActionLink {
   color: var(--orange);
+  color: var(--orange);
 }
 html.dark .cl-internal-17ydaof {
+  background-color: var(--dark);
   background-color: var(--dark);
 }
 html.dark .cl-internal-1vbdq0x,
@@ -135,9 +206,12 @@ html.dark .cl-internal-1xpzc82,
 html.dark .cl-internal-17bz5n6,
 html.dark .cl-internal-138ov2f {
   color: var(--white);
+  color: var(--white);
 }
 html.dark .cl-internal-mdg29y,
 html.dark .cl-internal-18ut2g5 {
+  background-color: var(--dark);
+  color: var(--white);
   background-color: var(--dark);
   color: var(--white);
 }
@@ -216,4 +290,19 @@ html.dark .cl-internal-18ut2g5 {
   .tag {
     @apply rounded-xl bg-white-700 px-[10px] py-[4px] dark:bg-darkPrimary-4;
   }
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f4f6f8;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f4f6f8;
 }

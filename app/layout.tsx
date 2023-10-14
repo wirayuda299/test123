@@ -1,5 +1,6 @@
 import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
+// eslint-disable-next-line camelcase
 import { Source_Sans_3 } from 'next/font/google';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
