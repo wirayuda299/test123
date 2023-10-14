@@ -7,3 +7,4 @@ export { default as PostCard } from './PostCard';
 export { default as Sidebar } from '@/components/group/Sidebar/Sidebar';
 export { default as GroupPostCard } from '@/components/group/PostCard/GroupPostCard';
 export { default as Pagination } from '@/components/shared/Pagination';
+export { default as CreatePost } from '@/components/forms/CreatePost';
