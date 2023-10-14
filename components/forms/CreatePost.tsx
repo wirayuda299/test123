@@ -1,5 +1,7 @@
 'use client';
 
+import React, { useRef } from 'react';
+import { Editor } from '@tinymce/tinymce-react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
@@ -17,6 +19,7 @@ import { Input } from '@/components/ui/input';
 import { CreatePostSchema } from '@/lib/validations';
 
 const CreatePost = () => {
+  const editorRef = useRef(null);
   const form = useForm<z.infer<typeof CreatePostSchema>>({
     resolver: zodResolver(CreatePostSchema),
     defaultValues: {
@@ -55,7 +58,58 @@ const CreatePost = () => {
           name='post'
           render={({ field }) => (
             <FormItem>
-              <FormControl>{/* TODO: editor */}</FormControl>
+              <FormControl>
+                <Editor
+                  apiKey={process.env.NEXT_PUBLIC_TINY_EDITOR_API_KEY}
+                  // @ts-ignore
+                  onInit={(evt, editor) => (editorRef.current = editor)}
+                  initialValue=''
+                  init={{
+                    setup: function (editor) {
+                      editor.ui.registry.addButton('Write', {
+                        icon: 'edit-block',
+                        text: 'Write',
+                        onAction: function () {
+                          alert('Button clicked!');
+                        },
+                      });
+                      editor.ui.registry.addButton('CodeOfConduct', {
+                        text: 'Code of Conduct',
+                        onAction: function () {
+                          alert('Button clicked!');
+                        },
+                      });
+                    },
+                    height: 500,
+                    menubar: false,
+                    plugins: [
+                      'advlist',
+                      'autolink',
+                      'lists',
+                      'link',
+                      'image',
+                      'charmap',
+                      'preview',
+                      'anchor',
+                      'searchreplace',
+                      'visualblocks',
+                      'code',
+                      'fullscreen',
+                      'insertdatetime',
+                      'media',
+                      'table',
+                      'code',
+                      'help',
+                      'wordcount',
+                    ],
+                    toolbar:
+                      'Write preview CodeOfConduct |' +
+                      'bold italic underline strikethrough forecolor link image alignleft aligncenter alignright alignjustify bullist numlist |',
+                    content_style:
+                      'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+                  }}
+                />
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}
