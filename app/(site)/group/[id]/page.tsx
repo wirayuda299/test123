@@ -1,4 +1,9 @@
-import { GroupAbout, GroupAdmins, GroupBanner } from '@/components/index';
+import {
+  Explore,
+  GroupAbout,
+  GroupAdmins,
+  GroupBanner,
+} from '@/components/index';
 
 export default function GroupDetail() {
   return (
@@ -13,6 +18,7 @@ export default function GroupDetail() {
         </div>
         <div>
           <GroupBanner />
+          <Explore />
         </div>
       </div>
     </div>
