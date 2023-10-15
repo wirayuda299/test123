@@ -6,3 +6,5 @@ export { default as PostCard } from '@/components/group/PostCard/PostCard';
 export { default as Pagination } from '@/components/shared/Pagination';
 export { default as Performance } from './Performance/Performance';
 export { default as ProfileFeed } from './ProfileFeed/ProfileFeed';
+export { default as GroupAbout } from '@/components/group/About/About';
+export { default as GroupAdmins } from '@/components/group/Admins/Admins';

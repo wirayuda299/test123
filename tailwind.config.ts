@@ -20,6 +20,7 @@ module.exports = {
         'source-sans': '[var(--source-sans)]',
       },
       maxWidth: {
+        170: '170px',
         442: '442px',
         250: '250px',
         500: '500px',
