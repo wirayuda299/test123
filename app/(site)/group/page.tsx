@@ -10,7 +10,7 @@ export default function Group() {
             <PostCard key={c} />
           ))}
         </div>
-        <Pagination totalPages={10} />
+        <Pagination totalPages={10} currentPage={1} />
       </section>
       <div className='flex w-full max-w-[250px] flex-col gap-5 lg:sticky lg:top-0 lg:h-screen lg:overflow-y-hidden lg:hover:overflow-y-auto'>
         <div className=' min-h-[400px] bg-slate-400'>Hello</div>
