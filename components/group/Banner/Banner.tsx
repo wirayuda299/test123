@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Banner() {
   return (
-    <section className='rounded-2xl bg-white p-5 dark:bg-darkPrimary-3'>
+    <section className=' rounded-2xl bg-white p-5 dark:bg-darkPrimary-3'>
       <Image
         className='rounded-2xl'
         src={'/assets/images/banner.png'}

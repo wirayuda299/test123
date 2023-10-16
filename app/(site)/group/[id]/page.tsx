@@ -5,20 +5,21 @@ import {
   GroupActiveMembers,
   GroupAdmins,
   GroupBanner,
+  GroupRecentMedia,
 } from '@/components/index';
 
 export default function GroupDetail() {
   return (
     <div className='h-full w-full bg-white-800 p-5 dark:bg-darkPrimary-2'>
-      <div className='flex flex-col-reverse gap-5 lg:flex-row'>
-        <div className='flex flex-col gap-5'>
+      <div className='flex flex-col gap-5 lg:flex-row'>
+        <div className='order-2 flex flex-col gap-5'>
           <GroupAbout />
           <GroupAdmins />
-          <div className='h-full min-h-[500px] min-w-[170px] max-w-250 bg-slate-500'>
+          <div className='h-full min-h-[500px] min-w-[170px] max-w-250 bg-white dark:bg-darkPrimary-2'>
             Waiting Popular tags component
           </div>
         </div>
-        <div>
+        <div className='order-1'>
           <GroupBanner />
           <Explore />
           <PostCard
@@ -38,6 +39,7 @@ export default function GroupDetail() {
             Waiting Create Post Component
           </div>
           <GroupActiveMembers />
+          <GroupRecentMedia />
         </div>
       </div>
     </div>
