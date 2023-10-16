@@ -10,3 +10,4 @@ export { default as GroupAbout } from '@/components/group/About/About';
 export { default as GroupAdmins } from '@/components/group/Admins/Admins';
 export { default as GroupBanner } from '@/components/group/Banner/Banner';
 export { default as Explore } from '@/components/group/Explore/Explore';
+export { default as GroupActiveMembers } from '@/components/group/ActiveMember/ActiveMember';
