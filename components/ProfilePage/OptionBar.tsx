@@ -2,7 +2,7 @@ import { optionBar } from '@/constant';
 
 const OptionBar = () => {
   return (
-    <div className='overflow-x-scroll'>
+    <div className='overflow-x-auto'>
       <div className='inline-flex w-full items-start justify-between rounded-[20px] bg-white px-[15px] py-[10px] dark:bg-darkPrimary-3 md:px-[30px] md:py-[19px] lg:max-w-[785px]'>
         {optionBar.map((option) => (
           <button

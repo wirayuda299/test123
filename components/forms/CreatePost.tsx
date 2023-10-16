@@ -16,6 +16,13 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { CreatePostSchema } from '@/lib/validations';
 
 const CreatePost = () => {
@@ -52,6 +59,72 @@ const CreatePost = () => {
             </FormItem>
           )}
         />
+
+        <div className='flex gap-5'>
+          <FormField
+            control={form.control}
+            name='title'
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input placeholder='Title...' {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name='title'
+            render={({ field }) => (
+              <FormItem>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder='Select Group' />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value='m@example.com'>m@example.com</SelectItem>
+                    <SelectItem value='m@google.com'>m@google.com</SelectItem>
+                    <SelectItem value='m@support.com'>m@support.com</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name='title'
+            render={({ field }) => (
+              <FormItem>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder='Create - Post' />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value='post'>Post</SelectItem>
+                    <SelectItem value='meetup'>Meetup</SelectItem>
+                    <SelectItem value='podcasts'>Podcasts</SelectItem>
+                    <SelectItem value='interviews'>Interviews</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
         <FormField
           control={form.control}
@@ -135,6 +208,7 @@ const CreatePost = () => {
             </FormItem>
           )}
         />
+
         <Button
           type='submit'
           className='body-semibold md:display-semibold rounded-lg bg-secondary-blue px-10 py-[10px] text-secondary-blue-10 hover:bg-secondary-blue hover:opacity-90'

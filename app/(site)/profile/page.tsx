@@ -12,7 +12,7 @@ const page = () => {
     <div className='flex flex-col items-start justify-center gap-6 lg:flex-row'>
       <LeftSidebar />
 
-      <div className='flex w-full flex-col overflow-x-scroll'>
+      <div className='flex w-full flex-col'>
         <OptionBar />
         {postDummyData?.map((post) => (
           <PostCard
