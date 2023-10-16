@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       >
         <TopBar />
 
-        <main>{children}</main>
+        <main className='h-full w-full'>{children}</main>
 
         <BottomBar />
       </ThemeProvider>
