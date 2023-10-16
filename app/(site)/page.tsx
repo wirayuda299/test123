@@ -1,13 +1,13 @@
-import PostCard from '@/components/shared/PostCard';
-import { postDummyData } from '@/constant/postDummyData';
+import CreatePostBar from '@/components/Home/CreatePostBar';
 import HomeLeftSidebar from '@/components/Home/HomeLeftSidebar';
 import HomeRightSidebar from '@/components/Home/HomeRightSidebar';
-import CreatePostBar from '@/components/Home/CreatePostBar';
 import NewAndPopularMobile from '@/components/Home/NewAndPopularMobile';
+import PostCard from '@/components/shared/PostCard';
+import { postDummyData } from '@/constant/PostDummyData';
 
-export default function Home() {
+export default async function Home() {
   return (
-    <main className='flex flex-row justify-center bg-white-700 dark:bg-darkPrimary-2'>
+    <main className='bg-white-700 dark:bg-darkPrimary-2 flex flex-row justify-center'>
       <HomeLeftSidebar />
       <section>
         <div className='max-w-8xl w-full px-[20px] py-28'>
