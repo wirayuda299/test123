@@ -19,6 +19,7 @@ const SidePodcasts = () => {
 
       {podcasts?.map((item) => (
         <PodcastsCard
+          key={item.id}
           cardData={{
             img: item.image,
             alt: item.id,
