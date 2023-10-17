@@ -5,7 +5,7 @@ const PopularTags = () => {
   return (
     <aside className='asideContainerLarge'>
       <header>
-        <h3 className='display-semibold mb-[20px] text-darkSecondary-900 dark:text-white-800'>
+        <h3 className='display-semibold mb-5 text-darkSecondary-900 dark:text-white-800'>
           Popular Tags
         </h3>
       </header>

@@ -6,7 +6,7 @@ import SidebarListItem from './SidebarListItem';
 const PinnedGroups = () => {
   return (
     <aside className='asideContainerLarge'>
-      <header className='mb-[20px] flex items-center justify-start'>
+      <header className='mb-5 flex items-center justify-start'>
         <h3 className='display-semibold mr-2 text-darkSecondary-900 dark:text-white-800'>
           Pinned Groups
         </h3>

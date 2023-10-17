@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface SidebarListItemProps {
   id: number;
@@ -15,12 +15,12 @@ interface SidebarListItemProps {
 const colors: {
   [key: string]: string;
 } = {
-  yellow: "bg-secondary-yellow-10 dark:bg-[#594F43]",
-  red: "bg-secondary-red-10 dark:bg-[#473E3B]",
-  blue: "bg-secondary-blue-10 dark:bg-[#444F5F]",
-  green: "bg-secondary-green-10 dark:bg-[#335248]",
-  purple: "bg-secondary-purple-10 dark:bg-[#46475B]",
-  transparent: "bg-transparent",
+  yellow: 'bg-secondary-yellow-10 dark:bg-[#594F43]',
+  red: 'bg-secondary-red-10 dark:bg-[#473E3B]',
+  blue: 'bg-secondary-blue-10 dark:bg-[#444F5F]',
+  green: 'bg-secondary-green-10 dark:bg-[#335248]',
+  purple: 'bg-secondary-purple-10 dark:bg-[#46475B]',
+  transparent: 'bg-transparent',
 };
 
 const SidebarListItem = ({
@@ -34,13 +34,13 @@ const SidebarListItem = ({
   hashtag = false,
 }: SidebarListItemProps) => {
   return (
-    <li key={id} className='mb-[10px] w-full'>
+    <li key={id} className='mb-2.5 w-full'>
       <Link href='#' className='asideListItemLink'>
         <div
           className={`asideImageDiv ${bgColor && colors[bgColor]} ${
-            bgColor === "transparent"
-              ? "h-[32px] w-[32px]"
-              : "h-[28px] w-[28px]"
+            bgColor === 'transparent'
+              ? 'h-[32px] w-[32px]'
+              : 'h-[28px] w-[28px]'
           }`}
         >
           <Image
@@ -49,9 +49,9 @@ const SidebarListItem = ({
             width={32}
             height={32}
             className={` ${
-              bgColor === "transparent"
-                ? "h-[32px] w-[32px]"
-                : "h-[20px] w-[20px]"
+              bgColor === 'transparent'
+                ? 'h-[32px] w-[32px]'
+                : 'h-[20px] w-[20px]'
             }`}
           />
         </div>
@@ -60,14 +60,14 @@ const SidebarListItem = ({
           <div className='flex items-center gap-[6px]'>
             <h6
               className={`bodyMd-semibold dark:text-white ${
-                hashtag ? "text-darkSecondary-800" : "text-darkSecondary-900"
+                hashtag ? 'text-darkSecondary-800' : 'text-darkSecondary-900'
               }`}
             >
               {hashtag ? `#${title}` : title}
             </h6>
             <p
               className={`${
-                isFollowingNumberHidden ? "hidden" : ""
+                isFollowingNumberHidden ? 'hidden' : ''
               } asideFollowingNumber`}
             >
               24

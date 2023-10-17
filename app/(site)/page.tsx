@@ -10,7 +10,7 @@ export default async function Home() {
     <main className='bg-white-700 dark:bg-darkPrimary-2 flex flex-row justify-center'>
       <HomeLeftSidebar />
       <section>
-        <div className='max-w-8xl w-full px-[20px] py-28'>
+        <div className='max-w-8xl w-full px-5 py-28'>
           <NewAndPopularMobile />
           <CreatePostBar />
           <section>

@@ -5,7 +5,7 @@ import { newAndPopularMobile } from '@/constant/homeLeftSidebar';
 
 const NewAndPopularMobile = () => {
   return (
-    <ul className='asideContainerSmall mb-[20px] flex items-center md:hidden'>
+    <ul className='asideContainerSmall mb-5 flex items-center md:hidden'>
       {newAndPopularMobile.map((item) => (
         <li key={item.id} className='w-full'>
           <Link href='#' className='asideListItemLink'>
