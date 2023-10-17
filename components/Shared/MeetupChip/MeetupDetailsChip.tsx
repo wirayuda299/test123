@@ -7,17 +7,17 @@ const MeetupDetailsChip = () => {
   return (
     <>
       {meetupsData?.map((meetupData) => (
-        <div className='flex mb-5' key={meetupData.companyName}>
-          <div className='border-[1px] px-2.5 py-1 text-center border-darkSecondary-600 rounded-md dark:border-none dark:shadow-darkShadow mr-3 flex flex-col justify-center'>
+        <section className='flex mb-5' key={meetupData.companyName}>
+          <time className='border-[1px] px-2.5 py-1 text-center border-darkSecondary-600 rounded-md dark:border-none dark:shadow-darkShadow mr-3 flex flex-col justify-center'>
             <p className='bodyMd-semibold sm:display-semibold uppercase text-darkSecondary-900 dark:text-white'>
               Feb
             </p>
             <p className='display-semibold sm:heading1 text-secondary-blue'>
               7
             </p>
-          </div>
+          </time>
 
-          <div className='overflow-hidden'>
+          <main className='overflow-hidden'>
             <p className='bodyMd-semibold sm:display-semibold uppercase text-darkSecondary-900 dark:text-white text-ellipsis overflow-hidden whitespace-nowrap'>
               {meetupData.title}
             </p>
@@ -47,8 +47,8 @@ const MeetupDetailsChip = () => {
                 </Badge>
               ))}
             </div>
-          </div>
-        </div>
+          </main>
+        </section>
       ))}
     </>
   );

@@ -5,18 +5,18 @@ import {
   SidePodcasts,
 } from '@/components/index';
 
-const page = () => {
-  const buttonData = {
-    codeButton: 'Code Of Conduct',
-    buttonName: 'Host a Meetup',
+const Page = () => {
+  const cardBtnValues = {
+    cardBtnCodeConduct: 'Code Of Conduct',
+    cardBtnHostMedia: 'Host a Meetup',
   };
 
   return (
-    <section className='flex gap-4 bg-white-700 flex-col md:flex-row dark:bg-darkPrimary-2 pb-12'>
+    <section className='flex gap-4 bg-white-700 flex-col md:flex-row dark:bg-darkPrimary-2'>
       <main className='flex-col flex lg:flex lg:flex-row gap-4 '>
         <div className='flex flex-col lg:flex-row gap-4'>
           <div className='lg:hidden w-full'>
-            <HostMeetupCard buttonData={buttonData} />
+            <HostMeetupCard cardBtnValues={cardBtnValues} />
           </div>
 
           <div className='flex flex-col md:flex-row gap-4'>
@@ -31,7 +31,7 @@ const page = () => {
 
         <div className='flex flex-col gap-5 w-full lg:max-w-[360px]'>
           <div className='hidden lg:block'>
-            <HostMeetupCard buttonData={buttonData} />
+            <HostMeetupCard cardBtnValues={cardBtnValues} />
           </div>
           <SidePodcasts />
         </div>
@@ -40,4 +40,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

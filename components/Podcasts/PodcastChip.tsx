@@ -13,7 +13,6 @@ interface PodcastProps {
 }
 
 const PodcastChip = ({ podcastData }: PodcastProps) => {
-  console.log(podcastData);
   return (
     <section className='w-full bg-white dark:bg-darkPrimary-3 rounded-2xl p-5 mb-3 overflow-hidden hover:shadow-md transition-all'>
       <h3 className='heading3 mb-2.5 text-darkSecondary-900 dark:text-white'>
