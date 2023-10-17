@@ -19,6 +19,9 @@ module.exports = {
       fontFamily: {
         'source-sans': '[var(--source-sans)]',
       },
+      backgroundImage: {
+        meetUpBg: 'url(/images/hostMeetup.svg)',
+      },
       maxWidth: {
         442: '442px',
         250: '250px',

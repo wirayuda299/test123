@@ -13,7 +13,7 @@ const podcasts = () => {
   };
 
   return (
-    <section className='flex gap-4 bg-white-700 flex-col md:flex-row dark:bg-darkPrimary-2'>
+    <section className='flex gap-4 bg-white-700 flex-col md:flex-row dark:bg-darkPrimary-2 pb-12'>
       <main className='flex-col flex lg:flex lg:flex-row gap-4 '>
         <div className='flex flex-col lg:flex-row gap-4'>
           <div className='lg:hidden w-full'>
