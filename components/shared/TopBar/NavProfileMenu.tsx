@@ -16,7 +16,7 @@ const NavProfileMenu = () => {
 
   return (
     <section className='relative flex shrink-0 items-center justify-between'>
-      <div className='flex items-center gap-[10px] lg:gap-[15px]'>
+      <div className='flex items-center gap-2.5 lg:gap-[15px]'>
         {isLoggedIn ? (
           <>
             <div className='profileIconContainer'>
@@ -32,13 +32,13 @@ const NavProfileMenu = () => {
               />
               <AvatarFallback className='rounded-lg'>HN</AvatarFallback>
             </Avatar>
-            <div className='flex items-center justify-between gap-[5px] lg:gap-[10px]'>
+            <div className='flex items-center justify-between gap-[5px] lg:gap-2.5'>
               <h6 className='navProfileName'>{testUser.name}</h6>
               <ProfileDropDown />
             </div>
           </>
         ) : (
-          <div className='flex flex-1 items-center justify-center gap-[15px] py-3 md:gap-[24px]'>
+          <div className='flex flex-1 items-center justify-center gap-[15px] py-3 md:gap-6'>
             <Link href='#' className='signupButton'>
               Signup
             </Link>

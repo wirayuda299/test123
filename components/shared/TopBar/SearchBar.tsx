@@ -28,6 +28,7 @@ const Searchbar = ({ showSearchBar, setShowSearchBar }: SearchBarProps) => {
         height={20}
         className='searchBarIcon'
         onClick={() => router.push('?showsearch=full')}
+        onTouchEnd={() => setShowSearchBar((showSearchBar) => !showSearchBar)}
       />
     </div>
   );

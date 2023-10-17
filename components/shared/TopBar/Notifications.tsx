@@ -1,35 +1,35 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
-import { AiOutlineCheck, AiOutlineComment } from "react-icons/ai";
-import { BsPencilSquare } from "react-icons/bs";
-import { FaRegHeart } from "react-icons/fa";
-import { GoMention } from "react-icons/go";
+import { AiOutlineCheck, AiOutlineComment } from 'react-icons/ai';
+import { BsPencilSquare } from 'react-icons/bs';
+import { FaRegHeart } from 'react-icons/fa';
+import { GoMention } from 'react-icons/go';
 
-import { NavigationMenuLink } from "@/components/ui/navigation-menu";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { notifications } from "@/constants/notifications";
-import Notification from "./Notification";
+import { NavigationMenuLink } from '@/components/ui/navigation-menu';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { notifications } from '@/constants/notifications';
+import Notification from './Notification';
 
 const Notifications = () => {
   const [isSeen, setIsSeen] = useState(false);
 
   const reactions = notifications.filter(
-    (notification) => notification.type === "reaction"
+    (notification) => notification.type === 'reaction',
   );
   const comments = notifications.filter(
-    (notification) => notification.type === "comment"
+    (notification) => notification.type === 'comment',
   );
   const mentions = notifications.filter(
-    (notification) => notification.type === "mention"
+    (notification) => notification.type === 'mention',
   );
 
   return (
     <>
       <header className='notificationsDropDownContainer'>
         {/* Dynamic Header */}
-        <h3 className='display-semibold md:heading3 px-[6px] text-darkSecondary-900 dark:text-white-800'>
+        <h3 className='display-semibold md:heading3 px-1.5 text-darkSecondary-900 dark:text-white-800'>
           {notifications.length} Notifications
         </h3>
 
@@ -39,10 +39,10 @@ const Notifications = () => {
           className='markAsSeenButton'
           onClick={() => setIsSeen((prevState) => !prevState)}
         >
-          <span className='display-semibold mr-[10px] text-secondary-blue-80'>
+          <span className='display-semibold mr-2.5 text-secondary-blue-80'>
             <AiOutlineCheck size={20} />
           </span>
-          {isSeen ? "Mark All Unread" : "Mark All Read"}
+          {isSeen ? 'Mark All Unread' : 'Mark All Read'}
         </button>
       </header>
 

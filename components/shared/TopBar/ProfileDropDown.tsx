@@ -1,4 +1,6 @@
-import { AiOutlineCaretDown } from "react-icons/ai";
+'use client';
+
+import { AiOutlineCaretDown } from 'react-icons/ai';
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -6,10 +8,10 @@ import {
   NavigationMenuItem,
   NavigationMenuContent,
   NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
-import { loggedIn } from "@/constants/profileDropDowns";
-import { Separator } from "@radix-ui/react-separator";
-import DarkModeToggle from "./DarkModeToggle";
+} from '@/components/ui/navigation-menu';
+import { loggedIn } from '@/constants/profileDropDowns';
+import { Separator } from '@radix-ui/react-separator';
+import DarkModeToggle from './DarkModeToggle';
 
 const ProfileDropDown = () => {
   return (

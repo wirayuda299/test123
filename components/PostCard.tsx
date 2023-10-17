@@ -1,6 +1,6 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 interface PostCardProps {
   mainImage: string;
@@ -16,7 +16,7 @@ interface PostCardProps {
   comments: number;
 }
 
-const PostCard: React.FC<PostCardProps> = ({
+const PostCard = ({
   mainImage,
   title,
   tags,
@@ -28,7 +28,7 @@ const PostCard: React.FC<PostCardProps> = ({
   views,
   likes,
   comments,
-}) => {
+}: PostCardProps) => {
   return (
     <div className='postCardGrid'>
       {/* Grid Item 1 - Post Image */}
@@ -65,7 +65,7 @@ const PostCard: React.FC<PostCardProps> = ({
               alt='Heart'
               width={25}
               height={25}
-              className='mt-[8px]'
+              className='mt-2'
             />
           </div>
         ) : (
@@ -88,23 +88,19 @@ const PostCard: React.FC<PostCardProps> = ({
 
       {/* Grid Item 4 - User info and created date */}
       <div className='postCardGridItem4'>
-        {/* Avatar */}
         <Avatar className='avatarDesktop'>
           <AvatarImage src={avatar} alt='Avatar' width={28} height={34} />
           <AvatarFallback>HN</AvatarFallback>
         </Avatar>
         <div>
-          {/* Name */}
           <div className='flex items-center justify-between'>
             <p className='avatarName'>{name}</p>
-            {/* Online */}
-            {online ? (
-              <div className='online bg-green-500 '></div>
-            ) : (
-              <div className='online bg-darkSecondary-600'></div>
-            )}
+            <div
+              className={`online ${
+                online ? 'bg-green-500' : 'bg-darkSecondary-600'
+              }`}
+            ></div>
           </div>
-          {/* Created date */}
           <p className='postCreatedDate'>{createdDate}</p>
         </div>
       </div>

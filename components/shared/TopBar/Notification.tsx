@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -61,7 +63,7 @@ const Notification = ({
             <h4
               className={`${
                 isSeen ? 'text-darkSecondary-800' : 'text-secondary-red-80'
-              } display-semibold md:heading3 mb-[4px] mr-2 `}
+              } display-semibold md:heading3 mb-1 mr-2 `}
             >
               {title}
             </h4>

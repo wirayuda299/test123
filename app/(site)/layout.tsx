@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 
 import BottomBar from '@/components/shared/BottomBar';
 import TopBar from '@/components/shared/TopBar/TopBar';
+import NavProfileMenu from '@/components/shared/TopBar/NavProfileMenu';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -13,7 +14,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         enableSystem
         disableTransitionOnChange
       >
-        <TopBar />
+        <TopBar>
+          <NavProfileMenu />
+        </TopBar>
 
         <main className='h-full w-full'>{children}</main>
 

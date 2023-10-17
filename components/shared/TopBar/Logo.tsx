@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,7 +10,7 @@ interface LogoProps {
 
 const Logo = ({ showSearchBar, setShowSearchBar }: LogoProps) => {
   return (
-    <div className='mr-4 flex shrink-0 items-center gap-[10px]'>
+    <div className='mr-4 flex shrink-0 items-center gap-2.5'>
       {/* Logo Icons - Dark and Light Mode */}
       <Link href='/'>
         <Image
@@ -37,8 +39,10 @@ const Logo = ({ showSearchBar, setShowSearchBar }: LogoProps) => {
           className={`${
             showSearchBar ? 'hidden sm:block' : 'block sm:hidden'
           } searchIcon`}
+          onClick={() => setShowSearchBar((showSearchBar) => !showSearchBar)}
         />
       </Link>
+
       {/* Logo Text - Dark and Light Mode */}
       <Link href='/' className='hidden items-center lg:flex '>
         <h1 className='md:heading2 lg:heading1 text-primary'>Hipnode</h1>

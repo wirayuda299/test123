@@ -5,10 +5,13 @@ import { useState } from 'react';
 import Searchbar from './SearchBar';
 import Logo from './Logo';
 import NavLinks from './NavLinks';
-import NavProfileMenu from './NavProfileMenu';
 
-const TopBar = () => {
-  const [showSearchBar, setShowSearchBar] = useState(false);
+interface TopBarProps {
+  children: JSX.Element;
+}
+
+const TopBar = ({ children }: TopBarProps) => {
+  const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
 
   return (
     <nav className='topBarContainer'>
@@ -40,7 +43,7 @@ const TopBar = () => {
           />
 
           {/* Profile Section */}
-          <NavProfileMenu />
+          {children}
         </div>
       </div>
     </nav>
