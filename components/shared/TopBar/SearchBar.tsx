@@ -1,6 +1,9 @@
-import Image from "next/image";
+'use client';
 
-import { Input } from "../../ui/input";
+import Image from 'next/image';
+
+import { Input } from '../../ui/input';
+import { useRouter } from 'next/navigation';
 
 interface SearchBarProps {
   showSearchBar: boolean;
@@ -8,8 +11,10 @@ interface SearchBarProps {
 }
 
 const Searchbar = ({ showSearchBar, setShowSearchBar }: SearchBarProps) => {
+  const router = useRouter();
+
   return (
-    <div className={`${showSearchBar ? "block" : "hidden sm:block"} searchbar`}>
+    <div className={`${showSearchBar ? 'block' : 'hidden sm:block'} searchbar`}>
       <Input
         id='text'
         placeholder='Type here to search...'
@@ -22,7 +27,7 @@ const Searchbar = ({ showSearchBar, setShowSearchBar }: SearchBarProps) => {
         width={20}
         height={20}
         className='searchBarIcon'
-        onClick={() => setShowSearchBar((showSearchBar) => !showSearchBar)}
+        onClick={() => router.push('?showsearch=full')}
       />
     </div>
   );

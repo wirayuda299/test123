@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-	--dark: #2c353d;
-	--orange: #ff8f67;
-	--white: #fff;
-	--gray: #3f4354;
+  --dark: #2c353d;
+  --orange: #ff8f67;
+  --white: #fff;
+  --gray: #3f4354;
 }
 
 @layer base {
@@ -115,12 +115,12 @@
   ::-webkit-scrollbar-track {
     background: transparent;
   }
-  
+
   ::-webkit-scrollbar-thumb {
     background: #f4f6f8;
     border-radius: 5px;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
     background: #f4f6f8;
   }
@@ -152,7 +152,8 @@
   }
 
   .cl-socialButtonsBlockButton__github .cl-socialButtonsBlockButtonText,
-  .cl-socialButtonsBlockButton__google .cl-socialButtonsBlockButtonText__google {
+  .cl-socialButtonsBlockButton__google
+    .cl-socialButtonsBlockButtonText__google {
     display: none !important;
   }
 
@@ -183,7 +184,6 @@
     color: var(--white);
   }
 
-  
   html.dark .cl-internal-mdg29y,
   html.dark .cl-internal-18ut2g5 {
     background-color: var(--dark);
@@ -199,7 +199,7 @@
   }
 
   .topBar {
-    @apply flex w-full flex-1 items-center gap-[20px];
+    @apply w-full flex-1 items-center gap-[20px];
   }
 
   .topBarCol2 {
@@ -475,4 +475,3 @@
     @apply relative flex flex-col items-center gap-2 rounded-lg p-2 sm:flex-1 sm:px-2 sm:py-2.5;
   }
 }
-

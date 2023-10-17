@@ -1,16 +1,19 @@
 import PostCard from '@/components/PostCard';
 import { LeftSidebar } from '@/components/index';
+import MessageDropDown from '@/components/shared/TopBar/MessageDropDown';
 
 import { postDummyData } from '@/constant/PostDummyData';
 
 export default async function Home() {
   return (
-    <>
+    <div className='flex flex-col'>
       <LeftSidebar />
+
       <h1 className='heading1 text-darkPrimary'>heading1</h1>
       <h1 className='heading1-semibold text-darkPrimary-2'>
         heading1-semibold
       </h1>
+      <MessageDropDown />
       {postDummyData?.map((post) => (
         <PostCard
           key={post.id}
@@ -27,6 +30,6 @@ export default async function Home() {
           likes={post.likes}
         />
       ))}
-    </>
+    </div>
   );
 }
