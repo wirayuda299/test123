@@ -44,14 +44,14 @@ export default function Pagination({ totalPages }: PaginationProps) {
   return (
     <div className='mt-5 flex items-center justify-center gap-2 sm:gap-5'>
       <Button
-        disabled={page === 1}
+        disabled={+page === 1}
         onClick={() => handlePagination('start')}
         className='w-12 !bg-white text-secondary-red-80 sm:w-20'
       >
         Start
       </Button>
       <Button
-        disabled={page === 1}
+        disabled={+page === 1}
         onClick={() => handlePagination('prev')}
         className='w-12 !bg-secondary-red-80 !text-white sm:w-20'
       >
@@ -64,14 +64,14 @@ export default function Pagination({ totalPages }: PaginationProps) {
         / <span className='text-primary'>{totalPages}</span>
       </p>
       <Button
-        disabled={page === totalPages}
+        disabled={+page === totalPages}
         onClick={() => handlePagination('next')}
         className='w-12 !bg-secondary-red-80 !text-white sm:w-20'
       >
         Next
       </Button>
       <Button
-        disabled={page === totalPages}
+        disabled={+page === totalPages}
         onClick={() => handlePagination('end')}
         className='w-12 !bg-white !text-secondary-red-80 sm:w-20'
       >
