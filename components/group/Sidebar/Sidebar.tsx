@@ -21,7 +21,7 @@ export default function Sidebar() {
   return (
     <aside className='h-full min-w-[250px] rounded-3xl bg-white dark:bg-darkPrimary-3 max-lg:min-w-full lg:sticky lg:top-0'>
       <Mobile />
-      <div className='hidden w-full overflow-y-hidden rounded-2xl p-3 hover:overflow-y-auto dark:bg-darkPrimary-3 lg:block lg:h-screen [&>*:not(:first-child)]:mt-5'>
+      <div className='no-scrollbar hidden w-full overflow-y-auto rounded-2xl p-3 dark:bg-darkPrimary-3 lg:block lg:h-screen [&>*:not(:first-child)]:mt-5'>
         {selectedContent && (
           <button
             className='flex h-9 w-9 items-center justify-center rounded-full bg-white-800 dark:bg-darkPrimary-4'

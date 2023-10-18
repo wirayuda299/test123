@@ -93,27 +93,14 @@
   .no-focus {
     @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
   }
-
-  /* Scrollbar */
-
-  ::-webkit-scrollbar {
-    width: 5px;
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 
-  ::-webkit-scrollbar-track {
-    background: transparent;
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
-
-  ::-webkit-scrollbar-thumb {
-    background: #f4f6f8;
-    border-radius: 5px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #f4f6f8;
-  }
-
-  /* Clerk */
 
   .cl-socialButtons {
     display: flex;
