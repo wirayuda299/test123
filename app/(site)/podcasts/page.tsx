@@ -50,4 +50,4 @@ const podcasts = () => {
   );
 };
 
-export default podcasts;
+export default Podcasts;
