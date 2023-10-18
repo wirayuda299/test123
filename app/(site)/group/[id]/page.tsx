@@ -9,6 +9,7 @@ import {
   Pagination,
 } from '@/components/index';
 
+// this will be deleted later when resulable createPost component merged
 const CreatePost = () => {
   return (
     <div className=' min-h-[200px] w-[250px] rounded-2xl bg-secondary-red-90 max-lg:w-full max-md:w-full'>
@@ -16,6 +17,7 @@ const CreatePost = () => {
     </div>
   );
 };
+// this will be deleted later when resulable PopularTag component merged
 const PopularTag = () => {
   return (
     <div className=' min-h-[100px] w-[250px] rounded-2xl bg-secondary-red-90 max-md:w-full'>
