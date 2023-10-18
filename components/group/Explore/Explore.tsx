@@ -20,7 +20,7 @@ export default function Explore() {
               New
             </span>
           </Button>
-          <Button className='inline-flex w-24 gap-2 truncate bg-white-800 hover:bg-white-700 dark:bg-secondary-red-10 max-sm:w-full'>
+          <Button className='group inline-flex w-24 gap-2 truncate bg-secondary-red-10 hover:bg-secondary-red-60 dark:bg-secondary-red-10 max-sm:w-full'>
             <Image
               className='aspect-auto object-contain'
               src={'/assets/icons/popular.svg'}
@@ -28,7 +28,7 @@ export default function Explore() {
               height={20}
               alt='popular icon'
             />
-            <span className=' text-xs font-bold !text-secondary-red-80 dark:text-white'>
+            <span className=' text-xs font-bold text-secondary-red-80 group-hover:text-white-700 dark:text-white'>
               Popular
             </span>
           </Button>
