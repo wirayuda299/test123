@@ -10,7 +10,7 @@ import {
 
 const CreatePost = () => {
   return (
-    <div className='h-full min-h-[100px] w-full rounded-2xl bg-secondary-red-90'>
+    <div className='h-full max-h-[200px] w-full rounded-2xl bg-secondary-red-90'>
       Create post component
     </div>
   );
@@ -35,17 +35,21 @@ export default function GroupDetail() {
         <section className='h-full w-full lg:grow'>
           <GroupBanner />
           <Explore />
-          <PostCard
-            avatar='/assets/images/user-avatar.svg'
-            comments={5}
-            createdDate={'12/10/2024'}
-            likes={23}
-            mainImage='/assets/images/profile.svg'
-            name='wira'
-            tags={['finance', 'crypto', 'bitcoin']}
-            title='Bitcoin has tumbled from its record high of $58,000 after words from three wise men and women...'
-            views={333}
-          />
+          {[1, 2, 3, 4].map((post) => (
+            <>
+              <PostCard
+                avatar='/assets/images/user-avatar.svg'
+                comments={5}
+                createdDate={'12/10/2024'}
+                likes={23}
+                mainImage='/assets/images/profile.svg'
+                name='wira'
+                tags={['finance', 'crypto', 'bitcoin']}
+                title='Bitcoin has tumbled from its record high of $58,000 after words from three wise men and women...'
+                views={333}
+              />
+            </>
+          ))}
 
           <div className='flex flex-col gap-5 xl:hidden'>
             <GroupAbout />
@@ -53,7 +57,7 @@ export default function GroupDetail() {
             <PopularTag />
           </div>
         </section>
-        <aside className='flex flex-col gap-5 max-xl:w-full '>
+        <aside className='top-0 flex flex-col gap-5 max-xl:w-full xl:sticky'>
           <CreatePost />
           <GroupActiveMembers />
           <GroupRecentMedia />

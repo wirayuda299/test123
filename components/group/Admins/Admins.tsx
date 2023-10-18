@@ -25,6 +25,9 @@ export default function Admins() {
   ];
   return (
     <section className='flex w-250 min-w-[170px] flex-col gap-5 rounded-2xl bg-white p-5 text-darkSecondary-900 dark:bg-darkPrimary-3 dark:text-white-800 max-xl:w-full'>
+      <h3 className='text-base font-semibold text-darkSecondary-900 dark:text-white-800'>
+        Admins
+      </h3>
       {admins.map((admin) => (
         <div
           key={admin.name}
