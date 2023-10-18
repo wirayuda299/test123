@@ -16,7 +16,6 @@ const TopBar = ({ children }: TopBarProps) => {
   return (
     <nav className='topBarContainer'>
       {/* On Mobile: Either show Search Bar (when search icon is clicked) - otherwise show TopBar */}
-
       <div
         className={`mx-auto ${showSearchBar ? 'block w-full' : 'hidden'} py-3`}
       >

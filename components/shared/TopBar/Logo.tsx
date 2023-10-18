@@ -10,7 +10,7 @@ interface LogoProps {
 
 const Logo = ({ showSearchBar, setShowSearchBar }: LogoProps) => {
   return (
-    <div className='mr-4 flex shrink-0 items-center gap-2.5'>
+    <div className='mr-4 flex shrink-0 items-center'>
       {/* Logo Icons - Dark and Light Mode */}
       <Link href='/'>
         <Image
@@ -44,7 +44,7 @@ const Logo = ({ showSearchBar, setShowSearchBar }: LogoProps) => {
       </Link>
 
       {/* Logo Text - Dark and Light Mode */}
-      <Link href='/' className='hidden items-center lg:flex '>
+      <Link href='/' className='ml-2.5 hidden items-center lg:flex'>
         <h1 className='md:heading2 lg:heading1 text-primary'>Hipnode</h1>
         <span className='heading1 text-darkSecondary dark:text-white'>.</span>
       </Link>

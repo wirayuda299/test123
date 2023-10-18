@@ -15,7 +15,7 @@ const NavProfileMenu = () => {
   const isLoggedIn: boolean = true;
 
   return (
-    <section className='relative flex shrink-0 items-center justify-between'>
+    <section className='relative flex h-[60px] shrink-0 items-center justify-between md:h-[64px]'>
       <div className='flex items-center gap-2.5 lg:gap-[15px]'>
         {isLoggedIn ? (
           <>

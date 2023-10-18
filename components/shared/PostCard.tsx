@@ -81,7 +81,13 @@ const PostCard = ({
         )}
         {/* Avatar shows on mobile view instead of heart */}
         <Avatar className='avatarMobile md:hidden'>
-          <AvatarImage src={avatar} alt='Avatar' width={20} height={25} />
+          <AvatarImage
+            src={avatar}
+            alt='Avatar'
+            width={20}
+            height={25}
+            className='rounded-[100%]'
+          />
           <AvatarFallback>HN</AvatarFallback>
         </Avatar>
       </div>
@@ -89,7 +95,13 @@ const PostCard = ({
       {/* Grid Item 4 - User info and created date */}
       <div className='postCardGridItem4'>
         <Avatar className='avatarDesktop'>
-          <AvatarImage src={avatar} alt='Avatar' width={28} height={34} />
+          <AvatarImage
+            src={avatar}
+            alt='Avatar'
+            width={40}
+            height={40}
+            className='rounded-full'
+          />
           <AvatarFallback>HN</AvatarFallback>
         </Avatar>
         <div>
