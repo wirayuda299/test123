@@ -38,8 +38,8 @@ export default function GroupDetail() {
         <section className=' w-full grow '>
           <GroupBanner />
           <Explore />
-          {[1, 2, 3, 4].map(() => (
-            <>
+          {[1, 2, 3, 4].map((p) => (
+            <div key={p} className='w-full'>
               <PostCard
                 avatar='/assets/images/user-avatar.svg'
                 comments={5}
@@ -52,7 +52,7 @@ export default function GroupDetail() {
                 views={333}
                 styles='max-w-full'
               />
-            </>
+            </div>
           ))}
           <Pagination totalPages={20} />
           <div className='flex flex-wrap gap-5 lg:hidden'>
