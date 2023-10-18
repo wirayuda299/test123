@@ -1,14 +1,16 @@
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+'use client';
 
-import { navLinks } from "@/constants/navLinks";
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+import { navLinks } from '@/constants/navLinks';
 import {
   TooltipProvider,
   Tooltip,
   TooltipTrigger,
   TooltipContent,
-} from "@radix-ui/react-tooltip";
+} from '@radix-ui/react-tooltip';
 
 const NavLinks = () => {
   const pathname = usePathname();
@@ -27,14 +29,14 @@ const NavLinks = () => {
                 <Link
                   href={link.route}
                   key={link.label}
-                  className={`navLink ${isActive && "bg-primary"}`}
+                  className={`navLink ${isActive && 'bg-primary'}`}
                 >
                   <Image
                     src={link.imgURL}
                     alt={link.label}
                     width={20}
                     height={20}
-                    className={`navLinkIcon ${isActive && "brightness-200"}`}
+                    className={`navLinkIcon ${isActive && 'brightness-200'}`}
                   />
                 </Link>
               </TooltipTrigger>

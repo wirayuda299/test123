@@ -22,6 +22,7 @@ const ProfileDropDown = () => {
           <NavigationMenuTrigger className='pl-1 dark:bg-darkPrimary-3 dark:hover:bg-darkPrimary-3'>
             <AiOutlineCaretDown className='profileDropDownArrow' />
           </NavigationMenuTrigger>
+
           {/* Dropdown */}
           <NavigationMenuContent className='cursor-pointer bg-white dark:bg-darkPrimary-3'>
             {loggedIn.map((link) => (
@@ -35,10 +36,8 @@ const ProfileDropDown = () => {
               </NavigationMenuLink>
             ))}
 
-            {/* Seperator */}
             <Separator className='mx-auto mt-5 dark:bg-white-800' />
 
-            {/* Dark Mode Toggle */}
             <DarkModeToggle />
           </NavigationMenuContent>
         </NavigationMenuItem>

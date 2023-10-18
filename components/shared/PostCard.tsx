@@ -86,7 +86,7 @@ const PostCard = ({
             alt='Avatar'
             width={20}
             height={25}
-            className='rounded-[100%]'
+            className='rounded-full'
           />
           <AvatarFallback>HN</AvatarFallback>
         </Avatar>

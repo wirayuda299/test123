@@ -1,6 +1,6 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -8,9 +8,9 @@ import {
   NavigationMenuItem,
   NavigationMenuContent,
   NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
-import { messageDropDownNav } from "@/constants/messageDropDownNav";
-import Notifications from "./Notifications";
+} from '@/components/ui/navigation-menu';
+import { messageDropDownNav } from '@/constants/messageDropDownNav';
+import Notifications from './Notifications';
 
 const MessageDropDown = () => {
   return (
@@ -36,7 +36,7 @@ const MessageDropDown = () => {
                 <div className='messageNotificationContainer'>
                   {/* Avatar and Message */}
                   <div className='flex items-center justify-between gap-[7px]'>
-                    <Avatar className='rounded-[100%] bg-secondary-yellow-30 p-[3px] text-center'>
+                    <Avatar className='rounded-full bg-secondary-yellow-30 p-[3px] text-center'>
                       <AvatarImage
                         src={message.avatar}
                         alt='Avatar'
@@ -44,7 +44,7 @@ const MessageDropDown = () => {
                         height={38}
                         className='messageAvatarImage'
                       />
-                      <AvatarFallback className='rounded-[100%]'>
+                      <AvatarFallback className='rounded-full'>
                         HN
                       </AvatarFallback>
                     </Avatar>

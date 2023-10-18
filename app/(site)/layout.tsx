@@ -1,6 +1,6 @@
-import { ThemeProvider } from '@/components/shared/TopBar/ThemeProvider';
 import type { ReactNode } from 'react';
 
+import { ThemeProvider } from '@/components/shared/TopBar/ThemeProvider';
 import BottomBar from '@/components/shared/BottomBar';
 import TopBar from '@/components/shared/TopBar/TopBar';
 import NavProfileMenu from '@/components/shared/TopBar/NavProfileMenu';

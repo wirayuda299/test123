@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
-interface NotificationProps {
+interface NotificationItemProps {
   name: string;
   avatar: string;
   typeIcon: string;
@@ -16,7 +16,7 @@ interface NotificationProps {
   isSeen: boolean;
 }
 
-const Notification = ({
+const NotificationItem = ({
   name,
   avatar,
   typeIcon,
@@ -26,7 +26,7 @@ const Notification = ({
   date,
   time,
   isSeen,
-}: NotificationProps) => {
+}: NotificationItemProps) => {
   return (
     <div className='mb-[35px]'>
       <div className='notificationContainer'>
@@ -38,7 +38,7 @@ const Notification = ({
             height={50}
             className='notificationAvatarImage'
           />
-          <AvatarFallback className='rounded-[100%]'>HN</AvatarFallback>
+          <AvatarFallback className='rounded-full'>HN</AvatarFallback>
           <div className='notificationAvatarIcon'>
             <Image
               src={typeIcon}
@@ -78,4 +78,4 @@ const Notification = ({
   );
 };
 
-export default Notification;
+export default NotificationItem;

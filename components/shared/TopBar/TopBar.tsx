@@ -1,16 +1,13 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import Searchbar from './SearchBar';
 import Logo from './Logo';
 import NavLinks from './NavLinks';
 
-interface TopBarProps {
-  children: JSX.Element;
-}
-
-const TopBar = ({ children }: TopBarProps) => {
+const TopBar = ({ children }: { children: ReactNode }) => {
   const [showSearchBar, setShowSearchBar] = useState<boolean>(false);
 
   return (

@@ -10,7 +10,7 @@ import { GoMention } from 'react-icons/go';
 import { NavigationMenuLink } from '@/components/ui/navigation-menu';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { notifications } from '@/constants/notifications';
-import Notification from './Notification';
+import NotificationItem from './NotificationItem';
 
 const Notifications = () => {
   const [isSeen, setIsSeen] = useState(false);
@@ -25,8 +25,18 @@ const Notifications = () => {
     (notification) => notification.type === 'mention',
   );
 
+  const tabs = [
+    {
+      value: 'allNotifications',
+      data: notifications,
+    },
+    { value: 'reactions', data: reactions },
+    { value: 'comments', data: comments },
+    { value: 'mentions', data: mentions },
+  ];
+
   return (
-    <>
+    <div className='p-4'>
       <header className='notificationsDropDownContainer'>
         {/* Dynamic Header */}
         <h3 className='display-semibold md:heading3 px-1.5 text-darkSecondary-900 dark:text-white-800'>
@@ -48,7 +58,6 @@ const Notifications = () => {
 
       {/* Tabs */}
       <Tabs defaultValue='allNotifications' className='w-full'>
-        {/* List of All Tabs */}
         <TabsList className='tabList'>
           {/* All Notifications Tab */}
           <TabsTrigger value='allNotifications' className='tabContainer'>
@@ -80,104 +89,36 @@ const Notifications = () => {
         </TabsList>
 
         {/* Content for each tab */}
-        {/* All Notifications */}
-        <TabsContent value='allNotifications'>
-          {notifications.length === 0 ? (
-            <p className='emptyNotificationsText'>Nothing to show!</p>
-          ) : (
-            notifications.map((notification) => (
-              <NavigationMenuLink key={notification.id}>
-                <Notification
-                  name={notification.name}
-                  avatar={notification.avatar}
-                  typeIcon={notification.typeIcon}
-                  typeText={notification.typeText}
-                  text={notification.text}
-                  title={notification.title}
-                  date={notification.date}
-                  time={notification.time}
-                  isSeen={isSeen}
-                />
-              </NavigationMenuLink>
-            ))
-          )}
-        </TabsContent>
-
-        {/* Reactions Tab */}
-        <TabsContent value='reactions'>
-          {reactions.length === 0 ? (
-            <p className='emptyNotificationsText'>Nothing to show!</p>
-          ) : (
-            reactions.map((notification) => (
-              <NavigationMenuLink key={notification.id}>
-                <Notification
-                  name={notification.name}
-                  avatar={notification.avatar}
-                  typeIcon={notification.typeIcon}
-                  typeText={notification.typeText}
-                  text={notification.text}
-                  title={notification.title}
-                  date={notification.date}
-                  time={notification.time}
-                  isSeen={isSeen}
-                />
-              </NavigationMenuLink>
-            ))
-          )}
-        </TabsContent>
-
-        {/* Comments Tab */}
-        <TabsContent value='comments'>
-          {comments.length === 0 ? (
-            <p className='emptyNotificationsText'>Nothing to show!</p>
-          ) : (
-            comments.map((notification) => (
-              <NavigationMenuLink key={notification.id}>
-                <Notification
-                  name={notification.name}
-                  avatar={notification.avatar}
-                  typeIcon={notification.typeIcon}
-                  typeText={notification.typeText}
-                  text={notification.text}
-                  title={notification.title}
-                  date={notification.date}
-                  time={notification.time}
-                  isSeen={isSeen}
-                />
-              </NavigationMenuLink>
-            ))
-          )}
-        </TabsContent>
-
-        {/* Mentions Tab */}
-        <TabsContent value='mentions'>
-          {mentions.length === 0 ? (
-            <p className='emptyNotificationsText'>Nothing to show!</p>
-          ) : (
-            mentions.map((notification) => (
-              <NavigationMenuLink key={notification.id}>
-                <Notification
-                  name={notification.name}
-                  avatar={notification.avatar}
-                  typeIcon={notification.typeIcon}
-                  typeText={notification.typeText}
-                  text={notification.text}
-                  title={notification.title}
-                  date={notification.date}
-                  time={notification.time}
-                  isSeen={isSeen}
-                />
-              </NavigationMenuLink>
-            ))
-          )}
-        </TabsContent>
+        {tabs.map((tab) => (
+          <TabsContent value={tab.value} key={tab.value}>
+            {tab.data.length === 0 ? (
+              <p className='emptyNotificationsText'>Nothing to show!</p>
+            ) : (
+              tab.data.map((notification) => (
+                <NavigationMenuLink key={notification.id}>
+                  <NotificationItem
+                    name={notification.name}
+                    avatar={notification.avatar}
+                    typeIcon={notification.typeIcon}
+                    typeText={notification.typeText}
+                    text={notification.text}
+                    title={notification.title}
+                    date={notification.date}
+                    time={notification.time}
+                    isSeen={isSeen}
+                  />
+                </NavigationMenuLink>
+              ))
+            )}
+          </TabsContent>
+        ))}
 
         {/* Create Post Tab */}
         <TabsContent value='createPost'>
           <p className='emptyNotificationsText'>Create a Post...</p>
         </TabsContent>
       </Tabs>
-    </>
+    </div>
   );
 };
 

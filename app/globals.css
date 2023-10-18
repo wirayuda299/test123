@@ -102,8 +102,8 @@
 
   /* Screen width minus 5% */
 
-  .w-screen-minus-5 {
-    width: calc(100vw - theme('spacing.5'));
+  .w-screen-minus-8 {
+    width: calc(100vw - theme('spacing.8'));
   }
 
   /* Scrollbar */
@@ -207,7 +207,7 @@
   }
 
   .logoIcon {
-    @apply h-[35px] w-[25px] lg:h-[30px] lg:w-[30px];
+    @apply h-[35px] w-[25px] lg:h-[30px] lg:w-[30px] block dark:brightness-200 dark:contrast-200 dark:grayscale dark:invert-[100%];
   }
 
   .logoText {
@@ -215,11 +215,11 @@
   }
 
   .searchIcon {
-    @apply ml-4 h-[20px] w-[20px] object-contain lg:h-[20px] lg:w-[20px];
+    @apply ml-4 h-5 w-5 object-contain lg:h-5 lg:w-5;
   }
 
   .navLinksContainer {
-    @apply hidden items-center gap-[7px] md:flex xl:gap-[10px] shrink-0 lg:ml-10;
+    @apply hidden items-center gap-[7px] md:flex xl:gap-2.5 shrink-0 lg:ml-10;
   }
 
   .navLink {
@@ -235,7 +235,7 @@
   }
 
   .navLinkIcon {
-    @apply h-[16px] w-[16px] object-contain dark:brightness-200 lg:h-[20px] lg:w-[20px];
+    @apply h-4 w-4 object-contain dark:brightness-200 lg:h-5 lg:w-5;
   }
 
   .profileIconContainer {
@@ -289,7 +289,7 @@
   }
 
   .messageIcon {
-    @apply profileIcon h-[23px] w-[23px] md:h-[20px] md:w-[20px];
+    @apply profileIcon h-[23px] w-[23px] md:h-5 md:w-5;
   }
 
   .messageDropDownContent {
@@ -305,11 +305,11 @@
   }
 
   .messageAvatarImage {
-    @apply h-[38px] w-[39px] rounded-[100%] object-contain p-[3px] dark:border-darkPrimary-4 lg:h-[38px] lg:w-[39px];
+    @apply h-[38px] w-[39px] rounded-full object-contain p-[3px] dark:border-darkPrimary-4 lg:h-[38px] lg:w-[39px];
   }
 
   .messagesNumber {
-    @apply body-semibold mr-2 ml-2 md:mr-0 flex h-6 w-6 items-center justify-center rounded-[100%] bg-primary text-white lg:mr-1;
+    @apply body-semibold mr-2 ml-2 md:mr-0 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-white lg:mr-1;
   }
 
   .seeInMessenger {
@@ -323,11 +323,11 @@
   }
 
   .bellIcon {
-    @apply profileIcon h-[23px] w-[23px] md:h-[20px] md:w-[20px] !important;
+    @apply profileIcon h-[23px] w-[23px] md:h-5 md:w-5 !important;
   }
 
   .bellButtonDropDown {
-    @apply w-screen-minus-5 md:w-[529px] md:px-2.5 bg-white dark:bg-darkPrimary-3 h-[659px] overflow-y-auto !important;
+    @apply w-screen-minus-8 md:w-[529px] md:px-2.5 bg-white dark:bg-darkPrimary-3 h-[659px] overflow-y-auto !important;
   }
 
   .notificationsDropDownContainer {
@@ -357,11 +357,11 @@
   }
 
   .notificationAvatarImage {
-    @apply h-[46px] w-[46px] rounded-[100%] object-contain p-[3px] dark:border-darkPrimary-4 lg:h-[50px] lg:w-[50px];
+    @apply h-[46px] w-[46px] rounded-full object-contain p-[3px] dark:border-darkPrimary-4 lg:h-[50px] lg:w-[50px];
   }
 
   .notificationAvatarIcon {
-    @apply dark:bg-darkPrimary-3 z-50 bg-white h-[26px] w-[26px] shadow-xl rounded-[100%] absolute flex justify-center items-center -bottom-1 right-0;
+    @apply dark:bg-darkPrimary-3 z-50 bg-white h-[26px] w-[26px] shadow-xl rounded-full absolute flex justify-center items-center -bottom-1 right-0;
   }
 
   .avatarIconImage {
@@ -383,7 +383,7 @@
   }
 
   .searchBarIcon {
-    @apply cursor-pointer absolute right-3 lg:right-2.5 top-2 h-[16px] w-[16px] object-contain sm:right-4 sm:top-2 md:top-2 lg:top-2.5 lg:h-[20px] lg:w-[20px];
+    @apply cursor-pointer absolute right-3 lg:right-2.5 top-2 h-4 w-4 object-contain sm:right-4 sm:top-2 md:top-2 lg:top-2.5 lg:h-5 lg:w-5;
   }
 
   /* Post Card on Home Page */
@@ -425,19 +425,19 @@
   }
 
   .orangeHeart {
-    @apply hidden h-[28px] w-[28px] items-center justify-center rounded-[100%] bg-secondary-red-10 p-[1px] dark:bg-darkPrimary-4 md:flex;
+    @apply hidden h-[28px] w-[28px] items-center justify-center rounded-full bg-secondary-red-10 p-[1px] dark:bg-darkPrimary-4 md:flex;
   }
 
   .grayHeart {
-    @apply hidden h-[28px] w-[28px] items-center justify-center rounded-[100%] bg-white-700 p-1 dark:bg-darkPrimary-4 md:flex;
+    @apply hidden h-[28px] w-[28px] items-center justify-center rounded-full bg-white-700 p-1 dark:bg-darkPrimary-4 md:flex;
   }
 
   .avatarMobile {
-    @apply h-[30px] w-[30px] rounded-[100%] bg-secondary-purple-10 px-[5px] py-[3px] dark:bg-secondary-purple-20 md:hidden;
+    @apply h-[30px] w-[30px] rounded-full bg-secondary-purple-10 px-[5px] py-[3px] dark:bg-secondary-purple-20 md:hidden;
   }
 
   .avatarDesktop {
-    @apply h-[40px] w-[40px] rounded-[100%] bg-secondary-purple-10 px-1.5 py-[3px] dark:bg-secondary-purple-20;
+    @apply h-10 w-10 rounded-full bg-secondary-purple-10 px-1.5 py-[3px] dark:bg-secondary-purple-20;
   }
 
   .avatarName {
@@ -453,7 +453,7 @@
   }
 
   .online {
-    @apply block h-[5px] w-[5px] rounded-[100%];
+    @apply block h-[5px] w-[5px] rounded-full;
   }
 
   .tag {
