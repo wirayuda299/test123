@@ -11,7 +11,7 @@ type CardProps = {
 
 export default function Card({ icon, title, text, style }: CardProps) {
   return (
-    <div
+    <button
       className={`mb-3 inline-flex h-full items-center justify-start gap-x-2 rounded-lg ${style}`}
     >
       <Image
@@ -29,6 +29,6 @@ export default function Card({ icon, title, text, style }: CardProps) {
           {text}
         </p>
       </div>
-    </div>
+    </button>
   );
 }
