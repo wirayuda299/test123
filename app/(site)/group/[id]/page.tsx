@@ -1,4 +1,4 @@
-import PostCard from '@/components/PostCard';
+import PostCard from '@/components/shared/PostCard';
 import {
   Explore,
   GroupAbout,
@@ -6,6 +6,7 @@ import {
   GroupAdmins,
   GroupBanner,
   GroupRecentMedia,
+  Pagination,
 } from '@/components/index';
 
 const CreatePost = () => {
@@ -17,7 +18,7 @@ const CreatePost = () => {
 };
 const PopularTag = () => {
   return (
-    <div className='h-full min-h-[100px] w-[250px] rounded-2xl bg-secondary-red-90 max-md:w-full'>
+    <div className=' min-h-[100px] w-[250px] rounded-2xl bg-secondary-red-90 max-md:w-full'>
       PopularTag component
     </div>
   );
@@ -27,7 +28,7 @@ export default function GroupDetail() {
   return (
     <div className='h-full min-h-full w-full bg-white-800 p-5 dark:bg-darkPrimary-2'>
       <div className='flex w-full justify-between gap-5 max-lg:flex-wrap'>
-        <aside className='top-0 hidden max-w-[250px] gap-5 lg:sticky lg:flex lg:h-screen lg:flex-col'>
+        <aside className='top-0 hidden h-full max-h-screen max-w-[250px] gap-5 lg:sticky lg:flex lg:flex-col'>
           <GroupAbout />
           <GroupAdmins />
           <PopularTag />
@@ -51,7 +52,7 @@ export default function GroupDetail() {
               />
             </>
           ))}
-
+          <Pagination totalPages={20} />
           <div className='flex flex-wrap gap-5 lg:hidden'>
             <GroupAbout />
             <GroupAdmins />
