@@ -8,18 +8,31 @@ import {
   GroupRecentMedia,
 } from '@/components/index';
 
+const CreatePost = () => {
+  return (
+    <div className='h-full min-h-[100px] w-full rounded-2xl bg-secondary-red-90'>
+      Create post component
+    </div>
+  );
+};
+const PopularTag = () => {
+  return (
+    <div className='h-full min-h-[100px] w-full rounded-2xl bg-secondary-red-90'>
+      PopularTag component
+    </div>
+  );
+};
+
 export default function GroupDetail() {
   return (
     <div className='h-full w-full bg-white-800 p-5 dark:bg-darkPrimary-2'>
-      <div className='flex flex-col gap-5 lg:flex-row'>
-        <div className='order-2 flex flex-col gap-5'>
+      <div className='flex h-full min-h-screen w-full gap-5 max-xl:flex-wrap md:justify-center lg:justify-between'>
+        <aside className='top-0 hidden gap-5 lg:h-screen lg:flex-col xl:sticky xl:flex'>
           <GroupAbout />
           <GroupAdmins />
-          <div className='h-full min-h-[500px] min-w-[170px] max-w-250 bg-white dark:bg-darkPrimary-2'>
-            Waiting Popular tags component
-          </div>
-        </div>
-        <div className='order-1'>
+          <PopularTag />
+        </aside>
+        <section className='h-full w-full lg:grow'>
           <GroupBanner />
           <Explore />
           <PostCard
@@ -33,14 +46,18 @@ export default function GroupDetail() {
             title='Bitcoin has tumbled from its record high of $58,000 after words from three wise men and women...'
             views={333}
           />
-        </div>
-        <div className='flex flex-col gap-5'>
-          <div className='h-36 min-w-[200px] rounded-2xl bg-secondary-red-90'>
-            Waiting Create Post Component
+
+          <div className='flex flex-col gap-5 xl:hidden'>
+            <GroupAbout />
+            <GroupAdmins />
+            <PopularTag />
           </div>
+        </section>
+        <aside className='flex flex-col gap-5 max-xl:w-full '>
+          <CreatePost />
           <GroupActiveMembers />
           <GroupRecentMedia />
-        </div>
+        </aside>
       </div>
     </div>
   );

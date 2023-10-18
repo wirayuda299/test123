@@ -3,17 +3,21 @@ import Image from 'next/image';
 
 export default function Banner() {
   return (
-    <section className=' rounded-2xl bg-white p-5 dark:bg-darkPrimary-3'>
+    <section className='h-full w-full flex-1 rounded-2xl bg-white p-3 dark:bg-darkPrimary-3 md:p-5'>
       <Image
-        className='rounded-2xl'
+        className='h-full min-h-[200px] w-full rounded-2xl object-cover object-center'
         src={'/assets/images/banner.png'}
+        sizes='100vw'
         width={765}
-        height={174}
+        height={200}
+        priority
+        fetchPriority='high'
         alt='banner'
       />
       <div className='flex items-center justify-between gap-5 py-5'>
-        <div className='flex items-center gap-5'>
+        <div className='flex items-center gap-3 md:gap-5'>
           <Image
+            className='w-9 object-contain'
             src={'/assets/images/logo.png'}
             width={50}
             height={50}
@@ -21,8 +25,10 @@ export default function Banner() {
           />
 
           <div className='text-darkSecondary-900 dark:text-white-800'>
-            <h2 className='text-3xl font-semibold '>Design Discussion</h2>
-            <p className='text-sm font-normal dark:text-darkSecondary-800'>
+            <h2 className='text-base font-semibold lg:text-3xl '>
+              Design Discussion
+            </h2>
+            <p className='text-10 font-normal dark:text-darkSecondary-800 md:text-sm'>
               Created by{' '}
               <span className='font-semibold dark:text-white-800'>
                 {' '}

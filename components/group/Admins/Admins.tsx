@@ -24,7 +24,7 @@ export default function Admins() {
     },
   ];
   return (
-    <div className='flex min-w-[170px] max-w-250 flex-col gap-5 rounded-2xl p-5 text-darkSecondary-900 dark:bg-darkPrimary-3 dark:text-white-800'>
+    <section className='flex w-250 min-w-[170px] flex-col gap-5 rounded-2xl bg-white p-5 text-darkSecondary-900 dark:bg-darkPrimary-3 dark:text-white-800 max-xl:w-full'>
       {admins.map((admin) => (
         <div
           key={admin.name}
@@ -50,6 +50,6 @@ export default function Admins() {
           </button>
         </div>
       ))}
-    </div>
+    </section>
   );
 }

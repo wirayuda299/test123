@@ -19,6 +19,7 @@ module.exports = {
       fontFamily: {
         'source-sans': '[var(--source-sans)]',
       },
+
       maxWidth: {
         170: '170px',
         442: '442px',

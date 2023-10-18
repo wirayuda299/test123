@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 export default function ActiveMember() {
   return (
-    <div className='w-full min-w-[170px] max-w-250 rounded-2xl bg-white p-5'>
+    <section className='w-full min-w-[170px] rounded-2xl bg-white p-5 dark:bg-darkPrimary-3'>
       <div>
-        <h3 className='pb-5 text-base font-semibold text-darkSecondary-900'>
+        <h3 className='pb-5 text-base font-semibold text-darkSecondary-900 dark:text-white-700'>
           Active Members
         </h3>
         <div className='flex flex-wrap gap-5'>
@@ -20,6 +20,6 @@ export default function ActiveMember() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
