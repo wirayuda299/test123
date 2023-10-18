@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 type CardProps = {
   icon: string;
@@ -11,8 +12,12 @@ type CardProps = {
 
 export default function Card({ icon, title, text, style }: CardProps) {
   return (
-    <button
-      className={`mb-3 inline-flex h-full items-center justify-start gap-x-2 rounded-lg ${style}`}
+    <Link
+      href='/group/1'
+      className={cn(
+        'mb-3 inline-flex h-full items-center justify-start gap-x-2 rounded-lg',
+        style,
+      )}
     >
       <Image
         className='aspect-auto bg-transparent object-cover'
@@ -29,6 +34,6 @@ export default function Card({ icon, title, text, style }: CardProps) {
           {text}
         </p>
       </div>
-    </button>
+    </Link>
   );
 }

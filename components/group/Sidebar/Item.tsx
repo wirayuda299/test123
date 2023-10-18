@@ -10,6 +10,7 @@ type SidebarItemProps = {
   content: GroupSidebar;
   handleCLick?: () => void;
 };
+
 export default function SidebarItem({
   content,
   handleCLick,
