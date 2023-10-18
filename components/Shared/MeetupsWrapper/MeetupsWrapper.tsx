@@ -7,8 +7,11 @@ const MeetupsWrapper = () => {
   return (
     <>
       {meetupsData?.map((meetupData) => (
-        <section className='w-full p-5 shadow-md rounded-2xl bg-white dark:bg-darkPrimary-3  mb-4'>
-          <main key={meetupData.companyName}>
+        <section
+          className='w-full p-5 shadow-md rounded-2xl bg-white dark:bg-darkPrimary-3  mb-4'
+          key={meetupData.companyName}
+        >
+          <div key={meetupData.companyName}>
             {/* Meetup Quick Informatio */}
             <article className='flex justify-between items-center'>
               <div className='flex'>
@@ -55,7 +58,7 @@ const MeetupsWrapper = () => {
                 </Badge>
               ))}
             </figcaption>
-          </main>
+          </div>
         </section>
       ))}
     </>

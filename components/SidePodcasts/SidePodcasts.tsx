@@ -5,7 +5,7 @@ import { PodcastsCard } from '../index';
 
 const SidePodcasts = () => {
   return (
-    <div className='w-full self-center p-5 bg-white dark:bg-darkPrimary-3 shadow-md pb-2.5 rounded-2xl'>
+    <section className='w-full self-center p-5 bg-white dark:bg-darkPrimary-3 shadow-md pb-2.5 rounded-2xl'>
       <h3 className='display-semibold text-darkSecondary-900 dark:text-white-800 flex items-baseline pb-2.5'>
         Podcasts
         <Image
@@ -28,7 +28,7 @@ const SidePodcasts = () => {
           }}
         />
       ))}
-    </div>
+    </section>
   );
 };
 

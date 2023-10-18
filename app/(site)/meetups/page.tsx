@@ -6,17 +6,23 @@ import {
 } from '@/components/index';
 
 const Page = () => {
-  const cardBtnValues = {
-    cardBtnCodeConduct: 'Code Of Conduct',
-    cardBtnHostMedia: 'Host a Meetup',
-  };
+  const cardBtns = [
+    {
+      name: 'Host a Meetup',
+      link: '/host-meetup',
+    },
+    {
+      name: 'Code of Conduct',
+      link: '/code-of-conduct',
+    },
+  ];
 
   return (
     <section className='flex gap-4 bg-white-700 flex-col md:flex-row dark:bg-darkPrimary-2'>
       <main className='flex-col flex lg:flex lg:flex-row gap-4 '>
         <div className='flex flex-col lg:flex-row gap-4'>
           <div className='lg:hidden w-full'>
-            <HostMeetupCard cardBtnValues={cardBtnValues} />
+            <HostMeetupCard cardBtns={cardBtns} />
           </div>
 
           <div className='flex flex-col md:flex-row gap-4'>
@@ -31,7 +37,7 @@ const Page = () => {
 
         <div className='flex flex-col gap-5 w-full lg:max-w-[360px]'>
           <div className='hidden lg:block'>
-            <HostMeetupCard cardBtnValues={cardBtnValues} />
+            <HostMeetupCard cardBtns={cardBtns} />
           </div>
           <SidePodcasts />
         </div>

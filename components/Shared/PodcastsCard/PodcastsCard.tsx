@@ -1,5 +1,6 @@
-import { rightArr } from '@/public/icons';
 import Image from 'next/image';
+
+import { rightArr } from '@/public/icons';
 
 type Props = {
   cardData: {
@@ -12,7 +13,7 @@ type Props = {
 
 const PodcastsCard = ({ cardData }: Props) => {
   return (
-    <div className='w-full my-2.5 flex items-center justify-between'>
+    <section className='w-full my-2.5 flex items-center justify-between'>
       <Image
         className='shadow-postCardImgShadow'
         src={cardData.img}
@@ -32,7 +33,7 @@ const PodcastsCard = ({ cardData }: Props) => {
       <div>
         <Image src='icons/rightArr.svg' width={30} height={30} alt='rightArr' />
       </div>
-    </div>
+    </section>
   );
 };
 

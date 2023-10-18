@@ -8,7 +8,7 @@ const Filter = () => {
       </h3>
 
       {categoryData?.map((category) => (
-        <aside className='flex justify-between my-3'>
+        <aside key={category.id} className='flex justify-between my-3'>
           <label
             className='bodyMd-semibold text-darkSecondary-800 '
             htmlFor={category.item}

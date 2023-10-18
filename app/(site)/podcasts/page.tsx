@@ -7,17 +7,22 @@ import {
 import { podcastDatas } from '@/constant';
 
 const podcasts = () => {
-  const cardBtnValues = {
-    cardBtnCodeConduct: 'Code Of Conduct',
-    cardBtnHostMedia: 'Host a Podcast',
-  };
-
+  const cardBtns = [
+    {
+      name: 'Host a Podcast',
+      link: '/host-podcast',
+    },
+    {
+      name: 'Code of Conduct',
+      link: '/code-of-conduct',
+    },
+  ];
   return (
     <section className='flex gap-4 bg-white-700 flex-col md:flex-row dark:bg-darkPrimary-2 pb-12'>
-      <main className='flex-col flex lg:flex lg:flex-row gap-4 '>
+      <div className='flex-col flex lg:flex lg:flex-row gap-4 '>
         <div className='flex flex-col lg:flex-row gap-4'>
           <div className='lg:hidden w-full'>
-            <HostMeetupCard cardBtnValues={cardBtnValues} />
+            <HostMeetupCard cardBtns={cardBtns} />
           </div>
 
           <div className='flex flex-col md:flex-row gap-4'>
@@ -36,11 +41,11 @@ const podcasts = () => {
 
         <div className='flex flex-col gap-5 w-full lg:max-w-[360px]'>
           <div className='hidden lg:block'>
-            <HostMeetupCard cardBtnValues={cardBtnValues} />
+            <HostMeetupCard cardBtns={cardBtns} />
           </div>
           <MeetupChip />
         </div>
-      </main>
+      </div>
     </section>
   );
 };

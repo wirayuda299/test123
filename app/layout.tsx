@@ -1,9 +1,10 @@
-import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
-// eslint-disable-next-line camelcase
 import { Source_Sans_3 } from 'next/font/google';
 import type { Metadata } from 'next';
+// eslint-disable-next-line camelcase
 import type { ReactNode } from 'react';
+
+import './globals.css';
 
 const sourceSansPro = Source_Sans_3({
   subsets: ['latin'],

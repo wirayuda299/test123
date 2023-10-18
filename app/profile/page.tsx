@@ -1,8 +1,8 @@
-import { ProfileFeed, LeftSidebar, Performance } from "@/components/index";
+import { ProfileFeed, LeftSidebar, Performance } from '@/components/index';
 
 const page = () => {
   return (
-    <div className="flex flex-wrap items-start justify-between">
+    <div className='flex flex-wrap items-start justify-between'>
       <LeftSidebar />
       <ProfileFeed />
       <Performance />
