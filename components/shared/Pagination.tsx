@@ -1,10 +1,11 @@
 'use client';
 
 import queryString from 'query-string';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 
 import { Button } from '../ui/button';
+import { formUrlQuery } from '@/lib/utils';
 
 type PaginationProps = {
   totalPages: number;
@@ -19,13 +20,13 @@ export default function Pagination({
     parseNumbers: true,
   });
   const router = useRouter();
-  const pathname = usePathname();
+  const params = useSearchParams();
   const [page, setPage] = useState<number>(
     parsed.page ? +parsed.page : currentPage,
   );
 
   const handlePagination = (direction: string) => {
-    let pageNum: number;
+    let pageNum: number = page;
 
     switch (direction) {
       case 'start':
@@ -35,10 +36,10 @@ export default function Pagination({
         pageNum = totalPages;
         break;
       case 'next':
-        pageNum = page + 1;
+        pageNum = pageNum + 1;
         break;
       case 'prev':
-        pageNum = page - 1;
+        pageNum = pageNum - 1;
         break;
       default:
         throw new Error('Invalid direction');
@@ -46,15 +47,17 @@ export default function Pagination({
 
     setPage(pageNum);
 
-    const newQueryString = queryString.stringify({ ...parsed, page: pageNum });
+    const newQueryString = formUrlQuery(
+      params.toString(),
+      'page',
+      pageNum.toString(),
+    );
 
-    const newUrl = `${pathname}?${newQueryString}`;
-
-    router.push(newUrl);
+    router.push(newQueryString);
   };
 
   return (
-    <div className='flex items-center justify-center gap-2 sm:gap-5'>
+    <div className='mt-5 flex items-center justify-center gap-2 sm:gap-5'>
       <Button
         disabled={page === 1}
         onClick={() => handlePagination('start')}
