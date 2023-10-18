@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Banner() {
   return (
-    <section className='h-full w-full flex-1 rounded-2xl bg-white p-3 dark:bg-darkPrimary-3 md:p-5'>
+    <section className=' w-full flex-1 rounded-2xl bg-white p-3 dark:bg-darkPrimary-3 md:p-5'>
       <Image
         className='h-full min-h-[200px] w-full rounded-2xl object-cover object-center'
         src={'/assets/images/banner.png'}
@@ -14,7 +14,7 @@ export default function Banner() {
         fetchPriority='high'
         alt='banner'
       />
-      <div className='flex items-center justify-between gap-5 py-5'>
+      <div className='flex flex-wrap items-center justify-between gap-5 py-5'>
         <div className='flex items-center gap-3 md:gap-5'>
           <Image
             className='w-9 object-contain'
@@ -37,7 +37,7 @@ export default function Banner() {
             </p>
           </div>
         </div>
-        <Button className='flex items-center gap-2 bg-white-700'>
+        <Button className='flex w-[150px] items-center gap-2 bg-white-700 dark:bg-darkPrimary-4 max-sm:w-full'>
           <Image
             src={'/assets/icons/leave.svg'}
             width={20}

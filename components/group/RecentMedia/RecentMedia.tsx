@@ -12,18 +12,16 @@ const examplesPictures = [
 ];
 export default function RecentMedia() {
   return (
-    <section className='rounded-2xl bg-white p-5 dark:bg-darkPrimary-3'>
+    <section className='w-[250px] rounded-2xl bg-white p-5 dark:bg-darkPrimary-3 max-lg:w-full'>
       <h3 className='text-base font-semibold text-darkSecondary-900 dark:text-white-800'>
         Recent Media
       </h3>
       <div className='flex flex-wrap gap-1'>
-        {examplesPictures.map((pic, i) => (
+        {examplesPictures.map((pic) => (
           <Image
             src={pic}
             width={88}
-            className={`${
-              i % 2 === 0 ? 'aspect-square grow' : 'aspect-[9/16]'
-            } max-w-full  rounded-2xl object-cover object-center shadow`}
+            className='aspect-square max-w-full  rounded-2xl object-cover object-top shadow'
             height={88}
             alt='picture'
             key={pic}

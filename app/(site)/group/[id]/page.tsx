@@ -10,14 +10,14 @@ import {
 
 const CreatePost = () => {
   return (
-    <div className='h-full max-h-[200px] w-full rounded-2xl bg-secondary-red-90'>
+    <div className=' min-h-[200px] w-[250px] rounded-2xl bg-secondary-red-90 max-lg:w-full max-md:w-full'>
       Create post component
     </div>
   );
 };
 const PopularTag = () => {
   return (
-    <div className='h-full min-h-[100px] w-full rounded-2xl bg-secondary-red-90'>
+    <div className='h-full min-h-[100px] w-[250px] rounded-2xl bg-secondary-red-90 max-md:w-full'>
       PopularTag component
     </div>
   );
@@ -25,17 +25,17 @@ const PopularTag = () => {
 
 export default function GroupDetail() {
   return (
-    <div className='h-full w-full bg-white-800 p-5 dark:bg-darkPrimary-2'>
-      <div className='flex h-full min-h-screen w-full gap-5 max-xl:flex-wrap md:justify-center lg:justify-between'>
-        <aside className='top-0 hidden gap-5 lg:h-screen lg:flex-col xl:sticky xl:flex'>
+    <div className='h-full min-h-full w-full bg-white-800 p-5 dark:bg-darkPrimary-2'>
+      <div className='flex w-full justify-between gap-5 max-lg:flex-wrap'>
+        <aside className='top-0 hidden max-w-[250px] gap-5 lg:sticky lg:flex lg:h-screen lg:flex-col'>
           <GroupAbout />
           <GroupAdmins />
           <PopularTag />
         </aside>
-        <section className='h-full w-full lg:grow'>
+        <section className=' w-full grow '>
           <GroupBanner />
           <Explore />
-          {[1, 2, 3, 4].map((post) => (
+          {[1, 2, 3, 4].map(() => (
             <>
               <PostCard
                 avatar='/assets/images/user-avatar.svg'
@@ -47,17 +47,18 @@ export default function GroupDetail() {
                 tags={['finance', 'crypto', 'bitcoin']}
                 title='Bitcoin has tumbled from its record high of $58,000 after words from three wise men and women...'
                 views={333}
+                styles='max-w-full'
               />
             </>
           ))}
 
-          <div className='flex flex-col gap-5 xl:hidden'>
+          <div className='flex flex-wrap gap-5 lg:hidden'>
             <GroupAbout />
             <GroupAdmins />
             <PopularTag />
           </div>
         </section>
-        <aside className='top-0 flex flex-col gap-5 max-xl:w-full xl:sticky'>
+        <aside className='flex h-full w-[450px] flex-col gap-5 overflow-y-auto max-lg:w-full lg:sticky lg:top-0'>
           <CreatePost />
           <GroupActiveMembers />
           <GroupRecentMedia />
