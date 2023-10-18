@@ -1,56 +1,41 @@
 'use client';
 
-import queryString from 'query-string';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useState } from 'react';
 
 import { Button } from '../ui/button';
 import { formUrlQuery } from '@/lib/utils';
 
 type PaginationProps = {
   totalPages: number;
-  currentPage: number;
 };
 
-export default function Pagination({
-  totalPages,
-  currentPage,
-}: PaginationProps) {
-  const parsed = queryString.parse(location.search, {
-    parseNumbers: true,
-  });
+export default function Pagination({ totalPages }: PaginationProps) {
   const router = useRouter();
   const params = useSearchParams();
-  const [page, setPage] = useState<number>(
-    parsed.page ? +parsed.page : currentPage,
-  );
+  let page = params.get('page') ?? 1;
 
   const handlePagination = (direction: string) => {
-    let pageNum: number = page;
-
     switch (direction) {
       case 'start':
-        pageNum = 1;
+        page = 1;
         break;
       case 'end':
-        pageNum = totalPages;
+        page = totalPages;
         break;
       case 'next':
-        pageNum = pageNum + 1;
+        page = +page + 1;
         break;
       case 'prev':
-        pageNum = pageNum - 1;
+        page = +page - 1;
         break;
       default:
         throw new Error('Invalid direction');
     }
 
-    setPage(pageNum);
-
     const newQueryString = formUrlQuery(
       params.toString(),
       'page',
-      pageNum.toString(),
+      page.toString(),
     );
 
     router.push(newQueryString);
@@ -73,8 +58,10 @@ export default function Pagination({
         Prev
       </Button>
       <p className='truncate text-xs font-semibold dark:text-white-800 sm:text-base'>
-        <span className='text-darkPrimary-2 dark:text-white-800'>{page}</span> /{' '}
-        <span className='text-primary'>{totalPages}</span>
+        <span className='text-darkPrimary-2 dark:text-white-800'>
+          {params.get('page') ?? 1}
+        </span>{' '}
+        / <span className='text-primary'>{totalPages}</span>
       </p>
       <Button
         disabled={page === totalPages}
