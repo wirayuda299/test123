@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { cn } from '@/lib/utils';
 
 interface PostCardProps {
   mainImage: string;
@@ -14,9 +15,10 @@ interface PostCardProps {
   views: number;
   likes: number;
   comments: number;
+  styles?: string;
 }
 
-const PostCard: React.FC<PostCardProps> = ({
+const PostCard = ({
   mainImage,
   title,
   tags,
@@ -28,9 +30,10 @@ const PostCard: React.FC<PostCardProps> = ({
   views,
   likes,
   comments,
-}) => {
+  styles,
+}: PostCardProps) => {
   return (
-    <div className='postCardGrid'>
+    <div className={cn('postCardGrid', styles)}>
       {/* Grid Item 1 - Post Image */}
       <div className='postCardGridItem1'>
         <Image
