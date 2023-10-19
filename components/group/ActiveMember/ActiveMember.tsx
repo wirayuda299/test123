@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function ActiveMember() {
   return (
-    <section className='w-[250px] rounded-2xl bg-white p-5 dark:bg-darkPrimary-3 max-lg:w-full'>
+    <section className=' w-full rounded-2xl bg-white p-5 dark:bg-darkPrimary-3'>
       <h3 className='pb-5 text-base font-semibold text-darkSecondary-900 dark:text-white-700'>
         Active Members
       </h3>
@@ -11,8 +11,8 @@ export default function ActiveMember() {
           <div key={activeMember}>
             <Image
               src={'/assets/images/profile.svg'}
-              width={50}
-              height={50}
+              width={40}
+              height={40}
               alt='user'
             />
           </div>

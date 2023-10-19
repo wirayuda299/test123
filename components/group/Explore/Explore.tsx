@@ -1,5 +1,7 @@
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+
+import { Button } from '@/components/ui/button';
+import NewIcon from './Icon';
 
 export default function Explore() {
   return (
@@ -10,12 +12,7 @@ export default function Explore() {
         </h4>
         <div className='flex items-center gap-5 max-sm:w-full'>
           <Button className='inline-flex w-24 gap-2 truncate bg-white-800 hover:bg-white-700 dark:bg-darkPrimary-4 dark:hover:bg-darkPrimary-3 max-sm:w-full'>
-            <Image
-              src={'/assets/icons/new.svg'}
-              width={30}
-              height={30}
-              alt='new icon'
-            />
+            <NewIcon />
             <span className='text-xs font-bold text-darkSecondary-900 dark:text-white'>
               New
             </span>
@@ -28,7 +25,7 @@ export default function Explore() {
               height={20}
               alt='popular icon'
             />
-            <span className=' text-xs font-bold text-secondary-red-80 group-hover:text-white-700 dark:text-white'>
+            <span className=' text-xs font-bold text-secondary-red-80 group-hover:text-white-700 '>
               Popular
             </span>
           </Button>

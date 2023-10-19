@@ -9,18 +9,18 @@ import {
   Pagination,
 } from '@/components/index';
 
-// this will be deleted later when resulable createPost component merged
+// this will be deleted later when reusable createPost component merged
 const CreatePost = () => {
   return (
-    <div className=' min-h-[200px] w-[250px] rounded-2xl bg-secondary-red-90 max-lg:w-full max-md:w-full'>
+    <div className=' min-h-[200px] w-full rounded-2xl bg-secondary-red-90'>
       Create post component
     </div>
   );
 };
-// this will be deleted later when resulable PopularTag component merged
+// this will be deleted later when reusable PopularTag component merged
 const PopularTag = () => {
   return (
-    <div className=' min-h-[100px] w-[250px] rounded-2xl bg-secondary-red-90 max-md:w-full'>
+    <div className='min-h-[100px] w-full rounded-2xl bg-secondary-red-90'>
       PopularTag component
     </div>
   );
@@ -30,7 +30,7 @@ export default function GroupDetail() {
   return (
     <div className='h-full min-h-full w-full bg-white-800 p-5 dark:bg-darkPrimary-2'>
       <div className='flex w-full justify-between gap-5 max-lg:flex-wrap'>
-        <aside className='top-0 hidden h-full max-h-screen max-w-[250px] gap-5 lg:sticky lg:flex lg:flex-col'>
+        <aside className='top-0 hidden h-full max-h-screen w-full max-w-[210px] gap-5 lg:sticky lg:flex lg:flex-col'>
           <GroupAbout />
           <GroupAdmins />
           <PopularTag />
@@ -61,7 +61,7 @@ export default function GroupDetail() {
             <PopularTag />
           </div>
         </section>
-        <aside className='flex h-full w-[450px] flex-col gap-5 overflow-y-auto max-lg:w-full lg:sticky lg:top-0'>
+        <aside className='flex h-full w-full max-w-[325px] flex-col gap-5 overflow-y-auto max-lg:max-w-full  lg:sticky lg:top-0'>
           <CreatePost />
           <GroupActiveMembers />
           <GroupRecentMedia />

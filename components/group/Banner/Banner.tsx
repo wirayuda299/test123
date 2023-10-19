@@ -14,7 +14,7 @@ export default function Banner() {
         fetchPriority='high'
         alt='banner'
       />
-      <div className='flex flex-wrap items-center justify-between gap-5 py-5'>
+      <div className='flex flex-wrap items-center justify-between gap-5 pt-5'>
         <div className='flex items-center gap-3 md:gap-5'>
           <Image
             className='w-[70px] object-contain'
@@ -37,7 +37,7 @@ export default function Banner() {
             </p>
           </div>
         </div>
-        <Button className='flex w-[150px] items-center gap-2 bg-white-700 hover:bg-white-800 dark:bg-darkPrimary-4 dark:hover:bg-darkPrimary-2 max-sm:w-full'>
+        <Button className='flex h-10 w-20 items-center gap-2 bg-white-700 hover:bg-white-800 dark:bg-darkPrimary-4 dark:hover:bg-darkPrimary-2 max-sm:w-full'>
           <Image
             src={'/assets/icons/leave.svg'}
             width={20}

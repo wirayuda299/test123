@@ -24,7 +24,7 @@ export default function Admins() {
     },
   ];
   return (
-    <section className='flex w-[250px] flex-col gap-5 rounded-2xl bg-white p-5 text-darkSecondary-900 dark:bg-darkPrimary-3 dark:text-white-800 max-lg:w-full'>
+    <section className='flex w-[210px] flex-col gap-5 rounded-2xl bg-white p-5 text-darkSecondary-900 dark:bg-darkPrimary-3 dark:text-white-800 max-lg:w-full'>
       <h3 className='text-base font-semibold text-darkSecondary-900 dark:text-white-800'>
         Admins
       </h3>
@@ -43,11 +43,11 @@ export default function Admins() {
 
             <h3>{admin.name}</h3>
           </div>
-          <button className='flex h-10 w-10 items-center justify-center rounded-full bg-secondary-blue-10'>
+          <button className='flex h-[30px] w-[30px] items-center justify-center rounded-full bg-secondary-blue-10'>
             <Image
               src={'/assets/icons/follow.svg'}
-              width={30}
-              height={30}
+              width={20}
+              height={20}
               alt={admin.name}
             />
           </button>
