@@ -2,7 +2,7 @@ import CreatePostBar from '@/components/Home/CreatePostBar';
 import HomeLeftSidebar from '@/components/Home/HomeLeftSidebar';
 import HomeRightSidebar from '@/components/Home/HomeRightSidebar';
 import NewAndPopularMobile from '@/components/Home/NewAndPopularMobile';
-import PostCard from '@/components/shared/PostCard';
+import PostCard from '@/components/Shared/PostCard';
 import { postDummyData } from '@/constant/PostDummyData';
 
 export default async function Home() {
