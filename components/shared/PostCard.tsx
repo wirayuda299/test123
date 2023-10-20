@@ -1,6 +1,7 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { cn } from '@/lib/utils';
 
 interface PostCardProps {
   mainImage: string;
@@ -14,9 +15,10 @@ interface PostCardProps {
   views: number;
   likes: number;
   comments: number;
+  styles?: string;
 }
 
-const PostCard: React.FC<PostCardProps> = ({
+const PostCard = ({
   mainImage,
   title,
   tags,
@@ -28,9 +30,10 @@ const PostCard: React.FC<PostCardProps> = ({
   views,
   likes,
   comments,
-}) => {
+  styles,
+}: PostCardProps) => {
   return (
-    <div className='postCardGrid'>
+    <div className={cn('postCardGrid', styles)}>
       {/* Grid Item 1 - Post Image */}
       <div className='postCardGridItem1'>
         <Image
@@ -81,7 +84,13 @@ const PostCard: React.FC<PostCardProps> = ({
         )}
         {/* Avatar shows on mobile view instead of heart */}
         <Avatar className='avatarMobile md:hidden'>
-          <AvatarImage src={avatar} alt='Avatar' width={20} height={25} />
+          <AvatarImage
+            src={avatar}
+            alt='Avatar'
+            width={20}
+            height={25}
+            className='rounded-[100%]'
+          />
           <AvatarFallback>HN</AvatarFallback>
         </Avatar>
       </div>
@@ -90,7 +99,13 @@ const PostCard: React.FC<PostCardProps> = ({
       <div className='postCardGridItem4'>
         {/* Avatar */}
         <Avatar className='avatarDesktop'>
-          <AvatarImage src={avatar} alt='Avatar' width={28} height={34} />
+          <AvatarImage
+            src={avatar}
+            alt='Avatar'
+            width={40}
+            height={40}
+            className='rounded-full'
+          />
           <AvatarFallback>HN</AvatarFallback>
         </Avatar>
         <div>
