@@ -4,5 +4,7 @@ export { programmingLevels } from './programmingLevel';
 export { signInContents } from './signin';
 export { signupContents } from './signup';
 export { userCurrentStage } from './userCurrentStage';
+export { meetupsData } from './meetups';
+export { podcastDatas } from './podcastDatas';
 export { sidebarContents } from './group-sidebar';
 export { socialIcons, demoPerformance, optionBar } from './profileData';

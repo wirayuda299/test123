@@ -20,11 +20,7 @@ const DarkModeToggle = ({ isTextHidden = false }: DarkModeToggleProps) => {
         Interface
       </h6>
 
-      <Switch
-        onClick={
-          theme === 'light' ? () => setTheme('dark') : () => setTheme('light')
-        }
-      />
+      <Switch onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} />
     </div>
   );
 };
