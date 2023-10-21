@@ -3,6 +3,8 @@ export const postDummyData = [
     id: 1,
     title:
       'The 4-step SEO framework that led to a 1000% increase in traffic. Let’s talk about blogging and SEO...',
+    description:
+      'OnePay is a modern, easy-to-use Online Payment Processing Web App UI Kit template that will help you build a web app for your payment/marketplace platform. OnePay, a multi-payment platform to facilitate payments online. In this app, you can submit a request for a certain product or service online and one of our agents will contact you back with an offer. You can also pay merchants directly through the app. After successfully any transaction you can see details about your payment. History details include: -Transaction ID. What will you get? - 200+ Beautiful Screens design - Figma, XD & Sketch Files 100% editable and scalable. Thank You For Your Time.',
     views: 244564,
     likes: 10290,
     comments: 184,
@@ -13,6 +15,7 @@ export const postDummyData = [
     online: true,
     isLiked: true,
     mainImage: '/bitcoin.png',
+    postHeader: './post-header.png',
   },
   {
     id: 2,
