@@ -1,5 +1,14 @@
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+
+import {
+  Dialog,
+  DialogContent,
+  DialogClose,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
 
 export default function Banner() {
   return (
@@ -37,15 +46,32 @@ export default function Banner() {
             </p>
           </div>
         </div>
-        <Button className='flex h-10 w-20 items-center gap-2 bg-white-700 hover:bg-white-800 dark:bg-darkPrimary-4 dark:hover:bg-darkPrimary-2 max-sm:w-full'>
-          <Image
-            src={'/assets/icons/leave.svg'}
-            width={20}
-            height={20}
-            alt='leave icon'
-          />
-          <span className='font-semibold text-darkSecondary-800'>Leave</span>
-        </Button>
+        <Dialog>
+          <DialogTrigger className='flex h-10 w-20 items-center justify-center gap-2 rounded bg-white-700 hover:bg-white-800 dark:bg-darkPrimary-4 dark:hover:bg-darkPrimary-2 max-sm:w-full'>
+            <Image
+              src={'/assets/icons/leave.svg'}
+              width={20}
+              height={19}
+              alt='leave icon'
+            />
+            <span className='font-semibold text-darkSecondary-800'>Leave</span>
+          </DialogTrigger>
+          <DialogContent className='flex justify-center bg-white dark:bg-darkPrimary-4'>
+            <DialogHeader>
+              <DialogTitle className='text-center text-lg text-darkSecondary-900 dark:text-white-800 sm:text-left'>
+                Are You Sure to Leave From This Group?
+              </DialogTitle>
+              <div className='flex items-center gap-5 pt-[30px]'>
+                <Button className='w-[160px] !bg-secondary-blue !text-white hover:bg-secondary-blue-90 max-sm:w-full'>
+                  Leave Group
+                </Button>
+                <DialogClose className='w-[160px] bg-transparent text-lg text-darkSecondary-800 hover:bg-transparent max-sm:w-full'>
+                  Cancel
+                </DialogClose>
+              </div>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
