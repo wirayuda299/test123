@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React, { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -24,6 +25,18 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { CreatePostSchema } from '@/lib/validations';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
+import { Badge } from 'lucide-react';
 
 const CreatePost = () => {
   const editorRef = useRef(null);
@@ -39,6 +52,41 @@ const CreatePost = () => {
   function onSubmit(values: z.infer<typeof CreatePostSchema>) {
     console.log(values);
   }
+
+  const handleInput = (
+    e: React.KeyboardEvent<HTMLInputElement>,
+    field: any,
+  ) => {
+    if (e.key === 'Enter' && field.name === 'tags') {
+      e.preventDefault();
+
+      const tagInput = e.target as HTMLInputElement;
+      const tagValue = tagInput.value.trim();
+
+      if (tagValue !== '') {
+        if (tagValue.length > 15) {
+          return form.setError('tags', {
+            type: 'required',
+            message: 'Tags must be less than 15 characters',
+          });
+        }
+
+        if (!field.value.includes(tagValue as never)) {
+          form.setValue('tags', [...field.value, tagValue]);
+          tagInput.value = '';
+          form.clearErrors('tags');
+        }
+      } else {
+        form.trigger();
+      }
+    }
+  };
+
+  const handleTagRemove = (tag: string, field: any) => {
+    const newTags = field.value.filter((t: string) => t !== tag);
+
+    form.setValue('tags', newTags);
+  };
 
   return (
     <Form {...form}>
@@ -114,7 +162,18 @@ const CreatePost = () => {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value='post'>Post</SelectItem>
+                    <SelectItem
+                      value='post'
+                      className='flex flex-row items-center justify-between'
+                    >
+                      <Image
+                        src='form-post.svg'
+                        alt='user-img'
+                        width={20}
+                        height={20}
+                      />
+                      <p className='flex flex-row'>Post</p>
+                    </SelectItem>
                     <SelectItem value='meetup'>Meetup</SelectItem>
                     <SelectItem value='podcasts'>Podcasts</SelectItem>
                     <SelectItem value='interviews'>Interviews</SelectItem>
@@ -138,6 +197,15 @@ const CreatePost = () => {
                   onInit={(evt, editor) => (editorRef.current = editor)}
                   initialValue=''
                   init={{
+                    skin: window.matchMedia('(prefers-color-scheme: dark)')
+                      .matches
+                      ? 'oxide-dark'
+                      : 'oxide',
+                    content_css: window.matchMedia(
+                      '(prefers-color-scheme: dark)',
+                    ).matches
+                      ? 'dark'
+                      : 'default',
                     setup: function (editor) {
                       editor.ui.registry.addButton('Write', {
                         icon: 'edit-block',
@@ -149,7 +217,28 @@ const CreatePost = () => {
                       editor.ui.registry.addButton('CodeOfConduct', {
                         text: 'Code of Conduct',
                         onAction: function () {
-                          alert('Button clicked!');
+                          return (
+                            <AlertDialog>
+                              <AlertDialogContent>
+                                <AlertDialogHeader>
+                                  <AlertDialogTitle>
+                                    Are you absolutely sure?
+                                  </AlertDialogTitle>
+                                  <AlertDialogDescription>
+                                    This action cannot be undone. This will
+                                    permanently delete your account and remove
+                                    your data from our servers.
+                                  </AlertDialogDescription>
+                                </AlertDialogHeader>
+                                <AlertDialogFooter>
+                                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                                  <AlertDialogAction>
+                                    Continue
+                                  </AlertDialogAction>
+                                </AlertDialogFooter>
+                              </AlertDialogContent>
+                            </AlertDialog>
+                          );
                         },
                       });
                     },
@@ -198,11 +287,26 @@ const CreatePost = () => {
                 about
               </FormLabel>
               <FormControl>
-                <Input
-                  placeholder='Add a tag...'
-                  {...field}
-                  className='bodyMd-regular md:body-regular rounded-lg border-2 border-white-800 px-5 py-3 text-darkSecondary-800 dark:border-darkPrimary-4'
-                />
+                <>
+                  <Input
+                    placeholder='Add a tag...'
+                    className='bodyMd-regular md:body-regular min-h-[50px] rounded-lg border-2 border-white-800 bg-white px-5 py-3 text-darkSecondary-800 dark:border-darkPrimary-4 dark:bg-darkPrimary-3'
+                    onKeyDown={(e) => handleInput(e, field)}
+                  />
+                  {field.value.length > 0 && (
+                    <div className='flex-start flex gap-2.5'>
+                      {field.value.map((tag: any) => (
+                        <div
+                          key={tag}
+                          className='bodyXs-regular mt-2.5 cursor-pointer rounded-[4px] bg-white-700 px-[10px] py-[6px] dark:bg-darkPrimary-4'
+                          onClick={() => handleTagRemove(tag, field)}
+                        >
+                          {tag}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -211,13 +315,13 @@ const CreatePost = () => {
 
         <Button
           type='submit'
-          className='body-semibold md:display-semibold rounded-lg bg-secondary-blue px-10 py-[10px] text-secondary-blue-10 hover:bg-secondary-blue hover:opacity-90'
+          className='body-semibold md:display-semibold rounded-lg bg-secondary-blue px-10 py-[10px] text-secondary-blue-10 hover:bg-secondary-blue hover:opacity-90 dark:bg-secondary-blue dark:text-secondary-blue-10'
         >
           Publish
         </Button>
         <Button
           type='button'
-          className='md:display-regular body-semibold bg-white text-darkSecondary-800 hover:bg-white dark:hover:bg-darkPrimary-3'
+          className='md:display-regular body-semibold bg-white text-darkSecondary-800 hover:bg-white dark:bg-darkPrimary-3 dark:text-darkSecondary-800'
         >
           Cancel
         </Button>

@@ -365,7 +365,7 @@
 }
 
 /* editor change */
-.tox-toolbar {
+.tox-toolbar__primary {
   width: 100% !important;
   display: flex !important;
   justify-content: space-between !important;

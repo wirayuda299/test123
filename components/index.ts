@@ -22,3 +22,4 @@ export { default as GroupBanner } from '@/components/group/Banner/Banner';
 export { default as Explore } from '@/components/group/Explore/Explore';
 export { default as GroupActiveMembers } from '@/components/group/ActiveMember/ActiveMember';
 export { default as GroupRecentMedia } from '@/components/group/RecentMedia/RecentMedia';
+export { default as CreatePost } from './forms/CreatePost';
