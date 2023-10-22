@@ -7,7 +7,7 @@ export default function Statistic() {
         <p className='text-sm font-bold leading-snug text-darkSecondary-900 dark:text-white-800'>
           $23k/mo
         </p>
-        <span className='block text-xs font-normal leading-[18px] text-neutral-400'>
+        <span className='block text-xs font-normal leading-18 text-neutral-400'>
           Revenue
         </span>
       </div>
@@ -15,7 +15,7 @@ export default function Statistic() {
         <p className='text-sm font-bold leading-snug text-darkSecondary-900 dark:text-white-800'>
           27
         </p>
-        <span className='block text-xs font-normal leading-[18px] text-neutral-400'>
+        <span className='block text-xs font-normal leading-18 text-neutral-400'>
           Updates
         </span>
       </div>
@@ -27,7 +27,7 @@ export default function Statistic() {
           height={20}
           alt='web icon'
         />
-        <p className='text-xs font-normal leading-[18px] text-neutral-400'>
+        <p className='text-xs font-normal leading-18 text-neutral-400'>
           Website
         </p>
       </div>

@@ -28,16 +28,16 @@ export default function InterviewDetail() {
           </div>
           <section className='flex flex-wrap items-center justify-between gap-5 '>
             <Statistic />
-            <div className='flex items-center gap-5'>
+            <ul className='flex items-center gap-5'>
               {tags.map((tag) => (
-                <p
+                <li
                   key={tag}
                   className='text-xs font-normal text-secondary-yellow-90 md:text-base'
                 >
                   {tag}
-                </p>
+                </li>
               ))}
-            </div>
+            </ul>
           </section>
           <article className='py-5 text-xs font-normal leading-4 text-darkSecondary-800 md:text-base'>
             {parse(exampleData)}

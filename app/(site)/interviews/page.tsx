@@ -5,19 +5,9 @@ import {
   HostMeetupCard,
   InterviewPostCard,
 } from '@/components/index';
+import { interviewCards } from '@/constant';
 
 export default function Interviews() {
-  const cardBtns = [
-    {
-      name: 'Start your Interview',
-      link: '/',
-    },
-    {
-      name: 'Code of Conduct',
-      link: '/code-of-conduct',
-    },
-  ];
-
   return (
     <div className='mt-28 flex h-full w-full flex-col gap-5 lg:flex-row '>
       <section className=' w-full max-w-[210px] max-lg:max-w-full lg:sticky lg:top-28 lg:h-screen'>
@@ -38,7 +28,7 @@ export default function Interviews() {
           <Pagination totalPages={20} />
         </section>
         <section className='no-scrollbar w-[325px] space-y-5 max-[1350px]:w-full  lg:sticky lg:top-28 lg:h-screen lg:overflow-y-auto'>
-          <HostMeetupCard cardBtns={cardBtns} />
+          <HostMeetupCard cardBtns={interviewCards} />
           <SidePodcasts />
         </section>
       </div>
