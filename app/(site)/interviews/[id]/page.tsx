@@ -1,8 +1,13 @@
-import Statistic from '@/components/interviews/statistic';
+import parse from 'html-react-parser';
 import Image from 'next/image';
+
+import Statistic from '@/components/interviews/statistic';
 
 export default function InterviewDetail() {
   const tags = ['#technology', '#diversity', '#hr'];
+  const exampleData = `
+  <p>In a recent interview with HR and people management experts, we explored the significance of leading with empathy in today's business world. Here are the key takeaways:</p>
+`;
   return (
     <div className='mx-auto h-full min-h-screen w-full max-w-[785px] p-5'>
       <section className='flex w-full flex-col justify-center rounded-lg bg-white dark:bg-darkPrimary-4'>
@@ -14,7 +19,7 @@ export default function InterviewDetail() {
           alt='image'
         />
         <div className='p-5'>
-          <div className='flex items-center gap-5 '>
+          <div className='flex items-center gap-5'>
             <h1 className='text-lg font-normal text-darkSecondary-600'>H1</h1>
             <h2 className='py-5 text-base font-semibold text-darkSecondary-900 dark:text-white-800 md:text-[26px]'>
               Leading with Empathy: An Interview with HR and People Management
@@ -34,19 +39,8 @@ export default function InterviewDetail() {
               ))}
             </div>
           </section>
-          <article className='py-5'>
-            <p className='text-xs font-normal leading-4 text-darkSecondary-800 md:text-base'>
-              In a recent interview with HR and people management experts, we
-              explored the significance of leading with empathy in today&apos;s
-              business world. Here are the key takeaways: Empathy in Leadership:
-              Empathy is foundational for effective leadership, creating a more
-              supportive work culture. Mental Health: Prioritizing employee
-              mental health is essential, especially in high-pressure work
-              environments. Inclusivity and Diversity: Fostering inclusivity and
-              diversity is a priority, ensuring everyone&apos;s voice is heard.
-              Remote Work Challenges: Managing and engaging remote teams require
-              adaptability and strong communication.
-            </p>
+          <article className='py-5 text-xs font-normal leading-4 text-darkSecondary-800 md:text-base'>
+            {parse(exampleData)}
           </article>
         </div>
       </section>

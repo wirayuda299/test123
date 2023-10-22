@@ -21,10 +21,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
       <ClerkProvider>
-        <body className={sourceSansPro.className}>
-          <main className='max-container bg-white-800 dark:bg-darkPrimary-2'>
-            {children}
-          </main>
+        <body
+          className={`${sourceSansPro.className} max-container bg-white-800 dark:bg-darkPrimary-2`}
+        >
+          <main>{children}</main>
         </body>
       </ClerkProvider>
     </html>
