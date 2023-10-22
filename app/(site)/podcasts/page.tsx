@@ -6,7 +6,7 @@ import {
 } from '@/components/index';
 import { podcastDatas } from '@/constant';
 
-const podcasts = () => {
+const Podcasts = () => {
   const cardBtns = [
     {
       name: 'Host a Podcast',
