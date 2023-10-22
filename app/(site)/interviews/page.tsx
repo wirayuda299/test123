@@ -19,7 +19,7 @@ export default function Interviews() {
   ];
 
   return (
-    <div className='mt-28 flex h-full w-full flex-col justify-between gap-5 lg:flex-row '>
+    <div className='mt-28 flex h-full w-full flex-col gap-5 lg:flex-row '>
       <section className=' w-full max-w-[210px] max-lg:max-w-full lg:sticky lg:top-28 lg:h-screen'>
         <Filter />
       </section>
