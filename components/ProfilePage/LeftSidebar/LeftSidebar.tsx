@@ -48,7 +48,7 @@ const LeftSidebar = () => {
               alt='link-img'
               width={20}
               height={20}
-              className='h-5 w-5 dark:brightness-0 dark:invert md:h-[14px] md:w-[14px]'
+              className='h-5 w-5 dark:brightness-0 dark:invert md:h-3.5 md:w-3.5'
             />
             <Link
               href='www.uikit.to'
@@ -58,7 +58,7 @@ const LeftSidebar = () => {
             </Link>
           </div>
 
-          <div className='flexCenter gap-[10px]'>
+          <div className='flexCenter gap-2.5'>
             {socialIcons.map((icon) => (
               <Image
                 key={icon.label}

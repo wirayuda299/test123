@@ -4,7 +4,7 @@ import { demoPerformance } from '@/constant';
 
 const Performance = () => {
   return (
-    <div className='flex flex-col items-start gap-[10px] rounded-2xl bg-white p-5 dark:bg-darkPrimary-3'>
+    <div className='flex flex-col items-start gap-2.5 rounded-2xl bg-white p-5 dark:bg-darkPrimary-3'>
       <h1 className='heading3 text-darkSecondary dark:text-white'>
         Performance
       </h1>

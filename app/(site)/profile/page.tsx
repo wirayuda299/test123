@@ -6,20 +6,9 @@ import {
   HostMeetupCard,
   Pagination,
 } from '@/components/index';
-import { postDummyData } from '@/constant/PostDummyData';
+import { postDummyData, cardBtns } from '@/constant';
 
-const page = () => {
-  const cardBtns = [
-    {
-      name: 'Submit a Story',
-      link: '/host-meetup',
-    },
-    {
-      name: 'Code of Conduct',
-      link: '/code-of-conduct',
-    },
-  ];
-
+export default function ProfilePage() {
   return (
     <div className='flex flex-col items-start justify-center gap-6 lg:flex-row'>
       <LeftSidebar />
@@ -60,6 +49,4 @@ const page = () => {
       </aside>
     </div>
   );
-};
-
-export default page;
+}
