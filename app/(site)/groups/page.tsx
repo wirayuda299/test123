@@ -27,7 +27,7 @@ export default function Group() {
         </div>
         <Pagination totalPages={10} />
       </section>
-      <div className='no-scrollbar flex h-full min-w-[325px] flex-col gap-5 overflow-y-auto pt-5 max-lg:min-w-full lg:sticky lg:top-0 lg:h-screen'>
+      <div className='no-scrollbar flex h-full w-full min-w-[325px] flex-col gap-5 overflow-y-auto pt-5 max-lg:min-w-full lg:sticky lg:top-0 lg:h-screen'>
         <MeetupChip />
         <SidePodcasts />
       </div>

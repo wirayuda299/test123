@@ -5,8 +5,8 @@ import { PodcastsCard } from '../index';
 
 const SidePodcasts = () => {
   return (
-    <section className='w-full self-center p-5 bg-white dark:bg-darkPrimary-3 shadow-md pb-2.5 rounded-2xl'>
-      <h3 className='display-semibold text-darkSecondary-900 dark:text-white-800 flex items-baseline pb-2.5'>
+    <section className='w-full self-center rounded-2xl bg-white p-5 pb-2.5 shadow-md dark:bg-darkPrimary-3'>
+      <h3 className='display-semibold flex items-baseline pb-2.5 text-darkSecondary-900 dark:text-white-800'>
         Podcasts
         <Image
           className='ml-2'
