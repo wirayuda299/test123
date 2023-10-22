@@ -14,7 +14,7 @@ const actionsButtons = [
   '/assets/icons/share.svg',
 ];
 
-export default function PostCard() {
+export default function GroupPostCard() {
   return (
     <Card className='mb-5 rounded-xl border-none p-2 dark:bg-darkPrimary-3 max-sm:w-full sm:w-250'>
       <CardHeader className='p-2'>
