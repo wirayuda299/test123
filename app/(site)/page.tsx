@@ -7,10 +7,10 @@ import { postDummyData } from '@/constant/PostDummyData';
 
 export default async function Home() {
   return (
-    <main className='bg-white-700 dark:bg-darkPrimary-2 flex flex-row justify-center'>
+    <main className='flex flex-row justify-center bg-white-700 dark:bg-darkPrimary-2'>
       <HomeLeftSidebar />
       <section>
-        <div className='max-w-8xl w-full px-5 py-28'>
+        <div className='px-5 py-[90px] md:py-[100px]'>
           <NewAndPopularMobile />
           <CreatePostBar />
           <section>

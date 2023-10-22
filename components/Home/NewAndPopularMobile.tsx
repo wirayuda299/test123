@@ -5,10 +5,10 @@ import { newAndPopularMobile } from '@/constant/homeLeftSidebar';
 
 const NewAndPopularMobile = () => {
   return (
-    <ul className='asideContainerSmall mb-5 flex items-center md:hidden'>
+    <ul className='asideContainerSmall mb-5 flex items-center justify-center md:hidden'>
       {newAndPopularMobile.map((item) => (
         <li key={item.id} className='w-full'>
-          <Link href='#' className='asideListItemLink'>
+          <Link href='#' className='asideListItemLink justify-center'>
             <div className='asideImageDiv h-[32px] w-[32px]'>
               <Image src={item.icon} alt='Icon' width={20} height={20} />
             </div>
