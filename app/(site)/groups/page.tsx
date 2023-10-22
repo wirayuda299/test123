@@ -1,6 +1,6 @@
 import {
+  GroupPostCard,
   Pagination,
-  PostCard,
   SidebarItem,
   SidebarMobile,
 } from '@/components/index';
@@ -20,7 +20,7 @@ export default function Group() {
       <section className='h-full w-full overflow-y-hidden py-5 hover:overflow-y-auto lg:h-screen'>
         <div className='flex flex-wrap justify-center gap-5'>
           {[1, 2, 3, 4, 5, 6].map((c) => (
-            <PostCard key={c} />
+            <GroupPostCard key={c} />
           ))}
         </div>
         <Pagination totalPages={10} />
