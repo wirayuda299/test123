@@ -23,6 +23,7 @@ module.exports = {
         meetUpBg: 'url(/images/hostMeetup.svg)',
       },
       maxWidth: {
+        170: '170px',
         442: '442px',
         250: '250px',
         500: '500px',
