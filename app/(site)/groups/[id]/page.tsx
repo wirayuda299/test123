@@ -23,7 +23,7 @@ const cardBtns = [
 ];
 export default function GroupDetail() {
   return (
-    <div className='h-full min-h-full w-full bg-white-800 p-5 dark:bg-darkPrimary-2'>
+    <div className='mt-24 h-full min-h-full w-full p-5'>
       <div className='flex w-full justify-between gap-5 max-lg:flex-wrap'>
         <aside className='top-0 hidden h-full max-h-screen w-full max-w-[210px] gap-5 overflow-y-auto lg:sticky lg:flex lg:flex-col'>
           <GroupAbout />
