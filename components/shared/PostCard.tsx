@@ -1,13 +1,15 @@
+'use client';
+
 import Image from 'next/image';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
+import { useState } from 'react';
 
 interface PostCardProps {
   mainImage: string;
   title: string;
   tags: string[];
-  isLiked?: boolean;
   avatar: string;
   name: string;
   online?: boolean;
@@ -22,7 +24,6 @@ const PostCard = ({
   mainImage,
   title,
   tags,
-  isLiked = false,
   avatar,
   name,
   online = false,
@@ -32,6 +33,8 @@ const PostCard = ({
   comments,
   styles,
 }: PostCardProps) => {
+  const [isLiked, setIsLiked] = useState<boolean>(false);
+
   return (
     <div className={cn('postCardGrid', styles)}>
       {/* Grid Item 1 - Post Image */}
@@ -69,6 +72,7 @@ const PostCard = ({
               width={25}
               height={25}
               className='mt-[8px]'
+              onClick={() => setIsLiked(!isLiked)}
             />
           </div>
         ) : (
@@ -78,7 +82,8 @@ const PostCard = ({
               alt='Heart'
               width={23}
               height={23}
-              className='mt-[1px] '
+              className='mt-[1px]'
+              onClick={() => setIsLiked(!isLiked)}
             />
           </div>
         )}

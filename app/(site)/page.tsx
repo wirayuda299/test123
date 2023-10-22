@@ -1,40 +1,54 @@
+import SidePodcasts from '@/components/SidePodcasts/SidePodcasts';
 import CreatePostBar from '@/components/Home/CreatePostBar';
-import HomeLeftSidebar from '@/components/Home/HomeLeftSidebar';
-import HomeRightSidebar from '@/components/Home/HomeRightSidebar';
 import NewAndPopularMobile from '@/components/Home/NewAndPopularMobile';
-import PostCard from '@/components/Shared/PostCard';
-import { postDummyData } from '@/constant/PostDummyData';
+import MeetupChip from '@/components/shared/MeetupChip/MeetupChip';
+import MainSection from '@/components/Home/MainSection';
+import PinnedGroups from '@/components/Home/PinnedGroups';
+import PopularTags from '@/components/Home/PopularTags';
+import SidebarListItem from '@/components/Home/SidebarListItem';
+import { newAndPopular } from '@/constant/homeLeftSidebar';
 
-export default async function Home() {
+export default function Home() {
   return (
-    <main className='bg-white-700 dark:bg-darkPrimary-2 flex flex-row justify-center'>
-      <HomeLeftSidebar />
-      <section>
-        <div className='max-w-8xl w-full px-5 py-28'>
-          <NewAndPopularMobile />
-          <CreatePostBar />
-          <section>
-            {postDummyData?.map((post) => (
-              <PostCard
-                key={post.id}
-                name={post.name}
-                title={post.title}
-                tags={post.tags}
-                views={post.views}
-                mainImage={post.mainImage}
-                createdDate={post.createdDate}
-                avatar={post.avatar}
-                comments={post.comments}
-                online={post.online}
-                isLiked={post.isLiked}
-                likes={post.likes}
+    <main className='mb-30 flex flex-row justify-center gap-5 bg-white-700 dark:bg-darkPrimary-2'>
+      {/* Left Sidebar */}
+      <aside className='sticky left-0 top-0 flex h-screen w-fit shrink-0 flex-col gap-5 overflow-auto py-28 pl-3 max-md:hidden lg:flex lg:flex-col'>
+        <section className='asideContainerSmall'>
+          <ul>
+            {newAndPopular.map((item) => (
+              <SidebarListItem
+                key={item.id}
+                id={item.id}
+                icon={item.icon}
+                title={item.title}
+                text={item.text}
+                isFollowingNumberHidden={item.isFollowingNumberHidden}
               />
             ))}
-          </section>
+          </ul>
+        </section>
+        <PopularTags />
+        <PinnedGroups />
+      </aside>
+
+      {/* Middle Section */}
+      <section>
+        <div className='sticky left-0 top-0 flex h-screen w-fit max-w-4xl shrink-0 flex-col overflow-auto py-28'>
+          <NewAndPopularMobile />
+          <CreatePostBar />
+          <MainSection />
+          <div className='flex flex-col gap-5 lg:hidden'>
+            <MeetupChip />
+            <SidePodcasts />
+          </div>
         </div>
       </section>
-      {/* @ts-ignore */}
-      <HomeRightSidebar />
+
+      {/* Right Sidebar */}
+      <aside className='sticky right-0 top-0 hidden h-screen w-fit max-w-sm flex-col gap-5 overflow-auto py-28 pb-3 pr-3 lg:flex lg:flex-col'>
+        <MeetupChip />
+        <SidePodcasts />
+      </aside>
     </main>
   );
 }

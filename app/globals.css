@@ -274,7 +274,7 @@
   }
 
   .viewsList {
-    @apply bodyXs-regular xl:display-regular flex h-full items-center justify-start gap-5 lg:gap-2.5 text-center text-darkSecondary-800 dark:text-darkSecondary-600 md:justify-between md:gap-5;
+    @apply bodyXs-regular xl:bodyMd-regular flex h-full items-center justify-start gap-5 lg:gap-2.5 text-center text-darkSecondary-800 dark:text-darkSecondary-600 md:justify-between md:gap-5;
   }
 
   .online {
