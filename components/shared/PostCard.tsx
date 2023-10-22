@@ -94,7 +94,7 @@ const PostCard = ({
             alt='Avatar'
             width={20}
             height={25}
-            className='rounded-[100%]'
+            className='rounded-full'
           />
           <AvatarFallback>HN</AvatarFallback>
         </Avatar>
@@ -102,7 +102,6 @@ const PostCard = ({
 
       {/* Grid Item 4 - User info and created date */}
       <div className='postCardGridItem4'>
-        {/* Avatar */}
         <Avatar className='avatarDesktop'>
           <AvatarImage
             src={avatar}
@@ -114,17 +113,14 @@ const PostCard = ({
           <AvatarFallback>HN</AvatarFallback>
         </Avatar>
         <div>
-          {/* Name */}
           <div className='flex items-center justify-between'>
             <p className='avatarName'>{name}</p>
-            {/* Online */}
-            {online ? (
-              <div className='online bg-green-500 '></div>
-            ) : (
-              <div className='online bg-darkSecondary-600'></div>
-            )}
+            <div
+              className={`online ${
+                online ? 'bg-green-500' : 'bg-darkSecondary-600'
+              }`}
+            ></div>
           </div>
-          {/* Created date */}
           <p className='postCreatedDate'>{createdDate}</p>
         </div>
       </div>
