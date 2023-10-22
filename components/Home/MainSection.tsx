@@ -14,7 +14,7 @@ const MainSection = () => {
   });
 
   return (
-    <section>
+    <section className='mb-10'>
       <div className='pb-2'>
         {currentPosts?.map((post) => (
           <PostCard

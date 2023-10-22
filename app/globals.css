@@ -464,11 +464,11 @@
   }
 
   .avatarMobile {
-    @apply h-[30px] w-[30px] rounded-full bg-secondary-purple-10 px-[5px] py-[3px] dark:bg-secondary-purple-20 md:hidden;
+    @apply h-[30px] w-[30px] rounded-full bg-secondary-purple-10 dark:bg-secondary-purple-20 md:hidden;
   }
 
   .avatarDesktop {
-    @apply h-10 w-10 rounded-full bg-secondary-purple-10 px-1.5 py-[3px] dark:bg-secondary-purple-20;
+    @apply h-10 w-10 rounded-full bg-secondary-purple-10 dark:bg-secondary-purple-20;
   }
 
   .avatarName {

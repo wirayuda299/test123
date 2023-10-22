@@ -3,7 +3,7 @@ import MeetupDetailsChip from './MeetupDetailsChip';
 
 const MeetupChip = () => {
   return (
-    <section className='dark:bg-darkPrimary-5 w-full self-center rounded-2xl bg-white p-5 pb-2.5'>
+    <section className='w-full self-center rounded-2xl bg-white p-5 pb-2.5 dark:bg-darkPrimary-3'>
       <h3
         className='display-semibold mb-5 flex items-baseline
         pb-2.5 text-darkSecondary-900 dark:text-white-800'

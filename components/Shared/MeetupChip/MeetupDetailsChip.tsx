@@ -8,7 +8,7 @@ const MeetupDetailsChip = () => {
     <>
       {meetupsData?.map((meetupData) => (
         <section className='mb-5 flex' key={meetupData.companyName}>
-          <time className='dark:shadow-darkShadow mr-[14px] flex flex-col justify-center rounded-md border-[1px] border-darkSecondary-600 px-2.5 py-1 text-center dark:border-none'>
+          <time className='dark:shadow-darkShadow mr-[14px] flex flex-col justify-center rounded-md border-[1px] border-darkSecondary-600 px-2.5 py-1 text-center dark:border-none dark:bg-darkPrimary-4'>
             <p className='bodyMd-semibold sm:display-semibold uppercase text-darkSecondary-900 dark:text-white'>
               {meetupData.month}
             </p>

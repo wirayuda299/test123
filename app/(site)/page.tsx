@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className='mb-30 flex flex-row justify-center gap-5 bg-white-700 dark:bg-darkPrimary-2'>
       {/* Left Sidebar */}
-      <aside className='sticky left-0 top-0 flex h-screen w-fit shrink-0 flex-col gap-5 overflow-auto py-28 pl-3 max-md:hidden lg:flex lg:flex-col'>
+      <aside className='sticky left-0 top-0 flex h-screen w-fit shrink-0 flex-col gap-5 overflow-auto py-24 pl-3 max-md:hidden lg:flex lg:flex-col'>
         <section className='asideContainerSmall'>
           <ul>
             {newAndPopular.map((item) => (
@@ -33,19 +33,19 @@ export default function Home() {
 
       {/* Middle Section */}
       <section>
-        <div className='sticky left-0 top-0 flex h-screen w-fit max-w-4xl shrink-0 flex-col overflow-auto py-28'>
+        <div className='sticky left-0 top-0 flex h-screen w-fit max-w-4xl shrink-0 flex-col overflow-auto py-24'>
           <NewAndPopularMobile />
           <CreatePostBar />
           <MainSection />
           <div className='flex flex-col gap-5 lg:hidden'>
             <MeetupChip />
-            <SidePodcasts />
+            {/* Possibly put <SidePodcasts /> here */}
           </div>
         </div>
       </section>
 
       {/* Right Sidebar */}
-      <aside className='sticky right-0 top-0 hidden h-screen w-fit max-w-sm flex-col gap-5 overflow-auto py-28 pb-3 pr-3 lg:flex lg:flex-col'>
+      <aside className='sticky right-0 top-0 hidden h-screen w-fit max-w-sm flex-col gap-5 overflow-auto py-24 pb-3 pr-3 xl:flex xl:flex-col'>
         <MeetupChip />
         <SidePodcasts />
       </aside>
