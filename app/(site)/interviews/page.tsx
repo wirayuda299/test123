@@ -23,7 +23,7 @@ export default function Interviews() {
       <section className=' w-full max-w-[210px] max-lg:max-w-full lg:sticky lg:top-28 lg:h-screen'>
         <Filter />
       </section>
-      <div className=' flex grow flex-wrap gap-5'>
+      <div className=' flex flex-wrap gap-5'>
         <section className='w-full max-w-[700px] space-y-5 pb-5 max-[1350px]:max-w-full'>
           {[1, 2, 3].map((post) => (
             <InterviewPostCard
@@ -37,7 +37,7 @@ export default function Interviews() {
           ))}
           <Pagination totalPages={20} />
         </section>
-        <section className='w-[350px] space-y-5 max-[1350px]:w-full lg:sticky  lg:top-28 lg:h-screen lg:overflow-y-auto'>
+        <section className='no-scrollbar w-[325px] space-y-5 max-[1350px]:w-full  lg:sticky lg:top-28 lg:h-screen lg:overflow-y-auto'>
           <HostMeetupCard cardBtns={cardBtns} />
           <SidePodcasts />
         </section>

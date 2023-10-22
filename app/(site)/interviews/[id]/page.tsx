@@ -9,7 +9,7 @@ export default function InterviewDetail() {
   <p>In a recent interview with HR and people management experts, we explored the significance of leading with empathy in today's business world. Here are the key takeaways:</p>
 `;
   return (
-    <div className='mx-auto h-full min-h-screen w-full max-w-[785px] p-5'>
+    <div className='mx-auto mt-28 h-full min-h-screen w-full max-w-[785px] p-5'>
       <section className='flex w-full flex-col justify-center rounded-lg bg-white dark:bg-darkPrimary-4'>
         <Image
           className='mx-auto object-cover object-center'
