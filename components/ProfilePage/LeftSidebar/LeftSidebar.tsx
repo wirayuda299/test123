@@ -7,7 +7,7 @@ import Following from './Following';
 
 const LeftSidebar = () => {
   return (
-    <aside className='w-full rounded-2xl bg-white text-center dark:bg-darkPrimary-3 lg:sticky lg:top-0 lg:w-[210px]'>
+    <aside className='w-full rounded-2xl bg-white text-center dark:bg-darkPrimary-3 lg:sticky lg:top-[100px] lg:w-[210px]'>
       <div className="h-[106px] w-full rounded-t-2xl bg-[url('../public/left-sidebar-bg.svg')]" />
       <div className='px-5 py-[30px]'>
         <div className='relative'>
