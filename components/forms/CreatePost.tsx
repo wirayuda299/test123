@@ -25,18 +25,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { CreatePostSchema } from '@/lib/validations';
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from '@/components/ui/alert-dialog';
-import { Badge } from 'lucide-react';
+import { createPostData } from '@/constant';
 
 const CreatePost = () => {
   const editorRef = useRef(null);
@@ -149,7 +138,7 @@ const CreatePost = () => {
 
           <FormField
             control={form.control}
-            name='title'
+            name='createType'
             render={({ field }) => (
               <FormItem>
                 <Select
@@ -157,26 +146,26 @@ const CreatePost = () => {
                   defaultValue={field.value}
                 >
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className='body-semibold rounded border-none bg-white-800 text-darkSecondary-900 dark:bg-darkPrimary-4 dark:text-white-800'>
+                      <p className='text-darkSecondary-800'>Create - </p>
                       <SelectValue placeholder='Create - Post' />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
-                    <SelectItem
-                      value='post'
-                      className='flex flex-row items-center justify-between'
-                    >
-                      <Image
-                        src='form-post.svg'
-                        alt='user-img'
-                        width={20}
-                        height={20}
-                      />
-                      <p className='flex flex-row'>Post</p>
-                    </SelectItem>
-                    <SelectItem value='meetup'>Meetup</SelectItem>
-                    <SelectItem value='podcasts'>Podcasts</SelectItem>
-                    <SelectItem value='interviews'>Interviews</SelectItem>
+                  <SelectContent className='dark:bg-darkPrimary-4'>
+                    {createPostData.map((data) => (
+                      <SelectItem value='post' key={data.title}>
+                        <div className='flex flex-row items-center justify-between gap-2.5 p-1'>
+                          <Image
+                            src={data.icon}
+                            alt={`${data.title} - icon`}
+                            width={15}
+                            height={15}
+                            className='dark:brightness-0 dark:invert'
+                          />
+                          <p className='bodyMd-semibold'>{data.title}</p>
+                        </div>
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -217,28 +206,7 @@ const CreatePost = () => {
                       editor.ui.registry.addButton('CodeOfConduct', {
                         text: 'Code of Conduct',
                         onAction: function () {
-                          return (
-                            <AlertDialog>
-                              <AlertDialogContent>
-                                <AlertDialogHeader>
-                                  <AlertDialogTitle>
-                                    Are you absolutely sure?
-                                  </AlertDialogTitle>
-                                  <AlertDialogDescription>
-                                    This action cannot be undone. This will
-                                    permanently delete your account and remove
-                                    your data from our servers.
-                                  </AlertDialogDescription>
-                                </AlertDialogHeader>
-                                <AlertDialogFooter>
-                                  <AlertDialogCancel>Cancel</AlertDialogCancel>
-                                  <AlertDialogAction>
-                                    Continue
-                                  </AlertDialogAction>
-                                </AlertDialogFooter>
-                              </AlertDialogContent>
-                            </AlertDialog>
-                          );
+                          return alert('TODO: link');
                         },
                       });
                     },
