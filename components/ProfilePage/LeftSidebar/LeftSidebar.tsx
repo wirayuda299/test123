@@ -11,7 +11,7 @@ const LeftSidebar = () => {
       <div className="h-[106px] w-full rounded-t-2xl bg-[url('../public/left-sidebar-bg.svg')]" />
       <div className='px-5 py-[30px]'>
         <div className='relative'>
-          <div className='flexCenter absolute inset-x-0 -top-24 mx-auto h-[130px] w-[130px] rounded-full border-4 border-white bg-secondary-yellow-30'>
+          <div className='flexCenter absolute inset-x-0 -top-24 mx-auto h-[130px] w-[130px] rounded-full border-4 border-white bg-secondary-yellow-30 dark:border-darkPrimary-3'>
             <Image
               src='user-avatar.svg'
               alt='user-img'

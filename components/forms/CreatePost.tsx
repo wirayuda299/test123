@@ -283,7 +283,7 @@ const CreatePost = () => {
 
         <Button
           type='submit'
-          className='body-semibold md:display-semibold rounded-lg bg-secondary-blue px-10 py-[10px] text-secondary-blue-10 hover:bg-secondary-blue hover:opacity-90 dark:bg-secondary-blue dark:text-secondary-blue-10'
+          className='body-semibold md:display-semibold rounded-lg bg-secondary-blue px-10 py-[10px] text-secondary-blue-10 hover:bg-[#347ae2e6] dark:bg-secondary-blue dark:text-secondary-blue-10 dark:hover:bg-[#347ae2e6]'
         >
           Publish
         </Button>
