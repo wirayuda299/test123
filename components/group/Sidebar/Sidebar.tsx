@@ -37,10 +37,14 @@ export default function Sidebar() {
           </button>
         )}
         {selectedContent ? (
-          <SidebarItem content={selectedContent} />
+          <SidebarItem
+            selectedContent={selectedContent}
+            content={selectedContent}
+          />
         ) : (
           sidebarContents.map((content) => (
             <SidebarItem
+              selectedContent={selectedContent}
               key={content.label}
               content={content}
               handleCLick={() => setSelectedContent(content)}

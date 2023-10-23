@@ -2,7 +2,7 @@ import { Pagination, GroupPostCard, Sidebar } from '@/components/index';
 
 export default function Group() {
   return (
-    <div className='flex h-full w-full flex-col items-center overflow-hidden bg-white-800 p-5 dark:bg-darkPrimary-2 lg:h-screen lg:flex-row'>
+    <div className='mt-28 flex h-full w-full flex-col items-center overflow-hidden bg-white-800 p-5 dark:bg-darkPrimary-2 lg:h-screen lg:flex-row'>
       <Sidebar />
       <section className='h-full w-full overflow-y-hidden py-5 hover:overflow-y-auto lg:h-screen'>
         <div className='flex flex-wrap justify-center gap-5'>
