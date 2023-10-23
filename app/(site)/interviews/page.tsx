@@ -27,7 +27,7 @@ export default function Interviews() {
           ))}
           <Pagination totalPages={20} />
         </section>
-        <section className='no-scrollbar w-[325px] space-y-5 max-[1350px]:w-full  lg:sticky lg:top-28 lg:h-screen lg:overflow-y-auto'>
+        <section className='no-scrollbar w-full min-w-[325px] space-y-5 max-[1350px]:min-w-full lg:sticky lg:top-28 lg:h-screen lg:overflow-y-auto'>
           <HostMeetupCard cardBtns={interviewCards} />
           <SidePodcasts />
         </section>

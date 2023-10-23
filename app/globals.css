@@ -526,7 +526,7 @@
   }
 
   .asideContainerLarge {
-    @apply rounded-2xl bg-white py-5 pl-5 pr-[25px] dark:bg-darkPrimary-3;
+    @apply rounded-2xl bg-white py-5 w-full pl-5 pr-[25px] dark:bg-darkPrimary-3;
   }
 
   .asideContainerSmall {
