@@ -41,6 +41,7 @@ module.exports = {
         9: '9px',
         10: '10px',
       },
+
       colors: {
         primary: '#FF4401',
         secondary: {
@@ -101,6 +102,9 @@ module.exports = {
           700: '#858EAD',
           600: '#C5D0E6',
         },
+      },
+      lineHeight: {
+        18: '18px',
       },
       screens: {
         '3xl': '1440px',

@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className='mb-30 flex flex-row justify-center gap-5 bg-white-700 dark:bg-darkPrimary-2'>
       {/* Left Sidebar */}
-      <aside className='sticky left-0 top-0 flex h-screen w-fit shrink-0 flex-col gap-5 overflow-auto py-24 pl-3 max-md:hidden lg:flex lg:flex-col'>
+      <aside className='leftSidebar'>
         <section className='asideContainerSmall'>
           <ul>
             {newAndPopular.map((item) => (
@@ -35,7 +35,7 @@ export default function Home() {
 
       {/* Middle Section */}
       <section>
-        <div className='sticky left-0 top-0 flex h-screen w-fit max-w-4xl shrink-0 flex-col overflow-auto py-24'>
+        <div className='rightSidebar'>
           <NewAndPopularMobile />
           <CreatePostBar />
           <MainSection />

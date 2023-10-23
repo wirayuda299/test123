@@ -7,11 +7,18 @@ import Following from './Following';
 
 const LeftSidebar = () => {
   return (
-    <aside className='relative rounded-2xl bg-white text-center dark:bg-darkPrimary-3 md:w-[210px]'>
+    <aside className='w-full rounded-2xl bg-white text-center dark:bg-darkPrimary-3 lg:sticky lg:top-0 lg:w-[210px]'>
       <div className="h-[106px] w-full rounded-t-2xl bg-[url('../public/left-sidebar-bg.svg')]" />
       <div className='px-5 py-[30px]'>
-        <div className='flexCenter absolute inset-x-0 top-10 mx-auto h-[130px] w-[130px] rounded-full border-4 border-white bg-secondary-yellow-30'>
-          <Image src='user-avatar.svg' alt='user-img' width={90} height={90} />
+        <div className='relative'>
+          <div className='flexCenter absolute inset-x-0 -top-24 mx-auto h-[130px] w-[130px] rounded-full border-4 border-white bg-secondary-yellow-30'>
+            <Image
+              src='user-avatar.svg'
+              alt='user-img'
+              width={90}
+              height={90}
+            />
+          </div>
         </div>
 
         <h1 className='heading1-semibold mt-[44px] text-darkSecondary dark:text-white'>
@@ -41,7 +48,7 @@ const LeftSidebar = () => {
               alt='link-img'
               width={20}
               height={20}
-              className='h-5 w-5 dark:brightness-0 dark:invert md:h-[14px] md:w-[14px]'
+              className='h-5 w-5 dark:brightness-0 dark:invert md:h-3.5 md:w-3.5'
             />
             <Link
               href='www.uikit.to'
@@ -51,7 +58,7 @@ const LeftSidebar = () => {
             </Link>
           </div>
 
-          <div className='flexCenter gap-[10px]'>
+          <div className='flexCenter gap-2.5'>
             {socialIcons.map((icon) => (
               <Image
                 key={icon.label}
