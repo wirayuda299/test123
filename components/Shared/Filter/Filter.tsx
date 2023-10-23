@@ -36,9 +36,6 @@ const Filter = () => {
         Categories
       </h3>
 
-      <p>Param-1 param1</p>
-      <p>Param-2 param2</p>
-
       {categoryData?.map((category) => (
         <aside key={category.id} className='flex justify-between my-3'>
           <label
