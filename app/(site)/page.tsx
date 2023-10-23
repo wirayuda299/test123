@@ -23,6 +23,8 @@ export default function Home() {
                 title={item.title}
                 text={item.text}
                 isFollowingNumberHidden={item.isFollowingNumberHidden}
+                dimensions1={item.dimensions1}
+                dimensions2={item.dimensions2}
               />
             ))}
           </ul>

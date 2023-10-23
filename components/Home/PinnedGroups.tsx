@@ -30,6 +30,8 @@ const PinnedGroups = () => {
             hashtag={item.hashtag}
             noOfPosts={item.noOfPosts}
             bgColor={item.bgColor}
+            dimensions1={item.dimensions1}
+            dimensions2={item.dimensions2}
           />
         ))}
       </ul>

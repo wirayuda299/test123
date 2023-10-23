@@ -12,7 +12,7 @@ const NavProfileMenu = () => {
     name: 'AR. Jakir',
     avatar: '/assets/navigation/profile-image.png',
   };
-  const isLoggedIn: boolean = false;
+  const isLoggedIn: boolean = true;
 
   return (
     <section className='relative flex h-[60px] shrink-0 items-center justify-between md:h-[64px]'>

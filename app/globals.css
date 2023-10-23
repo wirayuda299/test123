@@ -129,7 +129,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #f4f6f8;
+    background: transparent;
     border-radius: 5px;
   }
 

@@ -4,14 +4,13 @@ import { useSearchParams } from 'next/navigation';
 
 import PostCard from '@/components/shared/PostCard';
 import Pagination from '@/components/shared/Pagination';
-import usePostsData from '@/hooks/usePostsData';
+import usePostData from '@/hooks/usePostData';
 
 const MainSection = () => {
   const searchParams = useSearchParams();
+  const currentPage = Number(searchParams.get('page') || 1);
 
-  const { currentPosts, totalPages } = usePostsData({
-    currentPage: Number(searchParams.get('page')),
-  });
+  const { currentPosts, totalPages } = usePostData(currentPage);
 
   return (
     <section className='mb-10'>

@@ -1,6 +1,6 @@
 import { postDummyData } from '@/constant/postDummyData';
 
-function usePostsData({ currentPage = 1 }) {
+function usePostData(currentPage: number) {
   if (isNaN(currentPage)) {
     return {
       totalPages: 1,
@@ -9,7 +9,7 @@ function usePostsData({ currentPage = 1 }) {
     };
   }
 
-  const maxPostsOnEachPage = 3;
+  const maxPostsOnEachPage = 5;
   const totalPages = Math.ceil(postDummyData.length / maxPostsOnEachPage);
 
   const startIndex = (currentPage - 1) * maxPostsOnEachPage;
@@ -23,4 +23,4 @@ function usePostsData({ currentPage = 1 }) {
   };
 }
 
-export default usePostsData;
+export default usePostData;
