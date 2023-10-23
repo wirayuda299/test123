@@ -146,7 +146,7 @@ const CreatePost = () => {
                   defaultValue={field.value}
                 >
                   <FormControl>
-                    <SelectTrigger className='body-semibold rounded border-none bg-white-800 text-darkSecondary-900 dark:bg-darkPrimary-4 dark:text-white-800'>
+                    <SelectTrigger className='bodyXs-regular md:body-semibold rounded border-none bg-white-800 text-darkSecondary-900 dark:bg-darkPrimary-4 dark:text-white-800'>
                       <p className='text-darkSecondary-800'>Create - </p>
                       <SelectValue placeholder='Create - Post' />
                     </SelectTrigger>
@@ -154,13 +154,13 @@ const CreatePost = () => {
                   <SelectContent className='dark:bg-darkPrimary-4'>
                     {createPostData.map((data) => (
                       <SelectItem value='post' key={data.title}>
-                        <div className='flex flex-row items-center justify-between gap-2.5 p-1'>
+                        <div className='flex flex-row items-center justify-between gap-1 p-1 md:gap-2.5'>
                           <Image
                             src={data.icon}
                             alt={`${data.title} - icon`}
                             width={15}
                             height={15}
-                            className='dark:brightness-0 dark:invert'
+                            className='h-2.5 w-2.5 dark:brightness-0 dark:invert md:h-3.5 md:w-3.5'
                           />
                           <p className='bodyMd-semibold'>{data.title}</p>
                         </div>
