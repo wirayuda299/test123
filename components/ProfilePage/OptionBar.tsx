@@ -2,7 +2,7 @@ import { optionBar } from '@/constant';
 
 const OptionBar = () => {
   return (
-    <div className='no-scrollbar inline-flex w-full items-start justify-between overflow-x-scroll rounded-[20px] bg-white px-[15px] py-[10px] dark:bg-darkPrimary-3 md:px-[30px] md:py-[19px]'>
+    <div className='no-scrollbar inline-flex w-full items-start justify-between overflow-x-scroll rounded-[20px] bg-white px-[15px] py-2.5 dark:bg-darkPrimary-3 md:px-[30px] md:py-[19px]'>
       {optionBar.map((option) => (
         <button
           key={option}

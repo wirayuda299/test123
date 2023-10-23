@@ -1,7 +1,7 @@
 import { ClerkProvider } from '@clerk/nextjs';
+// eslint-disable-next-line camelcase
 import { Source_Sans_3 } from 'next/font/google';
 import type { Metadata } from 'next';
-// eslint-disable-next-line camelcase
 import type { ReactNode } from 'react';
 
 import './globals.css';
@@ -21,10 +21,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
       <ClerkProvider>
-        <body className={sourceSansPro.className}>
-          <main className='max-container bg-white-800 dark:bg-darkPrimary-2'>
-            {children}
-          </main>
+        <body
+          className={`${sourceSansPro.className} max-container bg-white-800 dark:bg-darkPrimary-2`}
+        >
+          <main>{children}</main>
         </body>
       </ClerkProvider>
     </html>
