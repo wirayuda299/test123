@@ -16,7 +16,7 @@ export default function RecentMedia() {
       <h3 className='text-base font-semibold text-darkSecondary-900 dark:text-white-800'>
         Recent Media
       </h3>
-      <div className='columns-2 gap-1 sm:columns-3'>
+      <div className='flex flex-wrap'>
         {examplesPictures.map((pic) => (
           <Image
             src={pic}
