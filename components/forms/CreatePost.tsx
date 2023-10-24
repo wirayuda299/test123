@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useTheme } from 'next-themes';
 import React, { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -28,6 +29,7 @@ import { CreatePostSchema } from '@/lib/validations';
 import { createPostData } from '@/constant';
 
 const CreatePost = () => {
+  const { theme } = useTheme();
   const editorRef = useRef(null);
   const form = useForm<z.infer<typeof CreatePostSchema>>({
     resolver: zodResolver(CreatePostSchema),
@@ -186,15 +188,8 @@ const CreatePost = () => {
                   onInit={(evt, editor) => (editorRef.current = editor)}
                   initialValue=''
                   init={{
-                    skin: window.matchMedia('(prefers-color-scheme: dark)')
-                      .matches
-                      ? 'oxide-dark'
-                      : 'oxide',
-                    content_css: window.matchMedia(
-                      '(prefers-color-scheme: dark)',
-                    ).matches
-                      ? 'dark'
-                      : 'default',
+                    skin: theme === 'dark' ? 'oxide-dark' : 'oxide',
+                    content_css: theme === 'dark' ? 'dark' : 'default',
                     setup: function (editor) {
                       editor.ui.registry.addButton('Write', {
                         icon: 'edit-block',
