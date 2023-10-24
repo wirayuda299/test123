@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-import { sidebarContents } from '@/constant';
 import SidebarItem from './Item';
+import { sidebarContents } from '@/constant';
 import { GroupSidebar } from '@/types/group-sidebar';
 
 export default function Sidebar() {
@@ -12,41 +12,44 @@ export default function Sidebar() {
     null,
   );
 
-  const handleSelectedContent = (item: GroupSidebar | null) => {
-    setSelectedContent(item);
+  const handleSelectedContent = () => {
+    if (selectedContent) return setSelectedContent(null);
+    return undefined;
   };
 
   return (
-    <div className='hidden w-full overflow-y-hidden p-3 hover:overflow-y-auto dark:bg-darkPrimary-3 lg:block lg:h-screen [&>*:not(:first-child)]:pt-5'>
-      {selectedContent && (
-        <button
-          className=' flex h-9 w-9 items-center justify-center rounded-full bg-white-800 dark:bg-darkPrimary-4'
-          onClick={() => setSelectedContent(null)}
-        >
-          <Image
-            className='dark:invert'
-            src={'/assets/icons/back.svg'}
-            width={20}
-            alt='back icon'
-            height={20}
-          />
-        </button>
-      )}
-      {selectedContent ? (
-        <SidebarItem
-          content={selectedContent}
-          selectedContent={selectedContent}
-        />
-      ) : (
-        sidebarContents.map((content) => (
+    <aside className='no-scrollbar hidden h-full w-full items-start justify-start gap-2.5 overflow-y-auto rounded-2xl bg-white p-2.5 dark:bg-gray-800 lg:flex lg:h-screen'>
+      <div className='flex w-full flex-col items-start justify-start gap-5'>
+        {selectedContent && (
+          <button
+            className='flex h-9 w-9 items-center justify-center rounded-full bg-white-800 dark:bg-darkPrimary-4'
+            onClick={handleSelectedContent}
+          >
+            <Image
+              className='dark:invert'
+              src={'/assets/icons/back.svg'}
+              width={20}
+              alt='back icon'
+              height={20}
+            />
+          </button>
+        )}
+        {selectedContent ? (
           <SidebarItem
-            key={content.label}
-            content={content}
+            content={selectedContent}
             selectedContent={selectedContent}
-            handleClick={handleSelectedContent}
           />
-        ))
-      )}
-    </div>
+        ) : (
+          sidebarContents.map((content) => (
+            <SidebarItem
+              selectedContent={selectedContent}
+              key={content.label}
+              content={content}
+              handleCLick={() => setSelectedContent(content)}
+            />
+          ))
+        )}
+      </div>
+    </aside>
   );
 }
