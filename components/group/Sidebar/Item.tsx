@@ -6,18 +6,18 @@ import { GroupSidebar } from '@/types/group-sidebar';
 
 type SidebarItemProps = {
   content: GroupSidebar;
-  handleCLick?: () => void;
   selectedContent: GroupSidebar | null;
+  handleClick?: (item: GroupSidebar | null) => void;
 };
 
 export default function SidebarItem({
   content,
-  handleCLick,
   selectedContent,
+  handleClick,
 }: SidebarItemProps) {
   return (
     <div
-      onClick={handleCLick}
+      onClick={() => (handleClick ? handleClick(content) : undefined)}
       className='mb-2 flex w-full cursor-pointer flex-col items-start space-y-5'
     >
       <Header {...content} />
@@ -25,7 +25,7 @@ export default function SidebarItem({
         {selectedContent
           ? selectedContent.items.map((item) => (
               <Card
-                key={item.title}
+                key={item.text}
                 {...item}
                 style='text-darkPrimary-2 dark:text-white-800'
               />
@@ -39,9 +39,10 @@ export default function SidebarItem({
                   style='text-darkPrimary-2 dark:text-white-800'
                 />
               ))}
+
         {!selectedContent && (
           <button
-            onClick={handleCLick}
+            onClick={() => (handleClick ? handleClick(content) : undefined)}
             className='w-max rounded-full bg-secondary-purple-20 px-2 py-[2px] text-9 font-semibold text-secondary-purple'
           >
             See All

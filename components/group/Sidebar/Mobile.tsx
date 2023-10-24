@@ -67,7 +67,7 @@ export default function Mobile() {
       >
         {sidebarContents.map((content) => (
           <div key={content.label} onClick={() => handleClick(content)}>
-            <SidebarItem content={content} />
+            <SidebarItem content={content} selectedContent={content} />
           </div>
         ))}
       </div>
