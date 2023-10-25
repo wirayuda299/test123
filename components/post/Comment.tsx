@@ -1,115 +1,151 @@
 'use client';
 
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import Image from 'next/image';
+
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
-import EmojiPickerComponent from './EmojiPickerComponent';
+import CommentInput from './CommentInput';
+import { createComment, CommentType } from '@/constants/post';
+import clsx from 'clsx';
 
 interface CommentProps {
+  id: number | string;
   user: string;
   postedDate: string;
   editedDate?: string;
   avatar: string;
   comment: string;
+  className?: string;
+  subComments?: CommentType[];
+  setComments: Dispatch<SetStateAction<CommentType[]>>;
 }
 
 const Comment = ({
+  id,
   user,
   postedDate,
   editedDate,
   avatar,
   comment,
+  setComments,
+  subComments = [],
+  className,
 }: CommentProps) => {
   const [isLiked, setIsLiked] = useState<boolean>(false);
   const [showReplyInput, setShowReplyInput] = useState<boolean>(false);
-  const [showComment, setShowComment] = useState<boolean>(false);
 
   return (
-    <div className='flex bg-white p-10 dark:bg-darkPrimary-3'>
-      <Avatar className='mr-5 h-11 w-11 rounded-full bg-secondary-yellow-30 lg:ml-[60px]'>
-        <AvatarImage src={avatar} className='rounded-full' />
-        <AvatarFallback className='rounded-full bg-secondary-yellow-30'>
-          HN
-        </AvatarFallback>
-      </Avatar>
-      <div className='flex flex-1 flex-col items-start justify-start gap-3.5'>
-        <div className='w-full rounded-3xl border border-slate-300 p-3.5'>
-          <div className='flex flex-col items-start'>
-            <div className='mb-4 flex items-center'>
-              <div className='display text-darkSecondary-900 dark:text-white-800'>
-                {user} •
+    <div className='rounded-b-2xl pb-2 dark:bg-darkPrimary-3'>
+      <div
+        className={clsx(
+          'flex rounded-2xl px-4 py-5  md:px-6 lg:-mt-4',
+          className,
+        )}
+      >
+        <Avatar className='mr-4 h-11 w-11 rounded-full bg-secondary-yellow-30'>
+          <AvatarImage src={avatar} className='rounded-full' />
+          <AvatarFallback className='rounded-full !bg-secondary-yellow-30'>
+            HN
+          </AvatarFallback>
+        </Avatar>
+        <div className='flex flex-1 flex-col gap-3.5'>
+          <div className='flex-wrap break-words rounded-3xl border border-slate-300 p-3.5'>
+            <div className='flex flex-col items-start'>
+              <div className='mb-4 flex flex-wrap items-center'>
+                <div className='body-semibold md:display text-darkSecondary-900 dark:text-white-800'>
+                  {user} •
+                </div>
+                <div className='bodyMd-regular md:body-regular ml-1 text-darkSecondary-900 dark:text-white-800'>
+                  {postedDate} {editedDate ? ` • Edited on ${editedDate}` : ``}
+                </div>
               </div>
-              <div className='body-regular ml-1 text-darkSecondary-900 dark:text-white-800'>
-                {`${postedDate} ${
-                  editedDate ? `• Edited on ${editedDate}` : ``
-                }`}
+              <div className='body-regular md:display-regular w-full break-words text-darkSecondary-800'>
+                {comment}
               </div>
-            </div>
-            <div className='display-regular w-full text-darkSecondary-800'>
-              {comment}
             </div>
           </div>
-        </div>
-        <div className='ml-4 flex gap-5'>
-          {isLiked ? (
+          <div className='ml-4 flex gap-5'>
+            {isLiked ? (
+              <Image
+                src='/assets/posts/orange-heart-square.svg'
+                alt='Heart'
+                width={20}
+                height={20}
+                className='cursor-pointer object-contain'
+                onClick={() => setIsLiked(!isLiked)}
+              />
+            ) : (
+              <Image
+                src='/assets/posts/gray-heart-square.svg'
+                alt='Heart'
+                width={20}
+                height={20}
+                className='cursor-pointer object-contain grayscale'
+                onClick={() => setIsLiked(!isLiked)}
+              />
+            )}
+
             <Image
-              src='/assets/posts/orange-heart-square.svg'
-              alt='Heart'
-              width={20}
-              height={20}
-              className='cursor-pointer object-contain'
-              onClick={() => setIsLiked(!isLiked)}
-            />
-          ) : (
-            <Image
-              src='/assets/posts/gray-heart-square.svg'
-              alt='Heart'
+              src='/assets/posts/reply.svg'
+              alt='Reply Icon'
               width={20}
               height={20}
               className='cursor-pointer object-contain grayscale'
-              onClick={() => setIsLiked(!isLiked)}
+              onClick={() => setShowReplyInput(!showReplyInput)}
             />
-          )}
 
-          <Image
-            src='/assets/posts/reply.svg'
-            alt='Reply Icon'
-            width={20}
-            height={20}
-            className='cursor-pointer object-contain grayscale'
-            onClick={() => setShowReplyInput(!showReplyInput)}
-          />
+            <Image
+              src='/assets/posts/more.svg'
+              alt='More Icon'
+              width={20}
+              height={20}
+              className='cursor-pointer object-contain grayscale'
+            />
+          </div>
 
-          <Image
-            src='/assets/posts/more.svg'
-            alt='More Icon'
-            width={20}
-            height={20}
-            className='cursor-pointer object-contain grayscale'
-          />
-        </div>
-        {showReplyInput && (
-          <div className='-ml-6 flex bg-white p-5 dark:bg-darkPrimary-3'>
-            <Avatar className='h-11 w-11 rounded-full bg-secondary-yellow-30 '>
-              <AvatarImage
-                src='https://github.com/shadcn.png'
-                className='rounded-full'
-              />
-              <AvatarFallback className='rounded-full bg-secondary-yellow-30'>
-                HN
-              </AvatarFallback>
-            </Avatar>
-            <div className='w-[400px]'>
-              <EmojiPickerComponent
-                placeholder='Add a reply...'
-                showReplyInput={showReplyInput}
-                setShowReplyInput={setShowReplyInput}
-                showComment={showComment}
-                setShowComment={setShowComment}
+          {showReplyInput && (
+            <div className='pr-4'>
+              <CommentInput
+                placeholder='Reply...'
+                handleComment={(text: string) => {
+                  if (text) {
+                    const subComment = createComment(text, new Date());
+                    setComments((prevComments: CommentType[]) => {
+                      const finalComments = prevComments?.map(
+                        (comment: CommentType) => {
+                          if (comment.id === id) {
+                            return {
+                              ...comment,
+                              subComments:
+                                comment?.subComments?.concat(subComment),
+                            };
+                          }
+                          return comment;
+                        },
+                      );
+                      return finalComments;
+                    });
+                    setShowReplyInput(false);
+                  }
+                }}
               />
             </div>
-          </div>
-        )}
+          )}
+        </div>
+      </div>
+
+      <div className='rounded-2xl bg-white'>
+        {subComments.length > 0 &&
+          subComments.map((comment) => {
+            return (
+              <Comment
+                className='-mt-4 ml-[60px]'
+                key={comment.id}
+                {...comment}
+                setComments={setComments}
+              />
+            );
+          })}
       </div>
     </div>
   );

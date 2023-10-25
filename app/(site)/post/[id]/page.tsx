@@ -1,23 +1,37 @@
-import PostOpenLeft from '@/components/post/PostOpenLeft';
-import PostOpenRightProfile from '@/components/post/PostOpenRightProfile';
-import PostOpenRightMore from '@/components/post/PostOpenRightMore';
-import PostOpenMain from '@/components/post/PostOpenMain';
+import PostStats from '@/components/post/PostStats';
+import PostArticle from '@/components/post/PostArticle';
+import PostProfile from '@/components/post/PostProfile';
+import UserPostList from '@/components/post/UserPostList';
+import { postDummyData } from '@/constant/PostDummyData';
 
-export default async function Home() {
+const Page = ({ params }: URLProps) => {
+  console.log({ params });
+  const post = postDummyData.find((post) => post.slug === params.id);
+  console.log({ post });
+  if (!post) return;
+
   return (
-    <main className='article-wrapper mx-auto mt-[100px] grid max-w-7xl justify-center bg-white-700 px-5 dark:bg-darkPrimary-2 md:gap-5 lg:flex-row'>
-      <div className='shrink-0 max-md:hidden'>
-        <PostOpenLeft />
+    <main className='article-wrapper mx-auto mt-[100px] grid max-w-7xl justify-center bg-white-700 px-2 dark:bg-darkPrimary-2 md:gap-5 md:px-5 lg:flex-row'>
+      <div className='shrink-0 max-xl:hidden'>
+        <PostStats />
       </div>
 
       <section>
-        <PostOpenMain />
+        <PostArticle
+          postHeader={post?.postHeader}
+          alt={post?.alt}
+          title={post?.title}
+          description={post?.description}
+          tags={post?.tags}
+        />
       </section>
 
-      <div className='sticky right-0 top-0 mt-4 flex  h-screen shrink-0 flex-col gap-5 pb-10 pr-3 md:mt-0'>
-        <PostOpenRightProfile />
-        <PostOpenRightMore />
+      <div className='sticky right-0 top-0 mt-4 flex h-screen shrink-0 flex-col gap-5 pb-10 md:mt-0 md:pr-3'>
+        <PostProfile />
+        <UserPostList />
       </div>
     </main>
   );
-}
+};
+
+export default Page;

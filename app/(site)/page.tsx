@@ -17,6 +17,7 @@ export default async function Home() {
             {postDummyData?.map((post) => (
               <PostCard
                 key={post.id}
+                slug={post.slug}
                 name={post.name}
                 title={post.title}
                 tags={post.tags}

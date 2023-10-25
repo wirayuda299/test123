@@ -1,15 +1,15 @@
-import { postLeftWidget } from '@/constant/postLeftSidebar';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
-const PostOpenLeft = () => {
+import { postStats } from '@/constants/post';
+
+const PostStats = () => {
   return (
-    <div className='flex w-full shrink-0 items-start justify-start gap-2.5 rounded-2xl bg-white p-5 px-7 dark:bg-darkPrimary-3'>
-      <ul className='flex shrink-0 flex-col items-start justify-start gap-5'>
-        {postLeftWidget.map((item) => (
+    <div className='flex w-full shrink-0 gap-2.5 rounded-2xl bg-white p-5 px-7 dark:bg-darkPrimary-3'>
+      <ul className='flex shrink-0 flex-col gap-5'>
+        {postStats.map((item) => (
           <li key={item.id}>
-            <Link href='' className='flex items-center justify-start gap-3.5'>
+            <div className='flex items-center justify-start gap-3.5'>
               <div
                 className={`${
                   item.isHeart ? '!bg-secondary-red-10' : 'bg-white-800'
@@ -34,12 +34,12 @@ const PostOpenLeft = () => {
               >
                 {item.amount} {item.iconName}
               </div>
-            </Link>
+            </div>
           </li>
         ))}
 
         {/* Report */}
-        <li>
+        <li className='cursor-pointer'>
           <Link href='' className='flex items-center justify-start gap-3.5'>
             <div className='flex aspect-square items-center justify-center rounded-[6px] bg-white-800 p-1 dark:bg-darkPrimary-3 dark:md:bg-darkPrimary-4'>
               <Image
@@ -58,4 +58,4 @@ const PostOpenLeft = () => {
   );
 };
 
-export default PostOpenLeft;
+export default PostStats;
