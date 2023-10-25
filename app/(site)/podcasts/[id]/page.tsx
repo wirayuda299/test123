@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 
 const Podcast = () => {
   return (
-    <main className='max-container  pb-10 w-full md:w-4/6'>
+    <main className='max-container  pb-10 w-full md:w-4/6 pt-28'>
       <section className='bg-white dark:bg-darkPrimary-3 p-5 rounded-2xl'>
         <div className='w-full flex flex-col md:flex-row'>
           <aside className='flex relative'>
