@@ -2,7 +2,7 @@ import { Separator } from '../ui/separator';
 
 const PostOpenRightMore = () => {
   return (
-    <div className='flex h-72 w-80 flex-col items-start justify-center rounded-2xl bg-white p-5 pb-[30px] dark:bg-gray-800'>
+    <div className='flex flex-col items-start justify-center rounded-2xl bg-white p-5 pb-[30px] dark:bg-darkPrimary-3'>
       <div className='heading3 pb-[15px] text-darkSecondary-900 dark:text-white-800'>
         More from Mansurul Haque
       </div>
@@ -22,7 +22,7 @@ const PostOpenRightMore = () => {
       <Separator />
 
       <div className='py-[15px]'>
-        <div className="font-['Source Sans Pro'] pb-1 text-xs font-semibold leading-none text-gray-700">
+        <div className='bodyMd-semibold pb-1 text-darkSecondary-900 dark:text-white-800'>
           Learn Nginx and its basics in 2022
         </div>
         <div className="font-['Source Sans Pro'] text-xs font-semibold leading-none text-neutral-400">
@@ -33,7 +33,7 @@ const PostOpenRightMore = () => {
       <Separator />
 
       <div className='pt-[15px]'>
-        <div className="font-['Source Sans Pro'] pb-1 text-xs font-semibold leading-none text-gray-700">
+        <div className='bodyMd-semibold pb-1 text-darkSecondary-900 dark:text-white-800'>
           My Learning Path for Programming Tello Drones
         </div>
         <div className="font-['Source Sans Pro'] text-xs font-semibold leading-none text-neutral-400">

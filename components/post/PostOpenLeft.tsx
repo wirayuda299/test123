@@ -5,22 +5,24 @@ import React from 'react';
 
 const PostOpenLeft = () => {
   return (
-    <div className='flex h-52 w-52 items-start justify-start gap-2.5 rounded-2xl bg-white p-5 dark:bg-gray-800'>
-      <ul className='flex flex-col items-start justify-start gap-5'>
+    <div className='flex w-full shrink-0 items-start justify-start gap-2.5 rounded-2xl bg-white p-5 px-7 dark:bg-darkPrimary-3'>
+      <ul className='flex shrink-0 flex-col items-start justify-start gap-5'>
         {postLeftWidget.map((item) => (
           <li key={item.id}>
             <Link href='' className='flex items-center justify-start gap-3.5'>
               <div
                 className={`${
-                  item.isHeart ? 'bg-secondary-red-10' : 'bg-white-800'
-                } flex aspect-square items-center justify-center rounded-[6px] p-1 dark:bg-darkPrimary-3 dark:md:bg-darkPrimary-4`}
+                  item.isHeart ? '!bg-secondary-red-10' : 'bg-white-800'
+                } flex aspect-square items-center justify-center rounded-[6px] p-1.5 dark:md:bg-darkPrimary-4`}
               >
                 <Image
                   src={item.icon}
                   alt={`${item.iconName} icon`}
                   width={20}
                   height={20}
-                  className='object-contain dark:brightness-200'
+                  className={`object-contain ${
+                    item.isHeart ? '' : 'dark:brightness-200 dark:contrast-200 '
+                  }`}
                 />
               </div>
               <div

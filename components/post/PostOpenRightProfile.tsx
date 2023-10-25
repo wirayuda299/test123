@@ -2,7 +2,7 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const PostOpenRightProfile = () => {
   return (
-    <div className='h-92 flex w-80 flex-col items-center justify-start gap-5 rounded-2xl bg-white px-5 py-7 dark:bg-gray-800'>
+    <div className='flex flex-col items-center justify-start gap-5 rounded-2xl bg-white px-5 py-7 dark:bg-darkPrimary-3'>
       <Avatar className='h-24 w-24 rounded-full bg-secondary-purple-20'>
         <AvatarImage src='https://github.com/shadcn.png' />
         <AvatarFallback className='bg-secondary-purple-20'>CN</AvatarFallback>

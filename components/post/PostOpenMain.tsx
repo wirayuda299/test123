@@ -1,17 +1,21 @@
 'use client';
 
 import Image from 'next/image';
+
 import EmojiPickerComponent from './EmojiPickerComponent';
-import { Avatar, AvatarImage, AvatarFallback } from '@radix-ui/react-avatar';
+import Comment from './Comment';
+import { comments } from '@/constant/comments';
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
+import PostOpenLeft from './PostOpenLeft';
 
 const PostOpenMain = () => {
   return (
-    <>
-      <div className='flex max-w-[675px] flex-col items-center justify-start gap-5 bg-white'>
+    <article className='space-y-4 rounded-xl md:mb-20'>
+      <div className='flex w-full flex-col items-center justify-start gap-5  bg-white pb-6 dark:bg-darkPrimary-3'>
         <Image
           src='/assets/posts/post-header.png'
           alt='Post header image'
-          width={675}
+          width={721}
           height={273}
           className='rounded-t-lg border-2 border-blue-100'
         />
@@ -28,7 +32,7 @@ const PostOpenMain = () => {
               <li>#design</li>
               <li>#uikit</li>
             </ul>
-            <div className='body-regular text-darkSecondary-800'>
+            <div className='body-regular pb-2 text-darkSecondary-800'>
               OnePay is a modern, easy-to-use Online Payment Processing Web App
               UI Kit template that will help you build a web app for your
               payment/marketplace platform. OnePay, a multi-payment platform to
@@ -46,22 +50,41 @@ const PostOpenMain = () => {
               What will you get? - 200+ Beautiful Screens design - Figma, XD &
               Sketch Files 100% editable and scalable. Thank You For Your Time.
             </div>
+            <div className='flex w-full dark:bg-darkPrimary-3 '>
+              <Avatar className='h-11 w-11 rounded-full bg-secondary-yellow-30 '>
+                <AvatarImage
+                  src='https://github.com/shadcn.png'
+                  className='rounded-full'
+                />
+                <AvatarFallback className='rounded-full bg-secondary-yellow-30'>
+                  HN
+                </AvatarFallback>
+              </Avatar>
+              <div className='w-full'>
+                <EmojiPickerComponent placeholder='Say something nice to follow Nishant...' />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div className='flex bg-white p-10'>
-        <Avatar className='h-11 w-11 rounded-full bg-secondary-yellow-30 '>
-          <AvatarImage
-            src='https://github.com/shadcn.png'
-            className='rounded-full'
-          />
-          <AvatarFallback className='rounded-full bg-secondary-yellow-30'>
-            CN
-          </AvatarFallback>
-        </Avatar>
-        <EmojiPickerComponent />
+
+      <div className='flex w-full shrink-0 flex-col md:hidden'>
+        <PostOpenLeft />
       </div>
-    </>
+
+      <div className='rounded-2xl'>
+        {comments.map((comment) => (
+          <Comment
+            key={comment.id}
+            user={comment.user}
+            comment={comment.comment}
+            avatar={comment.avatar}
+            postedDate={comment.postedDate}
+            editedDate={comment.editedDate}
+          />
+        ))}
+      </div>
+    </article>
   );
 };
 
