@@ -16,8 +16,8 @@ export default function Group() {
       </aside>
       <section className='no-scrollbar h-full w-full overflow-y-auto lg:h-screen'>
         <div className='flex flex-wrap justify-center gap-5'>
-          {[1, 2, 3, 4, 5, 6].map((c) => (
-            <GroupPostCard key={c} />
+          {[1, 2, 3, 4, 5, 6].map((post) => (
+            <GroupPostCard key={post} />
           ))}
         </div>
         <Pagination totalPages={10} />
