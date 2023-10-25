@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <body
           className={`${sourceSansPro.className} max-container bg-white-800 dark:bg-darkPrimary-2`}
         >
-          <main className=''>{children}</main>
+          <main>{children}</main>
         </body>
       </ClerkProvider>
     </html>
