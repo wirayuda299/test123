@@ -2,11 +2,11 @@
 
 import { Dispatch, SetStateAction, useState } from 'react';
 import Image from 'next/image';
+import clsx from 'clsx';
 
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import CommentInput from './CommentInput';
 import { createComment, CommentType } from '@/constants/post';
-import clsx from 'clsx';
 
 interface CommentProps {
   id: number | string;
@@ -48,6 +48,7 @@ const Comment = ({
             HN
           </AvatarFallback>
         </Avatar>
+
         <div className='flex flex-1 flex-col gap-3.5'>
           <div className='flex-wrap break-words rounded-3xl border border-slate-300 p-3.5'>
             <div className='flex flex-col items-start'>

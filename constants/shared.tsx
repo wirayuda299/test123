@@ -15,8 +15,8 @@ export interface Post {
   createdDate: string;
   avatar: string;
   tags: string[];
-  online: boolean;
-  isLiked: boolean;
+  online?: boolean;
+  isLiked?: boolean;
   mainImage: string;
   postHeader: string;
   alt: string;
