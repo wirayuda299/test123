@@ -1,14 +1,37 @@
-import SidePodcasts from '@/components/SidePodcasts/SidePodcasts';
-import CreatePostBar from '@/components/Home/CreatePostBar';
-import NewAndPopularMobile from '@/components/Home/NewAndPopularMobile';
-import MeetupChip from '@/components/shared/MeetupChip/MeetupChip';
-import MainSection from '@/components/Home/MainSection';
-import PinnedGroups from '@/components/Home/PinnedGroups';
-import PopularTags from '@/components/Home/PopularTags';
-import SidebarListItem from '@/components/Home/SidebarListItem';
-import { newAndPopular } from '@/constant/homeLeftSidebar';
+import Link from 'next/link';
 
-export default function Home() {
+import SidePodcasts from '@/components/SidePodcasts/SidePodcasts';
+import MeetupChip from '@/components/shared/MeetupChip/MeetupChip';
+import SidebarListItem from '@/components/Home/SidebarListItem';
+import {
+  newAndPopular,
+  newAndPopularMobile,
+  pinnedGroups,
+  popularTags,
+} from '@/constant/homeLeftSidebar';
+import PostCard from '../../components/shared/PostCard';
+import Pagination from '../../components/shared/Pagination';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+
+import { postDummyData } from '@/constant';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+
+type URLProps = {
+  searchParams: {
+    page: string;
+  };
+};
+
+export default function Home({ searchParams }: URLProps) {
+  const MAX_POSTS_PER_PAGE = 5;
+  const maxNumberOfPages = Math.ceil(postDummyData.length / MAX_POSTS_PER_PAGE);
+  const currentPage = Number(searchParams.page || '1');
+  const startIndex = (currentPage - 1) * MAX_POSTS_PER_PAGE;
+  const endIndex = currentPage * MAX_POSTS_PER_PAGE;
+  const activePosts = postDummyData.slice(startIndex, endIndex);
+
   return (
     <main className='mb-30 flex flex-row justify-center gap-5 bg-white-700 dark:bg-darkPrimary-2'>
       {/* Left Sidebar */}
@@ -29,25 +52,134 @@ export default function Home() {
             ))}
           </ul>
         </section>
-        <PopularTags />
-        <PinnedGroups />
+
+        <section className='asideContainerLarge'>
+          <header>
+            <h3 className='display-semibold mb-5 text-darkSecondary-900 dark:text-white-800'>
+              Popular Tags
+            </h3>
+          </header>
+          <ul>
+            {popularTags.map((item) => (
+              <SidebarListItem
+                key={item.id}
+                id={item.id}
+                icon={item.icon}
+                title={item.title}
+                text={item.text}
+                isFollowingNumberHidden={item.isFollowingNumberHidden}
+                hashtag={item.hashtag}
+                noOfPosts={item.noOfPosts}
+                bgColor={item.bgColor}
+                dimensions1={item.dimensions1}
+                dimensions2={item.dimensions2}
+              />
+            ))}
+          </ul>
+        </section>
+
+        <section className='asideContainerLarge'>
+          <header className='mb-5 flex items-center justify-start'>
+            <h3 className='display-semibold mr-2 text-darkSecondary-900 dark:text-white-800'>
+              Pinned Groups
+            </h3>
+            <Image
+              src='/assets/leftSideBarHome/arrow-right.svg'
+              alt='Right arrow'
+              width={20}
+              height={20}
+              className='dark:contrast-200 dark:grayscale dark:invert'
+            />
+          </header>
+          <ul>
+            {pinnedGroups.map((item) => (
+              <SidebarListItem
+                key={item.id}
+                id={item.id}
+                icon={item.icon}
+                title={item.title}
+                text={item.text}
+                isFollowingNumberHidden={item.isFollowingNumberHidden}
+                hashtag={item.hashtag}
+                noOfPosts={item.noOfPosts}
+                bgColor={item.bgColor}
+                dimensions1={item.dimensions1}
+                dimensions2={item.dimensions2}
+              />
+            ))}
+          </ul>
+        </section>
       </aside>
 
       {/* Middle Section */}
       <section>
-        <div className='rightSidebar'>
-          <NewAndPopularMobile />
-          <CreatePostBar />
-          <MainSection />
-          <div className='flex flex-col gap-5 lg:hidden'>
-            <MeetupChip />
-            {/* Possibly put <SidePodcasts /> here */}
-          </div>
+        <div className='homeMain'>
+          {/* Only on Mobile */}
+          <ul className='asideContainerSmall mb-5 flex items-center justify-center md:hidden'>
+            {newAndPopularMobile.map((item) => (
+              <li key={item.id} className='w-full'>
+                <Link href='#' className='asideListItemLink justify-center'>
+                  <div className='asideImageDiv h-[28px] w-[28px] p-1'>
+                    <Image src={item.icon} alt='Icon' width={15} height={15} />
+                  </div>
+
+                  <div>
+                    <div className='flex items-center gap-[6px]'>
+                      <h6 className='bodyXs-semibold text-darkSecondary-900 dark:text-white'>
+                        {item.title}
+                      </h6>
+                      <p
+                        className={`${
+                          item.isFollowingNumberHidden ? 'hidden' : ''
+                        } asideFollowingNumber px-[3px]`}
+                      >
+                        24
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <section className='barContainer'>
+            <Avatar className='avatarCreatePostMobile'>
+              <AvatarImage src='https://github.com/shadcn.png' />
+              <AvatarFallback>HN</AvatarFallback>
+            </Avatar>
+            <Input
+              type='text'
+              placeholder="Let's share what's going on in your mind..."
+              className='barInput bodySm-regular md:body-regular'
+            />
+            <Button className='barButton'>Create Post</Button>
+          </section>
+
+          <section className='mb-10'>
+            <div className='pb-2'>
+              {activePosts?.map((post) => (
+                <PostCard
+                  key={post.id}
+                  name={post.name}
+                  title={post.title}
+                  tags={post.tags}
+                  views={post.views}
+                  mainImage={post.mainImage}
+                  createdDate={post.createdDate}
+                  avatar={post.avatar}
+                  comments={post.comments}
+                  online={post.online}
+                  likes={post.likes}
+                />
+              ))}
+            </div>
+            <Pagination totalPages={maxNumberOfPages} />
+          </section>
         </div>
       </section>
 
       {/* Right Sidebar */}
-      <aside className='sticky right-0 top-0 hidden h-screen w-fit max-w-sm flex-col gap-5 overflow-auto py-24 pb-3 pr-3 xl:flex xl:flex-col'>
+      <aside className='rightSidebar'>
         <MeetupChip />
         <SidePodcasts />
       </aside>

@@ -239,11 +239,11 @@
   /* TopBar */
 
   .topBarContainer {
-    @apply flex items-center bg-white dark:bg-darkPrimary-3 mx-auto px-3 lg:px-10 py-1 md:py-2 fixed top-0 left-0 right-0 w-full z-50 !important;
+    @apply mx-auto flex items-center bg-white dark:bg-darkPrimary-3  px-3 py-1 md:py-2 fixed top-0 left-0 right-0 w-full z-50 !important;
   }
 
   .topBar {
-    @apply w-full flex-1 items-center gap-5 max-w-7xl mx-auto px-[1%];
+    @apply max-w-1440 flex-1 items-center gap-5 mx-auto px-[1%] md:px-[4%];
   }
 
   .topBarCol2 {
@@ -545,10 +545,16 @@
     @apply bodyXs-semibold rounded-sm bg-primary px-[5px] py-0.5 text-white;
   }
 
+  /* Home Main Section */
+
+  .homeMain {
+    @apply sticky left-0 top-0 flex h-screen w-fit max-w-4xl shrink-0 flex-col overflow-auto py-24;
+  }
+
   /* Home Page Right Sidebar  */
 
   .rightSidebar {
-    @apply sticky left-0 top-0 flex h-screen w-fit max-w-4xl shrink-0 flex-col overflow-auto py-24 !important;
+    @apply sticky right-0 top-0 hidden h-screen w-fit max-w-sm flex-col gap-5 overflow-auto py-24 pb-3 pr-3 xl:flex xl:flex-col !important;
   }
 
   /* Create Post Bar */
@@ -558,7 +564,7 @@
   }
 
   .barInput {
-    @apply md:body-regular no-focus bodyMd-regular border-none bg-white-700 text-darkSecondary-700 dark:bg-darkPrimary-4 dark:text-darkSecondary-700 !important;
+    @apply no-focus border-none bg-white-700 text-darkSecondary-700 dark:bg-darkPrimary-4 dark:text-darkSecondary-700 !important;
   }
 
   .barButton {
