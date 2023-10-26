@@ -21,16 +21,28 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 type URLProps = {
   searchParams: {
     page: string;
+    search: string;
   };
 };
 
 export default function Home({ searchParams }: URLProps) {
+  // Test functions - will re-write this when querying from server
+  let postsThatIncludeQuery = postDummyData.filter((article) =>
+    article.title.includes(searchParams.search),
+  );
+
+  if (postsThatIncludeQuery.length === 0) {
+    postsThatIncludeQuery = postDummyData;
+  }
+
   const MAX_POSTS_PER_PAGE = 5;
-  const maxNumberOfPages = Math.ceil(postDummyData.length / MAX_POSTS_PER_PAGE);
+  const maxNumberOfPages = Math.ceil(
+    postsThatIncludeQuery.length / MAX_POSTS_PER_PAGE,
+  );
   const currentPage = Number(searchParams.page || '1');
   const startIndex = (currentPage - 1) * MAX_POSTS_PER_PAGE;
   const endIndex = currentPage * MAX_POSTS_PER_PAGE;
-  const activePosts = postDummyData.slice(startIndex, endIndex);
+  const activePosts = postsThatIncludeQuery.slice(startIndex, endIndex);
 
   return (
     <main className='mb-30 flex flex-row justify-center gap-5 bg-white-700 dark:bg-darkPrimary-2'>
@@ -115,7 +127,7 @@ export default function Home({ searchParams }: URLProps) {
       <section>
         <div className='homeMain'>
           {/* Only on Mobile */}
-          <ul className='asideContainerSmall mb-5 flex items-center justify-center md:hidden'>
+          <ul className='asideContainerSmall d:hidden mb-5 flex pr-4'>
             {newAndPopularMobile.map((item) => (
               <li key={item.id} className='w-full'>
                 <Link href='#' className='asideListItemLink justify-center'>

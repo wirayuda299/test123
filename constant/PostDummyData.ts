@@ -15,8 +15,7 @@ export const postDummyData = [
   },
   {
     id: 2,
-    title:
-      'The 4-step SEO framework that led to a 1000% increase in traffic. Let’s talk about blogging and SEO...',
+    title: 'The impact of inflation on the economy and personal finances',
     views: 244564,
     likes: 10290,
     comments: 184,
@@ -135,7 +134,8 @@ export const postDummyData = [
   },
   {
     id: 11,
-    title: 'The of inflation on the economy and personal finances',
+    title:
+      'The 4-step SEO framework that led to a 1000% increase in traffic. Let’s talk about blogging and SEO...',
     views: 3210,
     likes: 87,
     comments: 15,
@@ -187,6 +187,19 @@ export const postDummyData = [
   },
   {
     id: 15,
+    title: 'The impact of inflation on the economy and personal finances',
+    views: 3210,
+    likes: 87,
+    comments: 15,
+    name: 'Sophia Davis',
+    createdDate: '3 weeks ago',
+    avatar: 'https://github.com/shadcn.png',
+    tags: ['finance', 'inflation', 'economy'],
+    online: true,
+    mainImage: '/bitcoin.png',
+  },
+  {
+    id: 16,
     title: 'The impact of inflation on the economy and personal finances',
     views: 3210,
     likes: 87,
