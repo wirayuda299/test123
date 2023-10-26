@@ -9,7 +9,7 @@ import {
   createComment,
 } from '@/constants/post';
 
-import { CommentInput, PostStats, Comment } from '@/components';
+import { CommentInput, PostStats, Comment } from '@/components/index';
 
 interface PostArticleProps {
   postHeader: string;

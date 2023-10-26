@@ -5,7 +5,7 @@ import Image from 'next/image';
 import clsx from 'clsx';
 
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
-import { CommentInput } from '@/components';
+import { CommentInput } from '@/components/index';
 import { createComment, CommentType } from '@/constants/post';
 
 interface CommentProps {

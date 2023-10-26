@@ -4,7 +4,7 @@ import {
   PostArticle,
   PostProfile,
   UserPostList,
-} from '@/components';
+} from '@/components/index';
 
 type URLProps = {
   params: {
