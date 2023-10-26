@@ -73,22 +73,3 @@ export const postStats = [
   },
   { id: 3, icon: '/assets/posts/share.svg', iconName: 'Shares', amount: 84 },
 ];
-
-export const userPosts = [
-  {
-    id: 1,
-    title: `Self-Taught Developer Journal, Day 51: TOP Building Rock Paper
-    Scissors UI cont.`,
-    tags: ['webdev', 'beginners', 'codenewbie', 'devjournal'],
-  },
-  {
-    id: 2,
-    title: `Learn Nginx and its basics in 2022`,
-    tags: ['webdev', 'nginx', 'node', 'javascript'],
-  },
-  {
-    id: 3,
-    title: ` My Learning Path for Programming Tello Drones`,
-    tags: ['tello', 'python', 'python3', 'beginners'],
-  },
-];

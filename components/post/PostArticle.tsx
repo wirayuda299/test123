@@ -41,11 +41,11 @@ const PostArticle = ({
         />
         <div>
           <div className='flex items-start justify-center px-[15px] md:px-[30px]'>
-            <div className='body-regular md:heading3-regular p-[5px] pr-[20px] text-darkSecondary-600 md:pr-[30px]'>
+            <div className='body-regular md:heading3-regular p-[5px] pr-5 text-darkSecondary-600 md:pr-[30px]'>
               H1
             </div>
-            <div className='flex flex-col items-start justify-start gap-5'>
-              <div className='display-semibold md:heading1-semibold text-darkSecondary-900 dark:text-white-800'>
+            <div className='flex flex-col justify-start gap-5'>
+              <div className='display-semibold md:heading1-semibold line-clamp-3 text-darkSecondary-900 dark:text-white-800'>
                 {title}
               </div>
               <ul className='bodyMd-regular md:display-regular flex justify-start gap-6 text-secondary-yellow-90'>

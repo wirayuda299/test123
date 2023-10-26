@@ -1,23 +1,39 @@
-import { userPosts } from '@/constants/post';
+import { Post, postDummyData } from '@/constant/PostDummyData';
 import { Separator } from '../ui/separator';
 
-const UserPostList = () => {
+interface userPostListProps {
+  user: string;
+}
+
+const UserPostList = ({ user }: userPostListProps) => {
+  console.log({ user });
+  function getThreeRandomArticles(arr: Post[], num: number): Post[] {
+    const result: Post[] = [];
+    const arrCopy = [...arr].filter((article: Post) => article.user === user);
+    for (let i = 0; i < num; i++) {
+      const randomIndex = Math.floor(Math.random() * arrCopy.length);
+      result.push(arrCopy[randomIndex]);
+      arrCopy.splice(randomIndex, 1);
+    }
+    return result;
+  }
+
   return (
     <div className='flex flex-col items-start justify-center rounded-2xl bg-white p-5 pb-[30px] dark:bg-darkPrimary-3'>
       <div className='heading3 pb-[15px] text-darkSecondary-900 dark:text-white-800'>
-        More from Mansurul Haque
+        More from {user}
       </div>
 
       <Separator />
 
-      {userPosts.map((post) => (
-        <div key={post.id}>
+      {getThreeRandomArticles(postDummyData, 3).map((post: Post) => (
+        <div key={post?.id}>
           <div className='py-[15px]'>
             <div className='bodyMd-semibold pb-1 text-darkSecondary-900 dark:text-white-800'>
-              {post.title}
+              {post?.title}
             </div>
             <ul className='bodyMd-semibold flex text-darkSecondary-800'>
-              {post.tags.map((tag) => (
+              {post?.tags.map((tag) => (
                 <li key={tag} className='mr-1'>
                   #{tag}
                 </li>

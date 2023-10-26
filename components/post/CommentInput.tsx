@@ -70,7 +70,7 @@ const CommentInput = ({ placeholder, handleComment }: CommentInputProps) => {
               className='bodyMd-regular md:display-regular ml-4 mr-3 h-10 w-full overflow-auto rounded-3xl border border-slate-300 px-3.5 py-2.5 align-middle dark:bg-darkPrimary-3 md:h-12'
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              placeholder={placeholder || 'Type something...'}
+              placeholder={placeholder || 'Comment...'}
               onKeyDown={handleOnKeyDown}
             />
             <Image
