@@ -2,11 +2,12 @@
 
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
+import { UploadButton } from '@uploadthing/react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -31,6 +32,19 @@ import { createPostData } from '@/constant';
 const CreatePost = () => {
   const { theme } = useTheme();
   const editorRef = useRef(null);
+  const [image, setImage] = useState<
+    {
+      fileKey: string;
+      fileName: string;
+      fileSize: number;
+      fileUrl: string;
+      key: string;
+      name: string;
+      size: number;
+      url: string;
+    }[]
+  >([]);
+
   const form = useForm<z.infer<typeof CreatePostSchema>>({
     resolver: zodResolver(CreatePostSchema),
     defaultValues: {
@@ -100,17 +114,48 @@ const CreatePost = () => {
         />
 
         <div className='flex gap-5'>
-          <FormField
-            control={form.control}
-            name='title'
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input placeholder='Title...' {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+          {/* @ts-ignore */}
+          <UploadButton
+            endpoint='imageUploader'
+            onClientUploadComplete={(
+              res: Array<{
+                fileKey: string;
+                fileName: string;
+                fileSize: number;
+                fileUrl: string;
+                key: string;
+                name: string;
+                size: number;
+                url: string;
+              }>,
+            ) => {
+              setImage(res);
+
+              alert('Upload Completed');
+            }}
+            onUploadError={(error: Error) => {
+              alert(`ERROR! ${error.message}`);
+            }}
+            className='bodyXs-semibold !ut-button:px-2.5 !ut-button:py-2 ut-button:bg-white-800 ut-button:text-darkSecondary-900 dark:ut-button:bg-darkPrimary-4 dark:ut-button:text-white-800'
+            content={{
+              button() {
+                return (
+                  <div className='flex items-center gap-2'>
+                    <Image
+                      src='uploadIcon.svg'
+                      alt='upload icon'
+                      width={20}
+                      height={20}
+                      className='h-5 w-5 dark:brightness-0 dark:invert'
+                    />
+                    <p>Change Cover</p>
+                  </div>
+                );
+              },
+              allowedContent() {
+                return '';
+              },
+            }}
           />
 
           <FormField
@@ -137,7 +182,6 @@ const CreatePost = () => {
               </FormItem>
             )}
           />
-
           <FormField
             control={form.control}
             name='createType'
@@ -175,6 +219,16 @@ const CreatePost = () => {
             )}
           />
         </div>
+
+        {image.length > 0 && (
+          <Image
+            src={image[0].fileUrl}
+            alt='cover image'
+            width={870}
+            height={500}
+            className='w-full rounded-lg'
+          />
+        )}
 
         <FormField
           control={form.control}
@@ -226,10 +280,11 @@ const CreatePost = () => {
                       'code',
                       'help',
                       'wordcount',
+                      'codesample',
                     ],
                     toolbar:
                       'Write preview CodeOfConduct |' +
-                      'bold italic underline strikethrough forecolor link image alignleft aligncenter alignright alignjustify bullist numlist |',
+                      'bold italic underline strikethrough forecolor codesample link image alignleft aligncenter alignright alignjustify bullist numlist |',
                     content_style:
                       'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
                   }}
