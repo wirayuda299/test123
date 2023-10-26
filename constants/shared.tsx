@@ -218,7 +218,7 @@ export const postDummyData: Post[] = [
         Stay tuned for more travel tips!
       </div>
     ),
-    user: 'Tom Williams',
+    user: 'Mansural Haque',
     userJob: 'Travel Blogger',
     joinDate: '2 months ago',
     views: 50000,

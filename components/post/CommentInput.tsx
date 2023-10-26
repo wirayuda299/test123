@@ -78,12 +78,12 @@ const CommentInput = ({ placeholder, handleComment }: CommentInputProps) => {
             <Image
               src='/assets/posts/smiley.svg'
               alt='Smiley'
-              width={24}
-              height={24}
+              width={20}
+              height={20}
               onClick={() => setIsEmojiPickerOpen(!isEmojiPickerOpen)}
-              className='absolute right-[12%] top-[22%] cursor-pointer text-darkSecondary-600 md:right-[4%]'
+              className='absolute right-[12%] top-[26%] cursor-pointer text-darkSecondary-600 md:right-[4%]'
             />
-            <div className='absolute right-[0] top-[30%] cursor-pointer text-darkSecondary-600'>
+            <div className='absolute right-[0] top-[34%] cursor-pointer text-darkSecondary-600'>
               <AiOutlineArrowRight
                 onClick={() => {
                   handleComment(inputValue);
@@ -95,7 +95,7 @@ const CommentInput = ({ placeholder, handleComment }: CommentInputProps) => {
 
           {isEmojiPickerOpen && (
             <EmojiPicker
-              theme={Theme.AUTO}
+              theme={Theme.DARK}
               onEmojiClick={onClick}
               autoFocusSearch={false}
               emojiStyle={EmojiStyle.NATIVE}

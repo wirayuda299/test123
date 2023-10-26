@@ -40,7 +40,7 @@ const Page = ({ params }: URLProps) => {
           joinDate={post?.joinDate}
           userJob={post?.userJob}
         />
-        <UserPostList user={post?.user} />
+        <UserPostList user={post?.user} id={post?.id} />
       </div>
     </main>
   );

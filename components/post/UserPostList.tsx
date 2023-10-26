@@ -5,12 +5,16 @@ import { Separator } from '../ui/separator';
 
 interface userPostListProps {
   user: string;
+  id: number;
 }
 
-const UserPostList = ({ user }: userPostListProps) => {
+const UserPostList = ({ user, id }: userPostListProps) => {
   function getThreeRandomArticles(arr: Post[], num: number): Post[] {
+    const articlesExcludingCurrent = arr.filter((article) => article.id !== id);
     const result: Post[] = [];
-    const arrCopy = [...arr].filter((article: Post) => article.user === user);
+    const arrCopy = [...articlesExcludingCurrent].filter(
+      (article: Post) => article.user === user,
+    );
     for (let i = 0; i < num; i++) {
       const randomIndex = Math.floor(Math.random() * arrCopy.length);
       result.push(arrCopy[randomIndex]);
@@ -31,7 +35,7 @@ const UserPostList = ({ user }: userPostListProps) => {
         <div key={post?.id}>
           <div className='py-[15px]'>
             <Link
-              href={`/post/${post.slug}`}
+              href={`/post/${post?.slug}`}
               className='bodyMd-semibold cursor-pointer pb-1 text-darkSecondary-900 dark:text-white-800'
             >
               {post?.title}

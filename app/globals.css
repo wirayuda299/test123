@@ -485,12 +485,6 @@
     @apply h-[28px] w-[28px] md:h-[38px] md:w-[38px];
   }
 
-  /* Emoji Picker */
-
-  .emojiContainer + aside {
-    @apply dark:bg-darkPrimary-4 text-white-800 ml-40 absolute !important;
-  }
-
   /* Post Details Page */
 
   .postDetailsLeftCol {
@@ -607,4 +601,18 @@ html.dark .cl-internal-18ut2g5 {
   .article-wrapper {
     grid-template-columns: 2fr 1fr;
   }
+}
+
+/* Emoji Picker */
+
+.emojiContainer + aside {
+  @apply dark:bg-darkPrimary-2 text-white-800 ml-40 absolute !important;
+}
+
+.epr-search-container > input {
+  @apply dark:bg-darkPrimary-2 dark:border dark:border-white-800 !important;
+}
+
+.epr-emoji-category-label {
+  @apply dark:bg-darkPrimary-2 text-white-800 !important;
 }
