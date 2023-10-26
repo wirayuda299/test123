@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { Post, postDummyData } from '@/constants/shared';
 import { Separator } from '../ui/separator';
 
@@ -28,9 +30,12 @@ const UserPostList = ({ user }: userPostListProps) => {
       {getThreeRandomArticles(postDummyData, 3).map((post: Post) => (
         <div key={post?.id}>
           <div className='py-[15px]'>
-            <div className='bodyMd-semibold pb-1 text-darkSecondary-900 dark:text-white-800'>
+            <Link
+              href={`/post/${post.slug}`}
+              className='bodyMd-semibold cursor-pointer pb-1 text-darkSecondary-900 dark:text-white-800'
+            >
               {post?.title}
-            </div>
+            </Link>
             <ul className='bodyMd-semibold flex text-darkSecondary-800'>
               {post?.tags.map((tag) => (
                 <li key={tag} className='mr-1'>
