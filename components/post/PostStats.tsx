@@ -13,7 +13,7 @@ const PostStats = () => {
               <div
                 className={`${
                   item.isHeart ? '!bg-secondary-red-10' : 'bg-white-800'
-                } flex aspect-square items-center justify-center rounded-[6px] p-1.5 dark:md:bg-darkPrimary-4`}
+                } flex aspect-square items-center justify-center rounded-[6px] p-1.5 dark:bg-darkPrimary-4`}
               >
                 <Image
                   src={item.icon}

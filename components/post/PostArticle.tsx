@@ -17,6 +17,8 @@ interface PostArticleProps {
   title: string;
   tags: string[];
   description: ReactNode;
+  user: string;
+  createdDate: string;
 }
 
 const PostArticle = ({
@@ -25,6 +27,8 @@ const PostArticle = ({
   title,
   tags,
   description,
+  user,
+  createdDate,
 }: PostArticleProps) => {
   const [comments, setComments] = useState(commentsData);
 
@@ -69,6 +73,14 @@ const PostArticle = ({
 
       <div className='flex w-full shrink-0 flex-col lg:hidden'>
         <PostStats />
+        <section className='mt-4 flex shrink-0 flex-col gap-1 rounded-2xl bg-white p-5 px-7 dark:bg-darkPrimary-3 xl:mt-0'>
+          <span className='display-semibold text-secondary-blue-80'>
+            {user}
+          </span>
+          <span className='display-semibold text-darkSecondary-800'>
+            Posted {createdDate}
+          </span>
+        </section>
       </div>
 
       <div className='mb-3 rounded-b-2xl bg-white dark:bg-darkPrimary-3 max-lg:rounded-2xl md:-mt-8'>

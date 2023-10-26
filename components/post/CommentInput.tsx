@@ -81,9 +81,9 @@ const CommentInput = ({ placeholder, handleComment }: CommentInputProps) => {
               width={20}
               height={20}
               onClick={() => setIsEmojiPickerOpen(!isEmojiPickerOpen)}
-              className='absolute right-[12%] top-[26%] cursor-pointer text-darkSecondary-600 md:right-[4%]'
+              className='absolute right-[12%] top-[26%] cursor-pointer text-darkSecondary-600 md:right-[6%]'
             />
-            <div className='absolute right-[0] top-[34%] cursor-pointer text-darkSecondary-600'>
+            <div className='absolute right-[0] top-[32%] cursor-pointer text-darkSecondary-600'>
               <AiOutlineArrowRight
                 onClick={() => {
                   handleComment(inputValue);

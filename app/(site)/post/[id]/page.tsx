@@ -19,8 +19,16 @@ const Page = ({ params }: URLProps) => {
 
   return (
     <main className='postDetailsLeftCol'>
-      <div className='shrink-0 max-xl:hidden'>
+      <div className='flex shrink-0 flex-col gap-5 max-xl:hidden'>
         <PostStats />
+        <section className='flex shrink-0 flex-col gap-1 rounded-2xl bg-white p-5 px-7 dark:bg-darkPrimary-3'>
+          <span className='display-semibold text-secondary-blue-80'>
+            {post?.user}
+          </span>
+          <span className='display-semibold text-darkSecondary-800'>
+            Posted {post?.createdDate}
+          </span>
+        </section>
       </div>
 
       <section>
@@ -30,6 +38,8 @@ const Page = ({ params }: URLProps) => {
           title={post?.title}
           description={post?.description}
           tags={post?.tags}
+          user={post?.user}
+          createdDate={post?.createdDate}
         />
       </section>
 
