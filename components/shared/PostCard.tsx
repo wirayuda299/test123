@@ -1,10 +1,10 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
-import { useState } from 'react';
 
 interface PostCardProps {
   mainImage: string;
