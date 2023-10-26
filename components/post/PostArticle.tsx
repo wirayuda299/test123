@@ -8,9 +8,8 @@ import {
   CommentType,
   createComment,
 } from '@/constants/post';
-import PostStats from './PostStats';
-import Comment from './Comment';
-import CommentInput from './CommentInput';
+
+import { CommentInput, PostStats, Comment } from '@/components';
 
 interface PostArticleProps {
   postHeader: string;

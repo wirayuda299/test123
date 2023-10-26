@@ -1,4 +1,4 @@
-import { Post, postDummyData } from '@/constant/PostDummyData';
+import { Post, postDummyData } from '@/constants/shared';
 import { Separator } from '../ui/separator';
 
 interface userPostListProps {
@@ -6,7 +6,6 @@ interface userPostListProps {
 }
 
 const UserPostList = ({ user }: userPostListProps) => {
-  console.log({ user });
   function getThreeRandomArticles(arr: Post[], num: number): Post[] {
     const result: Post[] = [];
     const arrCopy = [...arr].filter((article: Post) => article.user === user);

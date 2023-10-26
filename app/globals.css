@@ -486,8 +486,19 @@
   }
 
   /* Emoji Picker */
+
   .emojiContainer + aside {
     @apply dark:bg-darkPrimary-4 text-white-800 ml-40 absolute !important;
+  }
+
+  /* Post Details Page */
+
+  .postDetailsLeftCol {
+    @apply article-wrapper mx-auto mt-[100px] grid max-w-7xl justify-center bg-white-700 px-2 dark:bg-darkPrimary-2 md:gap-5 md:px-5 lg:flex-row;
+  }
+
+  .postDetailsRightCol {
+    @apply sticky right-0 top-0 mt-4 flex h-screen shrink-0 flex-col gap-5 pb-10 md:mt-0 md:pr-3;
   }
 }
 
@@ -573,6 +584,9 @@ html.dark .cl-internal-18ut2g5 {
   background-color: var(--dark);
   color: var(--white);
 }
+
+/* ScrollBar */
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -581,6 +595,8 @@ html.dark .cl-internal-18ut2g5 {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* Post Details Page */
 
 @media screen and (min-width: 1280px) {
   .article-wrapper {
