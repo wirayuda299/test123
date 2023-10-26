@@ -26,8 +26,8 @@ export const newAndPopular = [
     title: 'Newest and Recent',
     text: 'Find the latest update',
     isFollowingNumberHidden: true,
-    dimensions1: 28,
-    dimensions2: 20,
+    dimensionsOuterSquare: 28,
+    dimensionsInnerSquare: 20,
   },
   {
     id: 2,
@@ -35,8 +35,8 @@ export const newAndPopular = [
     title: 'Popular of the day',
     text: 'Shots Featured Today by Creators',
     isFollowingNumberHidden: true,
-    dimensions1: 28,
-    dimensions2: 20,
+    dimensionsOuterSquare: 28,
+    dimensionsInnerSquare: 20,
   },
   {
     id: 3,
@@ -44,8 +44,8 @@ export const newAndPopular = [
     icon: '/assets/leftSideBarHome/follow.svg',
     text: 'Explore from your favorite person',
     isFollowingNumberHidden: false,
-    dimensions1: 28,
-    dimensions2: 20,
+    dimensionsOuterSquare: 28,
+    dimensionsInnerSquare: 20,
   },
 ];
 
@@ -59,8 +59,8 @@ export const popularTags = [
     isFollowingNumberHidden: true,
     bgColor: 'yellow',
     hashtag: true,
-    dimensions1: 28,
-    dimensions2: 20,
+    dimensionsOuterSquare: 28,
+    dimensionsInnerSquare: 20,
   },
   {
     id: 2,
@@ -71,8 +71,8 @@ export const popularTags = [
     isFollowingNumberHidden: true,
     bgColor: 'red',
     hashtag: true,
-    dimensions1: 28,
-    dimensions2: 20,
+    dimensionsOuterSquare: 28,
+    dimensionsInnerSquare: 20,
   },
   {
     id: 3,
@@ -83,8 +83,8 @@ export const popularTags = [
     isFollowingNumberHidden: true,
     bgColor: 'blue',
     hashtag: true,
-    dimensions1: 28,
-    dimensions2: 20,
+    dimensionsOuterSquare: 28,
+    dimensionsInnerSquare: 20,
   },
   {
     id: 4,
@@ -95,8 +95,8 @@ export const popularTags = [
     isFollowingNumberHidden: true,
     bgColor: 'yellow',
     hashtag: true,
-    dimensions1: 28,
-    dimensions2: 20,
+    dimensionsOuterSquare: 28,
+    dimensionsInnerSquare: 20,
   },
   {
     id: 5,
@@ -107,8 +107,8 @@ export const popularTags = [
     isFollowingNumberHidden: true,
     bgColor: 'green',
     hashtag: true,
-    dimensions1: 28,
-    dimensions2: 20,
+    dimensionsOuterSquare: 28,
+    dimensionsInnerSquare: 20,
   },
   {
     id: 6,
@@ -119,8 +119,8 @@ export const popularTags = [
     isFollowingNumberHidden: true,
     bgColor: 'purple',
     hashtag: true,
-    dimensions1: 28,
-    dimensions2: 20,
+    dimensionsOuterSquare: 28,
+    dimensionsInnerSquare: 20,
   },
 ];
 
@@ -134,8 +134,8 @@ export const pinnedGroups = [
     hashtag: true,
     isFollowingNumberHidden: true,
     bgColor: 'transparent',
-    dimensions1: 32,
-    dimensions2: 32,
+    dimensionsOuterSquare: 32,
+    dimensionsInnerSquare: 32,
   },
   {
     id: 2,
@@ -146,8 +146,8 @@ export const pinnedGroups = [
     hashtag: true,
     isFollowingNumberHidden: true,
     bgColor: 'transparent',
-    dimensions1: 32,
-    dimensions2: 32,
+    dimensionsOuterSquare: 32,
+    dimensionsInnerSquare: 32,
   },
   {
     id: 3,
@@ -158,8 +158,8 @@ export const pinnedGroups = [
     hashtag: true,
     isFollowingNumberHidden: true,
     bgColor: 'transparent',
-    dimensions1: 32,
-    dimensions2: 32,
+    dimensionsOuterSquare: 32,
+    dimensionsInnerSquare: 32,
   },
   {
     id: 4,
@@ -170,7 +170,7 @@ export const pinnedGroups = [
     hashtag: true,
     isFollowingNumberHidden: true,
     bgColor: 'transparent',
-    dimensions1: 32,
-    dimensions2: 32,
+    dimensionsOuterSquare: 32,
+    dimensionsInnerSquare: 32,
   },
 ];

@@ -58,8 +58,8 @@ export default function Home({ searchParams }: URLProps) {
                 title={item.title}
                 text={item.text}
                 isFollowingNumberHidden={item.isFollowingNumberHidden}
-                dimensions1={item.dimensions1}
-                dimensions2={item.dimensions2}
+                dimensionsInnerSquare={item.dimensionsInnerSquare}
+                dimensionsOuterSquare={item.dimensionsOuterSquare}
               />
             ))}
           </ul>
@@ -83,8 +83,8 @@ export default function Home({ searchParams }: URLProps) {
                 hashtag={item.hashtag}
                 noOfPosts={item.noOfPosts}
                 bgColor={item.bgColor}
-                dimensions1={item.dimensions1}
-                dimensions2={item.dimensions2}
+                dimensionsInnerSquare={item.dimensionsInnerSquare}
+                dimensionsOuterSquare={item.dimensionsOuterSquare}
               />
             ))}
           </ul>
@@ -115,8 +115,8 @@ export default function Home({ searchParams }: URLProps) {
                 hashtag={item.hashtag}
                 noOfPosts={item.noOfPosts}
                 bgColor={item.bgColor}
-                dimensions1={item.dimensions1}
-                dimensions2={item.dimensions2}
+                dimensionsInnerSquare={item.dimensionsInnerSquare}
+                dimensionsOuterSquare={item.dimensionsOuterSquare}
               />
             ))}
           </ul>
@@ -127,7 +127,7 @@ export default function Home({ searchParams }: URLProps) {
       <section>
         <div className='homeMain'>
           {/* Only on Mobile */}
-          <ul className='asideContainerSmall d:hidden mb-5 flex pr-4'>
+          <ul className='asideContainerSmall mb-5 flex pr-4 md:hidden'>
             {newAndPopularMobile.map((item) => (
               <li key={item.id} className='w-full'>
                 <Link href='#' className='asideListItemLink justify-center'>
@@ -137,7 +137,7 @@ export default function Home({ searchParams }: URLProps) {
 
                   <div>
                     <div className='flex items-center gap-[6px]'>
-                      <h6 className='bodyXs-semibold text-darkSecondary-900 dark:text-white'>
+                      <h6 className='bodyXs-semibold sm:bodyMd-semibold text-darkSecondary-900 dark:text-white'>
                         {item.title}
                       </h6>
                       <p
