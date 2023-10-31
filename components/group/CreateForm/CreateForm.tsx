@@ -1,5 +1,4 @@
 'use client';
-
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -26,6 +25,7 @@ import useHandleEnter, {
 type ExtendedFormSchemaType = InferedFormSchema & Record<string, any>;
 
 export default function CreateGroupForm() {
+  const [isSubmit, setIsSubmit] = useState<boolean>(false);
   const [file, setFile] = useState<{ cover: File; profile: File } | null>(null);
   const [preview, setPreview] = useState<{
     cover: string;
@@ -40,16 +40,18 @@ export default function CreateGroupForm() {
 
   const handleSubmit = async (data: InferedFormSchema) => {
     try {
+      setIsSubmit(true);
       const [cover, profile] = await Promise.all([
         handleImageUpload(file?.cover!),
         handleImageUpload(file?.profile!),
       ]);
-
       console.log(data, cover, profile);
     } catch (error) {
       if (error instanceof Error) {
         console.log(error.message);
       }
+    } finally {
+      setIsSubmit(false);
     }
   };
 
@@ -289,6 +291,8 @@ export default function CreateGroupForm() {
         </div>
         <div className='flex gap-5'>
           <Button
+            aria-disabled={isSubmit}
+            disabled={isSubmit}
             type='submit'
             className='flex w-[125px] rounded-lg !bg-secondary-blue px-5 py-2.5 text-center text-base font-semibold leading-[150%] !text-white-800 hover:bg-secondary-blue-80'
           >
