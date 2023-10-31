@@ -22,4 +22,4 @@ export { default as OptionBar } from './ProfilePage/OptionBar';
 export { default as PostCard } from './shared/PostCard';
 export { default as GroupPostCard } from '@/components/group/GroupPostCard';
 export { default as InterviewPostCard } from '@/components/interviews/post-card';
-export { default as CreateGroupForm } from '@/components/group/CreateForm';
+export { default as CreateGroupForm } from '@/components/group/CreateForm/CreateForm';
