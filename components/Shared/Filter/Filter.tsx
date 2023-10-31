@@ -6,6 +6,8 @@ import { PrismaClient } from '@prisma/client';
 import { categoryData } from '@/constant/categories';
 import { useRouter, useSearchParams } from 'next/navigation';
 
+// use queryString
+
 const Filter = () => {
   const [selected, setSelected] = useState<string[]>([]);
 
@@ -34,26 +36,11 @@ const Filter = () => {
     email: string;
   }
 
-  const prisma = new PrismaClient();
-
-  const createUser = async () => {
-    const newUser = await prisma.user.create({
-      data: {
-        name: 'Alice',
-        email: 'alice@prisma.io',
-      } as Data,
-    });
-
-    const users = await prisma.user.findMany();
-    console.log(users);
-  };
-
   useEffect(() => {
     let dynamicUrl = `?page=${page ? page : 1}&type=${selected.join('_')}`;
     if (selected.length <= 0) {
       dynamicUrl = '';
     }
-    createUser();
     router.push(`${dynamicUrl}`);
   }, [selected, router]);
 

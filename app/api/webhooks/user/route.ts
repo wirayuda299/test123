@@ -2,14 +2,13 @@
 // 1. SVIx will send the headers from the server.
 // secretkey for webhook: "whsec_IWe7ZaE3dFAvuuXNId5VkNCYzFajV2OD"
 
-import prisma from '@/prisma';
 import { IncomingHttpHeaders } from 'http';
 import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 import { Webhook, WebhookRequiredHeaders } from 'svix';
 
-// Headers type
+// headers tyoe
 // const headers = {
 //   "svix-id": "msg_p5jXN8AQM9LWM0D4loKWxJek",
 //   "svix-timestamp": "1614265330",
@@ -50,59 +49,10 @@ async function handler(request: Request) {
 
   const eventType: EventType = evt.type;
 
-  if (eventType === 'user.created') {
+  if (eventType === 'user.created' || eventType === 'user.updated') {
     const { id, ...attributes } = evt.data;
     console.log(id);
     console.log(attributes);
-
-    await prisma.user.create({
-      data: {
-        name: 'Rich',
-        email: 'hello@prisma.com',
-        posts: {
-          create: {
-            title: 'My first post',
-            body: 'Lots of really interesting stuff',
-            slug: 'my-first-post',
-          },
-        },
-      },
-    });
-
-    const allUsers = await prisma.user.findMany({
-      include: {
-        posts: true,
-      },
-    });
-    console.dir(allUsers, { depth: null });
-  }
-
-  if (eventType === 'user.updated') {
-    const { id, ...attributes } = evt.data;
-    console.log(id);
-    console.log(attributes);
-    await prisma.post.update({
-      where: {
-        slug: 'my-first-post',
-      },
-      data: {
-        comments: {
-          createMany: {
-            data: [
-              { comment: 'Great post!' },
-              { comment: "Can't wait to read more!" },
-            ],
-          },
-        },
-      },
-    });
-    const posts = await prisma.post.findMany({
-      include: {
-        comments: true,
-      },
-    });
-
-    console.dir(posts, { depth: Infinity });
   }
 }
 
