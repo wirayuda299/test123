@@ -1,6 +1,8 @@
-import { S3 } from 'aws-sdk';
+import S3 from 'aws-sdk/clients/s3';
 
 export const handleImageUpload = async (file: File) => {
+  if (!file) return;
+
   const s3 = new S3({
     region: process.env.NEXT_PUBLIC_AWS_S3_REGION,
     credentials: {
@@ -13,9 +15,9 @@ export const handleImageUpload = async (file: File) => {
     s3.upload(
       {
         Bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME!,
-        Key: file?.name!,
-        Body: file!,
-        ContentType: file?.type!,
+        Key: file.name,
+        Body: file,
+        ContentType: file.type,
       },
       (err, data) => {
         if (err) {
