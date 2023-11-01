@@ -13,7 +13,7 @@ type Props = {
 
 const PodcastsCard = ({ cardData }: Props) => {
   return (
-    <section className='w-full my-2.5 flex items-center justify-between'>
+    <section className='my-2.5 flex w-full items-center justify-between'>
       <Image
         className='shadow-postCardImgShadow'
         src={cardData.img}
@@ -26,12 +26,13 @@ const PodcastsCard = ({ cardData }: Props) => {
         <p className='bodyMd-semibold text-darkSecondary-900 dark:text-white-800'>
           {cardData.title}
         </p>
-        <p className='bodySm-regular text-darkSecondary-800 pt-1.5'>
+        <p className='bodySm-regular pt-1.5 text-darkSecondary-800'>
           {cardData.author}
         </p>
       </div>
+
       <div>
-        <Image src='icons/rightArr.svg' width={30} height={30} alt='rightArr' />
+        <Image src='icons/rightArr.svg' width={20} height={20} alt='rightArr' />
       </div>
     </section>
   );
