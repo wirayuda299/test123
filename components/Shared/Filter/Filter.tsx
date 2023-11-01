@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { PrismaClient } from '@prisma/client';
 
 import { categoryData } from '@/constant/categories';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { createUser } from '@/lib/actions/user.action';
+import error from 'next/error';
+import router from 'next/router';
 
 // use queryString
 
