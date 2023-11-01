@@ -52,7 +52,7 @@ const NotificationItem = ({
         <div className='w-[449px]'>
           <div className='ml-[2px]'>
             <div className='mb-[8px] flex items-center justify-start'>
-              <h4 className='display-semibold md:heading3 mr-2 text-darkSecondary-800'>
+              <h4 className='bodyMd-semibold sm:display-semibold md:heading3 mr-2 text-darkSecondary-800'>
                 {name}
               </h4>
               <h6 className='bodySm-regular md:body-semibold mt-1 text-darkSecondary-800'>
@@ -63,7 +63,7 @@ const NotificationItem = ({
             <h4
               className={`${
                 isSeen ? 'text-darkSecondary-800' : 'text-secondary-red-80'
-              } display-semibold md:heading3 mb-1 mr-2 `}
+              } bodyMd-semibold sm:display-semibold md:heading3 mb-1 mr-2 `}
             >
               {title}
             </h4>

@@ -6,7 +6,8 @@ import {
   HostMeetupCard,
   Pagination,
 } from '@/components/index';
-import { postDummyData, cardBtns } from '@/constant';
+import { cardBtns } from '@/constant';
+import { postDummyData } from '@/constants/index';
 
 export default function ProfilePage() {
   return (
@@ -32,7 +33,6 @@ export default function ProfilePage() {
               avatar={post.avatar}
               comments={post.comments}
               online={post.online}
-              isLiked={post.isLiked}
               likes={post.likes}
             />
           ))}

@@ -36,7 +36,7 @@ const MessageDropDown = () => {
                 <div className='messageNotificationContainer'>
                   {/* Avatar and Message */}
                   <div className='flex items-center justify-between gap-[7px]'>
-                    <Avatar className='rounded-full bg-secondary-yellow-30 p-[3px] text-center'>
+                    <Avatar className='rounded-full bg-secondary-yellow-30 text-center'>
                       <AvatarImage
                         src={message.avatar}
                         alt='Avatar'
@@ -44,7 +44,7 @@ const MessageDropDown = () => {
                         height={38}
                         className='messageAvatarImage'
                       />
-                      <AvatarFallback className='rounded-full'>
+                      <AvatarFallback className='rounded-full !bg-secondary-yellow-30'>
                         HN
                       </AvatarFallback>
                     </Avatar>
@@ -97,7 +97,7 @@ const MessageDropDown = () => {
           </NavigationMenuTrigger>
 
           {/* Bell Button DropDown Content */}
-          <NavigationMenuContent className='bellButtonDropDown'>
+          <NavigationMenuContent className='bellButtonDropDown !sm:p-5 !p-1'>
             {/* Message Notifications */}
             <Notifications />
           </NavigationMenuContent>
