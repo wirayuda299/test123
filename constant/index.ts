@@ -12,4 +12,4 @@ export { socialIcons, demoPerformance, optionBar } from './profileData';
 export { interviewCards } from './interviews';
 export { cardBtns } from './hostMeetupCard';
 export { postDummyData } from './PostDummyData';
-export { createPostData } from './createPostPage';
+export { createPostData } from './create-post';

@@ -26,8 +26,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
 import { CreatePostSchema } from '@/lib/validations';
-import { createPostData } from '@/constant';
+import { createPostData, sidebarContents } from '@/constant';
+import { cn } from '@/lib/utils';
+import style from 'styled-jsx/style';
 
 const CreatePost = () => {
   const { theme } = useTheme();
@@ -50,6 +57,8 @@ const CreatePost = () => {
     defaultValues: {
       title: '',
       post: '',
+      group: '',
+      createType: '',
       tags: [],
     },
   });
@@ -160,28 +169,93 @@ const CreatePost = () => {
 
           <FormField
             control={form.control}
-            name='title'
+            name='group'
             render={({ field }) => (
               <FormItem>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
+                <Popover>
                   <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder='Select Group' />
-                    </SelectTrigger>
+                    <PopoverTrigger asChild className='flex items-center gap-2'>
+                      <Button className='bodyXs-regular md:body-semibold rounded border-none bg-white-800 text-darkSecondary-900 dark:bg-darkPrimary-4 dark:text-white-800'>
+                        Select Group
+                        <Image
+                          src='form-down-arrow.svg'
+                          alt='icon'
+                          width={15}
+                          height={15}
+                          className='h-2.5 w-2.5 dark:brightness-0 dark:invert md:h-3.5 md:w-3.5'
+                        />
+                      </Button>
+                    </PopoverTrigger>
                   </FormControl>
-                  <SelectContent>
-                    <SelectItem value='m@example.com'>m@example.com</SelectItem>
-                    <SelectItem value='m@google.com'>m@google.com</SelectItem>
-                    <SelectItem value='m@support.com'>m@support.com</SelectItem>
-                  </SelectContent>
-                </Select>
+
+                  <PopoverContent className='w-fit dark:bg-darkPrimary-4'>
+                    <div className='no-scrollbar flex w-full flex-col gap-3 overflow-y-hidden p-3 hover:overflow-y-auto dark:bg-darkPrimary-3 md:flex-row'>
+                      {sidebarContents.map((content) => (
+                        <div
+                          className='mb-2 flex flex-col items-start space-y-5'
+                          key={content.label}
+                        >
+                          <div className='h-full !w-full flex-1 rounded-lg bg-secondary-yellow-10 p-3'>
+                            <div className='flex items-center gap-2'>
+                              <Image
+                                className='aspect-auto object-contain'
+                                src={content.icon}
+                                alt='growth icon'
+                                width={20}
+                                height={20}
+                              />
+                              <h2 className='text-lg font-semibold'>
+                                {content.label}
+                              </h2>
+                            </div>
+                            <p className='text-left text-xs text-darkSecondary-800'>
+                              {content.text}
+                            </p>
+                          </div>
+
+                          <div className=' flex flex-col items-start gap-3'>
+                            {content.items.map((item) => (
+                              <div
+                                className={`mb-3 inline-flex h-full items-center justify-start gap-x-2 rounded-lg ${style} cursor-pointer`}
+                                key={item.title}
+                              >
+                                <Image
+                                  className='aspect-auto bg-transparent object-cover'
+                                  src={item.icon}
+                                  width={34}
+                                  height={34}
+                                  alt={item.title}
+                                />
+                                <div className='w-full text-left'>
+                                  <h3
+                                    className={cn(
+                                      'text-left text-xs font-semibold',
+                                      style,
+                                    )}
+                                  >
+                                    {item.title}
+                                  </h3>
+                                  <p className='truncate text-left text-10 text-darkSecondary-800'>
+                                    {item.text}
+                                  </p>
+                                </div>
+                              </div>
+                            ))}
+
+                            <button className='w-max rounded-full bg-secondary-purple-20 px-2 py-[2px] text-9 font-semibold text-secondary-purple'>
+                              See all
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </PopoverContent>
+                </Popover>
                 <FormMessage />
               </FormItem>
             )}
           />
+
           <FormField
             control={form.control}
             name='createType'
@@ -192,14 +266,20 @@ const CreatePost = () => {
                   defaultValue={field.value}
                 >
                   <FormControl>
-                    <SelectTrigger className='bodyXs-regular md:body-semibold rounded border-none bg-white-800 text-darkSecondary-900 dark:bg-darkPrimary-4 dark:text-white-800'>
-                      <p className='text-darkSecondary-800'>Create - </p>
+                    <SelectTrigger className='bodyXs-regular md:body-semibold flex items-center gap-2 rounded border-none bg-white-800 text-darkSecondary-900 dark:bg-darkPrimary-4 dark:text-white-800'>
                       <SelectValue placeholder='Create - Post' />
+                      <Image
+                        src='form-down-arrow.svg'
+                        alt='icon'
+                        width={15}
+                        height={15}
+                        className='h-2.5 w-2.5 dark:brightness-0 dark:invert md:h-3.5 md:w-3.5'
+                      />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent className='dark:bg-darkPrimary-4'>
                     {createPostData.map((data) => (
-                      <SelectItem value='post' key={data.title}>
+                      <SelectItem value={data.value} key={data.title}>
                         <div className='flex flex-row items-center justify-between gap-1 p-1 md:gap-2.5'>
                           <Image
                             src={data.icon}
@@ -241,6 +321,7 @@ const CreatePost = () => {
                   // @ts-ignore
                   onInit={(evt, editor) => (editorRef.current = editor)}
                   initialValue=''
+                  onEditorChange={(content) => field.onChange(content)}
                   init={{
                     skin: theme === 'dark' ? 'oxide-dark' : 'oxide',
                     content_css: theme === 'dark' ? 'dark' : 'default',
