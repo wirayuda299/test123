@@ -33,8 +33,6 @@ import {
 } from '@/components/ui/popover';
 import { CreatePostSchema } from '@/lib/validations';
 import { createPostData, sidebarContents } from '@/constant';
-import { cn } from '@/lib/utils';
-import style from 'styled-jsx/style';
 
 const CreatePost = () => {
   const { theme } = useTheme();
@@ -216,7 +214,7 @@ const CreatePost = () => {
                           <div className=' flex flex-col items-start gap-3'>
                             {content.items.map((item) => (
                               <div
-                                className={`mb-3 inline-flex h-full items-center justify-start gap-x-2 rounded-lg ${style} cursor-pointer`}
+                                className={`mb-3 inline-flex h-full cursor-pointer items-center justify-start gap-x-2 rounded-lg`}
                                 key={item.title}
                               >
                                 <Image
@@ -227,12 +225,7 @@ const CreatePost = () => {
                                   alt={item.title}
                                 />
                                 <div className='w-full text-left'>
-                                  <h3
-                                    className={cn(
-                                      'text-left text-xs font-semibold',
-                                      style,
-                                    )}
-                                  >
+                                  <h3 className='text-left text-xs font-semibold'>
                                     {item.title}
                                   </h3>
                                   <p className='truncate text-left text-10 text-darkSecondary-800'>
