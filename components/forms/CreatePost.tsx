@@ -170,23 +170,23 @@ const CreatePost = () => {
             name='group'
             render={({ field }) => (
               <FormItem>
-                <Popover>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
                   <FormControl>
-                    <PopoverTrigger asChild className='flex items-center gap-2'>
-                      <Button className='bodyXs-regular md:body-semibold rounded border-none bg-white-800 text-darkSecondary-900 dark:bg-darkPrimary-4 dark:text-white-800'>
-                        Select Group
-                        <Image
-                          src='form-down-arrow.svg'
-                          alt='icon'
-                          width={15}
-                          height={15}
-                          className='h-2.5 w-2.5 dark:brightness-0 dark:invert md:h-3.5 md:w-3.5'
-                        />
-                      </Button>
-                    </PopoverTrigger>
+                    <SelectTrigger className='bodyXs-regular md:body-semibold flex items-center gap-2 rounded border-none bg-white-800 text-darkSecondary-900 dark:bg-darkPrimary-4 dark:text-white-800'>
+                      <SelectValue placeholder='Select Group' />
+                      <Image
+                        src='form-down-arrow.svg'
+                        alt='icon'
+                        width={15}
+                        height={15}
+                        className='h-2.5 w-2.5 dark:brightness-0 dark:invert md:h-3.5 md:w-3.5'
+                      />
+                    </SelectTrigger>
                   </FormControl>
-
-                  <PopoverContent className='w-fit dark:bg-darkPrimary-4'>
+                  <SelectContent className='dark:bg-darkPrimary-4'>
                     <div className='no-scrollbar flex w-full flex-col gap-3 overflow-y-hidden p-3 hover:overflow-y-auto dark:bg-darkPrimary-3 md:flex-row'>
                       {sidebarContents.map((content) => (
                         <div
@@ -214,7 +214,7 @@ const CreatePost = () => {
                           <div className=' flex flex-col items-start gap-3'>
                             {content.items.map((item) => (
                               <div
-                                className={`mb-3 inline-flex h-full cursor-pointer items-center justify-start gap-x-2 rounded-lg`}
+                                className={`mb-3 inline-flex h-full  items-center justify-start gap-x-2 rounded-lg`}
                                 key={item.title}
                               >
                                 <Image
@@ -225,9 +225,12 @@ const CreatePost = () => {
                                   alt={item.title}
                                 />
                                 <div className='w-full text-left'>
-                                  <h3 className='text-left text-xs font-semibold'>
+                                  <SelectItem
+                                    value={item.title}
+                                    className='cursor-pointer'
+                                  >
                                     {item.title}
-                                  </h3>
+                                  </SelectItem>
                                   <p className='truncate text-left text-10 text-darkSecondary-800'>
                                     {item.text}
                                   </p>
@@ -242,8 +245,8 @@ const CreatePost = () => {
                         </div>
                       ))}
                     </div>
-                  </PopoverContent>
-                </Popover>
+                  </SelectContent>
+                </Select>
                 <FormMessage />
               </FormItem>
             )}
