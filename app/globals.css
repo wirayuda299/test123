@@ -449,7 +449,7 @@
   }
 
   .postCardGridItem3 {
-    @apply row-start-1 row-end-2 col-start-6 col-end-7 ml-auto pl-6;
+    @apply row-start-1 row-end-2 col-start-6 col-end-7 ml-auto;
   }
 
   .postCardGridItem4 {

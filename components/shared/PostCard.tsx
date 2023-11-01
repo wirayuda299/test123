@@ -1,10 +1,8 @@
-'use client';
-
 import Image from 'next/image';
-import { useState } from 'react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
+import { IsLiked } from '../Home/IsLiked';
 
 interface PostCardProps {
   mainImage: string;
@@ -33,8 +31,6 @@ const PostCard = ({
   comments,
   styles,
 }: PostCardProps) => {
-  const [isLiked, setIsLiked] = useState<boolean>(false);
-
   return (
     <div className={cn('postCardGrid', styles)}>
       {/* Grid Item 1 - Post Image */}
@@ -62,43 +58,7 @@ const PostCard = ({
       </div>
 
       {/* Grid Item 3 - Post Heart/isLiked */}
-      <div className='postCardGridItem3'>
-        {/* Show gray heart if not liked, orange heart if liked */}
-        {isLiked ? (
-          <div className='orangeHeart'>
-            <Image
-              src='/orange-heart.png'
-              alt='Heart'
-              width={25}
-              height={25}
-              className='mt-[8px]'
-              onClick={() => setIsLiked(!isLiked)}
-            />
-          </div>
-        ) : (
-          <div className='grayHeart'>
-            <Image
-              src='/gray-heart.png'
-              alt='Heart'
-              width={23}
-              height={23}
-              className='mt-[1px]'
-              onClick={() => setIsLiked(!isLiked)}
-            />
-          </div>
-        )}
-        {/* Avatar shows on mobile view instead of heart */}
-        <Avatar className='avatarMobile md:hidden'>
-          <AvatarImage
-            src={avatar}
-            alt='Avatar'
-            width={20}
-            height={25}
-            className='rounded-full'
-          />
-          <AvatarFallback>HN</AvatarFallback>
-        </Avatar>
-      </div>
+      <IsLiked avatar={avatar} />
 
       {/* Grid Item 4 - User info and created date */}
       <div className='postCardGridItem4'>
