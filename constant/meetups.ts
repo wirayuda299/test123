@@ -6,10 +6,10 @@ const meetupsData = [
     description:
       'Contact Email mansurul@uihut.com; Phone Number +8801777138513. UI HUT is a design resources platform for UX/UI designers, developers, and founders.',
     tags: ['Remote', 'Part-time', 'WorldWide'],
-    date: 'Feb 7',
+    day: '7',
+    month: 'Feb',
     image: 'images/job1.svg',
   },
-
   {
     title: 'Design Meetups USA | Dribbble',
     companyName: 'Dribbble',
@@ -17,8 +17,20 @@ const meetupsData = [
     description:
       'Dribbble Meetups are a chance for designers to socialize, talk shop, and foster their local design communities. They are self-organized events that range from the casual, five-person, coffee-shop roundtable to the chef-catered, bar-tended, 200-person extravaganza...',
     tags: ['Remote', 'Part-time'],
-    date: 'Feb 7',
+    day: '3',
+    month: 'Feb',
     image: 'images/job2.svg',
+  },
+  {
+    title: 'MeetUp Brand Identity Design | Dribbble',
+    companyName: 'Behance',
+    location: 'San Jose, USA',
+    description:
+      'Dribbble Meetups are a chance for designers to socialize, talk shop, and foster their local design communities. They are self-organized events that range from the casual, five-person, coffee-shop roundtable to the chef-catered, bar-tended, 200-person extravaganza...',
+    tags: ['Remote', 'Part-time'],
+    day: '5',
+    month: 'Feb',
+    image: 'images/job3.svg',
   },
 ];
 
