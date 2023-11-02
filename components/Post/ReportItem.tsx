@@ -1,16 +1,23 @@
 'use client';
 
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 
 interface ReportItemProps {
   id: number;
   title: string;
+  setSelectedReportItems: Dispatch<SetStateAction<number[]>>;
 }
 
-const ReportItem = ({ id, title }: ReportItemProps) => {
+const ReportItem = ({ id, title, setSelectedReportItems }: ReportItemProps) => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   const handleClick = () => {
+    setSelectedReportItems((prevState) => {
+      if (prevState.includes(id)) {
+        return prevState.filter((itemId) => itemId !== id);
+      }
+      return prevState.concat(id);
+    });
     setIsActive(!isActive);
   };
 

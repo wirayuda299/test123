@@ -1,5 +1,7 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -20,11 +22,20 @@ interface ReportProps {
 }
 
 const Report = ({ user }: ReportProps) => {
+  const [selectedReportItems, setSelectedReportItems] = useState<number[]>([]);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setSelectedReportItems([]);
+    }
+  }, [isOpen]);
+
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button className='flex items-center justify-start gap-3.5'>
-          <div className='flex aspect-square items-center justify-center rounded-[6px] bg-white-800 p-1 dark:bg-darkPrimary-3 dark:md:bg-darkPrimary-4'>
+          <div className=' flex aspect-square items-center justify-center rounded-[6px] bg-white-800 p-1 dark:md:bg-darkPrimary-4'>
             <Image
               src='/assets/posts/report.svg'
               alt='Report icon'
@@ -45,21 +56,28 @@ const Report = ({ user }: ReportProps) => {
         <div className='grid gap-4 py-4'>
           <ul className='flex flex-wrap items-center gap-5'>
             {reportTags.map((item) => (
-              <ReportItem key={item.id} id={item.id} title={item.title} />
+              <ReportItem
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                setSelectedReportItems={setSelectedReportItems}
+              />
             ))}
           </ul>
         </div>
 
         <DialogFooter className='flex !flex-row !justify-start'>
-          <ReportConfirmation />
+          <ReportConfirmation
+            closeParentModal={() => setIsOpen(false)}
+            selectedReportItems={selectedReportItems}
+          />
           <DialogClose asChild>
-            <Link
-              href=''
+            <Button
               type='submit'
-              className='heading-3 ml-5 bg-transparent p-2.5 text-darkSecondary-800 hover:text-secondary-blue'
+              className='heading-3 ml-5 bg-transparent p-2.5 text-darkSecondary-800 hover:!bg-white hover:text-secondary-blue'
             >
               Cancel
-            </Link>
+            </Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>
