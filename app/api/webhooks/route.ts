@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { NextResponse } from 'next/server';
 import { Webhook } from 'svix';
 import { headers } from 'next/headers';
@@ -59,7 +60,7 @@ export async function POST(req: Request) {
     // create user in db.
     const user = await createUser({
       email: email_addresses[0].email_address,
-      name: `${first_name} ${last_name ? last_name : ''}`,
+      name: `${first_name} ${last_name || ''}`,
     });
 
     return NextResponse.json({ user }, { status: 201 });
@@ -71,7 +72,7 @@ export async function POST(req: Request) {
     // updated user
     const updatedUser = await updateUser({
       email: email_addresses[0].email_address,
-      name: `${first_name} ${last_name ? last_name : ''}`,
+      name: `${first_name} ${last_name || ''}`,
     });
     return NextResponse.json({ updatedUser }, { status: 200 });
   }
