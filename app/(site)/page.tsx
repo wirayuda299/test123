@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import SidePodcasts from '@/components/SidePodcasts/SidePodcasts';
-import MeetupChip from '@/components/shared/MeetupChip/MeetupChip';
 import SidebarListItem from '@/components/Home/SidebarListItem';
 import PostCard from '../../components/shared/PostCard';
 import Pagination from '../../components/shared/Pagination';
@@ -16,7 +15,7 @@ import {
   pinnedGroups,
   popularTags,
 } from '@/constant/homeLeftSidebar';
-import Report from '../../components/Post/Report';
+import { MeetupChip } from '@/components/index';
 
 type URLProps = {
   searchParams: {
@@ -186,7 +185,6 @@ export default function Home({ searchParams }: URLProps) {
               ))}
             </div>
             <Pagination totalPages={maxNumberOfPages} />
-            <Report user='Mansurel Haque' />
           </section>
         </div>
       </section>
