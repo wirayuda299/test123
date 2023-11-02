@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
-import { Progress } from '@/components/ui/progress';
 
-import { diskLight, songThumb } from '@/public/images';
+import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
 
 const Podcast = () => {
@@ -13,14 +12,14 @@ const Podcast = () => {
           <aside className='flex relative'>
             <Image
               className='z-10 rounded-lg'
-              src={songThumb}
+              src='/images/songThumb.png'
               alt='thumb'
               width={150}
               height={150}
             />
             <Image
               className='-left-3 relative z-0 md:-left-8'
-              src={diskLight}
+              src='/images/diskLight.svg'
               alt='disk'
               width={130}
               height={130}
@@ -74,7 +73,7 @@ const Podcast = () => {
             topics including metal health, how to find a business idea and the
             relevance of bootstrapping today.
           </p>
-          <ul className='list-disc	list-inside py-6 pl-3 display-regular break-words'>
+          <ul className='list-disc list-inside py-6 pl-3 display-regular break-words'>
             <li>Follow Rob on Twitter: https://twitter.com/robwalling</li>
             <li>Apply to TinySeed: https://tinyseed.com/apply </li>
             <li>

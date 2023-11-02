@@ -34,7 +34,7 @@ const Podcasts = () => {
               <div className='w-full lg:w-5/6'>
                 <div className='columns-1 md:columns-2'>
                   {podcastDatas?.map((podcast) => (
-                    <PodcastChip podcastData={podcast} />
+                    <PodcastChip podcastData={podcast} key={podcast.author} />
                   ))}
                 </div>
               </div>

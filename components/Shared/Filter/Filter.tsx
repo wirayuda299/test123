@@ -1,14 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { categoryData } from '@/constant/categories';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { createUser } from '@/lib/actions/user.action';
-import error from 'next/error';
-import router from 'next/router';
-
-// use queryString
+import { useRouter } from 'next/navigation';
 
 const Filter = () => {
   const [selected, setSelected] = useState<string[]>([]);
@@ -29,22 +24,6 @@ const Filter = () => {
       return setSelected(uncheckedData);
     }
   };
-
-  let getParam = useSearchParams();
-  let page = getParam.get('page');
-
-  interface Data {
-    name: string;
-    email: string;
-  }
-
-  useEffect(() => {
-    let dynamicUrl = `?page=${page ? page : 1}&type=${selected.join('_')}`;
-    if (selected.length <= 0) {
-      dynamicUrl = '';
-    }
-    router.push(`${dynamicUrl}`);
-  }, [selected, router]);
 
   return (
     <section className='p-5 bg-white rounded-2xl dark:bg-darkPrimary-3'>
