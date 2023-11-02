@@ -13,12 +13,13 @@ import {
 } from '@/components/ui/dialog';
 import { reportTags } from '@/constants';
 import ReportItem from './ReportItem';
+import ReportConfirmation from './ReportConfirmation';
 
 interface ReportProps {
   user: string;
 }
 
-export function Report({ user }: ReportProps) {
+const Report = ({ user }: ReportProps) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -49,22 +50,21 @@ export function Report({ user }: ReportProps) {
           </ul>
         </div>
 
-        <DialogFooter className='!justify-start'>
-          <Button
-            type='submit'
-            className='heading-3 !hover:opacity-70 min-w-[160px] rounded-md bg-secondary-blue p-2.5 text-white'
-          >
-            Submit
-          </Button>
-          <Link
-            href=''
-            type='submit'
-            className='heading-3 ml-5 bg-transparent p-2.5 text-darkSecondary-800 hover:text-secondary-blue'
-          >
-            Cancel
-          </Link>
+        <DialogFooter className='flex !flex-row !justify-start'>
+          <ReportConfirmation />
+          <DialogClose asChild>
+            <Link
+              href=''
+              type='submit'
+              className='heading-3 ml-5 bg-transparent p-2.5 text-darkSecondary-800 hover:text-secondary-blue'
+            >
+              Cancel
+            </Link>
+          </DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>
   );
-}
+};
+
+export default Report;
