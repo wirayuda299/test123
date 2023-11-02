@@ -6,10 +6,10 @@ import { Button } from '@/components/ui/button';
 
 const Podcast = () => {
   return (
-    <main className='max-container  pb-10 w-full md:w-4/6 pt-28'>
-      <section className='bg-white dark:bg-darkPrimary-3 p-5 rounded-2xl'>
-        <div className='w-full flex flex-col md:flex-row'>
-          <aside className='flex relative'>
+    <main className='max-container  w-full pb-10 pt-28 md:w-4/6'>
+      <section className='rounded-2xl bg-white p-5 dark:bg-darkPrimary-3'>
+        <div className='flex w-full flex-col md:flex-row'>
+          <aside className='relative flex'>
             <Image
               className='z-10 rounded-lg'
               src='/images/songThumb.png'
@@ -18,28 +18,28 @@ const Podcast = () => {
               height={150}
             />
             <Image
-              className='-left-3 relative z-0 md:-left-8'
+              className='relative -left-3 z-0 md:-left-8'
               src='/images/diskLight.svg'
               alt='disk'
               width={130}
               height={130}
             />
           </aside>
-          <div className='flex-grow'>
+          <div className='grow'>
             <p className='bodyMd-regular text-darkSecondary-900 dark:text-white'>
               Hipnod • Episode 243
             </p>
             <h3 className='heading3 text-darkSecondary-900 dark:text-white'>
               by Courtland Allen
             </h3>
-            <div className='py-4 flex items-center'>
-              <Progress value={33} className='h-2.5 mr-5' />
-              <p className='body-semibold flex-grow whitespace-nowrap text-darkSecondary-900 dark:text-white'>
+            <div className='flex items-center py-4'>
+              <Progress value={33} className='mr-5 h-2.5' />
+              <p className='body-semibold grow whitespace-nowrap text-darkSecondary-900 dark:text-white'>
                 00:00 | 63:37
               </p>
             </div>
             <div className='flex'>
-              <Button className='rounded-[20px] !bg-secondary-blue !hover:bg-secondary-blue-90 display-semibold !text-white'>
+              <Button className='!hover:bg-secondary-blue-90 display-semibold rounded-[20px] !bg-secondary-blue !text-white'>
                 <Image
                   className='mr-2'
                   src='/icons/playIcon.svg'
@@ -54,26 +54,26 @@ const Podcast = () => {
         </div>
       </section>
 
-      <section className='my-5 bg-white dark:bg-darkPrimary-3 p-5 rounded-2xl'>
+      <section className='my-5 rounded-2xl bg-white p-5 dark:bg-darkPrimary-3'>
         <h1 className='heading1-semibold text-darkSecondary-900 dark:text-white'>
           #243 – Mental Health and Bootstrapping in 2022 with Rob Walling of
           TinySeed
         </h1>
 
-        <div className='text-darkSecondary-800 pt-5 '>
+        <div className='pt-5 text-darkSecondary-800 '>
           <h3 className='display-semibold'>EPISODE DETAILS</h3>
-          <p className='py-6 display-regular'>
-            In this episode I'm chat with Rob Walling (@robwalling) about a wide
-            range of topics including metal health, how to find a business idea
-            and the relevance of bootstrapping today.
+          <p className='display-regular py-6'>
+            In this episode I&apos;m chat with Rob Walling (@robwalling) about a
+            wide range of topics including metal health, how to find a business
+            idea and the relevance of bootstrapping today.
           </p>
           <h3 className='display-semibold'>SHOW NOTES</h3>
           <p className='display-regular'>
-            In this episode I'm chat with Rob Walling about a wide range of
+            In this episode I&apos;m chat with Rob Walling about a wide range of
             topics including metal health, how to find a business idea and the
             relevance of bootstrapping today.
           </p>
-          <ul className='list-disc list-inside py-6 pl-3 display-regular break-words'>
+          <ul className='display-regular list-inside list-disc break-words py-6 pl-3'>
             <li>Follow Rob on Twitter: https://twitter.com/robwalling</li>
             <li>Apply to TinySeed: https://tinyseed.com/apply </li>
             <li>
