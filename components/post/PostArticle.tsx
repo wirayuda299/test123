@@ -31,6 +31,11 @@ const PostArticle = ({
 }: PostArticleProps) => {
   const [comments, setComments] = useState(commentsData);
 
+  const handleComment = (text: string) => {
+    const comment = createComment(text, new Date());
+    setComments((prev) => prev.concat(comment as CommentType));
+  };
+
   return (
     <article className='space-y-4 rounded-2xl md:mb-20'>
       <div className='flex w-full flex-col items-center justify-between gap-5 bg-white dark:bg-darkPrimary-3 max-xl:pb-5'>
@@ -61,10 +66,7 @@ const PostArticle = ({
           <div className='pl-6 pr-10 dark:bg-darkPrimary-3'>
             <CommentInput
               placeholder='Comment... '
-              handleComment={(text: string) => {
-                const comment = createComment(text, new Date());
-                setComments((prev) => prev.concat(comment as CommentType));
-              }}
+              handleComment={handleComment}
             />
           </div>
         </div>

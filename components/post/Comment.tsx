@@ -34,6 +34,25 @@ const Comment = ({
   const [isLiked, setIsLiked] = useState<boolean>(false);
   const [showReplyInput, setShowReplyInput] = useState<boolean>(false);
 
+  const handleReply = (text: string) => {
+    if (text) {
+      const subComment = createComment(text, new Date());
+      setComments((prevComments: CommentType[]) => {
+        const finalComments = prevComments?.map((comment: CommentType) => {
+          if (comment.id === id) {
+            return {
+              ...comment,
+              subComments: comment?.subComments?.concat(subComment),
+            };
+          }
+          return comment;
+        });
+        return finalComments;
+      });
+      setShowReplyInput(false);
+    }
+  };
+
   return (
     <div className='rounded-b-2xl pb-2 dark:bg-darkPrimary-3'>
       <div
@@ -103,27 +122,7 @@ const Comment = ({
             <div className='pr-4'>
               <CommentInput
                 placeholder='Reply...'
-                handleComment={(text: string) => {
-                  if (text) {
-                    const subComment = createComment(text, new Date());
-                    setComments((prevComments: CommentType[]) => {
-                      const finalComments = prevComments?.map(
-                        (comment: CommentType) => {
-                          if (comment.id === id) {
-                            return {
-                              ...comment,
-                              subComments:
-                                comment?.subComments?.concat(subComment),
-                            };
-                          }
-                          return comment;
-                        },
-                      );
-                      return finalComments;
-                    });
-                    setShowReplyInput(false);
-                  }
-                }}
+                handleComment={handleReply}
               />
             </div>
           )}
