@@ -16,6 +16,7 @@ import {
   pinnedGroups,
   popularTags,
 } from '@/constant/homeLeftSidebar';
+import { Report } from '@/components/Post/report';
 
 type URLProps = {
   searchParams: {
@@ -185,6 +186,7 @@ export default function Home({ searchParams }: URLProps) {
               ))}
             </div>
             <Pagination totalPages={maxNumberOfPages} />
+            <Report />
           </section>
         </div>
       </section>
