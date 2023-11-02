@@ -8,12 +8,12 @@ const MeetupsWrapper = () => {
     <>
       {meetupsData?.map((meetupData) => (
         <section
-          className='w-full p-5 shadow-md rounded-2xl bg-white dark:bg-darkPrimary-3  mb-4'
+          className='mb-4 w-full rounded-2xl bg-white p-5 shadow-md  dark:bg-darkPrimary-3'
           key={meetupData.companyName}
         >
           <div key={meetupData.companyName}>
             {/* Meetup Quick Informatio */}
-            <article className='flex justify-between items-center'>
+            <article className='flex items-center justify-between'>
               <div className='flex'>
                 <Image
                   className='w-12 sm:w-20'
@@ -23,7 +23,7 @@ const MeetupsWrapper = () => {
                   quality={100}
                   alt={meetupData.companyName}
                 />
-                <div className='px-5 flex flex-col justify-evenly'>
+                <div className='flex flex-col justify-evenly px-5'>
                   <h1 className='bodyMd-semibold md:heading3 text-darkSecondary-900 dark:text-white'>
                     {meetupData.title}
                   </h1>
@@ -33,7 +33,7 @@ const MeetupsWrapper = () => {
                 </div>
               </div>
 
-              <time className='border-2 px-3 py-1 text-center border-darkSecondary-600 rounded-md md:px-4 md:py-2 dark:border-none dark:shadow-darkShadow'>
+              <time className='dark:shadow-darkShadow rounded-md border-2 border-darkSecondary-600 px-3 py-1 text-center dark:border-none md:px-4 md:py-2'>
                 <p className='bodyMd-semibold sm:display-semibold uppercase text-darkSecondary-900 dark:text-white'>
                   Feb
                 </p>
@@ -51,7 +51,7 @@ const MeetupsWrapper = () => {
               {meetupData.tags?.map((tag) => (
                 <Badge
                   key={tag}
-                  className='bodyXs-semibold md:bodyMd-semibold text-darkSecondary-700 mr-2.5 bg-white-700 dark:bg-darkPrimary-4'
+                  className='bodyXs-semibold md:bodyMd-semibold mr-2.5 bg-white-700 text-darkSecondary-700 dark:bg-darkPrimary-4'
                   variant='secondary'
                 >
                   {tag}

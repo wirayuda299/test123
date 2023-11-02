@@ -1,9 +1,8 @@
+export { default as MeetupsWrapper } from './shared/MeetupsWrapper/MeetupsWrapper';
+export { default as PodcastsCard } from './shared/PodcastsCard/PodcastsCard';
 export { default as Contents } from '@/components/shared/Contents/Contents';
 export { default as BusinessInterest } from '@/components/BusinessInterest/BuisinessInterest';
-export { default as HostMeetupCard } from '@/components/shared/HostMeetupCard/HostMeetupCard';
 export { default as SidePodcasts } from '@/components/SidePodcasts/SidePodcasts';
-export { default as PodcastsCard } from '@/components/shared/PodcastsCard/PodcastsCard';
-export { default as MeetupsWrapper } from '@/components/shared/MeetupsWrapper/MeetupsWrapper';
 export { default as Filter } from '@/components/shared/Filter/Filter';
 export { default as PodcastChip } from '@/components/Podcasts/PodcastChip';
 export { default as MeetupChip } from '@/components/shared/MeetupChip/MeetupChip';
@@ -22,3 +21,4 @@ export { default as OptionBar } from './ProfilePage/OptionBar';
 export { default as PostCard } from './shared/PostCard';
 export { default as GroupPostCard } from '@/components/group/GroupPostCard';
 export { default as InterviewPostCard } from '@/components/interviews/post-card';
+export { default as HostMeetupCard } from './shared/HostMeetupCard/HostMeetupCard';

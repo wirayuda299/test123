@@ -1,7 +1,5 @@
 import Image from 'next/image';
 
-import { rightArr } from '@/public/icons';
-
 type Props = {
   cardData: {
     img: string;

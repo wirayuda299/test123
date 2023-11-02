@@ -1,7 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
-import { Button } from '@/components/ui/button';
 import {
   CardHeader,
   Card,
@@ -17,28 +15,28 @@ interface HostButtonProps {
   }[];
 }
 
-const HostMeetupCard: React.FC<HostButtonProps> = ({ cardBtns }) => {
+const HostMeetupCard = ({ cardBtns }: HostButtonProps) => {
   return (
-    <Card className='p-5 rounded-2xl relative bg-center bg-no-repeat bg-cover bg-meetUpBg border-none'>
+    <Card className='relative rounded-2xl border-none bg-meetUpBg bg-cover bg-center bg-no-repeat p-5'>
       <CardHeader className='p-0'>
-        <CardTitle className='p-0 heading3 text-white mb-1'>
+        <CardTitle className='heading3 mb-1 p-0 text-white'>
           {cardBtns[0]?.name}
         </CardTitle>
-        <CardDescription className='!text-white bodyMd-regular mb-5 '>
+        <CardDescription className='bodyMd-regular mb-5 !text-white '>
           Find other Hipnoders in your area so you can learn, share and work
           together.
         </CardDescription>
       </CardHeader>
-      <CardContent className='flex justify-between p-0 mt-5'>
+      <CardContent className='mt-5 flex justify-between p-0'>
         <Link
           href={`${cardBtns[1]?.link}`}
-          className='!bg-secondary-red-60 px-4 py-2.5 rounded-md !text-secondary-red-10 body-semibold hover:!bg-secondary-red-80'
+          className='body-semibold rounded-md !bg-secondary-red-60 px-4 py-2.5 !text-secondary-red-10 hover:!bg-secondary-red-80'
         >
           {cardBtns[1]?.name}
         </Link>
         <Link
           href={cardBtns[0]?.link}
-          className='bg-white px-4 py-2.5 rounded-md !text-secondary-red-80 hover:!bg-white-700 body-semibold'
+          className='body-semibold rounded-md bg-white px-4 py-2.5 !text-secondary-red-80 hover:!bg-white-700'
         >
           {cardBtns[0]?.name}
         </Link>
