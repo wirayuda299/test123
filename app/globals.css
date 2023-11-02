@@ -155,11 +155,11 @@
   /* TopBar */
 
   .topBarContainer {
-    @apply flex items-center bg-white dark:bg-darkPrimary-3 mx-auto px-3 lg:px-10 py-1 md:py-2 fixed top-0 left-0 right-0 w-full z-50 !important;
+    @apply mx-auto flex items-center bg-white dark:bg-darkPrimary-3  px-3 py-1 md:py-2 fixed top-0 left-0 right-0 w-full z-50 !important;
   }
 
   .topBar {
-    @apply w-full flex-1 items-center gap-5 max-w-7xl mx-auto px-[1%];
+    @apply max-w-1440 flex-1 items-center gap-5 mx-auto px-[1%] md:px-[4%];
   }
 
   .topBarCol2 {
@@ -346,6 +346,10 @@
     @apply cursor-pointer absolute right-3 lg:right-2.5 top-2 h-4 w-4 object-contain sm:right-4 sm:top-2 md:top-2 lg:top-2.5 lg:h-5 lg:w-5;
   }
 
+  .closeIcon {
+    @apply cursor-pointer absolute right-9 lg:right-8 top-2 h-4 w-4 object-contain sm:right-4 sm:top-2 md:top-2 lg:top-2.5 lg:h-5 lg:w-5;
+  }
+
   /* Post Card on Home Page */
 
   .postCardGrid {
@@ -361,7 +365,7 @@
   }
 
   .postCardGridItem3 {
-    @apply row-start-1 row-end-2 col-start-6 col-end-7 ml-auto pl-6;
+    @apply row-start-1 row-end-2 col-start-6 col-end-7 ml-auto;
   }
 
   .postCardGridItem4 {
@@ -393,11 +397,11 @@
   }
 
   .avatarMobile {
-    @apply h-[30px] w-[30px] rounded-full bg-secondary-purple-10 px-[5px] py-[3px] dark:bg-secondary-purple-20 md:hidden;
+    @apply h-[30px] w-[30px] rounded-full bg-secondary-purple-10 dark:bg-secondary-purple-20 md:hidden;
   }
 
   .avatarDesktop {
-    @apply h-10 w-10 rounded-full bg-secondary-purple-10 px-1.5 py-[3px] dark:bg-secondary-purple-20;
+    @apply h-10 w-10 rounded-full bg-secondary-purple-10 dark:bg-secondary-purple-20;
   }
 
   .avatarName {
@@ -409,7 +413,7 @@
   }
 
   .viewsList {
-    @apply bodyXs-regular md:body-regular flex h-full items-center justify-start gap-[30px] text-center text-darkSecondary-800 dark:text-darkSecondary-600 md:justify-between md:gap-10;
+    @apply bodyXs-regular xl:bodyMd-regular flex h-full items-center justify-start gap-5 lg:gap-2.5 text-center text-darkSecondary-800 dark:text-darkSecondary-600 md:justify-between md:gap-5;
   }
 
   .online {
@@ -423,7 +427,7 @@
   /* Bottom Bar */
 
   .bottombar {
-    @apply fixed bottom-0 z-10 w-full p-4 md:hidden bg-white-800 dark:bg-darkPrimary-3;
+    @apply fixed bottom-0 z-10 w-full p-4 md:hidden bg-white dark:bg-darkPrimary-3;
     box-shadow: 0px -6px 30px 0px rgba(0, 0, 0, 0.06);
   }
 
@@ -438,7 +442,7 @@
   /* Home Page Left Sidebar  */
 
   .leftSidebar {
-    @apply sticky left-0 top-0 z-20 h-screen w-fit flex-col overflow-auto mt-[100px] max-md:hidden flex gap-5 shrink-0 pl-3 lg:flex lg:flex-col pb-10 !important;
+    @apply sticky left-0 top-0 flex h-screen w-fit shrink-0 flex-col gap-5 overflow-auto py-24 pl-3 max-md:hidden lg:flex lg:flex-col !important;
   }
 
   .asideContainerLarge {
@@ -461,10 +465,16 @@
     @apply bodyXs-semibold rounded-sm bg-primary px-[5px] py-0.5 text-white;
   }
 
+  /* Home Main Section */
+
+  .homeMain {
+    @apply sticky left-0 top-0 flex h-screen w-fit max-w-4xl shrink-0 flex-col overflow-auto py-[90px] md:py-24;
+  }
+
   /* Home Page Right Sidebar  */
 
   .rightSidebar {
-    @apply sticky right-0 top-0 z-20 h-screen w-fit flex-col overflow-auto pb-10 mt-[100px] gap-5 hidden shrink-0 pr-3 lg:flex lg:flex-col !important;
+    @apply sticky right-0 top-0 hidden h-screen w-fit max-w-sm flex-col gap-5 overflow-auto py-24 pb-3 pr-3 xl:flex xl:flex-col !important;
   }
 
   /* Create Post Bar */
@@ -474,7 +484,7 @@
   }
 
   .barInput {
-    @apply md:body-regular no-focus bodyMd-regular border-none bg-white-700 text-darkSecondary-700 dark:bg-darkPrimary-4 dark:text-darkSecondary-700 !important;
+    @apply no-focus border-none bg-white-700 text-darkSecondary-700 dark:bg-darkPrimary-4 dark:text-darkSecondary-700 !important;
   }
 
   .barButton {
