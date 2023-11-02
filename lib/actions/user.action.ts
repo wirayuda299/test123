@@ -34,7 +34,7 @@ export async function updateUser(params: ParamsType) {
         email,
       },
       data: {
-        name: name,
+        name,
       },
     });
     return updatedUser;
@@ -44,14 +44,16 @@ export async function updateUser(params: ParamsType) {
 }
 
 export async function deleteUser(params: ParamsType) {
-  const { email, name } = params;
+  const { email } = params;
+
   try {
     const deletedUser = await prisma.user.delete({
       where: {
-        email: email,
+        email,
       },
     });
-    return deleteUser;
+
+    return deletedUser;
   } catch (error) {
     console.log('error with delete user', error);
   }
