@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Post, postDummyData } from '@/constants/shared';
+import { Post, postDummyData } from '@/constants';
 import { Separator } from '../ui/separator';
 
 interface userPostListProps {
@@ -25,9 +25,9 @@ const UserPostList = ({ user, id }: userPostListProps) => {
 
   return (
     <div className='flex flex-col items-start justify-center rounded-2xl bg-white p-5 pb-[30px] dark:bg-darkPrimary-3'>
-      <div className='heading3 pb-[15px] text-darkSecondary-900 dark:text-white-800'>
+      <p className='heading3 pb-[15px] text-darkSecondary-900 dark:text-white-800'>
         More from {user}
-      </div>
+      </p>
 
       <Separator />
 
@@ -41,7 +41,7 @@ const UserPostList = ({ user, id }: userPostListProps) => {
               {post?.title}
             </Link>
             <ul className='bodyMd-semibold flex text-darkSecondary-800'>
-              {post?.tags.map((tag) => (
+              {post?.tags.map((tag: string) => (
                 <li key={tag} className='mr-1'>
                   #{tag}
                 </li>

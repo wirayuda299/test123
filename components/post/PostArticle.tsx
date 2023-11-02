@@ -8,7 +8,6 @@ import {
   CommentType,
   createComment,
 } from '@/constants/post';
-
 import { CommentInput, PostStats, Comment } from '@/components/index';
 
 interface PostArticleProps {
@@ -74,12 +73,10 @@ const PostArticle = ({
       <div className='flex w-full shrink-0 flex-col lg:hidden'>
         <PostStats />
         <section className='mt-4 flex shrink-0 flex-col gap-1 rounded-2xl bg-white p-5 px-7 dark:bg-darkPrimary-3 xl:mt-0'>
-          <span className='display-semibold text-secondary-blue-80'>
-            {user}
-          </span>
-          <span className='display-semibold text-darkSecondary-800'>
+          <p className='display-semibold text-secondary-blue-80'>{user}</p>
+          <p className='display-semibold text-darkSecondary-800'>
             Posted {createdDate}
-          </span>
+          </p>
         </section>
       </div>
 

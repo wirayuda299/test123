@@ -1,6 +1,6 @@
 'use client';
 
-import React, { RefObject, useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import EmojiPicker, {
   Theme,
@@ -10,21 +10,7 @@ import EmojiPicker, {
 import { AiOutlineArrowRight } from 'react-icons/ai';
 
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
-
-const useClickOutside = (ref: RefObject<HTMLElement>, callback: () => void) => {
-  const handleClick = (e: MouseEvent) => {
-    if (ref.current && !ref.current.contains(e.target as Node)) {
-      callback();
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('click', handleClick);
-    return () => {
-      document.removeEventListener('click', handleClick);
-    };
-  });
-};
+import { useClickOutside } from '@/hooks/useClickOutside';
 
 interface CommentInputProps {
   placeholder?: string;
@@ -46,7 +32,7 @@ const CommentInput = ({ placeholder, handleComment }: CommentInputProps) => {
   const emojiRef = useRef<HTMLDivElement | null>(null);
   useClickOutside(emojiRef, () => setIsEmojiPickerOpen(false));
 
-  function onClick(emojiData: EmojiClickData, event: MouseEvent) {
+  function onEmojiClick(emojiData: EmojiClickData, event: MouseEvent) {
     setInputValue(
       (inputValue) =>
         inputValue + (emojiData.isCustom ? emojiData.unified : emojiData.emoji),
@@ -95,8 +81,8 @@ const CommentInput = ({ placeholder, handleComment }: CommentInputProps) => {
 
           {isEmojiPickerOpen && (
             <EmojiPicker
-              theme={Theme.DARK}
-              onEmojiClick={onClick}
+              theme={Theme.AUTO}
+              onEmojiClick={onEmojiClick}
               autoFocusSearch={false}
               emojiStyle={EmojiStyle.NATIVE}
             />

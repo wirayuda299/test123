@@ -1,9 +1,10 @@
-import { postDummyData } from '@/constants/shared';
+import { postDummyData } from '@/constants';
 import {
   PostStats,
   PostArticle,
   PostProfile,
   UserPostList,
+  NotFound,
 } from '@/components/index';
 
 type URLProps = {
@@ -15,19 +16,19 @@ type URLProps = {
 const Page = ({ params }: URLProps) => {
   const post = postDummyData.find((post) => post.slug === params.id);
 
-  if (!post) return 'No Post Found';
+  if (!post) return <NotFound />;
 
   return (
     <main className='postDetailsLeftCol'>
       <div className='flex shrink-0 flex-col gap-5 max-xl:hidden'>
         <PostStats />
         <section className='flex shrink-0 flex-col gap-1 rounded-2xl bg-white p-5 px-7 dark:bg-darkPrimary-3'>
-          <span className='display-semibold text-secondary-blue-80'>
+          <p className='display-semibold text-secondary-blue-80'>
             {post?.user}
-          </span>
-          <span className='display-semibold text-darkSecondary-800'>
+          </p>
+          <p className='display-semibold text-darkSecondary-800'>
             Posted {post?.createdDate}
-          </span>
+          </p>
         </section>
       </div>
 

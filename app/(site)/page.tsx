@@ -3,7 +3,7 @@ import HomeLeftSidebar from '@/components/Home/HomeLeftSidebar';
 import HomeRightSidebar from '@/components/Home/HomeRightSidebar';
 import NewAndPopularMobile from '@/components/Home/NewAndPopularMobile';
 import PostCard from '@/components/shared/PostCard';
-import { postDummyData } from '@/constants/shared';
+import { postDummyData } from '@/constants';
 
 export default async function Home() {
   return (

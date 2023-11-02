@@ -53,38 +53,33 @@ const Comment = ({
           <div className='flex-wrap break-words rounded-3xl border border-slate-300 p-3.5'>
             <div className='flex flex-col items-start'>
               <div className='mb-4 flex flex-wrap items-center'>
-                <div className='body-semibold md:display text-darkSecondary-900 dark:text-white-800'>
+                <p className='body-semibold md:display text-darkSecondary-900 dark:text-white-800'>
                   {user} •
-                </div>
-                <div className='bodyMd-regular md:body-regular ml-1 text-darkSecondary-900 dark:text-white-800'>
+                </p>
+                <p className='bodyMd-regular md:body-regular ml-1 text-darkSecondary-900 dark:text-white-800'>
                   {postedDate} {editedDate ? ` • Edited on ${editedDate}` : ``}
-                </div>
+                </p>
               </div>
-              <div className='body-regular md:display-regular w-full break-words text-darkSecondary-800'>
+              <p className='body-regular md:display-regular w-full break-words text-darkSecondary-800'>
                 {comment}
-              </div>
+              </p>
             </div>
           </div>
           <div className='ml-4 flex gap-5'>
-            {isLiked ? (
-              <Image
-                src='/assets/posts/orange-heart-square.svg'
-                alt='Heart'
-                width={20}
-                height={20}
-                className='cursor-pointer object-contain'
-                onClick={() => setIsLiked(!isLiked)}
-              />
-            ) : (
-              <Image
-                src='/assets/posts/gray-heart-square.svg'
-                alt='Heart'
-                width={20}
-                height={20}
-                className='cursor-pointer object-contain grayscale'
-                onClick={() => setIsLiked(!isLiked)}
-              />
-            )}
+            <Image
+              src={
+                isLiked
+                  ? '/assets/posts/orange-heart-square.svg'
+                  : '/assets/posts/gray-heart-square.svg'
+              }
+              alt='Heart'
+              width={20}
+              height={20}
+              className={`cursor-pointer object-contain ${
+                isLiked ? '' : 'grayscale'
+              }`}
+              onClick={() => setIsLiked(!isLiked)}
+            />
 
             <Image
               src='/assets/posts/reply.svg'
@@ -137,16 +132,14 @@ const Comment = ({
 
       <div className='rounded-2xl bg-white'>
         {subComments.length > 0 &&
-          subComments.map((comment) => {
-            return (
-              <Comment
-                className='-mt-4 ml-[60px]'
-                key={comment.id}
-                {...comment}
-                setComments={setComments}
-              />
-            );
-          })}
+          subComments.map((comment) => (
+            <Comment
+              className='-mt-4 ml-[60px]'
+              key={comment.id}
+              {...comment}
+              setComments={setComments}
+            />
+          ))}
       </div>
     </div>
   );

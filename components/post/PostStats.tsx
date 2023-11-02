@@ -25,7 +25,7 @@ const PostStats = () => {
                   }`}
                 />
               </div>
-              <div
+              <p
                 className={`${
                   item.isHeart
                     ? 'text-darkSecondary dark:text-white'
@@ -33,7 +33,7 @@ const PostStats = () => {
                 } display-regular`}
               >
                 {item.amount} {item.iconName}
-              </div>
+              </p>
             </div>
           </li>
         ))}
@@ -50,7 +50,7 @@ const PostStats = () => {
                 className='object-contain dark:brightness-200'
               />
             </div>
-            <div className='display-regular text-darkSecondary-800'>Report</div>
+            <p className='display-regular text-darkSecondary-800'>Report</p>
           </Link>
         </li>
       </ul>

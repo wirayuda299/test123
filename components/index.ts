@@ -28,3 +28,4 @@ export { default as PostArticle } from '@/components/post/PostArticle';
 export { default as PostProfile } from '@/components/post/PostProfile';
 export { default as PostStats } from '@/components/post/PostStats';
 export { default as UserPostList } from '@/components/post/UserPostList';
+export { default as NotFound } from '@/components/shared/NotFound';
