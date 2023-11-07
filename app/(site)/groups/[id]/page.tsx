@@ -9,7 +9,6 @@ import {
   HostMeetupCard,
   Pagination,
 } from '@/components/index';
-import PopularTags from '@/components/Home/PopularTags';
 
 const cardBtns = [
   {
@@ -21,6 +20,7 @@ const cardBtns = [
     link: '/code-of-conduct',
   },
 ];
+
 export default function GroupDetail() {
   return (
     <div className='mt-24 h-full min-h-full w-full p-5'>
@@ -28,7 +28,7 @@ export default function GroupDetail() {
         <aside className='top-0 hidden h-full max-h-screen w-full max-w-[210px] gap-5 overflow-y-auto lg:sticky lg:flex lg:flex-col'>
           <GroupAbout />
           <GroupAdmins />
-          <PopularTags />
+          {/* <PopularTags /> */}
         </aside>
         <section className=' w-full grow '>
           <GroupBanner />
@@ -53,7 +53,7 @@ export default function GroupDetail() {
           <div className='flex flex-wrap gap-5 lg:hidden'>
             <GroupAbout />
             <GroupAdmins />
-            <PopularTags />
+            {/* <PopularTags /> */}
           </div>
         </section>
         <aside className='flex h-full w-full max-w-[325px] flex-col gap-5 overflow-y-auto max-lg:max-w-full  lg:sticky lg:top-0'>

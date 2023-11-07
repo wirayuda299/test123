@@ -2,11 +2,12 @@ import {
   Filter,
   HostMeetupCard,
   MeetupChip,
+  Pagination,
   PodcastChip,
 } from '@/components/index';
 import { podcastDatas } from '@/constant';
 
-const podcasts = () => {
+const Podcasts = () => {
   const cardBtns = [
     {
       name: 'Host a Podcast',
@@ -18,36 +19,39 @@ const podcasts = () => {
     },
   ];
   return (
-    <section className='flex gap-4 bg-white-700 flex-col md:flex-row dark:bg-darkPrimary-2 pb-12'>
-      <div className='flex-col flex lg:flex lg:flex-row gap-4 '>
-        <div className='flex flex-col lg:flex-row gap-4'>
-          <div className='lg:hidden w-full'>
-            <HostMeetupCard cardBtns={cardBtns} />
-          </div>
+    <>
+      <section className='flex flex-col gap-4 bg-white-700 pb-12 pt-28 dark:bg-darkPrimary-2 md:flex-row'>
+        <div className='flex flex-col gap-4 lg:flex lg:flex-row '>
+          <div className='flex flex-col gap-4 lg:flex-row'>
+            <div className='w-full lg:hidden'>
+              <HostMeetupCard cardBtns={cardBtns} />
+            </div>
 
-          <div className='flex flex-col md:flex-row gap-4'>
-            <aside className='w-full md:max-w-[210px] '>
-              <Filter />
-            </aside>
-            <div className='w-full lg:w-5/6'>
-              <div className='columns-1 md:columns-2'>
-                {podcastDatas?.map((podcast) => (
-                  <PodcastChip podcastData={podcast} />
-                ))}
+            <div className='flex flex-col gap-4 md:flex-row'>
+              <aside className='w-full md:max-w-[210px] '>
+                <Filter />
+              </aside>
+              <div className='w-full lg:w-5/6'>
+                <div className='columns-1 md:columns-2'>
+                  {podcastDatas?.map((podcast) => (
+                    <PodcastChip podcastData={podcast} key={podcast.author} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className='flex flex-col gap-5 w-full lg:max-w-[360px]'>
-          <div className='hidden lg:block'>
-            <HostMeetupCard cardBtns={cardBtns} />
+          <div className='flex w-full flex-col gap-5 lg:max-w-[360px]'>
+            <div className='hidden lg:block'>
+              <HostMeetupCard cardBtns={cardBtns} />
+            </div>
+            <MeetupChip />
           </div>
-          <MeetupChip />
         </div>
-      </div>
-    </section>
+      </section>
+      <Pagination totalPages={10} />
+    </>
   );
 };
 
-export default podcasts;
+export default Podcasts;

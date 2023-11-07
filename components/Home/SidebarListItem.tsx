@@ -10,6 +10,8 @@ interface SidebarListItemProps {
   bgColor?: string;
   hashtag?: boolean;
   noOfPosts?: number;
+  dimensionsOuterSquare?: number;
+  dimensionsInnerSquare?: number;
 }
 
 const colors: {
@@ -23,6 +25,12 @@ const colors: {
   transparent: 'bg-transparent',
 };
 
+const dimensions: { [key: string]: string } = {
+  32: 'h-[32px] w-[32px]',
+  28: 'h-[28px] w-[28px]',
+  20: 'h-[20px] w-[20px]',
+};
+
 const SidebarListItem = ({
   id,
   icon,
@@ -32,15 +40,15 @@ const SidebarListItem = ({
   bgColor,
   noOfPosts,
   hashtag = false,
+  dimensionsOuterSquare,
+  dimensionsInnerSquare,
 }: SidebarListItemProps) => {
   return (
     <li key={id} className='mb-2.5 w-full'>
       <Link href='#' className='asideListItemLink'>
         <div
           className={`asideImageDiv ${bgColor && colors[bgColor]} ${
-            bgColor === 'transparent'
-              ? 'h-[32px] w-[32px]'
-              : 'h-[28px] w-[28px]'
+            dimensionsOuterSquare && dimensions[dimensionsOuterSquare]
           }`}
         >
           <Image
@@ -48,10 +56,8 @@ const SidebarListItem = ({
             alt='Icon'
             width={32}
             height={32}
-            className={` ${
-              bgColor === 'transparent'
-                ? 'h-[32px] w-[32px]'
-                : 'h-[20px] w-[20px]'
+            className={`${
+              dimensionsInnerSquare && dimensions[dimensionsInnerSquare]
             }`}
           />
         </div>
