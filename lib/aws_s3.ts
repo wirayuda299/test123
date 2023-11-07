@@ -1,6 +1,6 @@
 import S3 from 'aws-sdk/clients/s3';
 
-export const handleImageUpload = async (file: File) => {
+export const uploadImageToS3 = async (file: File) => {
   if (!file) return;
 
   const s3 = new S3({

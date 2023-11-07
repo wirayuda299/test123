@@ -1,32 +1,20 @@
-import { KeyboardEvent, useState } from 'react';
-import { UseFormReturn } from 'react-hook-form';
-import { z } from 'zod';
+import type { Dispatch, KeyboardEvent, SetStateAction } from 'react';
+import type { FieldValues, Path, UseFormReturn } from 'react-hook-form';
 
-const file = z.object({
-  lastModified: z.number(),
-  name: z.string(),
-  size: z.number(),
-  type: z.string(),
-  webkitRelativePath: z.string(),
-});
+type UseHandleEnterProps<T extends FieldValues, K> = {
+  form: UseFormReturn<T>;
+  fields: {
+    [key: string]: {
+      state: any[K];
+      setState: Dispatch<SetStateAction<any[K]>>;
+    };
+  };
+};
 
-export const formSchema = z.object({
-  cover: file,
-  profile: file,
-  name: z.string().min(3),
-  admins: z.array(z.string()),
-  members: z.array(z.string()),
-  description: z.string().min(3, {
-    message: 'Descriptions must minimum 3 characters ',
-  }),
-});
-
-export type InferedFormSchema = z.infer<typeof formSchema>;
-
-const useHandleEnter = (form: UseFormReturn<InferedFormSchema>) => {
-  const [admins, setAdmins] = useState<string[]>([]);
-  const [members, setMembers] = useState<string[]>([]);
-
+const useHandleEnter = <T extends FieldValues, K>({
+  form,
+  fields,
+}: UseHandleEnterProps<T, K>) => {
   const handleEnter = (
     e: KeyboardEvent<HTMLInputElement>,
     field: string,
@@ -34,27 +22,17 @@ const useHandleEnter = (form: UseFormReturn<InferedFormSchema>) => {
   ) => {
     if (e.code === 'Enter') {
       e.preventDefault();
-      let newValues: string[] = [];
+      let newValues: any[T] = [];
 
-      if (field === 'admins') {
-        newValues = [...admins, value];
-        setAdmins(newValues);
-        form.setValue('admins', newValues);
-      } else {
-        newValues = [...members, value];
-        setMembers(newValues);
-        form.setValue('members', newValues);
+      if (fields[field]) {
+        newValues = [...fields[field].state, value];
+        fields[field].setState(newValues);
+        form.setValue(field as Path<T>, newValues);
       }
     }
   };
 
-  return {
-    handleEnter,
-    members,
-    admins,
-    setAdmins,
-    setMembers,
-  };
+  return { handleEnter };
 };
 
 export default useHandleEnter;

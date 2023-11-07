@@ -1,18 +1,20 @@
 import type { Dispatch, SetStateAction } from 'react';
 
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+
+import { Button } from '@/components/ui/button';
 
 type ItemListProps = {
   items: string[];
   setItems: Dispatch<SetStateAction<string[]>>;
 };
+
 export default function ItemList({ items, setItems }: ItemListProps) {
-  if (items.length < 1) return;
+  if (items?.length < 1) return;
 
   return (
     <div className='flex flex-wrap items-center gap-5'>
-      {items.slice(0, 3).map((admin) => (
+      {items?.slice(0, 3).map((admin) => (
         <Button
           type='button'
           className='group relative w-20 bg-white-800 text-darkPrimary-2 hover:bg-white-700 dark:bg-darkPrimary-4 dark:text-white-800 dark:hover:bg-darkPrimary-3'

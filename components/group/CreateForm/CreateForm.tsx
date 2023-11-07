@@ -14,20 +14,20 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { handleImageUpload } from '@/lib/aws_s3';
+import { uploadImageToS3 } from '@/lib/aws_s3';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '../../ui/textarea';
 import ItemList from './ItemList';
-import useHandleEnter, {
-  InferedFormSchema,
-  formSchema,
-} from '@/hooks/useHandleEnter';
+import useHandleEnter from '@/hooks/useHandleEnter';
+import { InferedFormSchema, formSchema } from '@/validations/create-group';
 
 type ExtendedFormSchemaType = InferedFormSchema & Record<string, any>;
 
 export default function CreateGroupForm() {
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
   const [file, setFile] = useState<{ cover: File; profile: File } | null>(null);
+  const [members, setMembers] = useState<string[]>([]);
+  const [admins, setAdmins] = useState<string[]>([]);
   const [preview, setPreview] = useState<{
     cover: string;
     profile: string;
@@ -36,17 +36,29 @@ export default function CreateGroupForm() {
   const form = useForm<ExtendedFormSchemaType>({
     resolver: zodResolver(formSchema),
   });
-  const { admins, handleEnter, members, setAdmins, setMembers } =
-    useHandleEnter(form);
+
+  const { handleEnter } = useHandleEnter({
+    form,
+    fields: {
+      members: {
+        state: members.slice(0, 2),
+        setState: setMembers,
+      },
+      admins: {
+        state: admins.slice(0, 2),
+        setState: setAdmins,
+      },
+    },
+  });
 
   const handleSubmit = async (data: InferedFormSchema) => {
     try {
       setIsSubmit(true);
       const [cover, profile] = await Promise.all([
-        handleImageUpload(file?.cover!),
-        handleImageUpload(file?.profile!),
+        uploadImageToS3(file?.cover!),
+        uploadImageToS3(file?.profile!),
       ]);
-      console.log(data, cover, profile);
+      console.log(data);
     } catch (error) {
       if (error instanceof Error) {
         console.log(error.message);
@@ -245,12 +257,16 @@ export default function CreateGroupForm() {
                   <Input
                     type='text'
                     onKeyDown={(e) =>
-                      handleEnter(e, 'admins', field.value as unknown as string)
+                      handleEnter(
+                        e,
+                        'admins',
+                        form.getValues('admins') as unknown as string,
+                      )
                     }
                     className='h-12 w-full flex-1 rounded-lg bg-white-800  focus-visible:!ring-0 focus-visible:!ring-transparent focus-visible:!ring-offset-transparent dark:border-darkPrimary-4 dark:bg-darkPrimary-4'
                     placeholder='Add Admins'
                     autoComplete='off'
-                    {...field}
+                    onChange={field.onChange}
                   />
                 </FormControl>
                 <FormMessage />
@@ -275,20 +291,20 @@ export default function CreateGroupForm() {
                       handleEnter(
                         e,
                         'members',
-                        field.value as unknown as string,
+                        form.getValues('members') as unknown as string,
                       )
                     }
                     className='h-12 rounded-lg bg-white-800  focus-visible:!ring-0 focus-visible:!ring-transparent focus-visible:!ring-offset-transparent dark:border-darkPrimary-4 dark:bg-darkPrimary-4'
                     placeholder='Add members'
                     autoComplete='off'
-                    {...field}
+                    onChange={field.onChange}
                   />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <ItemList items={members} setItems={setMembers} />
+          <ItemList items={members ?? []} setItems={setMembers} />
         </div>
         <div className='flex gap-5'>
           <Button
