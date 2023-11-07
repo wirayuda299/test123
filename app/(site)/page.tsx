@@ -44,7 +44,7 @@ export default function Home({ searchParams }: URLProps) {
   const activePosts = postsThatIncludeQuery.slice(startIndex, endIndex);
 
   return (
-    <main className='mb-30 flex flex-row justify-center gap-3 bg-white-700 dark:bg-darkPrimary-2'>
+    <main className='mb-30 flex flex-row justify-center gap-7 bg-white-700 dark:bg-darkPrimary-2'>
       {/* Left Sidebar */}
       <aside className='leftSidebar'>
         <section className='asideContainerSmall'>
