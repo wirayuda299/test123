@@ -11,12 +11,12 @@ export const sidebarContents = [
       },
       {
         icon: '/assets/icons/bootstrap.svg',
-        title: 'Looking to Partner Up',
+        title: 'Somebody Make This',
         text: 'Share how to succeed and w...',
       },
       {
         icon: '/assets/icons/bootstrap.svg',
-        title: 'Looking to Partner Up',
+        title: 'Paid Virtual Coworking',
         text: 'Share how to succeed and w...',
       },
     ],
@@ -28,17 +28,17 @@ export const sidebarContents = [
     items: [
       {
         icon: '/assets/icons/building.svg',
-        title: 'Looking to Partner Up',
+        title: 'Building in Public',
         text: 'Hipnode building their prod...',
       },
       {
         icon: '/assets/icons/building.svg',
-        title: 'Looking to Partner Up',
+        title: 'Digital Nomads',
         text: 'Hipnode building their prod...',
       },
       {
         icon: '/assets/icons/building.svg',
-        title: 'Looking to Partner Up',
+        title: 'Landing Page UIHUT',
         text: 'Hipnode building their prod...',
       },
     ],
@@ -55,12 +55,12 @@ export const sidebarContents = [
       },
       {
         icon: '/assets/icons/hipnoder.svg',
-        title: 'European Hipnoder',
+        title: 'Browser Extension Ma...',
         text: 'Everything related to the sta...',
       },
       {
         icon: '/assets/icons/hipnoder.svg',
-        title: 'European Hipnoder',
+        title: 'Ideas and Validation',
         text: 'Everything related to the sta...',
       },
     ],

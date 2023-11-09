@@ -112,7 +112,7 @@ const CreatePost = () => {
                 <Input
                   placeholder='Title...'
                   {...field}
-                  className='heading3 md:heading1 min-h-[48px] rounded-lg border-none bg-white-800 px-5 py-3 text-darkSecondary-800 dark:bg-darkPrimary-4 md:min-h-[60px]'
+                  className='heading3 md:heading1 bg-white-800 text-darkSecondary-800 dark:bg-darkPrimary-4 min-h-[48px] rounded-lg border-none px-5 py-3 md:min-h-[60px]'
                 />
               </FormControl>
               <FormMessage />
@@ -175,7 +175,7 @@ const CreatePost = () => {
                   defaultValue={field.value}
                 >
                   <FormControl>
-                    <SelectTrigger className='bodyXs-regular md:body-semibold flex items-center gap-2 rounded border-none bg-white-800 text-darkSecondary-900 dark:bg-darkPrimary-4 dark:text-white-800'>
+                    <SelectTrigger className='bodyXs-regular md:body-semibold bg-white-800 text-darkSecondary-900 dark:bg-darkPrimary-4 dark:text-white-800 flex items-center gap-2 rounded border-none'>
                       <SelectValue placeholder='Select Group' />
                       <Image
                         src='form-down-arrow.svg'
@@ -186,15 +186,15 @@ const CreatePost = () => {
                       />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent className='dark:bg-darkPrimary-4'>
-                    <div className='no-scrollbar flex w-full flex-col gap-3 overflow-y-hidden p-3 hover:overflow-y-auto dark:bg-darkPrimary-3 md:flex-row'>
+                  <SelectContent className='dark:bg-darkPrimary-4 max-h-[500px] overflow-y-auto'>
+                    <div className='dark:bg-darkPrimary-3 flex w-full flex-col gap-3 p-3 md:flex-row'>
                       {sidebarContents.map((content) => (
                         <div
                           className='mb-2 flex flex-col items-start space-y-5'
                           key={content.label}
                         >
-                          <div className='h-full !w-full flex-1 rounded-lg bg-secondary-yellow-10 p-3'>
-                            <div className='flex items-center gap-2'>
+                          <div className='bg-secondary-yellow-10 h-full !w-full flex-1 rounded-lg p-3'>
+                            <div className=' flex items-center gap-2'>
                               <Image
                                 className='aspect-auto object-contain'
                                 src={content.icon}
@@ -202,16 +202,16 @@ const CreatePost = () => {
                                 width={20}
                                 height={20}
                               />
-                              <h2 className='text-lg font-semibold'>
+                              <h2 className='text-darkSecondary-900 text-lg font-semibold'>
                                 {content.label}
                               </h2>
                             </div>
-                            <p className='text-left text-xs text-darkSecondary-800'>
+                            <p className='text-darkSecondary-800 text-left text-xs'>
                               {content.text}
                             </p>
                           </div>
 
-                          <div className=' flex flex-col items-start gap-3'>
+                          <div className='flex flex-col items-start gap-3'>
                             {content.items.map((item) => (
                               <div
                                 className={`mb-3 inline-flex h-full  items-center justify-start gap-x-2 rounded-lg`}
@@ -231,14 +231,15 @@ const CreatePost = () => {
                                   >
                                     {item.title}
                                   </SelectItem>
-                                  <p className='truncate text-left text-10 text-darkSecondary-800'>
+
+                                  <p className='text-10 text-darkSecondary-800 truncate text-left'>
                                     {item.text}
                                   </p>
                                 </div>
                               </div>
                             ))}
 
-                            <button className='w-max rounded-full bg-secondary-purple-20 px-2 py-[2px] text-9 font-semibold text-secondary-purple'>
+                            <button className='bg-secondary-purple-20 text-9 text-secondary-purple w-max rounded-full px-2 py-[2px] font-semibold'>
                               See all
                             </button>
                           </div>
@@ -262,7 +263,7 @@ const CreatePost = () => {
                   defaultValue={field.value}
                 >
                   <FormControl>
-                    <SelectTrigger className='bodyXs-regular md:body-semibold flex items-center gap-2 rounded border-none bg-white-800 text-darkSecondary-900 dark:bg-darkPrimary-4 dark:text-white-800'>
+                    <SelectTrigger className='bodyXs-regular md:body-semibold bg-white-800 text-darkSecondary-900 dark:bg-darkPrimary-4 dark:text-white-800 flex items-center gap-2 rounded border-none'>
                       <SelectValue placeholder='Create - Post' />
                       <Image
                         src='form-down-arrow.svg'
@@ -385,7 +386,7 @@ const CreatePost = () => {
                 <>
                   <Input
                     placeholder='Add a tag...'
-                    className='bodyMd-regular md:body-regular min-h-[50px] rounded-lg border-2 border-white-800 bg-white px-5 py-3 text-darkSecondary-800 dark:border-darkPrimary-4 dark:bg-darkPrimary-3'
+                    className='bodyMd-regular md:body-regular border-white-800 text-darkSecondary-800 dark:border-darkPrimary-4 dark:bg-darkPrimary-3 min-h-[50px] rounded-lg border-2 bg-white px-5 py-3'
                     onKeyDown={(e) => handleInput(e, field)}
                   />
                   {field.value.length > 0 && (
@@ -393,7 +394,7 @@ const CreatePost = () => {
                       {field.value.map((tag: any) => (
                         <div
                           key={tag}
-                          className='bodyXs-regular mt-2.5 cursor-pointer rounded-[4px] bg-white-700 px-[10px] py-[6px] dark:bg-darkPrimary-4'
+                          className='bodyXs-regular bg-white-700 dark:bg-darkPrimary-4 mt-2.5 cursor-pointer rounded-[4px] px-[10px] py-[6px]'
                           onClick={() => handleTagRemove(tag, field)}
                         >
                           {tag}
@@ -410,13 +411,13 @@ const CreatePost = () => {
 
         <Button
           type='submit'
-          className='body-semibold md:display-semibold rounded-lg bg-secondary-blue px-10 py-[10px] text-secondary-blue-10 hover:bg-[#347ae2e6] dark:bg-secondary-blue dark:text-secondary-blue-10 dark:hover:bg-[#347ae2e6]'
+          className='body-semibold md:display-semibold bg-secondary-blue text-secondary-blue-10 dark:bg-secondary-blue dark:text-secondary-blue-10 rounded-lg px-10 py-[10px] hover:bg-[#347ae2e6] dark:hover:bg-[#347ae2e6]'
         >
           Publish
         </Button>
         <Button
           type='button'
-          className='md:display-regular body-semibold bg-white text-darkSecondary-800 hover:bg-white dark:bg-darkPrimary-3 dark:text-darkSecondary-800'
+          className='md:display-regular body-semibold text-darkSecondary-800 dark:bg-darkPrimary-3 dark:text-darkSecondary-800 bg-white hover:bg-white'
         >
           Cancel
         </Button>
