@@ -28,4 +28,5 @@ export { default as PostProfile } from '@/components/post/PostProfile';
 export { default as PostStats } from '@/components/post/PostStats';
 export { default as UserPostList } from '@/components/post/UserPostList';
 export { default as NotFound } from '@/components/shared/NotFound';
+export { default as CreateGroupForm } from '@/components/group/CreateForm/CreateForm';
 export { default as HostMeetupCard } from './shared/HostMeetupCard';
