@@ -26,11 +26,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
 import { CreatePostSchema } from '@/lib/validations';
 import { createPostData, sidebarContents } from '@/constant';
 
