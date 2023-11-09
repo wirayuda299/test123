@@ -21,6 +21,6 @@ export { default as OptionBar } from './ProfilePage/OptionBar';
 export { default as PostCard } from './shared/PostCard';
 export { default as GroupPostCard } from '@/components/group/GroupPostCard';
 export { default as InterviewPostCard } from '@/components/interviews/post-card';
-export { default as CreatePost } from '@/components/forms/CreatePost';
+export { default as CreatePost } from './forms/CreatePost';
 export { default as CreateGroupForm } from '@/components/group/CreateForm/CreateForm';
 export { default as HostMeetupCard } from './shared/HostMeetupCard';

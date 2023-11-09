@@ -3,9 +3,6 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { Source_Sans_3 } from 'next/font/google';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin';
-import { extractRouterConfig } from 'uploadthing/server';
-import { ourFileRouter } from './api/uploadthing/core';
 
 import './globals.css';
 
@@ -27,7 +24,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <body
           className={`${sourceSansPro.className} max-container bg-white-800 dark:bg-darkPrimary-2`}
         >
-          <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
           <main>{children}</main>
         </body>
       </ClerkProvider>
