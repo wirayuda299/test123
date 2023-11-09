@@ -33,6 +33,7 @@ export default function ProfilePage() {
               avatar={post.avatar}
               comments={post.comments}
               online={post.online}
+              // isLiked={post.isLiked}
               likes={post.likes}
             />
           ))}
