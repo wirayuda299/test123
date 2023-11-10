@@ -3,11 +3,8 @@
 import Image from 'next/image';
 import { ReactNode, useState } from 'react';
 
-import {
-  comments as commentsData,
-  CommentType,
-  createComment,
-} from '@/constants/post';
+import { comments as commentsData, createComment } from '@/constants/post';
+import { CommentType } from '@/types/post';
 import { CommentInput, PostStats, Comment } from '@/components/index';
 
 interface PostArticleProps {
@@ -52,9 +49,9 @@ const PostArticle = ({
               H1
             </div>
             <div className='flex flex-col justify-start gap-5'>
-              <div className='display-semibold md:heading1-semibold line-clamp-3 text-darkSecondary-900 dark:text-white-800'>
+              <p className='display-semibold md:heading1-semibold line-clamp-3 text-darkSecondary-900 dark:text-white-800'>
                 {title}
-              </div>
+              </p>
               <ul className='bodyMd-regular md:display-regular flex justify-start gap-6 text-secondary-yellow-90'>
                 {tags?.map((tag) => <li key={tag}>#{tag}</li>)}
               </ul>

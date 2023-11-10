@@ -1,4 +1,5 @@
 import format from 'date-fns/format';
+import { CommentType } from '@/types/post';
 
 function createRandomId() {
   return Math.floor((1 + Math.random()) * 0x10000)
@@ -15,16 +16,6 @@ export function createComment(comment: string, date: Date): CommentType {
     avatar: '/user-avatar.svg',
     subComments: [],
   };
-}
-
-export interface CommentType {
-  id: number | string;
-  user: string;
-  postedDate: string;
-  avatar: string;
-  comment: string;
-  editedDate?: string;
-  subComments?: CommentType[];
 }
 
 export const comments: CommentType[] = [
@@ -72,4 +63,27 @@ export const postStats = [
     amount: 3086,
   },
   { id: 3, icon: '/assets/posts/share.svg', iconName: 'Shares', amount: 84 },
+];
+
+export const reportTags = [
+  {
+    id: 1,
+    title: 'False Information?',
+  },
+  {
+    id: 2,
+    title: 'Low Quality',
+  },
+  {
+    id: 3,
+    title: 'Spam',
+  },
+  {
+    id: 4,
+    title: 'Hate Speech',
+  },
+  {
+    id: 5,
+    title: 'Inappropriate',
+  },
 ];
