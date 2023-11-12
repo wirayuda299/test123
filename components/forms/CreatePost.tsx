@@ -115,7 +115,7 @@ const CreatePost = () => {
         />
 
         <div className='flex gap-5'>
-          {/* implement AWS */}
+          {/* implement AWS here */}
 
           <FormField
             control={form.control}
@@ -145,7 +145,9 @@ const CreatePost = () => {
                           className='mb-2 flex flex-col items-start space-y-5'
                           key={content.label}
                         >
-                          <div className='h-full !w-full flex-1 rounded-lg bg-secondary-yellow-10 p-3'>
+                          <div
+                            className={`h-full !w-full flex-1 rounded-lg ${content.bgColour} p-3`}
+                          >
                             <div className=' flex items-center gap-2'>
                               <Image
                                 className='aspect-auto object-contain'

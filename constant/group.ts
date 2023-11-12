@@ -3,6 +3,7 @@ export const sidebarContents = [
     label: 'Fastest Growing',
     icon: '/assets/icons/growth.svg',
     text: 'List updated daily at midnight PST.',
+    bgColour: 'bg-secondary-yellow-10',
     items: [
       {
         icon: '/assets/icons/bootstrap.svg',
@@ -25,6 +26,7 @@ export const sidebarContents = [
     label: 'Most Popular',
     icon: '/assets/icons/fire.svg',
     text: 'List updated daily at midnight PST.',
+    bgColour: 'bg-secondary-red-10',
     items: [
       {
         icon: '/assets/icons/building.svg',
@@ -47,6 +49,7 @@ export const sidebarContents = [
     label: 'Newly Launched',
     icon: '/assets/icons/rocket-black.svg',
     text: 'List updated daily at midnight PST.',
+    bgColour: 'bg-secondary-blue-10',
     items: [
       {
         icon: '/assets/icons/hipnoder.svg',
