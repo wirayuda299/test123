@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import { IsLiked } from '../Home/IsLiked';
 
 interface PostCardProps {
+  slug: string;
   mainImage: string;
   title: string;
   tags: string[];
@@ -19,6 +21,7 @@ interface PostCardProps {
 }
 
 const PostCard = ({
+  slug,
   mainImage,
   title,
   tags,
@@ -46,7 +49,11 @@ const PostCard = ({
 
       {/* Grid Item 2 - Post Title */}
       <div className='postCardGridItem2'>
-        <h3 className='postCardTitle'>{title}</h3>
+        <Link href={`/post/${slug}`}>
+          <h3 className='postCardTitle line-clamp-2 cursor-pointer text-opacity-90'>
+            {title}
+          </h3>
+        </Link>
         {/* Tags */}
         <ul className='postCardTagList'>
           {tags.map((tag) => (

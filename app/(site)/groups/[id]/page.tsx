@@ -36,6 +36,7 @@ export default function GroupDetail() {
           {[1, 2, 3, 4].map((p) => (
             <div key={p} className='w-full'>
               <PostCard
+                slug='/slug'
                 avatar='/assets/images/user-avatar.svg'
                 comments={5}
                 createdDate={'12/10/2024'}

@@ -134,7 +134,7 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #f4f6f8;
+    background: transparent;
   }
 
   @variants responsive {
@@ -148,90 +148,6 @@
       -ms-overflow-style: none; /* IE and Edge */
       scrollbar-width: none; /* Firefox */
     }
-  }
-
-  /* Clerk */
-
-  .cl-socialButtons {
-    display: flex;
-    width: auto;
-    display: flex;
-    width: auto;
-  }
-
-  .cl-socialButtons .cl-socialButtonsBlockButton {
-    width: 60px;
-    height: 50px;
-    display: flex;
-    width: 60px;
-    height: 50px;
-    display: flex;
-  }
-
-  html.dark .cl-socialButtons .cl-socialButtonsBlockButton {
-    background-color: var(--dark);
-    border: 1px solid var(--gray);
-    background-color: var(--dark);
-    border: 1px solid var(--gray);
-  }
-
-  html.dark .cl-socialButtonsBlockButton__github .cl-internal-1fc9kwt > img {
-    filter: invert(100%);
-    filter: invert(100%);
-  }
-
-  html.dark .cl-internal-b868gt {
-    background-color: var(--white);
-    background-color: var(--white);
-  }
-
-  .cl-socialButtonsBlockButton__github .cl-socialButtonsBlockButtonText,
-  .cl-socialButtonsBlockButton__google
-    .cl-socialButtonsBlockButtonText__google {
-    display: none !important;
-    display: none !important;
-  }
-
-  .cl-socialButtons .cl-internal-1fc9kwt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .cl-internal-b3fm6y,
-  .cl-formButtonPrimary {
-    background-color: var(--orange);
-    background-color: var(--orange);
-  }
-
-  .cl-footerActionLink {
-    color: var(--orange);
-    color: var(--orange);
-  }
-
-  html.dark .cl-internal-17ydaof {
-    background-color: var(--dark);
-    background-color: var(--dark);
-  }
-
-  html.dark .cl-internal-1vbdq0x,
-  html.dark .cl-internal-13zhnx0,
-  html.dark .cl-internal-1xpzc82,
-  html.dark .cl-internal-17bz5n6,
-  html.dark .cl-internal-138ov2f {
-    color: var(--white);
-    color: var(--white);
-  }
-
-  html.dark .cl-internal-mdg29y,
-  html.dark .cl-internal-18ut2g5 {
-    background-color: var(--dark);
-    color: var(--white);
-    background-color: var(--dark);
-    color: var(--white);
   }
 }
 
@@ -578,6 +494,16 @@
   .avatarCreatePostMobile {
     @apply h-[28px] w-[28px] md:h-[38px] md:w-[38px];
   }
+
+  /* Post Details Page */
+
+  .postDetailsLeftCol {
+    @apply article-wrapper mx-auto mt-[100px] grid max-w-7xl justify-center bg-white-700 px-2 dark:bg-darkPrimary-2 md:gap-5 md:px-5 lg:flex-row;
+  }
+
+  .postDetailsRightCol {
+    @apply sticky right-0 top-0 mt-4 flex h-screen shrink-0 flex-col gap-5 pb-10 md:mt-0 md:pr-3;
+  }
 }
 
 /* Clerk */
@@ -662,6 +588,9 @@ html.dark .cl-internal-18ut2g5 {
   background-color: var(--dark);
   color: var(--white);
 }
+
+/* ScrollBar */
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -669,4 +598,31 @@ html.dark .cl-internal-18ut2g5 {
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/* Post Details Page */
+
+@media screen and (min-width: 1280px) {
+  .article-wrapper {
+    grid-template-columns: 18% 55% 27%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .article-wrapper {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Emoji Picker */
+
+.emojiContainer + aside {
+  @apply dark:bg-darkPrimary-2 text-white-800 ml-40 absolute !important;
+}
+
+.epr-search-container > input {
+  @apply dark:bg-darkPrimary-2 dark:border dark:border-white-800 !important;
+}
+
+.epr-emoji-category-label {
+  @apply dark:bg-darkPrimary-2 text-white-800 !important;
 }
