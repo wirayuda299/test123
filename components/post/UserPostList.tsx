@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-import { Post, postDummyData } from '@/constants';
+import { postDummyData } from '@/constants';
+import { Post } from '@/types/home';
 import { Separator } from '../ui/separator';
 
 interface userPostListProps {
@@ -10,16 +11,19 @@ interface userPostListProps {
 
 const UserPostList = ({ user, id }: userPostListProps) => {
   function getThreeRandomArticles(arr: Post[], num: number): Post[] {
-    const articlesExcludingCurrent = arr.filter((article) => article.id !== id);
     const result: Post[] = [];
-    const arrCopy = [...articlesExcludingCurrent].filter(
+
+    const articlesExcludingCurrent = arr.filter((article) => article.id !== id);
+    const arrCopy = articlesExcludingCurrent.filter(
       (article: Post) => article.user === user,
     );
+
     for (let i = 0; i < num; i++) {
       const randomIndex = Math.floor(Math.random() * arrCopy.length);
       result.push(arrCopy[randomIndex]);
       arrCopy.splice(randomIndex, 1);
     }
+
     return result;
   }
 

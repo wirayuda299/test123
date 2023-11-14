@@ -18,6 +18,9 @@ interface CommentInputProps {
 }
 
 const CommentInput = ({ placeholder, handleComment }: CommentInputProps) => {
+  const emojiRef = useRef<HTMLDivElement | null>(null);
+  useClickOutside(emojiRef, () => setIsEmojiPickerOpen(false));
+
   const [, setSelectedEmoji] = useState<string>('1f60a');
   const [inputValue, setInputValue] = useState<string>('');
   const [isEmojiPickerOpen, setIsEmojiPickerOpen] = useState<boolean>(false);
@@ -29,9 +32,6 @@ const CommentInput = ({ placeholder, handleComment }: CommentInputProps) => {
     }
   }
 
-  const emojiRef = useRef<HTMLDivElement | null>(null);
-  useClickOutside(emojiRef, () => setIsEmojiPickerOpen(false));
-
   function onEmojiClick(emojiData: EmojiClickData, event: MouseEvent) {
     setInputValue(
       (inputValue) =>
@@ -40,6 +40,7 @@ const CommentInput = ({ placeholder, handleComment }: CommentInputProps) => {
     setSelectedEmoji(emojiData.unified);
     setIsEmojiPickerOpen(!isEmojiPickerOpen);
   }
+
   return (
     <div className='flex bg-white pb-3 pl-0 pt-5 dark:bg-darkPrimary-3'>
       <Avatar className='h-11 w-11 rounded-full bg-secondary-yellow-30 '>
