@@ -110,7 +110,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/hayley/Documents/hayley-is-coding/js-mastery-bootcamp/Cohort5_CodeFam_Hipnode/prisma/generated/client",
+      "value": "/Users/hanna/projects/Hipnode/prisma/generated/client",
       "fromEnvVar": null
     },
     "config": {
@@ -119,7 +119,7 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "darwin-arm64",
+        "value": "darwin",
         "native": true
       }
     ],
@@ -158,12 +158,12 @@ defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 
 config.injectableEdgeEnv = () => ({
   parsed: {
-    DATABASE_URL: typeof globalThis !== 'undefined' && globalThis.DATABASE_URL || typeof process !== 'undefined' && process.env && process.env.DATABASE_URL || undefined
+    DATABASE_URL: typeof globalThis !== 'undefined' && globalThis['DATABASE_URL'] || typeof process !== 'undefined' && process.env && process.env.DATABASE_URL || undefined
   }
 })
 
-if (typeof globalThis !== 'undefined' && globalThis.DEBUG || typeof process !== 'undefined' && process.env && process.env.DEBUG || undefined) {
-  Debug.enable(typeof globalThis !== 'undefined' && globalThis.DEBUG || typeof process !== 'undefined' && process.env && process.env.DEBUG || undefined)
+if (typeof globalThis !== 'undefined' && globalThis['DEBUG'] || typeof process !== 'undefined' && process.env && process.env.DEBUG || undefined) {
+  Debug.enable(typeof globalThis !== 'undefined' && globalThis['DEBUG'] || typeof process !== 'undefined' && process.env && process.env.DEBUG || undefined)
 }
 
 const PrismaClient = getPrismaClient(config)

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -26,23 +26,12 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { CreatePostSchema } from '@/lib/validations';
-import { createPostData, sidebarContents } from '@/constant';
+import { createPostData } from '@/constant';
+import GroupSelectContent from './GroupSelectContent';
 
 const CreatePost = () => {
   const { theme } = useTheme();
   const editorRef = useRef(null);
-  // const [image, setImage] = useState<
-  //   {
-  //     fileKey: string;
-  //     fileName: string;
-  //     fileSize: number;
-  //     fileUrl: string;
-  //     key: string;
-  //     name: string;
-  //     size: number;
-  //     url: string;
-  //   }[]
-  // >([]);
 
   const form = useForm<z.infer<typeof CreatePostSchema>>({
     resolver: zodResolver(CreatePostSchema),
@@ -139,67 +128,7 @@ const CreatePost = () => {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent className='max-h-[500px] overflow-y-auto dark:bg-darkPrimary-4'>
-                    <div className='flex w-full flex-col gap-3 p-3 dark:bg-darkPrimary-3 md:flex-row'>
-                      {sidebarContents.map((content) => (
-                        <div
-                          className='mb-2 flex flex-col items-start space-y-5'
-                          key={content.label}
-                        >
-                          <div
-                            className={`h-full !w-full flex-1 rounded-lg ${content.bgColour} p-3`}
-                          >
-                            <div className=' flex items-center gap-2'>
-                              <Image
-                                className='aspect-auto object-contain'
-                                src={content.icon}
-                                alt='growth icon'
-                                width={20}
-                                height={20}
-                              />
-                              <h2 className='text-lg font-semibold text-darkSecondary-900'>
-                                {content.label}
-                              </h2>
-                            </div>
-                            <p className='text-left text-xs text-darkSecondary-800'>
-                              {content.text}
-                            </p>
-                          </div>
-
-                          <div className='flex flex-col items-start gap-3'>
-                            {content.items.map((item) => (
-                              <div
-                                className={`mb-3 inline-flex h-full  items-center justify-start gap-x-2 rounded-lg`}
-                                key={item.title}
-                              >
-                                <Image
-                                  className='aspect-auto bg-transparent object-cover'
-                                  src={item.icon}
-                                  width={34}
-                                  height={34}
-                                  alt={item.title}
-                                />
-                                <div className='w-full text-left'>
-                                  <SelectItem
-                                    value={item.title}
-                                    className='cursor-pointer'
-                                  >
-                                    {item.title}
-                                  </SelectItem>
-
-                                  <p className='truncate text-left text-10 text-darkSecondary-800'>
-                                    {item.text}
-                                  </p>
-                                </div>
-                              </div>
-                            ))}
-
-                            <button className='w-max rounded-full bg-secondary-purple-20 px-2 py-[2px] text-9 font-semibold text-secondary-purple'>
-                              See all
-                            </button>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                    <GroupSelectContent />
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -250,16 +179,6 @@ const CreatePost = () => {
             )}
           />
         </div>
-
-        {/* {image.length > 0 && (
-          <Image
-            src={image[0].fileUrl}
-            alt='cover image'
-            width={870}
-            height={500}
-            className='w-full rounded-lg'
-          />
-        )} */}
 
         <FormField
           control={form.control}
