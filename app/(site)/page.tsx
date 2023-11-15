@@ -8,7 +8,7 @@ import Pagination from '../../components/shared/Pagination';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { postDummyData } from '@/constants/index';
+import { postDummyData } from '@/constants';
 import {
   newAndPopular,
   newAndPopularMobile,
@@ -44,7 +44,7 @@ export default function Home({ searchParams }: URLProps) {
   const activePosts = postsThatIncludeQuery.slice(startIndex, endIndex);
 
   return (
-    <main className='mb-30 flex flex-row justify-center gap-5 bg-white-700 dark:bg-darkPrimary-2'>
+    <main className='mb-30 flex flex-row justify-center gap-3 bg-white-700 dark:bg-darkPrimary-2'>
       {/* Left Sidebar */}
       <aside className='leftSidebar'>
         <section className='asideContainerSmall'>
@@ -166,12 +166,13 @@ export default function Home({ searchParams }: URLProps) {
             <Button className='barButton'>Create Post</Button>
           </section>
 
-          <section className='mb-10'>
+          <section className='mb-10 max-w-2xl'>
             <div className='pb-2'>
               {activePosts?.map((post) => (
                 <PostCard
                   key={post.id}
                   name={post.name}
+                  slug={post.slug}
                   title={post.title}
                   tags={post.tags}
                   views={post.views}
