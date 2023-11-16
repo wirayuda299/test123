@@ -7,11 +7,11 @@ import {
   Pagination,
 } from '@/components/index';
 import { cardBtns } from '@/constant';
-import { postDummyData } from '@/constants';
+import { postDummyData } from '@/constants/index';
 
 export default function ProfilePage() {
   return (
-    <div className='flex flex-col items-start justify-center gap-6 lg:flex-row'>
+    <div className='flex flex-col items-start justify-center gap-6 py-[90px] lg:flex-row lg:py-[100px]'>
       <LeftSidebar />
 
       <div className='w-full lg:hidden'>
@@ -41,7 +41,7 @@ export default function ProfilePage() {
         </div>
       </main>
 
-      <aside className='flex w-full flex-col gap-5 lg:sticky lg:top-0 lg:max-w-[325px]'>
+      <aside className='flex w-full flex-col gap-5 lg:sticky lg:top-[100px] lg:max-w-[325px]'>
         <div className='hidden lg:block'>
           <HostMeetupCard cardBtns={cardBtns} />
         </div>

@@ -21,6 +21,7 @@ export { default as OptionBar } from './ProfilePage/OptionBar';
 export { default as PostCard } from './shared/PostCard';
 export { default as GroupPostCard } from '@/components/group/GroupPostCard';
 export { default as InterviewPostCard } from '@/components/interviews/post-card';
+export { default as CreatePost } from './forms/CreatePost';
 export { default as Comment } from '@/components/Post/Comment';
 export { default as CommentInput } from '@/components/Post/CommentInput';
 export { default as PostArticle } from '@/components/Post/PostArticle';

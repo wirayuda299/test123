@@ -110,7 +110,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/hayley/Documents/hayley-is-coding/js-mastery-bootcamp/Cohort5_CodeFam_Hipnode/prisma/generated/client",
+      "value": "/Users/hanna/projects/Hipnode/prisma/generated/client",
       "fromEnvVar": null
     },
     "config": {
@@ -119,7 +119,7 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "darwin-arm64",
+        "value": "darwin",
         "native": true
       }
     ],
