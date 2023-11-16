@@ -7,6 +7,16 @@ function createRandomId() {
     .substring(1);
 }
 
+export interface CommentType {
+  id: number | string;
+  user: string;
+  postedDate: string;
+  avatar: string;
+  comment: string;
+  editedDate?: string;
+  subComments?: CommentType[];
+}
+
 export function createComment(comment: string, date: Date): CommentType {
   return {
     id: createRandomId(),
